@@ -1,0 +1,19 @@
+# Design decisions
+
+Primary reference: supplied refero.design 5af49096-2a34-424c-8f91-4b5713a04e31.jpg (Spyglass). Direct Refero lookup returned NO_SUBSCRIPTION. The supplied screenshot provides the visual lock; there is no missing reference dependency.
+
+| Decision | Evidence and adaptation |
+| --- | --- |
+| White split hero, compact navigation, bold sans-serif | Observed in screenshot. Adapt to a grooming message and portrait video, not floating social-media mockups. |
+| Alternating white and near-black rounded sections | Observed reference rhythm; dark About, Academy and closing CTA balance service-reading surfaces. |
+| Tight display tracking, generous whitespace, occasional italic phrase | Observed screenshot. Arial/Helvetica system stack is a pragmatic close alternative, not an identified reference font. |
+| Gold accent on primary actions and small details | Latest user palette (roughly 50/40/10); #B98F22 sampled from SVG source. Use dark text on gold, not small gold text on white. |
+| Original square logo on black | Actual supplied SVG has opaque black background. Preserve original file and proportions, do not invent compact monogram. |
+| Portrait video at its native aspect ratio | User forbids stretching/cropping away barbering action. Single primary film surface; no fabricated studio imagery. |
+| Menu rows and category filters | Supplied service specification; a readable service menu instead of repeated marketing cards. |
+| Progressive expandable academy ladder | Five provisional programmes from framework; distinct from service selection. |
+| Honest gallery/review/contact states | Missing approved media and contact destinations; no fictional reviews or dead outbound links. |
+
+Tokens: white #fff, ink #101110, subtle surface #f2f2ef, gold #b98f22, muted text #62645f; 1200px content width, fluid 20–64px gutters, 16–24px large-panel radii, pill actions with at least 44px targets. Display typography fluid 42–84px; body 16–18px. Gold use remains restrained. Mobile layout is an adaptation, not observed reference behaviour.
+
+Written brand: use latest user spelling URBANCUT. Older documents say Urban Cuts Grooming Studio; retain source documents and flag for final content approval. Supplied logo remains unchanged.

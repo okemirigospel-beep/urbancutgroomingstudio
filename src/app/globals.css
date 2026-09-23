@@ -1,0 +1,6 @@
+@import "tailwindcss";
+:root { color-scheme: light; font-family: Arial, Helvetica, sans-serif; color: #141414; background: white; }
+body { margin: 0; }
+main { max-width: 1100px; margin: auto; padding: 80px 24px; }
+h1 { font-size: clamp(40px, 6vw, 80px); line-height: 1; letter-spacing: -.055em; }
+a { color: inherit; }
