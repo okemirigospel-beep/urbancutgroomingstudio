@@ -9,4 +9,6 @@ Originals in repository root are preserved byte-for-byte:
 
 Missing: approved actual-studio/gallery photography, genuine publishable reviews, product photographs and approved compact logo variant (optional). Stock film must not be presented as actual URBANCUT work. Contact URLs/map are also pending.
 
+Web derivatives: public/media/urbancut-logo.svg is an unchanged copy of the supplied logo; hero.mp4 is silent H.264, 540x960, 30fps, fast-start, 620,031 bytes; hero-poster.jpg is a 540x960 frame at 1.1 seconds, 69,048 bytes. The original MP4 is 4.56 seconds with 1280x720 encoded dimensions and -90-degree rotation metadata (portrait display). Preserve the entire portrait framing. Embedded editing mark, internal cuts, black bands and a non-seamless end/start transition are source limitations. Obtain a clean authorised source before launch; do not remove the mark to conceal its origin.
+
 All supplied files are small enough for regular Git tracking. No separate asset storage is required for the current local prototype. Once pushed and verified, clone the continuation branch and run npm ci to recover tracked source and assets. Git does not recover untracked secrets, databases or future external storage. No Supabase database or external storage has been created by this task.
