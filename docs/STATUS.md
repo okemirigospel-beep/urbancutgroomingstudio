@@ -19,3 +19,5 @@ Latest responsive re-edit: combined SVG and uppercase two-line header wordmark; 
 Latest focused finish: larger Georgia secondary wordmark directly beneath URBANCUT; no visible slideshow controls; image activation toggles pause; opaque 280ms directional slide replaces crossfade at the same 2.8-second interval. Verified responsive layouts, keyboard/click interaction, loop and reduced motion.
 
 Latest header correction: actual SVG is the principal brand element, using a tight-bounds derivative at responsive widths. Companion wordmark removed. Before/after screenshots, visible-artwork measurements and navigation checks recorded in VERIFICATION.md. Hero and slideshow unchanged.
+
+Mobile header refined to a fluid 160–190px visible emblem with approximately 99–114px header height across 320–430px phones. Larger tablet/desktop logo sizes preserved.

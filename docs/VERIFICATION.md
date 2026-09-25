@@ -81,3 +81,11 @@ Removed redundant companion lettering. CSS image widths 300px desktop, 260px tab
 Visually verified at 320, 360, 390, 600, 601, 768, 1024, 1179, 1180 and 1440px, including all relevant layout boundaries. No horizontal overflow, clipping or second-row closed-header content. Desktop navigation/white booking control and mobile/tablet toggle stay aligned. Menu has valid targets, remains below the logo and above the hero, closes with Escape and restores toggle focus. Desktop and mobile booking both reached #services. Browser errors: none. Production build and its TypeScript stage passed. Hero, slideshow, information band and service components were not modified.
 
 Matched before/after screenshots at normal 1x browser scale: screenshots/logo-before-desktop.png and logo-after-desktop.png (1440px); logo-before-tablet.png and logo-after-tablet.png (768px); logo-before-mobile.png and logo-after-mobile.png (360px). Local development only, no deployment.
+
+## Mobile header proportion correction
+
+Mobile-only CSS: image width clamp(164px, 46vw, 194px), header vertical padding 8px and reliable 16px minimum gap. Existing flex centering, 20px outer gutters and 44px toggle remain. Removed the old 220px narrow-phone override. No SVG, component, hero, slideshow, information-band or booking logic changes; tablet/desktop widths remain 260/300px. Artwork is SVG paths, with no companion wordmark or font-loading dependency.
+
+Browser measurements (viewport: visible artwork width / closed header height): 320: 160.45 / 98.95px; 360: 162.01 / 99.75px; 390: 175.50 / 106.73px; 430: 189.80 / 114.13px. At 390px the previous visible width/header height was 234.80 / 141.39px. Image/toggle centers differ by less than 0.01px; visible-artwork center differs only by the derivative's subpixel padding. SVG proportions and all visible paths are unchanged.
+
+Actual closed/open screenshots inspected at 320, 360, 390 and 430px: readable logo, single centered row, no clipping/overflow and no menu/hero overlap. Escape closes and returns focus; menu appointment action reaches #services. Tablet 768 and desktop 1440 checked unchanged. Browser errors: none. Production build and TypeScript stage passed. Matched 390px before/after screenshots: screenshots/mobile-proportion-before.png and screenshots/mobile-proportion-after.png. Local only; no deployment.
