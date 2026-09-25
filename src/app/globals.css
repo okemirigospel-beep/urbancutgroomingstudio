@@ -1728,7 +1728,7 @@ textarea {
 .brand-wordmark {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 3px;
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1;
   white-space: nowrap;
@@ -1739,9 +1739,11 @@ textarea {
   font-weight: 800;
 }
 .brand-wordmark > span {
-  font-size: 10px;
-  letter-spacing: 0.24em;
-  font-weight: 500;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 15px;
+  letter-spacing: 0.055em;
+  font-weight: 700;
+  line-height: 1.15;
 }
 .masthead-links {
   display: flex;
@@ -1852,12 +1854,35 @@ textarea {
 .grooming-frame {
   position: absolute;
   inset: 0;
-  opacity: 0;
-  transition: opacity 0.45s ease;
+  visibility: hidden;
 }
 .grooming-frame.is-active {
-  opacity: 1;
+  visibility: visible;
+  z-index: 2;
+}
+.grooming-frame.is-previous {
+  visibility: visible;
   z-index: 1;
+  animation: photo-exit 0.28s ease-in-out both;
+}
+.grooming-frame.is-entering {
+  animation: photo-enter 0.28s ease-in-out both;
+}
+@keyframes photo-enter {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes photo-exit {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
 }
 .grooming-frame img {
   width: 100%;
@@ -1868,31 +1893,6 @@ textarea {
 .photo-unavailable {
   color: #fff;
   padding: 32px;
-}
-.slideshow-play {
-  position: absolute;
-  right: 14px;
-  bottom: 14px;
-  z-index: 2;
-  width: 44px;
-  height: 44px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #101110e8;
-  border: 1px solid #ffffffb3;
-  color: #fff;
-  border-radius: 3px;
-}
-.slideshow-play:hover:not(:disabled) {
-  background: #000;
-}
-.slideshow-play:focus-visible {
-  outline-offset: -5px;
-}
-.slideshow-play:disabled {
-  opacity: 1;
-  cursor: default;
 }
 .studio-band {
   background: #101110;
@@ -2002,8 +2002,8 @@ textarea {
     letter-spacing: 0.08em;
   }
   .brand-wordmark > span {
-    font-size: 9px;
-    letter-spacing: 0.18em;
+    font-size: 12px;
+    letter-spacing: 0.035em;
   }
   .grooming-hero {
     padding-block: 30px;
@@ -2038,8 +2038,8 @@ textarea {
     font-size: 18px;
   }
   .brand-wordmark > span {
-    font-size: 8px;
-    letter-spacing: 0.15em;
+    font-size: 11px;
+    letter-spacing: 0.015em;
   }
   .masthead-logo {
     gap: 8px;
@@ -2061,4 +2061,20 @@ textarea {
 .grooming-slideshow:focus-visible {
   outline: 3px solid var(--gold);
   outline-offset: 4px;
+}
+
+.grooming-slideshow[role="button"] {
+  cursor: pointer;
+}
+.grooming-slideshow[aria-disabled="true"] {
+  cursor: default;
+}
+@media (prefers-reduced-motion: reduce) {
+  .grooming-frame.is-entering,
+  .grooming-frame.is-previous {
+    animation: none;
+  }
+  .grooming-frame.is-previous {
+    visibility: hidden;
+  }
 }

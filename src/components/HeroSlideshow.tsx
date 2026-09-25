@@ -1,21 +1,20 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import { Pause, Play } from "lucide-react";
 import { heroPhotos } from "@/lib/hero";
 
 export default function HeroSlideshow() {
   const region = useRef<HTMLDivElement>(null);
-  const [active, setActive] = useState(0);
+  const [{ active, previous }, setSlide] = useState<{
+    active: number;
+    previous: number | null;
+  }>({ active: 0, previous: null });
   const [paused, setPaused] = useState(false);
   const [reduced, setReduced] = useState(true);
   const [visible, setVisible] = useState(false);
   const [tabVisible, setTabVisible] = useState(true);
-  const [hovered, setHovered] = useState(false);
-  const [focused, setFocused] = useState(false);
   const [loaded, setLoaded] = useState<number[]>([]);
   const [failed, setFailed] = useState<number[]>([]);
-  const running =
-    !paused && !reduced && visible && tabVisible && !hovered && !focused;
+  const running = !paused && !reduced && visible && tabVisible;
 
   useEffect(() => {
     const query = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -53,33 +52,44 @@ export default function HeroSlideshow() {
     )
       return;
     const timer = window.setTimeout(
-      () => setActive((index) => (index + 1) % heroPhotos.length),
+      () =>
+        setSlide(({ active }) => ({
+          active: (active + 1) % heroPhotos.length,
+          previous: active,
+        })),
       2800,
     );
     return () => window.clearTimeout(timer);
   }, [running, active, loaded]);
 
   const move = (step: number) =>
-    setActive(
-      (index) => (index + step + heroPhotos.length) % heroPhotos.length,
-    );
+    setSlide(({ active }) => ({
+      active: (active + step + heroPhotos.length) % heroPhotos.length,
+      previous: active,
+    }));
+  const toggle = () => {
+    if (!reduced) setPaused((value) => !value);
+  };
   return (
     <div
       className="grooming-slideshow"
       ref={region}
-      role="region"
-      aria-roledescription="carousel"
-      aria-label="Grooming photographs"
+      role="button"
+      aria-label="Pause grooming slideshow"
+      aria-pressed={paused || reduced}
+      aria-disabled={reduced}
       tabIndex={0}
-      aria-description="Use the left and right arrow keys to browse photographs."
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      onFocusCapture={() => setFocused(true)}
-      onBlurCapture={(event) => {
-        if (!event.currentTarget.contains(event.relatedTarget as Node | null))
-          setFocused(false);
-      }}
+      aria-description={
+        reduced
+          ? "Automatic cycling is off for reduced motion. Use left and right arrow keys to browse photographs."
+          : "Click, tap, or press Enter or Space to pause or resume. Use left and right arrow keys to browse photographs."
+      }
+      onClick={toggle}
       onKeyDown={(event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          if (!event.repeat) toggle();
+        }
         if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
           event.preventDefault();
           move(event.key === "ArrowLeft" ? -1 : 1);
@@ -94,7 +104,7 @@ export default function HeroSlideshow() {
         {heroPhotos.map((photo, index) => (
           <div
             key={photo.id}
-            className={`grooming-frame${index === active ? " is-active" : ""}`}
+            className={`grooming-frame${index === active ? " is-active" : ""}${index === previous ? " is-previous" : ""}${index === active && previous !== null ? " is-entering" : ""}`}
             aria-hidden={index !== active}
             role="group"
             aria-roledescription="slide"
@@ -132,28 +142,6 @@ export default function HeroSlideshow() {
           </div>
         ))}
       </div>
-      <button
-        type="button"
-        className="slideshow-play"
-        disabled={reduced}
-        aria-label={
-          reduced
-            ? "Autoplay off: reduced motion"
-            : paused
-              ? "Play slideshow"
-              : "Pause slideshow"
-        }
-        onClick={() => setPaused((value) => !value)}
-      >
-        {paused || reduced ? (
-          <Play size={16} aria-hidden="true" />
-        ) : (
-          <Pause size={16} aria-hidden="true" />
-        )}
-        <span className="sr-only">
-          {reduced ? "Motion off" : paused ? "Play" : "Pause"}
-        </span>
-      </button>
     </div>
   );
 }

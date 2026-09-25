@@ -57,3 +57,15 @@ Actual transition events measured at 2719, 5543 and 8371ms after observation beg
 720px reflow tested as the layout equivalent of 200% zoom on a 1440px screen: no overflow. Native browser zoom itself was not independently measured. Contrast retained: headline gold on white 5.18:1, hero white on ink 18.92:1, header black/white 21:1. Browser errors: none; console only development/HMR messages. Final production build, TypeScript and four appointment-rule tests passed (existing Node typeless-module warning remains).
 
 Final screenshots: screenshots/responsive-refine-desktop.png, screenshots/responsive-refine-tablet.png, screenshots/responsive-refine-mobile.png. Earlier screenshots are historical. Server remains on the owner's Windows computer, C:\UCUTS, bound to 127.0.0.1:3000; no website deployment. Prior explicit user approval covers GitHub upload of the photos and screenshots. Permission for public website use, especially the child's image, remains an outstanding launch approval.
+
+## Wordmark and control-free slideshow finish
+
+Latest request supersedes the visible inset pause and previous same-family wordmark. Secondary line now uses Georgia bold, 15px desktop/tablet, 12px phone and 11px at 320px, directly aligned under the unchanged primary Arial line with a 3px gap. Original SVG and navigation composition are preserved.
+
+Visible pause icon, square and CSS removed. The entire photograph is an accessible toggle with a name, usage instruction, aria-pressed state and keyboard focus. Click/tap activation toggles explicit pause; Enter and Space perform the same action without page scrolling. Hover/focus no longer silently blocks an explicit resume. Reduced motion prevents cycling and animation. Offscreen and hidden-tab safeguards remain.
+
+Replaced crossfade with synchronized opaque right-to-left slide animations (280ms), retaining 2800ms cycling. Browser timing observed slides 2, 3, 4, 5, 6, then 1 at 2782, 5672, 8493, 11316, 14149 and 16973ms. The actual animation was inspected at its 140ms midpoint: adjacent opaque images, no blended faces or black gap. All six existing crops and full-frame sizing are preserved.
+
+Verified browser widths 320, 390, 768, 1024 and 1440: no overflow; secondary wordmark aligned and legible; zero visible slideshow controls/icons. Click pause, Enter resume, Space pause, pause persistence across viewport exit/re-entry, and stable reduced motion all passed. Desktop header, mobile menu and hero appointment actions each reached #services. Browser errors: none; only development/HMR console messages. Production build, TypeScript and all four appointment tests passed; existing Node typeless-module warning unchanged.
+
+Screenshots: screenshots/wordmark-finish-desktop.png and screenshots/wordmark-finish-mobile.png. No publication or deployment. Existing image-publication approvals remain outstanding for website launch; GitHub photo/screenshot upload was explicitly authorised earlier.
