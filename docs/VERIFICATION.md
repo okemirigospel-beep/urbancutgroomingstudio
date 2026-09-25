@@ -69,3 +69,15 @@ Replaced crossfade with synchronized opaque right-to-left slide animations (280m
 Verified browser widths 320, 390, 768, 1024 and 1440: no overflow; secondary wordmark aligned and legible; zero visible slideshow controls/icons. Click pause, Enter resume, Space pause, pause persistence across viewport exit/re-entry, and stable reduced motion all passed. Desktop header, mobile menu and hero appointment actions each reached #services. Browser errors: none; only development/HMR console messages. Production build, TypeScript and all four appointment tests passed; existing Node typeless-module warning unchanged.
 
 Screenshots: screenshots/wordmark-finish-desktop.png and screenshots/wordmark-finish-mobile.png. No publication or deployment. Existing image-publication approvals remain outstanding for website launch; GitHub photo/screenshot upload was explicitly authorised earlier.
+
+## Actual SVG header-logo correction
+
+Cause: both source canvas padding and CSS. Original SVG has width/height 1536 and no viewBox, with an opaque black full-canvas path. Non-black artwork bounds measured in browser: x=98.8504, y=393.3795, right=1437.2096, bottom=1056.0025. The original 62–104px square CSS sizing reduced visible artwork to about 54×27px at 360px and 91×45px at tablet/desktop.
+
+Header-only derivative public/media/urbancut-logo-header.svg sets width=1368, height=692 and viewBox="84 379 1368 692". At least 14 source units surround all visible artwork. A byte comparison verified all content apart from those root attributes is identical to the original. Original public/media/urbancut-logo.svg SHA-256 remains 615cac50bfde9528d9bb4fb68e7682a2dc59c567137881a68a591606473769d2. Original root asset and footer are unchanged. No redraw, recolour, stretch or artwork crop.
+
+Removed redundant companion lettering. CSS image widths 300px desktop, 260px tablet, 240px mobile and 220px at/below 360px, with automatic aspect-ratio height. Geometric artwork sizes are approximately 293.5×145.3, 254.4×125.9, 234.8×116.2 and 215.2×106.6 CSS pixels. Pixel inspection of actual 1x screenshots (including antialiased edges) measured desktop 294×146, tablet 256×128, and 360px mobile 216×107.
+
+Visually verified at 320, 360, 390, 600, 601, 768, 1024, 1179, 1180 and 1440px, including all relevant layout boundaries. No horizontal overflow, clipping or second-row closed-header content. Desktop navigation/white booking control and mobile/tablet toggle stay aligned. Menu has valid targets, remains below the logo and above the hero, closes with Escape and restores toggle focus. Desktop and mobile booking both reached #services. Browser errors: none. Production build and its TypeScript stage passed. Hero, slideshow, information band and service components were not modified.
+
+Matched before/after screenshots at normal 1x browser scale: screenshots/logo-before-desktop.png and logo-after-desktop.png (1440px); logo-before-tablet.png and logo-after-tablet.png (768px); logo-before-mobile.png and logo-after-mobile.png (360px). Local development only, no deployment.

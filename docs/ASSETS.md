@@ -31,3 +31,5 @@ Reference-only: current-homepage screenshots, annotated EDIT screenshots, naviga
 No assets are missing for this local header/hero implementation. Publication permission for identifiable people has not been supplied, particularly parental/guardian permission for the child. Confirm permission and scope before public website launch. Images are described only by visible grooming work; no staff/customer attribution is asserted. Existing unrelated gallery/product/contact approval gaps remain.
 
 Latest responsive re-edit: web assets are unchanged, but display now uses full-frame proportional cover with per-photo focal positions instead of contain. Six desktop and mobile crops were visually reviewed. No reference MP4 is used. Original 720px-wide resolution limits fine detail; maximum display width is 620px.
+
+Header logo derivative: public/media/urbancut-logo-header.svg changes only outer dimensions/viewBox to remove empty black canvas. All original paths/colours/transforms remain exact; source SVG and footer use are preserved. See the latest VERIFICATION.md entry for bounds and hash.

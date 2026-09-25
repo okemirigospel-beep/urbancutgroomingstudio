@@ -29,16 +29,12 @@ export default function Header() {
         aria-label="URBANCUT Grooming Studio home"
       >
         <Image
-          src="/media/urbancut-logo.svg"
-          width={104}
-          height={104}
+          src="/media/urbancut-logo-header.svg"
+          width={1368}
+          height={692}
           alt=""
           priority
         />
-        <span className="brand-wordmark">
-          <strong>URBANCUT</strong>
-          <span>GROOMING STUDIO</span>
-        </span>
       </a>
       <nav className="masthead-links" aria-label="Main navigation">
         {links.map(([name, href]) => (

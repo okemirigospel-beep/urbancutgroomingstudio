@@ -17,3 +17,5 @@ Header/hero revision (25 September 2026): prominent intact logo in a black masth
 Latest responsive re-edit: combined SVG and uppercase two-line header wordmark; single-row tablet/mobile header with booking inside an in-flow menu; compact white desktop booking and black uppercase hero booking; edge-to-edge photo crops, 2.8-second dissolve and inset pause/play. Earlier footer controls and duplicate hero brand text removed. All requested responsive and interaction checks passed; see the latest VERIFICATION.md entry.
 
 Latest focused finish: larger Georgia secondary wordmark directly beneath URBANCUT; no visible slideshow controls; image activation toggles pause; opaque 280ms directional slide replaces crossfade at the same 2.8-second interval. Verified responsive layouts, keyboard/click interaction, loop and reduced motion.
+
+Latest header correction: actual SVG is the principal brand element, using a tight-bounds derivative at responsive widths. Companion wordmark removed. Before/after screenshots, visible-artwork measurements and navigation checks recorded in VERIFICATION.md. Hero and slideshow unchanged.

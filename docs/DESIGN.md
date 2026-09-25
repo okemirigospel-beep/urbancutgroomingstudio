@@ -35,3 +35,9 @@ Header: one row, desktop white compact CTA at nav scale; below 1180px show brand
 ## Focused wordmark and motion finish
 
 Current-state screenshots identify an undersized secondary wordmark and portrait blending. Latest lock: retain composition and primary Arial wordmark, pair it with a readable Georgia bold secondary line, tighten gap/tracking, and remove visible slideshow controls. Use opaque synchronized 280ms right-to-left movement at the existing 2.8-second interval. The photo region is an accessible toggle; explicit activation controls pause, with reduced-motion/offscreen/hidden-tab safeguards. Hover/focus no longer silently overrides an explicit resume.
+
+## Actual logo prominence — latest focused correction
+
+Reference lock: user's current desktop/tablet/mobile screenshots show the actual emblem dominated by companion lettering; Barcelona reference informs visible logo presence only. Remove redundant companion lettering across all sizes and allocate responsive width to the actual supplied emblem. Original 1536-square SVG has no viewBox and an opaque black background, not transparent padding. Browser path bounds of non-black artwork: x 98.8504–1437.2096, y 393.3795–1056.0025 (1338.3593 × 662.6230). A header-only derivative sets viewBox 84 379 1368 692, retaining at least 14 source units around every coloured shape. All paths, fills and transforms are byte-identical; only root dimensions/viewBox differ. Original and footer use remain untouched.
+
+Header derivative widths: desktop 300px, tablet 260px, mobile 240px, narrow phones at/below 360px 220px, each with automatic proportional height. This addresses both the blank internal canvas and restrictive CSS. No hero/slideshow/booking behaviour changes.

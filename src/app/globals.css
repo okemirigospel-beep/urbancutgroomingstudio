@@ -1712,7 +1712,7 @@ textarea {
   justify-content: space-between;
   gap: 24px;
   flex-wrap: wrap;
-  padding-block: 8px;
+  padding-block: 16px;
 }
 .masthead-logo {
   display: flex;
@@ -1721,29 +1721,9 @@ textarea {
   flex-shrink: 0;
 }
 .masthead-logo img {
-  width: 104px;
-  height: 104px;
+  width: 300px;
+  height: auto;
   display: block;
-}
-.brand-wordmark {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-  font-family: Arial, Helvetica, sans-serif;
-  line-height: 1;
-  white-space: nowrap;
-}
-.brand-wordmark strong {
-  font-size: 25px;
-  letter-spacing: 0.1em;
-  font-weight: 800;
-}
-.brand-wordmark > span {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 15px;
-  letter-spacing: 0.055em;
-  font-weight: 700;
-  line-height: 1.15;
 }
 .masthead-links {
   display: flex;
@@ -1921,6 +1901,10 @@ textarea {
   flex-shrink: 0;
 }
 @media (max-width: 1179px) {
+  .masthead-logo img {
+    width: 260px;
+    height: auto;
+  }
   .masthead-links,
   .masthead-booking {
     display: none;
@@ -1994,16 +1978,8 @@ textarea {
     gap: 10px;
   }
   .masthead-logo img {
-    width: 76px;
-    height: 76px;
-  }
-  .brand-wordmark strong {
-    font-size: 21px;
-    letter-spacing: 0.08em;
-  }
-  .brand-wordmark > span {
-    font-size: 12px;
-    letter-spacing: 0.035em;
+    width: 240px;
+    height: auto;
   }
   .grooming-hero {
     padding-block: 30px;
@@ -2031,15 +2007,8 @@ textarea {
 }
 @media (max-width: 360px) {
   .masthead-logo img {
-    width: 62px;
-    height: 62px;
-  }
-  .brand-wordmark strong {
-    font-size: 18px;
-  }
-  .brand-wordmark > span {
-    font-size: 11px;
-    letter-spacing: 0.015em;
+    width: 220px;
+    height: auto;
   }
   .masthead-logo {
     gap: 8px;
