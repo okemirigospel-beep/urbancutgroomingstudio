@@ -20,7 +20,6 @@ export default function Home() {
       <main id="main">
         <section className="grooming-hero shell" aria-labelledby="hero-title">
           <div className="grooming-copy">
-            <p className="grooming-brand">{hero.brand}</p>
             <h1 id="hero-title">
               {hero.headline[0]}
               <br />
@@ -30,7 +29,7 @@ export default function Home() {
             </h1>
             <p className="grooming-description">{hero.description}</p>
             <a className="booking-button hero-booking" href="#services">
-              {hero.action}
+              {hero.action.toUpperCase()}
             </a>
           </div>
           <HeroSlideshow />

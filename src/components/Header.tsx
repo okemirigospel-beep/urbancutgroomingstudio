@@ -23,14 +23,22 @@ export default function Header() {
         }
       }}
     >
-      <a className="masthead-logo" href="#home" aria-label="URBANCUT home">
+      <a
+        className="masthead-logo"
+        href="#home"
+        aria-label="URBANCUT Grooming Studio home"
+      >
         <Image
           src="/media/urbancut-logo.svg"
-          width={144}
-          height={144}
-          alt="URBANCUT Grooming Studio"
+          width={104}
+          height={104}
+          alt=""
           priority
         />
+        <span className="brand-wordmark">
+          <strong>URBANCUT</strong>
+          <span>GROOMING STUDIO</span>
+        </span>
       </a>
       <nav className="masthead-links" aria-label="Main navigation">
         {links.map(([name, href]) => (
@@ -63,6 +71,13 @@ export default function Header() {
               {name}
             </a>
           ))}
+          <a
+            className="menu-booking"
+            href="#services"
+            onClick={() => setOpen(false)}
+          >
+            {hero.action}
+          </a>
         </nav>
       )}
     </header>

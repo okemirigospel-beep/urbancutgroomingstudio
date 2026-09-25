@@ -9,36 +9,42 @@ export const hero = {
 export const heroPhotos = [
   {
     id: 1,
+    position: "50% 58%",
     width: 720,
     height: 882,
     alt: "Short textured haircut with a defined hairline and faded sides",
   },
   {
     id: 2,
+    position: "50% 52%",
     width: 720,
     height: 806,
     alt: "Close-cropped haircut with a clean line-up, viewed from the side",
   },
   {
     id: 3,
+    position: "50% 62%",
     width: 720,
     height: 748,
     alt: "Sectioned twists with a centre part and shaped hairline",
   },
   {
     id: 4,
+    position: "50% 50%",
     width: 720,
     height: 813,
     alt: "Locs arranged in clearly defined sections around a centre part",
   },
   {
     id: 5,
+    position: "50% 58%",
     width: 720,
     height: 747,
     alt: "Short haircut with a curved shaved part and a shaped beard",
   },
   {
     id: 6,
+    position: "50% 45%",
     width: 720,
     height: 825,
     alt: "Child with neatly patterned cornrow braids",

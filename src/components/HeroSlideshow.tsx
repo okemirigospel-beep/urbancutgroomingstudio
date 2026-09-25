@@ -12,6 +12,7 @@ export default function HeroSlideshow() {
   const [tabVisible, setTabVisible] = useState(true);
   const [hovered, setHovered] = useState(false);
   const [focused, setFocused] = useState(false);
+  const [loaded, setLoaded] = useState<number[]>([]);
   const [failed, setFailed] = useState<number[]>([]);
   const running =
     !paused && !reduced && visible && tabVisible && !hovered && !focused;
@@ -20,6 +21,15 @@ export default function HeroSlideshow() {
     const query = window.matchMedia("(prefers-reduced-motion: reduce)");
     const updateMotion = () => setReduced(query.matches);
     const updateTab = () => setTabVisible(!document.hidden);
+    // Cached images can finish before React attaches onLoad during hydration.
+    const cached = Array.from(
+      region.current?.querySelectorAll<HTMLImageElement>(
+        "img[data-photo-id]",
+      ) ?? [],
+    )
+      .filter((image) => image.complete && image.naturalWidth > 0)
+      .map((image) => Number(image.dataset.photoId));
+    setLoaded((ids) => Array.from(new Set([...ids, ...cached])));
     updateMotion();
     updateTab();
     query.addEventListener("change", updateMotion);
@@ -37,13 +47,17 @@ export default function HeroSlideshow() {
   }, []);
 
   useEffect(() => {
-    if (!running) return;
+    if (
+      !running ||
+      !loaded.includes(heroPhotos[(active + 1) % heroPhotos.length].id)
+    )
+      return;
     const timer = window.setTimeout(
       () => setActive((index) => (index + 1) % heroPhotos.length),
-      6000,
+      2800,
     );
     return () => window.clearTimeout(timer);
-  }, [running, active]);
+  }, [running, active, loaded]);
 
   const move = (step: number) =>
     setActive(
@@ -56,6 +70,8 @@ export default function HeroSlideshow() {
       role="region"
       aria-roledescription="carousel"
       aria-label="Grooming photographs"
+      tabIndex={0}
+      aria-description="Use the left and right arrow keys to browse photographs."
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       onFocusCapture={() => setFocused(true)}
@@ -86,17 +102,28 @@ export default function HeroSlideshow() {
           >
             {failed.includes(photo.id) ? (
               <p className="photo-unavailable">
-                This photograph could not load. Choose Next to see another.
+                This photograph could not load.
               </p>
             ) : (
               <img
                 src={`/media/grooming/look-${photo.id}-720.webp`}
                 srcSet={`/media/grooming/look-${photo.id}-480.webp 480w, /media/grooming/look-${photo.id}-720.webp 720w`}
-                sizes="(max-width: 760px) calc(100vw - 40px), (max-width: 1000px) 620px, 560px"
+                sizes="(max-width: 760px) calc(100vw - 40px), (max-width: 900px) 620px, 576px"
+                style={{ objectPosition: photo.position }}
+                onLoad={() =>
+                  setLoaded((ids) =>
+                    ids.includes(photo.id) ? ids : [...ids, photo.id],
+                  )
+                }
                 width={photo.width}
                 height={photo.height}
                 alt={photo.alt}
-                loading={index === 0 ? "eager" : "lazy"}
+                data-photo-id={photo.id}
+                loading={
+                  index === 0 || index === (active + 1) % heroPhotos.length
+                    ? "eager"
+                    : "lazy"
+                }
                 fetchPriority={index === 0 ? "high" : "auto"}
                 decoding="async"
                 onError={() => setFailed((ids) => [...ids, photo.id])}
@@ -105,42 +132,28 @@ export default function HeroSlideshow() {
           </div>
         ))}
       </div>
-      <div className="slideshow-controls">
-        <button
-          type="button"
-          onClick={() => move(-1)}
-          aria-label="Previous photograph"
-        >
-          Previous
-        </button>
-        <button
-          type="button"
-          className="slideshow-play"
-          disabled={reduced}
-          aria-label={
-            reduced
-              ? "Autoplay off: reduced motion"
-              : paused
-                ? "Play slideshow"
-                : "Pause slideshow"
-          }
-          onClick={() => setPaused((value) => !value)}
-        >
-          {paused || reduced ? (
-            <Play size={16} aria-hidden="true" />
-          ) : (
-            <Pause size={16} aria-hidden="true" />
-          )}
-          <span>{reduced ? "Motion off" : paused ? "Play" : "Pause"}</span>
-        </button>
-        <button
-          type="button"
-          onClick={() => move(1)}
-          aria-label="Next photograph"
-        >
-          Next
-        </button>
-      </div>
+      <button
+        type="button"
+        className="slideshow-play"
+        disabled={reduced}
+        aria-label={
+          reduced
+            ? "Autoplay off: reduced motion"
+            : paused
+              ? "Play slideshow"
+              : "Pause slideshow"
+        }
+        onClick={() => setPaused((value) => !value)}
+      >
+        {paused || reduced ? (
+          <Play size={16} aria-hidden="true" />
+        ) : (
+          <Pause size={16} aria-hidden="true" />
+        )}
+        <span className="sr-only">
+          {reduced ? "Motion off" : paused ? "Play" : "Pause"}
+        </span>
+      </button>
     </div>
   );
 }

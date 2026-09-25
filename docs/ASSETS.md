@@ -29,3 +29,5 @@ Approved SVG in the new ZIP is byte-identical to `public/media/urbancut-logo.svg
 Reference-only: current-homepage screenshots, annotated EDIT screenshots, navigation references I/II, slideshow concept, green media-outline screenshot, motion_slideshow reference only.mp4, and Refero/Spyglass screenshot. No new reference video is committed or served. The former hero video/poster remain preserved in Git but are no longer used by the page.
 
 No assets are missing for this local header/hero implementation. Publication permission for identifiable people has not been supplied, particularly parental/guardian permission for the child. Confirm permission and scope before public website launch. Images are described only by visible grooming work; no staff/customer attribution is asserted. Existing unrelated gallery/product/contact approval gaps remain.
+
+Latest responsive re-edit: web assets are unchanged, but display now uses full-frame proportional cover with per-photo focal positions instead of contain. Six desktop and mobile crops were visually reviewed. No reference MP4 is used. Original 720px-wide resolution limits fine detail; maximum display width is 620px.

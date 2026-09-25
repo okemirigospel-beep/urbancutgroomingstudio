@@ -8,7 +8,8 @@ This is a NEW implementation, not recovered source. Preserve the supplied root a
 - Commit meaningful verified milestones and verify remote SHA after each push. No secrets, actual .env, customer data, dependencies or builds in Git.
 - Supplied section specifications govern content. Latest user direction overrides older recommendations. Primary visual reference is the supplied Spyglass screenshot; approximately 50% white, 40% near-black and 10% restrained logo-aligned gold.
 - Never introduce decorative arrow pointers or arrow icons. Use text labels for navigation controls; arrow-key keyboard support is allowed.
-- Latest hero direction: six supplied photographs replace the live video. Keep approved logo intact, rectangular booking CTAs, visible URBANCUT Grooming Studio brand line, and a black business-information band.
+- Latest hero direction: six supplied photographs replace the live video. Keep approved logo intact, rectangular booking CTAs, two-line uppercase companion header wordmark, and a black business-information band.
+- Responsive header: single brand/toggle row below desktop; booking belongs inside the expanded menu. Header booking white, hero booking black and uppercase. Photo hero uses full-frame cover with focal positions, 2.8-second dissolve cycling and discreet inset pause, never the old footer controls.
 - Preserve supplied logo proportions/colours and original video. Generate derivatives separately. No invented monogram, customer work, testimonials, business facts or confirmed availability.
 - Sample prices and academy curricula remain provisional. Coming-soon offerings are not selectable. Multi-service prototype supports adult plus child selections and quantities. No actual save/send claims.
 - Production booking storage, WhatsApp automation and payments are deferred. Supabase remains the designated future backend; no production project or schema changes are authorised here.

@@ -25,3 +25,9 @@ Latest user brief supersedes the earlier portrait-film direction. Reference lock
 Decisions: black masthead, white split hero, dark-gold emphasis (#896815 on white), black information band; intact 144px square SVG on desktop; 50/50 hero columns separated by a modest gutter. Full-photo contain framing against near-black preserves all six compositions. Text Previous/Next controls replace arrow icons. Header and hero appointment actions link to Services. Tablet stacks before content is cramped. Reduced motion disables autoplay and fades; focus, hover, offscreen and hidden-tab states suspend progression. No new dependencies or backend features.
 
 Decorative arrow pointers are prohibited throughout the site by explicit user instruction. Existing lower sections retain their layout and behaviour, with arrow icons removed.
+
+## Responsive re-edit — latest supplied brief
+
+Reference lock: mobile/tablet screenshots demonstrate detached booking controls; brand-name screenshot establishes the identity to improve; slideshow screenshot identifies unwanted letterboxing/footer controls. Latest direction replaces prior contain framing and six-second timing. Use an intact SVG beside a two-line uppercase Arial/Helvetica wordmark (bold, tracked URBANCUT; smaller widely tracked GROOMING STUDIO). This keeps the emblem detailed and the companion type readable without introducing a conflicting ornamental face. Remove redundant hero brand line.
+
+Header: one row, desktop white compact CTA at nav scale; below 1180px show brand and end-aligned toggle, with booking last in an in-flow expanded menu that pushes the hero down. Hero: black compact uppercase action. Slideshow: square desktop/tablet frame, 4:5 mobile frame; proportional cover and individual focal positions, 2.8-second cycle, one 450ms dissolve, small inset pause/play control. No footer bar, no arrows, no mixed animations. Retain existing black information band and lower sections.
