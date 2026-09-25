@@ -1,6 +1,6 @@
 "use client";
 import { useRef, useState } from "react";
-import { ArrowRight, Check, Minus, Plus, ShoppingBag, X } from "lucide-react";
+import { Check, Minus, Plus, ShoppingBag, X } from "lucide-react";
 import { categories, money, services, type Category } from "@/lib/content";
 import { dateError, firstRequestDate, timeOptions } from "@/lib/appointments";
 
@@ -299,7 +299,7 @@ export default function Services() {
               </p>
             )}
             <button type="submit" className="button gold" disabled={!count}>
-              Preview sample request <ArrowRight size={18} />
+              Preview sample request
             </button>
           </form>
           {summary && (

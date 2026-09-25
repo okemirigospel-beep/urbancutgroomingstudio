@@ -1700,3 +1700,380 @@ textarea {
     gap: 6px;
   }
 }
+
+/* September 2026 header/hero: supplied annotated reference lock. */
+.masthead-wrap {
+  background: #000;
+  color: #fff;
+}
+.masthead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  position: relative;
+  min-height: 144px;
+}
+.masthead-logo {
+  flex-shrink: 0;
+  display: block;
+  background: #000;
+}
+.masthead-logo img {
+  width: 144px;
+  height: 144px;
+  display: block;
+}
+.masthead-links {
+  display: flex;
+  gap: 28px;
+  margin-left: auto;
+}
+.masthead-links a {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  font-size: 14px;
+}
+.masthead-links a:hover,
+.masthead-mobile a:hover {
+  color: #dfbc58;
+}
+.booking-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  padding: 15px 24px;
+  border-radius: 3px;
+  background: #b98f22;
+  color: #101110;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.35;
+  text-align: center;
+}
+.booking-button:hover {
+  background: #d5ad44;
+}
+.masthead-booking {
+  margin-left: 20px;
+}
+.masthead-toggle {
+  display: none;
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border: 1px solid #777;
+  border-radius: 3px;
+  background: transparent;
+  color: white;
+  align-items: center;
+  justify-content: center;
+}
+.masthead-mobile {
+  display: none;
+}
+.grooming-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 48px;
+  padding-block: 40px;
+}
+.grooming-copy {
+  padding-block: 20px;
+}
+.grooming-brand {
+  font-size: clamp(20px, 2vw, 27px);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.25;
+  margin-bottom: 27px;
+}
+.grooming-copy h1 {
+  font-size: clamp(42px, 4.4vw, 64px);
+  line-height: 1.06;
+  letter-spacing: -0.055em;
+}
+.grooming-copy h1 em {
+  color: #896815;
+}
+.grooming-description {
+  color: #535650;
+  max-width: 410px;
+  font-size: 18px;
+  line-height: 1.65;
+  margin-block: 25px 28px;
+}
+.grooming-slideshow {
+  background: #101110;
+  min-width: 0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.grooming-frames {
+  height: 490px;
+  position: relative;
+}
+.grooming-frame {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.65s ease,
+    visibility 0.65s;
+}
+.grooming-frame.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+.grooming-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.photo-unavailable {
+  color: white;
+  padding: 32px;
+}
+.slideshow-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-top: 1px solid #383934;
+}
+.slideshow-controls button {
+  min-height: 44px;
+  min-width: 60px;
+  padding: 10px 12px;
+  border-radius: 3px;
+  background: transparent;
+  color: #fff;
+  font-size: 13px;
+}
+.slideshow-controls button:hover:not(:disabled) {
+  background: #30322e;
+}
+.slideshow-controls button:focus-visible {
+  outline-offset: -3px;
+}
+.slideshow-controls button:disabled {
+  opacity: 1;
+  color: #c4c5c0;
+}
+.slideshow-play {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+}
+.studio-band {
+  background: #101110;
+  color: #fff;
+}
+.studio-band-inner {
+  display: grid;
+  grid-template-columns: 0.72fr 1.2fr 1.2fr;
+  gap: 32px;
+  padding-block: 28px;
+}
+.studio-band p {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  font-size: 14px;
+  line-height: 1.55;
+}
+.studio-band svg {
+  color: #d1ab43;
+}
+.studio-band-marker {
+  width: 4px;
+  height: 30px;
+  background: #b98f22;
+  flex-shrink: 0;
+}
+@media (min-width: 1600px) {
+  .grooming-frames {
+    height: 530px;
+  }
+}
+@media (max-width: 1100px) {
+  .masthead-links {
+    gap: 18px;
+  }
+  .masthead {
+    gap: 18px;
+  }
+  .masthead-booking {
+    margin-left: 0;
+  }
+  .grooming-hero {
+    gap: 32px;
+  }
+  .grooming-frames {
+    height: 460px;
+  }
+}
+@media (max-width: 1000px) {
+  .masthead-links {
+    display: none;
+  }
+  .masthead-booking {
+    margin-left: auto;
+  }
+  .masthead-toggle {
+    display: flex;
+  }
+  .masthead-mobile {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 100%;
+    left: 0;
+    right: 0;
+    padding: 14px 24px;
+    background: #101110;
+    color: white;
+    z-index: 20;
+    border-top: 1px solid #444;
+    box-shadow: 0 14px 24px #0003;
+  }
+  .masthead-mobile a {
+    padding: 14px 0;
+    min-height: 48px;
+    border-bottom: 1px solid #383934;
+  }
+  .grooming-hero {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding-block: 32px;
+  }
+  .grooming-copy {
+    padding: 0;
+    max-width: 620px;
+    width: 100%;
+    margin-inline: auto;
+  }
+  .grooming-copy h1 {
+    font-size: clamp(42px, 7vw, 62px);
+  }
+  .grooming-brand {
+    font-size: 25px;
+    margin-bottom: 22px;
+  }
+  .grooming-description {
+    max-width: 500px;
+  }
+  .grooming-slideshow {
+    width: 100%;
+    max-width: 620px;
+    margin-inline: auto;
+  }
+  .grooming-frames {
+    height: 540px;
+  }
+  .studio-band-inner {
+    grid-template-columns: 1fr 1.5fr;
+    gap: 20px;
+  }
+  .studio-band p:last-child {
+    grid-column: 1 / -1;
+  }
+}
+@media (max-width: 600px) {
+  .masthead {
+    min-height: 110px;
+    gap: 12px;
+    flex-wrap: wrap;
+    padding-bottom: 12px;
+  }
+  .masthead-logo img {
+    width: 110px;
+    height: 110px;
+  }
+  .masthead-booking {
+    order: 3;
+    width: 100%;
+    margin: 0;
+    min-height: 48px;
+  }
+  .masthead-toggle {
+    margin-left: auto;
+  }
+  .grooming-hero {
+    padding-block: 30px;
+    gap: 28px;
+  }
+  .grooming-brand {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+  .grooming-copy h1 {
+    font-size: clamp(39px, 10vw, 58px);
+  }
+  .grooming-description {
+    font-size: 16px;
+    margin-block: 22px;
+  }
+  .hero-booking {
+    min-height: 50px;
+  }
+  .grooming-frames {
+    height: auto;
+    aspect-ratio: 1 / 1.23;
+  }
+  .slideshow-controls {
+    padding: 7px 5px;
+    gap: 0;
+  }
+  .slideshow-controls button {
+    padding-inline: 10px;
+  }
+  .studio-band-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-block: 25px;
+  }
+  .studio-band p {
+    font-size: 15px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .grooming-frame {
+    transition: none;
+  }
+}
+
+@media (min-width: 1001px) and (max-height: 850px) {
+  .masthead {
+    min-height: 128px;
+  }
+  .masthead-logo img {
+    width: 128px;
+    height: 128px;
+  }
+  .grooming-hero {
+    padding-block: 24px;
+  }
+  .grooming-copy {
+    padding-block: 0;
+  }
+  .grooming-brand {
+    margin-bottom: 22px;
+  }
+  .grooming-description {
+    margin-block: 20px;
+  }
+  .grooming-frames {
+    height: 400px;
+  }
+}

@@ -1,7 +1,7 @@
 export const brand = {
   name: "URBANCUT",
   region: "Abuja, Nigeria",
-  hours: "Monday–Saturday, 10 a.m.–6 p.m.",
+  hours: "Monday–Saturday, 10:00 a.m.–6:00 p.m.",
   timezone: "Africa/Lagos",
 };
 export const categories = [

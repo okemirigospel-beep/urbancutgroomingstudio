@@ -1,19 +1,10 @@
 import Image from "next/image";
-import {
-  ArrowDown,
-  ArrowRight,
-  ArrowUpRight,
-  Clock3,
-  MapPin,
-  Scissors,
-  Sparkles,
-  Check,
-  Plus,
-} from "lucide-react";
+import { Clock3, MapPin, Scissors, Sparkles, Check, Plus } from "lucide-react";
 import Header from "@/components/Header";
-import HeroFilm from "@/components/HeroFilm";
+import HeroSlideshow from "@/components/HeroSlideshow";
+import { hero } from "@/lib/hero";
 import Services from "@/components/Services";
-import { academy, faqs, money } from "@/lib/content";
+import { academy, faqs, money, brand } from "@/lib/content";
 
 export default function Home() {
   return (
@@ -21,62 +12,44 @@ export default function Home() {
       <a href="#main" className="skip-link">
         Skip to content
       </a>
-      <div id="home" className="shell">
-        <Header />
+      <div id="home" className="masthead-wrap">
+        <div className="shell">
+          <Header />
+        </div>
       </div>
       <main id="main">
-        <section className="hero section shell" aria-labelledby="hero-title">
-          <div className="hero-copy">
-            <p className="eyebrow">
-              <span className="status-dot" /> GROOMING STUDIO / ABUJA
-            </p>
+        <section className="grooming-hero shell" aria-labelledby="hero-title">
+          <div className="grooming-copy">
+            <p className="grooming-brand">{hero.brand}</p>
             <h1 id="hero-title">
-              Good grooming.
+              {hero.headline[0]}
               <br />
-              <em>Great feeling.</em>
+              <em>{hero.headline[1]}</em>
               <br />
-              Entirely you.
+              {hero.headline[2]}
             </h1>
-            <p className="hero-description">
-              Barbering, braiding and loc care. Thoughtful attention to the
-              details that make your look your own.
-            </p>
-            <div className="hero-actions">
-              <a className="button gold" href="#services">
-                Find your service <ArrowUpRight size={19} />
-              </a>
-              <a className="text-link" href="#about">
-                Meet URBANCUT <ArrowRight size={17} />
-              </a>
-            </div>
-            <div className="hero-note">
-              <span className="line" />
-              <span>A little care. A lasting impression.</span>
-            </div>
+            <p className="grooming-description">{hero.description}</p>
+            <a className="booking-button hero-booking" href="#services">
+              {hero.action}
+            </a>
           </div>
-          <div className="hero-visual">
-            <div className="film-offset" aria-hidden="true" />
-            <HeroFilm />
-            <div className="craft-label" aria-hidden="true">
-              <Scissors size={22} />
-              <span>
-                YOUR LOOK.
-                <br />
-                OUR ATTENTION.
-              </span>
-            </div>
-          </div>
+          <HeroSlideshow />
         </section>
-        <div className="visit-strip shell">
-          <p>
-            <MapPin size={17} /> Abuja, Nigeria
-          </p>
-          <p>
-            <Clock3 size={17} /> Mon–Sat · 10 a.m.–6 p.m.
-          </p>
-          <a href="#faq">
-            Plan at least a day ahead <ArrowDown size={16} />
-          </a>
+        <div className="studio-band">
+          <div className="studio-band-inner shell">
+            <p>
+              <MapPin size={20} aria-hidden="true" />
+              {brand.region}
+            </p>
+            <p>
+              <Clock3 size={20} aria-hidden="true" />
+              {brand.hours}
+            </p>
+            <p>
+              <span className="studio-band-marker" aria-hidden="true" />
+              {hero.bookingNotice}
+            </p>
+          </div>
         </div>
         <div className="shell">
           <Services />
@@ -200,7 +173,7 @@ export default function Home() {
               progressive path into professional grooming.
             </p>
             <a className="button gold" href="#contact">
-              Enquire about training <ArrowUpRight size={18} />
+              Enquire about training
             </a>
             <p className="academy-note">
               The academy is operating. Programme names, fees, durations and
@@ -289,7 +262,7 @@ export default function Home() {
               More time for your next look.
             </p>
             <a className="text-link" href="#contact">
-              Find the studio <ArrowRight size={17} />
+              Find the studio
             </a>
           </div>
           <div className="faq-list">
@@ -357,7 +330,7 @@ export default function Home() {
             <em>for your next look.</em>
           </h2>
           <a href="#services" className="button gold">
-            Explore services <ArrowUpRight size={19} />
+            Explore services
           </a>
           <p>
             <Check size={15} /> Choose your services. Plan your preferred visit.

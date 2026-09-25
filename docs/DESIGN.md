@@ -17,3 +17,11 @@ Primary reference: supplied refero.design 5af49096-2a34-424c-8f91-4b5713a04e31.j
 Tokens: white #fff, ink #101110, subtle surface #f2f2ef, gold #b98f22, muted text #62645f; 1200px content width, fluid 20–64px gutters, 16–24px large-panel radii, pill actions with at least 44px targets. Display typography fluid 42–84px; body 16–18px. Gold use remains restrained. Mobile layout is an adaptation, not observed reference behaviour.
 
 Written brand: use latest user spelling URBANCUT. Older documents say Urban Cuts Grooming Studio; retain source documents and flag for final content approval. Supplied logo remains unchanged.
+
+## Header and hero revision — 25 September 2026
+
+Latest user brief supersedes the earlier portrait-film direction. Reference lock: annotated EDIT/EDIT 2 and green media-area screenshot determine scope; navigation references I/II inform a prominent intact logo and rectangular CTA; the slideshow concept informs a substantial right-hand image region. The Spyglass screenshot continues to govern the wider page. Reference MP4 was inspected as a sequence: restrained photographic changes, no animated captions. Adaptation: six-second holds and a short dissolve, with no zoom or crop.
+
+Decisions: black masthead, white split hero, dark-gold emphasis (#896815 on white), black information band; intact 144px square SVG on desktop; 50/50 hero columns separated by a modest gutter. Full-photo contain framing against near-black preserves all six compositions. Text Previous/Next controls replace arrow icons. Header and hero appointment actions link to Services. Tablet stacks before content is cramped. Reduced motion disables autoplay and fades; focus, hover, offscreen and hidden-tab states suspend progression. No new dependencies or backend features.
+
+Decorative arrow pointers are prohibited throughout the site by explicit user instruction. Existing lower sections retain their layout and behaviour, with arrow icons removed.

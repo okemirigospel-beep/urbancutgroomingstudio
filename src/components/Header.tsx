@@ -1,7 +1,8 @@
 "use client";
 import Image from "next/image";
-import { Menu, X, ArrowUpRight } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useRef, useState } from "react";
+import { hero } from "@/lib/hero";
 const links = [
   ["Services", "#services"],
   ["About", "#about"],
@@ -14,7 +15,7 @@ export default function Header() {
   const toggle = useRef<HTMLButtonElement>(null);
   return (
     <header
-      className="site-header"
+      className="masthead"
       onKeyDown={(e) => {
         if (e.key === "Escape") {
           setOpen(false);
@@ -22,45 +23,44 @@ export default function Header() {
         }
       }}
     >
-      <a className="brand-mark" href="#home" aria-label="URBANCUT home">
+      <a className="masthead-logo" href="#home" aria-label="URBANCUT home">
         <Image
           src="/media/urbancut-logo.svg"
-          width={78}
-          height={78}
+          width={144}
+          height={144}
           alt="URBANCUT Grooming Studio"
           priority
         />
       </a>
-      <nav className="desktop-nav" aria-label="Main navigation">
+      <nav className="masthead-links" aria-label="Main navigation">
         {links.map(([name, href]) => (
           <a key={href} href={href}>
             {name}
           </a>
         ))}
       </nav>
-      <a className="button small header-cta" href="#services">
-        Find your service <ArrowUpRight size={16} />
-      </a>
       <button
         ref={toggle}
-        className="icon-button menu-toggle"
+        className="masthead-toggle"
         aria-expanded={open}
-        aria-controls="mobile-navigation"
+        aria-controls="masthead-mobile-navigation"
         aria-label={open ? "Close menu" : "Open menu"}
         onClick={() => setOpen(!open)}
       >
         {open ? <X /> : <Menu />}
       </button>
+      <a className="booking-button masthead-booking" href="#services">
+        {hero.action}
+      </a>
       {open && (
         <nav
-          id="mobile-navigation"
-          className="mobile-nav"
+          id="masthead-mobile-navigation"
+          className="masthead-mobile"
           aria-label="Mobile navigation"
         >
           {links.map(([name, href]) => (
             <a key={href} href={href} onClick={() => setOpen(false)}>
               {name}
-              <ArrowUpRight size={18} />
             </a>
           ))}
         </nav>
