@@ -219,7 +219,6 @@ export default function Services() {
     >
       <div className="uc-section-heading">
         <div>
-          <p className="eyebrow">CARE, DOWN TO THE DETAIL</p>
           <h2 id="services-heading" className="type-editorial">
             Our Services
           </h2>
