@@ -2061,6 +2061,9 @@ textarea {
 }
 
 /* Approved Services catalogue. Scoped to preserve the header, hero and other sections. */
+.uc-services {
+  padding-top: clamp(32px, 4vw, 56px);
+}
 .uc-section-heading {
   display: flex;
   align-items: end;
