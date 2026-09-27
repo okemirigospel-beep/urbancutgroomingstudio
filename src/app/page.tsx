@@ -24,7 +24,7 @@ export default function Home() {
             <h1 id="hero-title">
               {hero.headline[0]}
               <br />
-              <em>{hero.headline[1]}</em>
+              <em className="hero-editorial">{hero.headline[1]}</em>
               <br />
               {hero.headline[2]}
             </h1>
@@ -57,10 +57,10 @@ export default function Home() {
         <section id="about" className="dark-panel about-panel shell section">
           <div className="about-heading">
             <p className="eyebrow">02 / THE URBANCUT WAY</p>
-            <h2>
+            <h2 className="type-editorial">
               A considered cut.
               <br />
-              <em>A personal experience.</em>
+              <em className="headline-emphasis">A personal experience.</em>
             </h2>
             <p>
               Professional grooming and thoughtful personal service, together in
@@ -114,7 +114,7 @@ export default function Home() {
               <h2>
                 The finish
                 <br />
-                <em>says it all.</em>
+                <em className="headline-emphasis">says it all.</em>
               </h2>
             </div>
             <div className="section-intro">
@@ -149,7 +149,7 @@ export default function Home() {
           <h2>
             Good experiences.
             <br />
-            <em>In your own words.</em>
+            <em className="headline-emphasis">In your own words.</em>
           </h2>
           <div className="reviews-empty">
             <span aria-hidden="true">“</span>
@@ -163,10 +163,10 @@ export default function Home() {
         >
           <div className="academy-intro">
             <p className="eyebrow">05 / URBANCUT ACADEMY</p>
-            <h2>
+            <h2 className="type-editorial">
               Learn the craft.
               <br />
-              <em>Find your edge.</em>
+              <em className="headline-emphasis">Find your edge.</em>
             </h2>
             <p>
               From first principles to more advanced practice. Explore a
@@ -218,7 +218,7 @@ export default function Home() {
               <h2>
                 A little care,
                 <br />
-                <em>to take with you.</em>
+                <em className="headline-emphasis">to take with you.</em>
               </h2>
             </div>
             <p className="section-intro">
@@ -254,7 +254,7 @@ export default function Home() {
             <h2>
               A few things
               <br />
-              <em>worth knowing.</em>
+              <em className="headline-emphasis">worth knowing.</em>
             </h2>
             <p>
               Less guesswork.
@@ -282,7 +282,7 @@ export default function Home() {
           <h2>
             Your next look
             <br />
-            <em>starts in Abuja.</em>
+            <em className="headline-emphasis">starts in Abuja.</em>
           </h2>
           <div className="contact-grid">
             <div className="visit-card">
@@ -331,10 +331,10 @@ export default function Home() {
         </section>
         <section className="closing dark-panel shell">
           <p className="eyebrow">A FRESH START, DOWN TO THE DETAIL.</p>
-          <h2>
+          <h2 className="type-editorial">
             Make time
             <br />
-            <em>for your next look.</em>
+            <em className="headline-emphasis">for your next look.</em>
           </h2>
           <a href="#services" className="button gold">
             Explore services

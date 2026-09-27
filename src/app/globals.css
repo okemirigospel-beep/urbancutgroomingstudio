@@ -2,16 +2,21 @@
 @theme inline {
   --color-gold: #b98f22;
   --color-ink: #101110;
-  --font-sans: Arial, Helvetica, sans-serif;
+  --font-sans: var(--font-interface);
+  --font-serif: var(--font-editorial);
 }
 :root {
+  --font-interface: var(--font-naira), var(--font-dm-sans);
+  --font-editorial: var(--font-crimson-text);
   --ink: #101110;
   --gold: #b98f22;
   --muted: #62645f;
   --line: #dedfd9;
   --surface: #f2f2ef;
   color-scheme: light;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-interface);
+  font-optical-sizing: auto;
+  font-synthesis: none;
   color: var(--ink);
   background: #fff;
 }
@@ -91,7 +96,7 @@ h3 {
 h1,
 h2 {
   font-weight: 600;
-  letter-spacing: -0.058em;
+  letter-spacing: -0.035em;
   line-height: 1.04;
 }
 h1 {
@@ -106,9 +111,17 @@ h3 {
   letter-spacing: -0.035em;
   line-height: 1.2;
 }
-em {
-  font-weight: 400;
+.headline-emphasis {
+  font-style: normal;
+  font-weight: inherit;
 }
+h2.type-editorial {
+  font-family: var(--font-editorial);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.08;
+}
+
 p {
   text-wrap: pretty;
 }
@@ -679,7 +692,8 @@ svg {
 }
 .reviews-empty > span {
   display: block;
-  font-family: Georgia, serif;
+  font-family: var(--font-editorial);
+  font-weight: 600;
   font-size: 55px;
   line-height: 1;
   color: var(--gold);
@@ -1789,12 +1803,18 @@ textarea {
   padding-block: 36px;
 }
 .grooming-copy h1 {
-  font-size: clamp(42px, 4.4vw, 64px);
-  line-height: 1.06;
-  letter-spacing: -0.055em;
+  font-size: clamp(42px, 4.2vw, 62px);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.035em;
 }
-.grooming-copy h1 em {
+.grooming-copy .hero-editorial {
   color: #896815;
+  font-family: var(--font-editorial);
+  font-weight: 600;
+  font-style: italic;
+  font-size: 1.12em;
+  letter-spacing: -0.025em;
 }
 .grooming-description {
   color: #535650;
@@ -1986,7 +2006,7 @@ textarea {
     gap: 28px;
   }
   .grooming-copy h1 {
-    font-size: clamp(39px, 10vw, 56px);
+    font-size: clamp(32px, 9.1vw, 50px);
   }
   .grooming-description {
     font-size: 16px;

@@ -1,3 +1,7 @@
+# Current typography milestone — 27 September 2026
+
+Site-wide DM Sans + selective Crimson Text is implemented locally. Self-hosted real italic, explicit semantic font roles and a naira-only fallback preserve readable service/booking information. Build, typecheck and all 10 tests pass. Browser evidence and remaining native-zoom verification limitation are documented in docs/TYPOGRAPHY-VERIFICATION.md. No deployment or backend changes. Existing service scope and pending business inputs below remain applicable.
+
 # Project status
 
 New implementation, not recovered code. The original GitHub initial commit, README and supplied assets remain preserved. Next.js App Router, TypeScript and Tailwind run locally on the owner's Windows computer at http://127.0.0.1:3000. Nothing has been deployed.

@@ -51,3 +51,19 @@ Reference lock: the existing URBANCUT black/white/gold system, the supplied Spyg
 - One native dialog, persistent Back/Close/title, independently scrolling body; compact desktop rows and a side selection summary. At 850px and below the summary collapses into an in-flow count/estimate panel; at 600px and below the dialog occupies the screen. No stacked modals or decorative arrows.
 - Studio selection, enquiry-only Home Service and non-interactive Black Card remain distinct. Every form has labelled controls, inline field errors, final review and truthful WhatsApp handoff copy. Black Card benefits are explicitly proposed.
 - Approved data in src/lib/catalogue.ts replaces the prototype catalogue. booking.ts owns selection guards, time filtering, validation and the two encoded message builders. No new dependency or backend was introduced.
+
+
+## Current typography system — 27 September 2026
+
+This entry supersedes earlier Arial/Georgia and companion-wordmark typography directions above. Reference lock: the owner's explicit DM Sans + Crimson Text brief, [Figma Pairing 37](https://www.figma.com/resource-library/font-pairings/) and the established local URBANCUT layout. Refero's bundled typography craft guidance supports the functional/editorial distinction; it does not override the supplied font choice.
+
+Figma calls Pairing 37 “Crimson Serif + DM Sans.” The selected, verifiable family here is **Crimson Text**, by Sebastian Kosch. No exact licensed “Crimson Serif” files were supplied. This is a documented naming substitution, not a claim that the article provides a font file with that name.
+
+- **DM Sans**, Colophon Foundry: all body/interface text, navigation, buttons, cards, modal titles, service rows, prices/durations, forms/errors, basket/review, FAQ/contact/footer. Real 400/500/600/700 weights, optical sizing enabled. Headline tracking relaxed to -0.035em; the hero uses 700 with 1.1 line height and responsive sizing down to 32px at 320px.
+- **Crimson Text SemiBold**, 600 normal: the entire Services, About, Academy and closing headings; the decorative review quote. Tracking -0.02em with 1.08 line height. Other section headings stay DM Sans. Every pre-existing em has an explicit role; headline-emphasis is upright and inherits its parent's face/weight instead of indiscriminate serif/italic switching.
+- **Crimson Text SemiBold Italic**, actual 600 italic file: only the gold “Great feeling.” phrase, 1.12 times the hero size. No synthesized italic. Logo typography remains embedded, unchanged SVG artwork.
+- A **1,288-byte Noto Sans subset** supplies only ₦, absent in both selected brand fonts. This is the only functional glyph exception, not a third decorative family. Other artwork lettering is also unchanged.
+
+Central --font-interface / --font-editorial tokens map Next.js local font variables to roles; Tailwind sans/serif tokens share them. Three brand WOFF2 files plus the currency subset total 143,048 bytes. Fonts and OFL licenses live in src/app/fonts; exact names, provenance, conversion and hashes are in its README. No external font runtime requests, machine-only brand fonts, new application dependency or backend changes. Next/font/local supplies swap and adjusted temporary fallbacks.
+
+See TYPOGRAPHY-VERIFICATION.md and screenshots/typography/index.html for browser evidence and limitations.

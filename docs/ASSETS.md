@@ -49,3 +49,8 @@ All six files in `C:\Users\LENOVO\Pictures\service section images __.zip` were v
 | blackcard membership | membership.webp | Coming Soon membership concept |
 
 The supplied artwork is not represented as documentary studio/staff/treatment photography or an issued membership card. Original photo/video/logo assets and existing hero derivatives were not modified. WhatsApp destination is now approved; email/social/map details remain pending. The tracked derivative assets suffice to run the application from Git; source ZIPs outside the repository require separate storage.
+
+
+## Self-hosted typography — 27 September 2026
+
+Four licensed WOFF2 assets and three OFL licenses are tracked under src/app/fonts. The fonts/README.md records source URLs, real weights, Unicode coverage, currency-only fallback, conversion and hashes. All runtime font assets are included in Git; no separate storage or API credentials are required. Screenshot evidence is under docs/screenshots/typography. The original logo and all existing media remain byte-for-byte unchanged.
