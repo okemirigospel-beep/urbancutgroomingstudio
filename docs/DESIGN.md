@@ -41,3 +41,13 @@ Current-state screenshots identify an undersized secondary wordmark and portrait
 Reference lock: user's current desktop/tablet/mobile screenshots show the actual emblem dominated by companion lettering; Barcelona reference informs visible logo presence only. Remove redundant companion lettering across all sizes and allocate responsive width to the actual supplied emblem. Original 1536-square SVG has no viewBox and an opaque black background, not transparent padding. Browser path bounds of non-black artwork: x 98.8504–1437.2096, y 393.3795–1056.0025 (1338.3593 × 662.6230). A header-only derivative sets viewBox 84 379 1368 692, retaining at least 14 source units around every coloured shape. All paths, fills and transforms are byte-identical; only root dimensions/viewBox differ. Original and footer use remain untouched.
 
 Header derivative widths: desktop 300px, tablet 260px, mobile 240px, narrow phones at/below 360px 220px, each with automatic proportional height. This addresses both the blank internal canvas and restrictive CSS. No hero/slideshow/booking behaviour changes.
+
+
+## Approved Services implementation — 27 September 2026
+
+Reference lock: the existing URBANCUT black/white/gold system, the supplied Spyglass reference, the six supplied category artworks and the latest complete Services brief. Live Refero was previously unavailable (NO_SUBSCRIPTION); bundled craft guidance informed focus states, forms and responsive spacing. No new branding or stock substitutions.
+
+- Prominent literal “Our Services” heading; 3/2/1 image-led cards at desktop/tablet/mobile, one button per card, solid content area and restrained gold status badges. Category artwork is illustrative rather than evidence of delivered treatments.
+- One native dialog, persistent Back/Close/title, independently scrolling body; compact desktop rows and a side selection summary. At 850px and below the summary collapses into an in-flow count/estimate panel; at 600px and below the dialog occupies the screen. No stacked modals or decorative arrows.
+- Studio selection, enquiry-only Home Service and non-interactive Black Card remain distinct. Every form has labelled controls, inline field errors, final review and truthful WhatsApp handoff copy. Black Card benefits are explicitly proposed.
+- Approved data in src/lib/catalogue.ts replaces the prototype catalogue. booking.ts owns selection guards, time filtering, validation and the two encoded message builders. No new dependency or backend was introduced.

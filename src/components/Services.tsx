@@ -1,315 +1,536 @@
 "use client";
-import { useRef, useState } from "react";
-import { Check, Minus, Plus, ShoppingBag, X } from "lucide-react";
-import { categories, money, services, type Category } from "@/lib/content";
-import { dateError, firstRequestDate, timeOptions } from "@/lib/appointments";
+import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
+import {
+  categories,
+  services,
+  money,
+  homeOffering,
+  membership,
+  type CategoryId,
+  type Service,
+  type Category,
+} from "@/lib/catalogue";
+import {
+  addService,
+  quantityService,
+  selection,
+  validateStudio,
+  validateHome,
+  studioMessage,
+  homeMessage,
+  whatsappUrl,
+  type Basket,
+  type StudioRequest,
+  type HomeRequest,
+  type Errors,
+} from "@/lib/booking";
+import { SelectionSummary, StudioForm, HomeForm } from "./BookingParts";
 
+type View =
+  | { kind: "list"; category: CategoryId }
+  | { kind: "detail"; id: string }
+  | {
+      kind:
+        | "studio"
+        | "studio-review"
+        | "home"
+        | "home-form"
+        | "home-review"
+        | "membership";
+    };
+const emptyRequest: StudioRequest = { name: "", date: "", time: "", notes: "" };
+
+function AddAction({
+  service,
+  basket,
+  add,
+}: {
+  service: Service;
+  basket: Basket;
+  add: (id: string) => void;
+}) {
+  return service.status === "coming-soon" ? (
+    <span className="uc-status">Coming Soon</span>
+  ) : (
+    <button
+      className={`uc-add ${basket[service.id] ? "is-added" : ""}`}
+      aria-label={`${basket[service.id] ? "Added" : "Add to Booking"}: ${service.name}`}
+      aria-pressed={!!basket[service.id]}
+      onClick={() => add(service.id)}
+    >
+      {basket[service.id] ? "Added" : "Add to Booking"}
+    </button>
+  );
+}
+function Price({ service }: { service: Service }) {
+  return (
+    <p className="uc-service-meta">
+      {service.status === "coming-soon" && <span>Planned price </span>}
+      <strong>{money(service.price)}</strong>
+      {service.duration && <span> · {service.duration} minutes</span>}
+    </p>
+  );
+}
 export default function Services() {
-  const [category, setCategory] = useState<Category>("Barbering");
-  const [basket, setBasket] = useState<Record<string, number>>({});
-  const [error, setError] = useState("");
-  const [summary, setSummary] = useState("");
-  const [mode, setMode] = useState("studio");
+  const [view, setView] = useState<View | null>(null);
+  const [basket, setBasket] = useState<Basket>({});
+  const [studio, setStudio] = useState<StudioRequest>(emptyRequest);
+  const [home, setHome] = useState<HomeRequest>({
+    ...emptyRequest,
+    region: "Abuja",
+    address: "",
+    destination: "",
+  });
+  const [errors, setErrors] = useState<Errors>({});
+  const [message, setMessage] = useState("");
+  const [announcement, setAnnouncement] = useState("");
   const dialog = useRef<HTMLDialogElement>(null);
-  const trigger = useRef<HTMLButtonElement>(null);
-  const selected = services.filter((s) => basket[s.id] > 0);
-  const count = selected.reduce((sum, s) => sum + basket[s.id], 0);
-  const total = selected.reduce((sum, s) => sum + basket[s.id] * s.price, 0);
-  const homeSelected = (basket["home-grooming"] || 0) > 0;
-  function adjust(id: string, delta: number) {
-    setBasket((prev) => ({
-      ...prev,
-      [id]: Math.min(20, Math.max(0, (prev[id] || 0) + delta)),
-    }));
-    setSummary("");
-  }
-  function close() {
-    dialog.current?.close();
-    trigger.current?.focus();
-  }
-  function preview(event: React.FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    const date = String(data.get("date") || "");
-    const time = String(data.get("time") || "");
-    const issue =
-      dateError(date) ||
-      (!timeOptions.includes(time)
-        ? "Choose a preferred time within the listed hours."
-        : "") ||
-      (!count ? "Add at least one service." : "") ||
-      (!String(data.get("name")).trim() || !String(data.get("location")).trim()
-        ? "Enter a name and Abuja area for this sample."
-        : "");
-    if (issue) {
-      setError(issue);
-      return;
+  const heading = useRef<HTMLHeadingElement>(null);
+  const scroll = useRef<HTMLDivElement>(null);
+  const trigger = useRef<HTMLElement | null>(null);
+  const listScroll = useRef<Record<string, number>>({});
+  const lastCategory = useRef<CategoryId>("haircuts");
+  const isOpen = !!view;
+  const currentService =
+    view?.kind === "detail"
+      ? services.find((s) => s.id === view.id)
+      : undefined;
+  const categoryId =
+    view?.kind === "list" ? view.category : currentService?.category;
+  const currentCategory = categories.find((c) => c.id === categoryId);
+  const isStudio =
+    view?.kind === "list" || view?.kind === "detail" || view?.kind === "studio";
+  const lines = selection(basket);
+  const count = lines.reduce((s, l) => s + l.quantity, 0);
+  const total = lines.reduce((s, l) => s + l.total, 0);
+
+  useEffect(() => {
+    const node = dialog.current;
+    if (!isOpen || !node) return;
+    const oldOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    node.showModal();
+    return () => {
+      node.close();
+      document.body.style.overflow = oldOverflow;
+      trigger.current?.focus({ preventScroll: true });
+    };
+  }, [isOpen]);
+  useEffect(() => {
+    if (!view) return;
+    const frame = requestAnimationFrame(() => {
+      heading.current?.focus({ preventScroll: true });
+      if (scroll.current)
+        scroll.current.scrollTop =
+          view.kind === "list" ? (listScroll.current[view.category] ?? 0) : 0;
+    });
+    return () => cancelAnimationFrame(frame);
+  }, [view]);
+  function go(next: View) {
+    if (view?.kind === "list") {
+      listScroll.current[view.category] = scroll.current?.scrollTop ?? 0;
+      lastCategory.current = view.category;
     }
-    setError("");
-    setSummary(
-      `SAMPLE REQUEST — NOT SENT OR SAVED\n\nHello URBANCUT, my name is ${String(data.get("name")).trim()}.\nI would like to request:\n${selected.map((s) => `${basket[s.id]} × ${s.name} — sample ${money(s.price * basket[s.id])}`).join("\n")}\nSample estimate: ${money(total)} (not a payable total)\nService mode: ${mode === "home" ? "Home visit enquiry" : "Studio visit"}\nAbuja area: ${String(data.get("location")).trim()}\nPreferred date: ${date}\nPreferred time: ${time} (Abuja time)\nNotes: ${String(data.get("notes") || "").trim() || "None"}\n\nPlease confirm availability, final prices and service arrangements.`,
+    setErrors({});
+    setView(next);
+  }
+  function open(
+    category: Category,
+    event: React.MouseEvent<HTMLButtonElement>,
+  ) {
+    trigger.current = event.currentTarget;
+    if (category.kind === "studio") {
+      lastCategory.current = category.id as CategoryId;
+      go({ kind: "list", category: category.id as CategoryId });
+    } else go({ kind: category.id === "home" ? "home" : "membership" });
+  }
+  function add(id: string) {
+    setBasket((prev) => addService(prev, id));
+    setAnnouncement(
+      `${services.find((s) => s.id === id)?.name} added. Adjust quantities in your selection.`,
     );
   }
+  function adjust(id: string, quantity: number) {
+    setBasket((prev) => quantityService(prev, id, quantity));
+  }
+  function focusErrors(next: Errors, prefix: string) {
+    setErrors(next);
+    requestAnimationFrame(() => {
+      const key = Object.keys(next)[0];
+      document
+        .getElementById(key === "basket" ? "uc-basket" : `${prefix}-${key}`)
+        ?.focus();
+    });
+  }
+  function submitStudio(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const next = validateStudio(studio, basket);
+    if (Object.keys(next).length) {
+      focusErrors(next, "studio");
+      return;
+    }
+    setMessage(studioMessage(studio, basket));
+    go({ kind: "studio-review" });
+  }
+  function submitHome(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const next = validateHome(home);
+    if (Object.keys(next).length) {
+      focusErrors(next, "home");
+      return;
+    }
+    setMessage(homeMessage(home));
+    go({ kind: "home-review" });
+  }
+  function back() {
+    if (view?.kind === "detail" && currentService)
+      go({ kind: "list", category: currentService.category });
+    else if (view?.kind === "studio")
+      go({ kind: "list", category: lastCategory.current });
+    else if (view?.kind === "studio-review") go({ kind: "studio" });
+    else if (view?.kind === "home-form") go({ kind: "home" });
+    else if (view?.kind === "home-review") go({ kind: "home-form" });
+  }
+  const title =
+    currentService?.name ??
+    currentCategory?.name ??
+    (view?.kind === "studio"
+      ? "Studio appointment request"
+      : view?.kind === "studio-review"
+        ? "Review your studio request"
+        : view?.kind === "home-form"
+          ? "Home Service enquiry"
+          : view?.kind === "home-review"
+            ? "Review your Home Service enquiry"
+            : view?.kind === "membership"
+              ? "UrbanCut Black Card"
+              : "Premium Grooming at Your Location");
+  const hasBack =
+    view &&
+    ["detail", "studio", "studio-review", "home-form", "home-review"].includes(
+      view.kind,
+    );
   return (
-    <section id="services" className="section services-section">
-      <div className="section-top">
+    <section
+      id="services"
+      className="section uc-services"
+      aria-labelledby="services-heading"
+    >
+      <div className="uc-section-heading">
         <div>
-          <p className="eyebrow">01 / FIND YOUR FINISH</p>
-          <h2>
-            Your style.
-            <br />
-            <em>Your kind of care.</em>
-          </h2>
+          <p className="eyebrow">CARE, DOWN TO THE DETAIL</p>
+          <h2 id="services-heading">Our Services</h2>
         </div>
-        <p className="section-intro">
-          A fresh cut, a new pattern, a little maintenance. Start with what
-          feels like you.
-        </p>
-      </div>
-      <div className="service-toolbar">
-        <div
-          className="category-list"
-          role="group"
-          aria-label="Service categories"
-        >
-          {categories.map((c) => (
-            <button
-              key={c}
-              aria-pressed={category === c}
-              className={category === c ? "category active" : "category"}
-              onClick={() => setCategory(c)}
-            >
-              {c}
-            </button>
-          ))}
-        </div>
-        <span className="sample-label">All prices are samples</span>
-      </div>
-      <div className="service-list">
-        {services
-          .filter((s) => s.category === category)
-          .map((s, i) => (
-            <article className="service-row" key={s.id}>
-              <span className="service-number" aria-hidden="true">
-                {String(i + 1).padStart(2, "0")}
-              </span>
-              <div className="service-copy">
-                <h3>{s.name}</h3>
-                <p>{s.description}</p>
-                <details className="service-detail">
-                  <summary>Service details</summary>
-                  <p>{s.detail} Duration: to be confirmed.</p>
-                </details>
-              </div>
-              <div className="service-price">
-                <span>Sample price</span>
-                <strong>{money(s.price)}</strong>
-              </div>
-              <button
-                className={
-                  basket[s.id] ? "add-service selected" : "add-service"
-                }
-                onClick={() => adjust(s.id, 1)}
-                aria-label={`Add ${s.name}`}
-                disabled={(basket[s.id] || 0) >= 20}
-              >
-                {basket[s.id] ? <Check size={19} /> : <Plus size={19} />}
-                <span>{basket[s.id] ? `Added (${basket[s.id]})` : "Add"}</span>
-              </button>
-            </article>
-          ))}
-      </div>
-      <div className="service-bottom">
         <p>
-          <span className="status-dot" /> Coming later: manicure, pedicure,
-          massage & spa.
-          <br />
-          <span className="muted">Facials: availability to be confirmed.</span>
+          Explore our grooming services at the studio, or enquire about premium
+          grooming at your location.
         </p>
-        <div className="selection-area">
-          <span aria-live="polite">
-            {count
-              ? `${count} service${count === 1 ? "" : "s"} selected · Sample ${money(total)}`
-              : "Planning for you and someone else? Add both."}
-          </span>
+      </div>
+      <div className="uc-category-grid">
+        {categories.map((category) => (
           <button
-            ref={trigger}
-            className="button"
-            disabled={!count}
-            onClick={() => {
-              setSummary("");
-              setError("");
-              setMode(homeSelected ? "home" : "studio");
-              dialog.current?.showModal();
+            key={category.id}
+            className="uc-category-card"
+            onClick={(event) => open(category, event)}
+            aria-haspopup="dialog"
+            aria-label={`${category.name} — ${category.kind === "studio" ? "View All Services" : "View Details"}`}
+          >
+            <div className="uc-card-image">
+              <Image
+                src={`/media/services/${category.image}.webp`}
+                alt=""
+                width={800}
+                height={1000}
+                sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw"
+              />
+              {category.id === "membership" && (
+                <span className="uc-status uc-card-status">Coming Soon</span>
+              )}
+            </div>
+            <div className="uc-card-copy">
+              <h3>{category.name}</h3>
+              <p>{category.caption}</p>
+              <span className="uc-card-action">
+                {category.kind === "studio"
+                  ? "View All Services"
+                  : "View Details"}
+              </span>
+            </div>
+          </button>
+        ))}
+      </div>
+      <div className="uc-section-foot">
+        <p>
+          Category artwork illustrates each offering. Availability is shown in
+          the service details.
+        </p>
+        {count > 0 && (
+          <button
+            className="uc-primary"
+            onClick={(event) => {
+              trigger.current = event.currentTarget;
+              go({ kind: "studio" });
             }}
           >
-            <ShoppingBag size={17} /> Review selection{" "}
-            {count > 0 && <span className="count">{count}</span>}
+            Review selection · {count} · {money(total)}
           </button>
-        </div>
+        )}
       </div>
-      <p className="prototype-note">
-        Local preview: selections are temporary. Nothing is saved, sent or
-        booked.
-      </p>
       <dialog
         ref={dialog}
-        className="request-dialog"
-        aria-labelledby="request-title"
-        onCancel={() => trigger.current?.focus()}
-        onClick={(e) => {
-          if (e.target === dialog.current) close();
+        className="uc-dialog"
+        aria-labelledby="uc-dialog-title"
+        onClose={(event) => {
+          if (!event.currentTarget.open) setView(null);
+        }}
+        onCancel={(event) => {
+          event.preventDefault();
+          setView(null);
         }}
       >
-        <div className="dialog-inner">
-          <button
-            className="icon-button dialog-close"
-            onClick={close}
-            aria-label="Close request preview"
-          >
-            <X />
-          </button>
-          <p className="eyebrow">YOUR NEXT VISIT / LOCAL PREVIEW</p>
-          <h2 id="request-title">
-            Make it <em>your own.</em>
-          </h2>
-          <p>
-            Prepare a sample request. Your preferred time needs studio
-            confirmation. Use sample details; nothing leaves this page.
-          </p>
-          <div className="basket-list">
-            {selected.map((s) => (
-              <div className="basket-row" key={s.id}>
-                <div>
-                  <strong>{s.name}</strong>
-                  <small>Sample {money(s.price * basket[s.id])}</small>
-                </div>
-                <div className="quantity">
-                  <button
-                    aria-label={`Decrease ${s.name} quantity`}
-                    onClick={() => adjust(s.id, -1)}
-                  >
-                    <Minus size={16} />
-                  </button>
-                  <span aria-label={`${s.name} quantity`}>{basket[s.id]}</span>
-                  <button
-                    aria-label={`Increase ${s.name} quantity`}
-                    disabled={basket[s.id] >= 20}
-                    onClick={() => adjust(s.id, 1)}
-                  >
-                    <Plus size={16} />
-                  </button>
-                  <button
-                    aria-label={`Remove ${s.name}`}
-                    onClick={() => {
-                      setBasket((prev) => ({ ...prev, [s.id]: 0 }));
-                      setSummary("");
-                    }}
-                  >
-                    <X size={16} />
-                  </button>
-                </div>
-              </div>
-            ))}
-          </div>
-          <p className="estimate">
-            Sample estimate <strong>{money(total)}</strong>
-          </p>
-          <form onSubmit={preview} onChange={() => setSummary("")}>
-            <div className="form-grid">
-              <label>
-                Your name (sample)
-                <input
-                  name="name"
-                  placeholder="e.g. Alex"
-                  required
-                  maxLength={80}
-                  autoComplete="off"
-                />
-              </label>
-              <label>
-                Service location
-                <select
-                  name="mode"
-                  value={mode}
-                  onChange={(e) => setMode(e.target.value)}
-                  disabled={homeSelected}
-                >
-                  <option value="studio">At the studio</option>
-                  <option value="home">Home visit in Abuja</option>
-                </select>
-              </label>
-              <label className="full">
-                Abuja area (sample)
-                <input
-                  name="location"
-                  placeholder="Area only — no full address needed for this preview"
-                  required
-                  maxLength={120}
-                  autoComplete="off"
-                />
-              </label>
-              <label>
-                Preferred date
-                <input
-                  name="date"
-                  type="date"
-                  min={firstRequestDate()}
-                  required
-                />
-              </label>
-              <label>
-                Preferred time
-                <select name="time" required defaultValue="">
-                  <option value="" disabled>
-                    Choose a time
-                  </option>
-                  {timeOptions.map((t) => (
-                    <option key={t} value={t}>
-                      {t}
-                    </option>
-                  ))}
-                </select>
-              </label>
-              <label className="full">
-                Anything we should know? (optional)
-                <textarea
-                  name="notes"
-                  rows={3}
-                  maxLength={600}
-                  placeholder="Use sample instructions for this preview."
-                />
-              </label>
-            </div>
-            <p className="field-help">
-              Abuja time · Monday–Saturday, 10 a.m.–6 p.m. Book at least the day
-              before. Listed half-hour intervals are prototype choices, not live
-              availability. Latest start times and service durations are
-              unconfirmed.
+        {view && (
+          <div className="uc-dialog-shell">
+            <p className="sr-only" role="status">
+              {announcement}
             </p>
-            {homeSelected && (
-              <p className="field-help">
-                A home grooming enquiry is selected, so the location is set to a
-                home visit. Scope and travel fees need confirmation.
+            <header className="uc-dialog-header">
+              <div className="uc-dialog-nav">
+                {hasBack && (
+                  <button onClick={back}>
+                    {view.kind === "detail"
+                      ? `Back to ${currentCategory?.name}`
+                      : "Back"}
+                  </button>
+                )}
+                <button
+                  className="uc-close"
+                  onClick={() => setView(null)}
+                  aria-label="Close services dialog"
+                >
+                  Close
+                </button>
+              </div>
+              <p className="uc-kicker">
+                {isStudio || view.kind === "studio-review"
+                  ? "URBANCUT / STUDIO VISIT"
+                  : view.kind === "membership"
+                    ? "URBANCUT / MEMBERSHIP PREVIEW"
+                    : "URBANCUT / BY ARRANGEMENT"}
               </p>
-            )}
-            {error && (
-              <p className="form-error" role="alert">
-                {error}
-              </p>
-            )}
-            <button type="submit" className="button gold" disabled={!count}>
-              Preview sample request
-            </button>
-          </form>
-          {summary && (
-            <section className="request-summary" aria-live="polite">
-              <h3>Sample request — not sent</h3>
-              <pre>{summary}</pre>
-              <p>WhatsApp and booking storage are not connected.</p>
-            </section>
-          )}
-        </div>
+              <h2 id="uc-dialog-title" ref={heading} tabIndex={-1}>
+                {title}
+              </h2>
+            </header>
+            <div className="uc-modal-scroll" ref={scroll}>
+              <div
+                className={`uc-dialog-layout ${isStudio ? "with-selection" : ""}`}
+              >
+                <div className="uc-dialog-main">
+                  {view.kind === "list" && (
+                    <>
+                      <p className="uc-list-intro">
+                        {view.category === "wellness"
+                          ? "Nail & Foot Care. These services are Coming Soon; explore the planned menu below."
+                          : "Explore the details, then add services for your visit to the Abuja studio."}
+                      </p>
+                      <div className="uc-service-list">
+                        {services
+                          .filter((s) => s.category === view.category)
+                          .map((service) => (
+                            <article
+                              className="uc-service-row"
+                              key={service.id}
+                            >
+                              <div>
+                                <h3>{service.name}</h3>
+                                <Price service={service} />
+                              </div>
+                              <div className="uc-row-actions">
+                                <button
+                                  className="uc-text-action"
+                                  aria-label={`View Service: ${service.name}`}
+                                  onClick={() =>
+                                    go({ kind: "detail", id: service.id })
+                                  }
+                                >
+                                  View Service
+                                </button>
+                                <AddAction
+                                  service={service}
+                                  basket={basket}
+                                  add={add}
+                                />
+                              </div>
+                            </article>
+                          ))}
+                      </div>
+                    </>
+                  )}
+                  {view.kind === "detail" && currentService && (
+                    <article className="uc-service-detail">
+                      <Price service={currentService} />
+                      <p className="uc-detail-description">
+                        {currentService.description}
+                      </p>
+                      {currentService.inclusions && (
+                        <div className="uc-inclusions">
+                          <h3>What’s included</h3>
+                          <ul>
+                            {currentService.inclusions.map((i) => (
+                              <li key={i}>{i}</li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+                      <AddAction
+                        service={currentService}
+                        basket={basket}
+                        add={add}
+                      />
+                    </article>
+                  )}
+                  {view.kind === "studio" && (
+                    <StudioForm
+                      data={studio}
+                      update={setStudio}
+                      basket={basket}
+                      errors={errors}
+                      submit={submitStudio}
+                    />
+                  )}
+                  {(view.kind === "studio-review" ||
+                    view.kind === "home-review") && (
+                    <div className="uc-review">
+                      <p>Review these details before continuing to WhatsApp.</p>
+                      <pre>{message}</pre>
+                      <p>
+                        You must press Send in WhatsApp. Opening the chat does
+                        not send this request, save it with the studio or
+                        confirm availability.
+                      </p>
+                      <a
+                        className="uc-primary"
+                        href={whatsappUrl(message)}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(event) => {
+                          const next =
+                            view.kind === "studio-review"
+                              ? validateStudio(studio, basket)
+                              : validateHome(home);
+                          if (Object.keys(next).length) {
+                            event.preventDefault();
+                            setView({
+                              kind:
+                                view.kind === "studio-review"
+                                  ? "studio"
+                                  : "home-form",
+                            });
+                            focusErrors(
+                              next,
+                              view.kind === "studio-review" ? "studio" : "home",
+                            );
+                          }
+                        }}
+                      >
+                        Continue to WhatsApp
+                      </a>
+                      <p className="uc-fine">
+                        Opens a new tab or the WhatsApp app. Your selection
+                        remains here if you return. You can also copy the
+                        request above.
+                      </p>
+                    </div>
+                  )}
+                  {view.kind === "home" && (
+                    <div className="uc-offering">
+                      <Image
+                        src="/media/services/home.webp"
+                        width={800}
+                        height={1000}
+                        alt="Illustrative portable grooming kit"
+                        sizes="(max-width: 600px) 100vw, 40vw"
+                      />
+                      <div>
+                        <p className="uc-offering-price">
+                          {money(homeOffering.price)} in Abuja
+                        </p>
+                        <h3>{homeOffering.package}</h3>
+                        <p>{homeOffering.description}</p>
+                        <p className="uc-callout">{homeOffering.outside}</p>
+                        <button
+                          className="uc-primary"
+                          onClick={() => go({ kind: "home-form" })}
+                        >
+                          Enquire About Home Service
+                        </button>
+                      </div>
+                    </div>
+                  )}
+                  {view.kind === "home-form" && (
+                    <HomeForm
+                      data={home}
+                      update={setHome}
+                      errors={errors}
+                      submit={submitHome}
+                    />
+                  )}
+                  {view.kind === "membership" && (
+                    <div className="uc-offering uc-membership">
+                      <Image
+                        src="/media/services/membership.webp"
+                        width={800}
+                        height={1000}
+                        alt="Illustrative Black Card membership concept, not currently available"
+                        sizes="(max-width: 600px) 100vw, 40vw"
+                      />
+                      <div>
+                        <p className="uc-kicker">Monthly Grooming Membership</p>
+                        <span className="uc-status">Coming Soon</span>
+                        <h3 className="uc-membership-heading">
+                          {membership.headline}
+                        </h3>
+                        <p>{membership.introduction}</p>
+                        <div className="uc-callout">
+                          <strong>
+                            Registration fee:{" "}
+                            {money(membership.registrationFee)}
+                          </strong>
+                          <p>
+                            Registration is not open. This is not a monthly
+                            subscription fee or an amount payable on this
+                            website now.
+                          </p>
+                        </div>
+                        <h4>Proposed benefits</h4>
+                        <ul>
+                          {membership.benefits.map((b) => (
+                            <li key={b}>{b}</li>
+                          ))}
+                        </ul>
+                        <p className="uc-fine">
+                          Proposed benefits are not confirmed entitlements. This
+                          preview does not make unavailable treatments bookable.
+                        </p>
+                        <span className="uc-status">Coming Soon</span>
+                      </div>
+                    </div>
+                  )}
+                </div>
+                {isStudio && (
+                  <SelectionSummary
+                    basket={basket}
+                    adjust={adjust}
+                    onContinue={() => go({ kind: "studio" })}
+                    canContinue={view.kind !== "studio"}
+                    error={errors.basket}
+                  />
+                )}
+              </div>
+            </div>
+          </div>
+        )}
       </dialog>
     </section>
   );

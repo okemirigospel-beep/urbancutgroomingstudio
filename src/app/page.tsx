@@ -1,3 +1,4 @@
+import { whatsappBase } from "@/lib/booking";
 import Image from "next/image";
 import { Clock3, MapPin, Scissors, Sparkles, Check, Plus } from "lucide-react";
 import Header from "@/components/Header";
@@ -302,8 +303,15 @@ export default function Home() {
             </div>
             <div className="contact-links">
               <p>Let’s plan your visit.</p>
+              <a
+                className="contact-link"
+                href={whatsappBase}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Message us on WhatsApp <span>Open chat</span>
+              </a>
               {[
-                "Message us on WhatsApp",
                 "Send us an email",
                 "Visit our Instagram",
                 "Get directions",
@@ -314,9 +322,9 @@ export default function Home() {
                 </div>
               ))}
               <p className="field-help">
-                Contact links are awaiting confirmed studio details. Please
-                confirm the address before visiting. No contact messages can be
-                sent from this preview.
+                Contact the studio on WhatsApp to confirm the address before
+                visiting. Email, social links and directions are awaiting
+                confirmed details. Opening WhatsApp does not send a message.
               </p>
             </div>
           </div>

@@ -89,3 +89,7 @@ Mobile-only CSS: image width clamp(164px, 46vw, 194px), header vertical padding 
 Browser measurements (viewport: visible artwork width / closed header height): 320: 160.45 / 98.95px; 360: 162.01 / 99.75px; 390: 175.50 / 106.73px; 430: 189.80 / 114.13px. At 390px the previous visible width/header height was 234.80 / 141.39px. Image/toggle centers differ by less than 0.01px; visible-artwork center differs only by the derivative's subpixel padding. SVG proportions and all visible paths are unchanged.
 
 Actual closed/open screenshots inspected at 320, 360, 390 and 430px: readable logo, single centered row, no clipping/overflow and no menu/hero overlap. Escape closes and returns focus; menu appointment action reaches #services. Tablet 768 and desktop 1440 checked unchanged. Browser errors: none. Production build and TypeScript stage passed. Matched 390px before/after screenshots: screenshots/mobile-proportion-before.png and screenshots/mobile-proportion-after.png. Local only; no deployment.
+
+## Approved Services implementation — 27 September 2026
+
+See [Services verification and screenshots](SERVICES-VERIFICATION.md) for the approved catalogue, separate studio/Home Service/Black Card journeys, ten passing tests, build/type checks, actual responsive browser evidence and remaining owner inputs. No deployment or message transmission occurred.

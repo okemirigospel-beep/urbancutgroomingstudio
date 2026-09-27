@@ -27,7 +27,7 @@ export function dateError(value: string, now = new Date()) {
     return "The studio is closed on Sundays. Please choose Monday–Saturday.";
   return "";
 }
-// Prototype display intervals only: not service durations or verified free slots.
+// Preference intervals only. booking.ts filters known durations against closing time; these are not live availability.
 export const timeOptions = Array.from(
   { length: 16 },
   (_, i) => `${10 + Math.floor(i / 2)}:${i % 2 ? "30" : "00"}`,

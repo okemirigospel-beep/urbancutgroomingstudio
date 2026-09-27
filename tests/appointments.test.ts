@@ -25,7 +25,7 @@ test("invalid dates and past dates cannot become requests", () => {
   for (const date of ["", "2026-02-30", "2026-13-01", "2026-09-21", "tomorrow"])
     assert.ok(dateError(date, now));
 });
-test("prototype time options stay within opening hours", () => {
+test("preference intervals stay within opening hours", () => {
   assert.equal(timeOptions[0], "10:00");
   assert.equal(timeOptions.at(-1), "17:30");
   assert.equal(timeOptions.length, 16);

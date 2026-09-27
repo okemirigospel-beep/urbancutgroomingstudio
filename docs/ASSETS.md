@@ -33,3 +33,19 @@ No assets are missing for this local header/hero implementation. Publication per
 Latest responsive re-edit: web assets are unchanged, but display now uses full-frame proportional cover with per-photo focal positions instead of contain. Six desktop and mobile crops were visually reviewed. No reference MP4 is used. Original 720px-wide resolution limits fine detail; maximum display width is 620px.
 
 Header logo derivative: public/media/urbancut-logo-header.svg changes only outer dimensions/viewBox to remove empty black canvas. All original paths/colours/transforms remain exact; source SVG and footer use are preserved. See the latest VERIFICATION.md entry for bounds and hash.
+
+
+## Services category artwork — 27 September 2026
+
+All six files in `C:\Users\LENOVO\Pictures\service section images __.zip` were verified as 1122 × 1402 PNG data despite having no extensions. The original ZIP is unchanged and outside Git; retain it in the owner's separate original-asset backup. Its production derivatives are tracked under `public/media/services/`, RGB WebP at 800 × 1000, quality 84, without metadata or upscaling. Total: 559,462 bytes. Next/Image supplies responsive delivery sizes.
+
+| ZIP entry under service section images/ | Tracked derivative | Role |
+| --- | --- | --- |
+| barbering and grooming | haircuts.webp | Haircuts & Grooming |
+| beard and shave | beard.webp | Beard & Shave |
+| hair and scalp care | hair-care.webp | Hair & Scalp Care |
+| urbancut wellness (nail and footcare) | wellness.webp | Coming Soon Nail & Foot Care |
+| home service | home.webp | Enquiry-only package |
+| blackcard membership | membership.webp | Coming Soon membership concept |
+
+The supplied artwork is not represented as documentary studio/staff/treatment photography or an issued membership card. Original photo/video/logo assets and existing hero derivatives were not modified. WhatsApp destination is now approved; email/social/map details remain pending. The tracked derivative assets suffice to run the application from Git; source ZIPs outside the repository require separate storage.

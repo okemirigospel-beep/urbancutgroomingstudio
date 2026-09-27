@@ -1,16 +1,20 @@
 # Project status
 
-New implementation, not recovered code. Original GitHub initial commit and README preserved. Foundation: Next.js App Router, TypeScript, Tailwind v4, local-only scripts and deployment-disable configuration.
+New implementation, not recovered code. The original GitHub initial commit, README and supplied assets remain preserved. Next.js App Router, TypeScript and Tailwind run locally on the owner's Windows computer at http://127.0.0.1:3000. Nothing has been deployed.
 
-Foundation checkpoint 0ab6398f37554ae35ba970b0dc9314e910a2b3c0 was built, browser-checked, pushed and verified on GitHub's urbancut-continuation branch.
+## Current implementation — 27 September 2026
 
-Implemented: responsive header/mobile navigation; reference-led hero with unchanged logo, six supplied grooming photographs and accessible slideshow controls; 11 draft services across four categories; details, multi-service quantities and a native request-preview dialog; Abuja date/time validation; About/standards; honest gallery/reviews states; five expandable provisional academy levels; coming-soon product preview; FAQ; contact/social/directions pending states and footer.
+Services now uses the approved six-category artwork and 16-service catalogue (13 bookable, three Coming Soon, three verified durations). The single accessible dialog supports category lists, details, persistent-in-visit selection/quantities, studio form and final review. Standard services are studio visits; no customer address is requested. Abuja advance-date/Sunday rules and known-duration closing-time limits are enforced.
 
-Current appointment flow is in-memory only, with no persistence or external handoff. Sample requests explicitly say not saved/sent. Browser and build verification is recorded in VERIFICATION.md. Hero photos have now been supplied; publication permissions and final business content remain prerequisites before launch work.
+The authorised manual WhatsApp handoff targets 2349163444436. The visitor must press Send in WhatsApp; this website does not save, send or confirm a request. Form data and selection live only in React memory for the current page visit, are retained when dialogs close, and are lost on reload. No database, WhatsApp agent, payments or production availability system exists.
 
-Production booking storage, WhatsApp handoff/automation, payment, accounts, external analytics and Supabase connections are not implemented or activated. No personal data should be entered into this development prototype.
+Home Service is a separate enquiry: ₦100,000 for a one-person premium package in Abuja; outside-Abuja requests are quoted separately. Treatments and arrangements are confirmed during enquiry. Black Card remains a non-actionable Coming Soon preview with a ₦50,000 registration fee, not a supplied monthly fee. Nail-care planned prices are not payable or selectable.
 
-Pending business inputs: final service prices/durations/inclusions; exact address/map; WhatsApp/email/Instagram destinations; authentic gallery and reviews; product imagery/details; approved academy fees/durations/curricula; deposit/cancellation/late/walk-in policies; final written brand spelling.
+The completed header, hero, six-photo slideshow, information band and Services booking links are unchanged. FAQ and contact copy now reflect the approved catalogue and WhatsApp destination. Academy and product information remains provisional.
+
+Pending owner inputs before any future launch: exact studio address/map, email and social destinations, authentic gallery/reviews, final product details and academy terms, deposit/cancellation/late/walk-in policies, hosting authorisation and any future backend scope. There are no missing category images and no credential requirement for manual click-to-chat.
+
+## Historical milestones (superseded where the current status above differs)
 
 Header/hero revision (25 September 2026): prominent intact logo in a black masthead; visible URBANCUT Grooming Studio brand line; gold headline emphasis; two rectangular Book an Appointment links to #services; six-photo slideshow with Previous/Next and pause/play controls; reduced-motion, hover/focus/offscreen/tab-visibility safeguards; black information band. Decorative arrows removed sitewide and prohibited in AGENTS.md. Production integrations remain deferred. Existing lower-section behaviour is preserved.
 

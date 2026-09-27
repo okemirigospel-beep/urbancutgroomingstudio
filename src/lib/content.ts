@@ -4,122 +4,6 @@ export const brand = {
   hours: "Monday–Saturday, 10:00 a.m.–6:00 p.m.",
   timezone: "Africa/Lagos",
 };
-export const categories = [
-  "Barbering",
-  "Loc care",
-  "Braiding",
-  "Home services",
-] as const;
-export type Category = (typeof categories)[number];
-export type Service = {
-  id: string;
-  name: string;
-  category: Category;
-  price: number;
-  description: string;
-  detail: string;
-};
-export const services: Service[] = [
-  {
-    id: "adult-cut",
-    name: "Adult haircut",
-    category: "Barbering",
-    price: 7000,
-    description: "A fresh cut. Your own point of view.",
-    detail:
-      "A haircut shaped around your preferred look. Final inclusions, duration and price will be confirmed by the studio.",
-  },
-  {
-    id: "child-cut",
-    name: "Children’s haircut",
-    category: "Barbering",
-    price: 4000,
-    description: "A neat finish for the younger ones.",
-    detail:
-      "A haircut for a younger client. Add alongside an adult service, or increase the quantity for more than one child.",
-  },
-  {
-    id: "beard",
-    name: "Beard shape-up",
-    category: "Barbering",
-    price: 3500,
-    description: "Considered lines. A clean outline.",
-    detail:
-      "Beard shaping for a clean outline. Discuss your preferred shape with the studio; duration and inclusions are pending.",
-  },
-  {
-    id: "colour",
-    name: "Hair colouring",
-    category: "Barbering",
-    price: 10000,
-    description: "Make room for a different shade.",
-    detail:
-      "Colour application. Available colours, materials, preparation and pricing must be confirmed with the studio.",
-  },
-  {
-    id: "waves",
-    name: "Wave styling",
-    category: "Barbering",
-    price: 6000,
-    description: "Definition, down to the finish.",
-    detail:
-      "Styling focused on a defined wave look. Exact service scope and duration are to be confirmed.",
-  },
-  {
-    id: "starter-locs",
-    name: "Starter locs",
-    category: "Loc care",
-    price: 18000,
-    description: "The beginning of your loc journey.",
-    detail:
-      "An introductory loc installation service. Method, hair requirements and duration must be discussed with the studio.",
-  },
-  {
-    id: "loc-maintenance",
-    name: "Loc maintenance",
-    category: "Loc care",
-    price: 12000,
-    description: "Care for the look you’re growing.",
-    detail:
-      "Maintenance and tidying of existing locs. Final scope depends on your hair and must be confirmed.",
-  },
-  {
-    id: "loc-extensions",
-    name: "Loc extensions",
-    category: "Loc care",
-    price: 35000,
-    description: "Explore a new length and shape.",
-    detail:
-      "Extension work for a loc style. Materials, length and final pricing require confirmation.",
-  },
-  {
-    id: "mens-braids",
-    name: "Men’s braids",
-    category: "Braiding",
-    price: 10000,
-    description: "A pattern that feels like you.",
-    detail:
-      "Braiding tailored to a chosen style. Confirm lengths, materials and exact options before your visit.",
-  },
-  {
-    id: "womens-braids",
-    name: "Women’s braids",
-    category: "Braiding",
-    price: 18000,
-    description: "Your style, thoughtfully woven.",
-    detail:
-      "Braiding options with lengths, materials and duration to be confirmed with the studio.",
-  },
-  {
-    id: "home-grooming",
-    name: "Abuja home grooming enquiry",
-    category: "Home services",
-    price: 15000,
-    description: "Grooming, in your own space.",
-    detail:
-      "Request a home visit within Abuja. Exact location, service scope, travel fee and scheduling must be confirmed; this sample is not an approved visit price.",
-  },
-];
 export const academy = [
   {
     title: "Foundation",
@@ -184,11 +68,11 @@ export const faqs = [
   ],
   [
     "Do you offer home services?",
-    "Home-service enquiries are available within Abuja. The location, scope, travel fee and scheduling need to be confirmed with the studio.",
+    "Home Service is a separate enquiry: ₦100,000 in Abuja for a one-person premium grooming package. Treatments and arrangements are confirmed during enquiry. Requests elsewhere in Nigeria or abroad are priced separately by arrangement.",
   ],
   [
     "Are manicure, pedicure and spa services available?",
-    "Manicure, pedicure, massage and spa are coming soon and cannot be selected. Facial services are still unconfirmed.",
+    "Manicure, pedicure and Manicure + Pedicure are Coming Soon. Their planned prices are not payable now and they cannot be booked. The Wellness category currently previews Nail & Foot Care only; proposed Black Card benefits are not an available spa menu.",
   ],
   [
     "Is the academy operating?",
@@ -212,7 +96,7 @@ export const faqs = [
   ],
   [
     "Are these final prices, and is this a live booking?",
-    "No. Displayed prices are examples awaiting approval. This local preview lets you prepare a sample request only. Nothing is saved, sent or confirmed.",
+    "Our Services shows published listed prices, with planned nail-care prices marked Coming Soon. Your selection creates an appointment request, not a confirmed reservation. Review it, continue to WhatsApp and press Send there. The studio must confirm availability, final amount and arrangements. The website does not save or send your request.",
   ],
 ];
-export const money = (amount: number) => `₦${amount.toLocaleString("en-NG")}`;
+export { money } from "./catalogue";
