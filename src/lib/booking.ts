@@ -1,10 +1,5 @@
 import { services, money, homeOffering } from "./catalogue.ts";
-import {
-  dateError,
-  hourlyTimes,
-  advanceNotice,
-  studioSchedule,
-} from "./appointments.ts";
+import { dateError, hourlyTimes, studioSchedule } from "./appointments.ts";
 export const whatsappNumber = "2349163444436";
 export const whatsappBase = `https://wa.me/${whatsappNumber}`;
 export const whatsappUrl = (message: string) =>
@@ -105,18 +100,20 @@ export function studioMessage(
     throw new Error("Review a valid studio request before continuing.");
   const lines = selection(basket);
   return [
-    `URBANCUT — STUDIO APPOINTMENT REQUEST`,
+    "Hello UrbanCut, I’d like to request a studio appointment.",
+    "",
     `Name: ${data.name.trim()}`,
+    "",
     "Services:",
     ...lines.map(
-      (l) => `- ${l.quantity} × ${l.service.name} — ${money(l.total)}`,
+      (l) => `• ${l.service.name} × ${l.quantity} — ${money(l.total)}`,
     ),
-    `Listed estimate: ${money(lines.reduce((sum, l) => sum + l.total, 0))}`,
+    "",
+    `Listed total: ${money(lines.reduce((sum, l) => sum + l.total, 0))}`,
+    "",
     `Preferred date: ${data.date}`,
     `Preferred time: ${data.time} (Abuja time)`,
-    `Notes: ${data.notes.trim() || "None"}`,
-    advanceNotice,
-    "Please confirm availability, final amount and appointment details.",
+    ...(data.notes.trim() ? [`Notes: ${data.notes.trim()}`] : []),
   ].join("\n");
 }
 export function homeMessage(data: HomeRequest, now = new Date()) {
@@ -136,7 +133,6 @@ export function homeMessage(data: HomeRequest, now = new Date()) {
     `Preferred date: ${data.date}`,
     `Preferred time: ${data.time} (Abuja time)`,
     `Notes: ${data.notes.trim() || "None"}`,
-    advanceNotice,
     "Please confirm treatments, visit arrangements, availability and final quote.",
   ].join("\n");
 }

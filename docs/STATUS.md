@@ -33,3 +33,5 @@ Latest focused finish: larger Georgia secondary wordmark directly beneath URBANC
 Latest header correction: actual SVG is the principal brand element, using a tight-bounds derivative at responsive widths. Companion wordmark removed. Before/after screenshots, visible-artwork measurements and navigation checks recorded in VERIFICATION.md. Hero and slideshow unchanged.
 
 Mobile header refined to a fluid 160–190px visible emblem with approximately 99–114px header height across 320–430px phones. Larger tablet/desktop logo sizes preserved.
+
+Booking copy cleanup (28 September 2026): concise current-state studio request, Listed total, optional notes only when supplied, one WhatsApp handoff callout and CONTINUE TO BOOKING. Date/time restrictions and existing agent destination preserved. See BOOKING-COPY-VERIFICATION.md for checks and screenshots.

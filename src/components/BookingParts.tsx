@@ -177,10 +177,6 @@ export function StudioForm({
     update({ ...data, [key]: value });
   return (
     <form className="uc-form" noValidate onSubmit={submit}>
-      <p>
-        Plan your visit to our Abuja studio. Choose a preference; these times
-        are not live availability.
-      </p>
       <Field label="Your name (required)" id="studio-name" error={errors.name}>
         <input
           id="studio-name"
@@ -227,10 +223,6 @@ export function StudioForm({
       <button className="uc-primary" type="submit">
         Review Studio Request
       </button>
-      <p className="uc-fine">
-        Your details stay in this page during your visit. Nothing is submitted
-        by this form.
-      </p>
     </form>
   );
 }

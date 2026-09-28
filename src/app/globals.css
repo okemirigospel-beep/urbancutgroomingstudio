@@ -2987,3 +2987,26 @@ textarea {
     font-size: 13px;
   }
 }
+
+/* One concise handoff note, shared by studio and home request reviews. */
+.uc-review .uc-handoff-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 16px;
+  background: #f5f1e6;
+  border: 1px solid #ded2b0;
+  border-left: 3px solid #b98f22;
+  border-radius: 3px;
+}
+.uc-handoff-note svg {
+  flex-shrink: 0;
+  color: #806112;
+  margin-top: 1px;
+}
+.uc-review .uc-handoff-note p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #332e23;
+}

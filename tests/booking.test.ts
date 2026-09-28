@@ -143,16 +143,16 @@ test("studio handoff preserves quantity, total, Unicode and reserved URL charact
     { "signature-cut": 1, "kids-cut": 2 },
     now,
   );
-  assert.match(text, /2 × Kids Haircut — ₦10,000/);
-  assert.match(text, /Listed estimate: ₦25,000/);
+  assert.match(text, /Kids Haircut × 2 — ₦10,000/);
+  assert.match(text, /Listed total: ₦25,000/);
   assert.doesNotMatch(text, /Address|Region|Location/);
   const url = new URL(whatsappUrl(text));
   assert.equal(url.origin + url.pathname, "https://wa.me/2349163444436");
   assert.equal(url.searchParams.get("text"), text);
   assert.equal([...url.searchParams].length, 1);
-  assert.match(
-    studioMessage({ ...studio, notes: "" }, { "kids-cut": 1 }, now),
-    /Notes: None/,
+  assert.doesNotMatch(
+    studioMessage({ ...studio, notes: "   " }, { "kids-cut": 1 }, now),
+    /Notes:/,
   );
 });
 test("Home Service validates separately and outside-Abuja requests never carry the Abuja charge", () => {
@@ -201,7 +201,7 @@ test("home enquiries share the advance-day and hourly schedule including outside
     homeMessage({ ...home, date: "2026-10-04", time: "20:00" }, now),
     /20:00 \(Abuja time\)/,
   );
-  assert.match(homeMessage(home, now), /at least one day ahead/);
+  assert.doesNotMatch(homeMessage(home, now), /at least one day ahead/);
   assert.throws(() => homeMessage({ ...home, time: "21:00" }, now));
   assert.throws(() => homeMessage({ ...home, date: "2026-09-28" }, now));
 });
@@ -215,4 +215,43 @@ test("Coming Soon categories remain non-bookable even if their IDs are injected"
     studioMessage(studio, { "kids-cut": 1, manicure: 1 }, now),
     /Manicure/,
   );
+});
+
+test("studio message matches the concise template and recalculates edited selections", () => {
+  const draft = { ...studio, name: "  Ada  ", notes: "" };
+  const message = studioMessage(
+    draft,
+    { "signature-cut": 1, "kids-cut": 2 },
+    now,
+  );
+  assert.equal(
+    message,
+    [
+      "Hello UrbanCut, I’d like to request a studio appointment.",
+      "",
+      "Name: Ada",
+      "",
+      "Services:",
+      "• UrbanCut Signature Haircut × 1 — ₦15,000",
+      "• Kids Haircut × 2 — ₦10,000",
+      "",
+      "Listed total: ₦25,000",
+      "",
+      "Preferred date: 2026-09-29",
+      "Preferred time: 10:00 (Abuja time)",
+    ].join("\n"),
+  );
+  const changed = studioMessage(
+    { ...draft, name: "Bola", notes: "Please keep the length." },
+    { "kids-cut": 3 },
+    now,
+  );
+  assert.match(changed, /Name: Bola/);
+  assert.match(changed, /Kids Haircut × 3 — ₦15,000\n\nListed total: ₦15,000/);
+  assert.match(changed, /Notes: Please keep the length\./);
+  assert.doesNotMatch(
+    changed,
+    /Signature Haircut|Amount due|one day ahead|confirmed|Notes: None/,
+  );
+  assert.equal(new URL(whatsappUrl(changed)).searchParams.get("text"), changed);
 });

@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { Tag, Timer, ShoppingCart } from "lucide-react";
+import { Tag, Timer, ShoppingCart, MessageCircle } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import {
   categories,
@@ -92,7 +92,6 @@ export default function Services() {
     destination: "",
   });
   const [errors, setErrors] = useState<Errors>({});
-  const [message, setMessage] = useState("");
   const [announcement, setAnnouncement] = useState("");
   const dialog = useRef<HTMLDialogElement>(null);
   const heading = useRef<HTMLHeadingElement>(null);
@@ -180,7 +179,6 @@ export default function Services() {
       focusErrors(next, "studio");
       return;
     }
-    setMessage(studioMessage(studio, basket));
     go({ kind: "studio-review" });
   }
   function submitHome(event: React.FormEvent<HTMLFormElement>) {
@@ -190,7 +188,6 @@ export default function Services() {
       focusErrors(next, "home");
       return;
     }
-    setMessage(homeMessage(home));
     go({ kind: "home-review" });
   }
   function back() {
@@ -216,6 +213,16 @@ export default function Services() {
             : view?.kind === "membership"
               ? "UrbanCut Black Card"
               : "Premium Grooming at Your Location");
+  // Derive the review and handoff together from current entries, never a saved snapshot.
+  const requestNow = new Date();
+  const message =
+    view?.kind === "studio-review" &&
+    !Object.keys(validateStudio(studio, basket, requestNow)).length
+      ? studioMessage(studio, basket, requestNow)
+      : view?.kind === "home-review" &&
+          !Object.keys(validateHome(home, requestNow)).length
+        ? homeMessage(home, requestNow)
+        : "";
   const hasBack =
     view &&
     ["detail", "studio", "studio-review", "home-form", "home-review"].includes(
@@ -327,13 +334,9 @@ export default function Services() {
               </div>
               <div className="uc-panel-identity">
                 <div className="uc-panel-title">
-                  {!isStudio && (
-                    <p className="uc-kicker">
-                      {view.kind === "membership" ||
-                      currentCategory?.kind === "coming-soon"
-                        ? "Coming Soon / Preview"
-                        : "By arrangement"}
-                    </p>
+                  {(view.kind === "membership" ||
+                    currentCategory?.kind === "coming-soon") && (
+                    <p className="uc-kicker">Coming Soon / Preview</p>
                   )}
                   <h2 id="uc-dialog-title" ref={heading} tabIndex={-1}>
                     {title}
@@ -434,13 +437,18 @@ export default function Services() {
                   {(view.kind === "studio-review" ||
                     view.kind === "home-review") && (
                     <div className="uc-review">
-                      <p>Review these details before continuing to WhatsApp.</p>
                       <pre>{message}</pre>
-                      <p>
-                        You must press Send in WhatsApp. Opening the chat does
-                        not send this request, save it with the studio or
-                        confirm availability.
-                      </p>
+                      <div className="uc-handoff-note">
+                        <MessageCircle
+                          size={22}
+                          strokeWidth={1.8}
+                          aria-hidden="true"
+                        />
+                        <p>
+                          You’ll be taken to WhatsApp to send your booking
+                          request.
+                        </p>
+                      </div>
                       <a
                         className="uc-primary"
                         href={whatsappUrl(message)}
@@ -466,13 +474,8 @@ export default function Services() {
                           }
                         }}
                       >
-                        Continue to WhatsApp
+                        CONTINUE TO BOOKING
                       </a>
-                      <p className="uc-fine">
-                        Opens a new tab or the WhatsApp app. Your selection
-                        remains here if you return. You can also copy the
-                        request above.
-                      </p>
                     </div>
                   )}
                   {view.kind === "home" && (
