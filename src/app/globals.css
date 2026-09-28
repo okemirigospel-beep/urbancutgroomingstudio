@@ -2805,21 +2805,10 @@ textarea {
   display: none;
 }
 .uc-panel-identity {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 28px;
+  width: 100%;
 }
 .uc-panel-title {
   min-width: 0;
-}
-.uc-panel-logo {
-  width: 150px;
-  height: auto;
-  flex-shrink: 0;
-  background: #000;
-  border-radius: 3px;
-  padding: 7px;
 }
 .uc-service-meta {
   display: flex;
@@ -2937,9 +2926,6 @@ textarea {
   .uc-section-intro {
     margin-top: 20px;
   }
-  .uc-panel-logo {
-    width: 128px;
-  }
 }
 @media (max-width: 600px) {
   .studio-band-inner {
@@ -2966,13 +2952,6 @@ textarea {
   }
   .studio-info-group .opening-hours {
     gap: 12px 22px;
-  }
-  .uc-panel-identity {
-    gap: 14px;
-  }
-  .uc-panel-logo {
-    width: 100px;
-    padding: 5px;
   }
   .uc-panel-title h2 {
     font-size: 23px;

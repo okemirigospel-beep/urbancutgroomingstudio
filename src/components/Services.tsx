@@ -342,19 +342,6 @@ export default function Services() {
                     {title}
                   </h2>
                 </div>
-                {(isStudio ||
-                  view.kind === "home" ||
-                  view.kind === "home-form" ||
-                  view.kind === "home-review" ||
-                  view.kind === "studio-review") && (
-                  <Image
-                    className="uc-panel-logo"
-                    src="/media/urbancut-logo-header.svg"
-                    alt="URBANCUT Grooming Studio"
-                    width={1368}
-                    height={692}
-                  />
-                )}
               </div>
             </header>
             <div className="uc-modal-scroll" ref={scroll}>
@@ -445,7 +432,7 @@ export default function Services() {
                           aria-hidden="true"
                         />
                         <p>
-                          You’ll be taken to WhatsApp to send your booking
+                          You’ll be redirected to WhatsApp to send your booking
                           request.
                         </p>
                       </div>

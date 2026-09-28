@@ -35,3 +35,5 @@ Latest header correction: actual SVG is the principal brand element, using a tig
 Mobile header refined to a fluid 160–190px visible emblem with approximately 99–114px header height across 320–430px phones. Larger tablet/desktop logo sizes preserved.
 
 Booking copy cleanup (28 September 2026): concise current-state studio request, Listed total, optional notes only when supplied, one WhatsApp handoff callout and CONTINUE TO BOOKING. Date/time restrictions and existing agent destination preserved. See BOOKING-COPY-VERIFICATION.md for checks and screenshots.
+
+Service-panel correction (28 September 2026): removed branding from the shared category, detail and booking header; titles now occupy the full available width. WhatsApp callout wording updated to 'redirected'. Browser review at 360/768/1440 verified no header logo or overflow; category/detail navigation checked. Main navigation logo preserved. Build and TypeScript passed. Screenshots: docs/screenshots/panel-header/.
