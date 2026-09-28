@@ -32,8 +32,8 @@ export const categories: Category[] = [
     id: "wellness",
     name: "UrbanCut Wellness",
     image: "wellness",
-    caption: "Nail & Foot Care · Coming Soon",
-    kind: "studio",
+    caption: "Nail & Foot Care",
+    kind: "coming-soon",
   },
   {
     id: "home",

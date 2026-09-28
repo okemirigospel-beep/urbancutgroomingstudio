@@ -1,3 +1,5 @@
+> Historical verification record. Scheduling and Services presentation have since changed; see [current refinement](SERVICES-REFINEMENT.md). Old Sunday-closure/half-hour results below do not describe the current application.
+
 # Verification record — 23 September 2026
 
 ## Passed

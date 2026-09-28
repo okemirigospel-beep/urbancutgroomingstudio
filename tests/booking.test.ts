@@ -85,30 +85,57 @@ test("basket is idempotent and enforces availability even for tampered IDs", () 
   );
   assert.equal(selection(quantityService(basket, "kids-cut", 0)).length, 1);
 });
-test("times exclude known overruns without inventing unknown durations", () => {
-  assert.ok(!preferredTimes({ "signature-cut": 1 }).includes("17:30"));
-  assert.ok(!preferredTimes({ "express-cut": 1 }).includes("17:30"));
-  assert.ok(preferredTimes({ "kids-cut": 1 }).includes("17:30"));
-  assert.ok(!preferredTimes({ "signature-cut": 2 }).includes("17:00"));
-  assert.equal(preferredTimes({ "signature-cut": 11 }).length, 0);
+test("known duration filters closing-time overruns without invented unknown durations", () => {
   assert.ok(
-    validateStudio({ ...studio, time: "17:30" }, { "signature-cut": 1 }, now)
+    preferredTimes({ "signature-cut": 1 }, studio.date).includes("20:00"),
+  );
+  assert.ok(
+    preferredTimes({ "express-cut": 1 }, studio.date).includes("20:00"),
+  );
+  assert.ok(preferredTimes({ "kids-cut": 1 }, studio.date).includes("20:00"));
+  assert.ok(
+    !preferredTimes({ "signature-cut": 2 }, studio.date).includes("20:00"),
+  );
+  assert.ok(
+    preferredTimes({ "signature-cut": 2 }, studio.date).includes("19:00"),
+  );
+  assert.equal(preferredTimes({ "signature-cut": 17 }, studio.date).length, 0);
+  assert.equal(preferredTimes({ "signature-cut": 11 }, "2026-10-04").length, 0);
+  assert.ok(
+    validateStudio({ ...studio, time: "20:00" }, { "signature-cut": 2 }, now)
       .time,
   );
 });
-test("field-specific studio validation rejects empty, Sunday, same-day and forged times", () => {
+test("studio validation rejects same-day, invalid dates, half hours, Sunday mornings and closing", () => {
   assert.deepEqual(
     Object.keys(
       validateStudio({ ...studio, name: "", date: "", time: "" }, {}, now),
     ),
     ["name", "basket", "date", "time"],
   );
-  for (const date of ["2026-09-28", "2026-10-04", "2026-02-30"])
+  for (const date of ["2026-09-28", "2026-02-30"])
     assert.ok(validateStudio({ ...studio, date }, { "kids-cut": 1 }, now).date);
+  for (const time of ["08:00", "09:30", "20:30", "21:00"])
+    assert.ok(validateStudio({ ...studio, time }, { "kids-cut": 1 }, now).time);
   assert.ok(
-    validateStudio({ ...studio, time: "18:00" }, { "kids-cut": 1 }, now).time,
+    validateStudio(
+      { ...studio, date: "2026-10-04", time: "12:00" },
+      { "kids-cut": 1 },
+      now,
+    ).time,
+  );
+  assert.deepEqual(
+    validateStudio(
+      { ...studio, date: "2026-10-04", time: "13:00" },
+      { "kids-cut": 1 },
+      now,
+    ),
+    {},
   );
   assert.throws(() => studioMessage(studio, {}, now));
+  assert.throws(() =>
+    studioMessage({ ...studio, time: "21:00" }, { "kids-cut": 1 }, now),
+  );
 });
 test("studio handoff preserves quantity, total, Unicode and reserved URL characters without an address", () => {
   const text = studioMessage(
@@ -150,4 +177,42 @@ test("Home Service validates separately and outside-Abuja requests never carry t
   assert.ok(validateHome({ ...outside, destination: "" }, now).destination);
   assert.ok(validateHome({ ...home, address: "" }, now).address);
   assert.throws(() => homeMessage({ ...home, name: "" }, now));
+});
+
+test("home enquiries share the advance-day and hourly schedule including outside Abuja", () => {
+  const home: HomeRequest = {
+    ...studio,
+    region: "Outside Abuja",
+    destination: "Test city",
+    address: "QA only",
+  };
+  for (const time of ["08:00", "10:30", "21:00"])
+    assert.ok(validateHome({ ...home, time }, now).time);
+  for (const date of ["", "2026-09-28", "2026-02-30"])
+    assert.ok(validateHome({ ...home, date }, now).date);
+  assert.ok(
+    validateHome({ ...home, date: "2026-10-04", time: "09:00" }, now).time,
+  );
+  assert.deepEqual(
+    validateHome({ ...home, date: "2026-10-04", time: "13:00" }, now),
+    {},
+  );
+  assert.match(
+    homeMessage({ ...home, date: "2026-10-04", time: "20:00" }, now),
+    /20:00 \(Abuja time\)/,
+  );
+  assert.match(homeMessage(home, now), /at least one day ahead/);
+  assert.throws(() => homeMessage({ ...home, time: "21:00" }, now));
+  assert.throws(() => homeMessage({ ...home, date: "2026-09-28" }, now));
+});
+test("Coming Soon categories remain non-bookable even if their IDs are injected", () => {
+  for (const id of ["wellness", "membership"])
+    assert.equal(categories.find((c) => c.id === id)?.kind, "coming-soon");
+  assert.throws(() =>
+    studioMessage(studio, { manicure: 1, pedicure: 1, membership: 1 }, now),
+  );
+  assert.doesNotMatch(
+    studioMessage(studio, { "kids-cut": 1, manicure: 1 }, now),
+    /Manicure/,
+  );
 });

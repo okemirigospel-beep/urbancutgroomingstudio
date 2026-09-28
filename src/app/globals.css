@@ -2755,3 +2755,235 @@ textarea {
     margin-top: 0;
   }
 }
+
+/* Services refinement: coordinated metadata, schedule and panel branding. */
+.uc-section-heading {
+  align-items: center;
+}
+.uc-section-intro {
+  max-width: 510px;
+}
+.uc-section-intro p {
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.6;
+}
+.uc-section-intro .uc-intro-lead {
+  color: var(--ink);
+  font-size: clamp(19px, 1.6vw, 22px);
+  font-weight: 600;
+  line-height: 1.4;
+  margin-bottom: 10px;
+  letter-spacing: -0.015em;
+}
+.uc-card-action {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: color 0.18s;
+}
+.uc-category-card:hover .uc-card-action,
+.uc-category-card:focus-visible .uc-card-action,
+.uc-text-action:hover,
+.uc-text-action:focus-visible {
+  color: #806112;
+}
+.uc-card-status {
+  letter-spacing: 0.07em;
+}
+.uc-primary {
+  gap: 9px;
+}
+.uc-primary svg {
+  flex-shrink: 0;
+  stroke-width: 1.8;
+}
+.uc-selection .uc-primary {
+  font-size: 12px;
+  letter-spacing: 0.025em;
+}
+.uc-section-foot:empty {
+  display: none;
+}
+.uc-panel-identity {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+}
+.uc-panel-title {
+  min-width: 0;
+}
+.uc-panel-logo {
+  width: 150px;
+  height: auto;
+  flex-shrink: 0;
+  background: #000;
+  border-radius: 3px;
+  padding: 7px;
+}
+.uc-service-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 20px;
+  align-items: center;
+}
+.uc-meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.uc-meta-item svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  stroke-width: 1.8;
+  color: #806112;
+}
+.uc-service-detail .uc-meta-item svg {
+  width: 22px;
+  height: 22px;
+}
+.opening-hours {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 28px;
+}
+.opening-hours > div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.opening-hours span {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+.opening-hours strong {
+  font-size: 16px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.uc-schedule-help {
+  padding: 16px;
+  background: #f5f5f1;
+  border-left: 3px solid var(--gold);
+}
+.uc-schedule-help p {
+  font-size: 13px;
+  line-height: 1.6;
+  margin-top: 12px;
+  color: #535650;
+}
+.uc-fine:empty {
+  display: none;
+}
+.studio-band-inner {
+  grid-template-columns: 0.8fr 1.2fr 1fr;
+  align-items: start;
+  gap: 36px;
+  padding-block: 32px;
+}
+.studio-info-group {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+.studio-info-group > svg {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  stroke-width: 1.8;
+  margin-top: 2px;
+}
+.studio-info-group h2 {
+  color: #d1ab43;
+  font-family: var(--font-interface);
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  line-height: 1.5;
+  letter-spacing: 0.1em;
+  margin-bottom: 9px;
+  text-wrap: initial;
+}
+.studio-info-group p {
+  display: block;
+  font-size: 16px;
+  line-height: 1.55;
+  max-width: 270px;
+}
+.studio-info-group .opening-hours span {
+  color: #dedfd9;
+}
+.studio-info-group .opening-hours strong {
+  font-size: 17px;
+  color: white;
+}
+@media (max-width: 1100px) {
+  .studio-band-inner {
+    grid-template-columns: 1fr 1.5fr;
+    gap: 26px 32px;
+  }
+  .studio-info-group:last-child {
+    grid-column: 1 / -1;
+    border-top: 1px solid #343630;
+    padding-top: 22px;
+  }
+  .studio-info-group:last-child p {
+    max-width: none;
+  }
+}
+@media (max-width: 850px) {
+  .uc-section-intro {
+    margin-top: 20px;
+  }
+  .uc-panel-logo {
+    width: 128px;
+  }
+}
+@media (max-width: 600px) {
+  .studio-band-inner {
+    grid-template-columns: 1fr;
+    padding-block: 26px;
+    gap: 22px;
+  }
+  .studio-info-group + .studio-info-group {
+    border-top: 1px solid #343630;
+    padding-top: 22px;
+  }
+  .studio-info-group {
+    gap: 14px;
+  }
+  .studio-info-group:last-child {
+    grid-column: auto;
+  }
+  .studio-info-group > svg {
+    width: 25px;
+    height: 25px;
+  }
+  .studio-info-group p {
+    font-size: 15px;
+  }
+  .studio-info-group .opening-hours {
+    gap: 12px 22px;
+  }
+  .uc-panel-identity {
+    gap: 14px;
+  }
+  .uc-panel-logo {
+    width: 100px;
+    padding: 5px;
+  }
+  .uc-panel-title h2 {
+    font-size: 23px;
+  }
+  .uc-dialog-nav button {
+    font-size: 12px;
+  }
+  .uc-dialog-nav {
+    gap: 12px;
+  }
+  .uc-section-foot .uc-primary {
+    font-size: 13px;
+  }
+}

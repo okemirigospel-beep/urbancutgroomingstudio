@@ -67,3 +67,8 @@ Figma calls Pairing 37 “Crimson Serif + DM Sans.” The selected, verifiable f
 Central --font-interface / --font-editorial tokens map Next.js local font variables to roles; Tailwind sans/serif tokens share them. Three brand WOFF2 files plus the currency subset total 143,048 bytes. Fonts and OFL licenses live in src/app/fonts; exact names, provenance, conversion and hashes are in its README. No external font runtime requests, machine-only brand fonts, new application dependency or backend changes. Next/font/local supplies swap and adjusted temporary fallbacks.
 
 See TYPOGRAPHY-VERIFICATION.md and screenshots/typography/index.html for browser evidence and limitations.
+
+
+## Services discovery and booking refinement — 28 September 2026
+
+Reference lock: latest owner brief, inspected current site, four supplied PNG icon concepts and original logo. Preserve the established DM Sans/Crimson Text and black/white/gold system. Use installed Lucide Clock3/Timer/Tag/ShoppingCart with consistent supporting MapPin/CalendarDays, never dollar imagery. Strong Services lead and supporting sentence replace technical copy. Matching Coming Soon badges and informational-only Wellness views prevent misleading booking paths. Original logo derivative anchors available panel headers; names remain primary. New three-group information band and shared OpeningHours display consume the central daily schedule. See SERVICES-REFINEMENT.md for source assets, rules, responsive evidence and verification limits.

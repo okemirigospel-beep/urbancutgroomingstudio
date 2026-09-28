@@ -1,8 +1,9 @@
+import { openingHoursSummary, studioSchedule } from "./appointments.ts";
 export const brand = {
   name: "URBANCUT",
   region: "Abuja, Nigeria",
-  hours: "Monday–Saturday, 10:00 a.m.–6:00 p.m.",
-  timezone: "Africa/Lagos",
+  hours: openingHoursSummary,
+  timezone: studioSchedule.timeZone,
 };
 export const academy = [
   {
@@ -50,10 +51,7 @@ export const faqs = [
     "Where can I find the studio?",
     "We operate from one studio in Abuja, Nigeria. The exact address and directions are pending; please confirm them before planning your visit.",
   ],
-  [
-    "When are you open?",
-    "Monday to Saturday, 10 a.m. to 6 p.m., Abuja time. We are closed on Sundays.",
-  ],
+  ["When are you open?", openingHoursSummary],
   [
     "Can I request an appointment for today?",
     "Please request at least the day before your preferred visit. Same-day requests are not available through this flow. Your preferred time is not confirmed availability.",

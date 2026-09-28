@@ -1,3 +1,5 @@
+> Historical verification record. Scheduling and Services presentation have since changed; see [current refinement](SERVICES-REFINEMENT.md). Old Sunday-closure/half-hour results below do not describe the current application.
+
 # Services implementation verification — 27 September 2026
 
 Local preview: http://127.0.0.1:3000/#services, hosted on the owner's LENOVO Windows computer from C:\UCUTS. No deployment, tunnel, backend provisioning or WhatsApp agent was created. Restart locally with `powershell -ExecutionPolicy Bypass -File C:\UCUTS\scripts\local.ps1` if needed.

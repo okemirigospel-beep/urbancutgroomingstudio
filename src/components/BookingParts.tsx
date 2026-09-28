@@ -9,7 +9,15 @@ import {
   type StudioRequest,
   type HomeRequest,
 } from "@/lib/booking";
-import { firstRequestDate } from "@/lib/appointments";
+import {
+  firstRequestDate,
+  hourlyTimes,
+  timeLabel,
+  changeRequestDate,
+  advanceNotice,
+} from "@/lib/appointments";
+import { ShoppingCart } from "lucide-react";
+import OpeningHours from "./OpeningHours";
 
 export function Field({
   label,
@@ -134,7 +142,7 @@ export function SelectionSummary({
             disabled={!lines.length}
             onClick={onContinue}
           >
-            Continue to Booking
+            <ShoppingCart size={19} aria-hidden="true" /> CONTINUE TO BOOKING
           </button>
         )}
       </div>
@@ -144,7 +152,7 @@ export function SelectionSummary({
           disabled={!lines.length}
           onClick={onContinue}
         >
-          Continue to Booking
+          <ShoppingCart size={19} aria-hidden="true" /> CONTINUE TO BOOKING
         </button>
       )}
     </aside>
@@ -164,7 +172,7 @@ export function StudioForm({
   errors: Errors;
   submit: (event: React.FormEvent<HTMLFormElement>) => void;
 }) {
-  const times = preferredTimes(basket);
+  const times = preferredTimes(basket, data.date);
   const set = (key: keyof StudioRequest, value: string) =>
     update({ ...data, [key]: value });
   return (
@@ -183,52 +191,24 @@ export function StudioForm({
           {...inputError("studio-name", errors.name)}
         />
       </Field>
-      <div className="uc-form-row">
-        <Field
-          label="Preferred date (required)"
-          id="studio-date"
-          error={errors.date}
-        >
-          <input
-            type="date"
-            id="studio-date"
-            required
-            min={firstRequestDate()}
-            value={data.date}
-            onChange={(e) => set("date", e.target.value)}
-            {...inputError("studio-date", errors.date)}
-          />
-        </Field>
-        <Field
-          label="Preferred start time (required)"
-          id="studio-time"
-          error={errors.time}
-        >
-          <select
-            id="studio-time"
-            required
-            value={data.time}
-            onChange={(e) => set("time", e.target.value)}
-            {...inputError("studio-time", errors.time)}
-          >
-            <option value="">Choose a time</option>
-            {times.map((t) => (
-              <option key={t} value={t}>
-                {t} · Abuja time
-              </option>
-            ))}
-          </select>
-        </Field>
-      </div>
+      <RequestSchedule
+        prefix="studio"
+        data={data}
+        errors={errors}
+        times={times}
+        updateDate={(date) =>
+          update(changeRequestDate(data, date, preferredTimes(basket, date)))
+        }
+        updateTime={(time) => set("time", time)}
+      />
       <p className="uc-fine">
-        Monday–Saturday, 10 a.m.–6 p.m. Request at least the day before. Where a
-        selected service has no listed duration, the studio will confirm a
-        suitable start time.
+        Where a selected service has no listed duration, the studio will confirm
+        the final arrangement.
       </p>
-      {!times.length && (
+      {data.date && !times.length && (
         <p className="uc-error">
-          The selected timed services exceed one day’s opening hours. Adjust
-          quantities or contact the studio to arrange separate visits.
+          No eligible starts for this date and selection. Choose another day,
+          adjust quantities or contact the studio to arrange separate visits.
         </p>
       )}
       <Field label="Additional notes (optional)" id="studio-notes">
@@ -333,37 +313,19 @@ export function HomeForm({
           {...inputError("home-address", errors.address)}
         />
       </Field>
-      <div className="uc-form-row">
-        <Field
-          label="Preferred date (optional)"
-          id="home-date"
-          error={errors.date}
-        >
-          <input
-            id="home-date"
-            type="date"
-            min={firstRequestDate()}
-            value={data.date}
-            onChange={(e) => set("date", e.target.value)}
-            {...inputError("home-date", errors.date)}
-          />
-        </Field>
-        <Field
-          label={`Preferred time (${data.region === "Abuja" ? "Abuja" : "destination local"} time, optional)`}
-          id="home-time"
-          error={errors.time}
-        >
-          <input
-            id="home-time"
-            type="time"
-            value={data.time}
-            onChange={(e) => set("time", e.target.value)}
-            {...inputError("home-time", errors.time)}
-          />
-        </Field>
-      </div>
+      <RequestSchedule
+        prefix="home"
+        data={data}
+        errors={errors}
+        times={hourlyTimes(data.date)}
+        updateDate={(date) =>
+          update(changeRequestDate(data, date, hourlyTimes(date)))
+        }
+        updateTime={(time) => set("time", time)}
+      />
       <p className="uc-fine">
-        Date and time are preferences, subject to confirmation.
+        All preferred times use Abuja time, including outside-Abuja enquiries.
+        Travel, treatment duration and final arrangements require confirmation.
       </p>
       <Field label="Requirements or notes (optional)" id="home-notes">
         <textarea
@@ -377,5 +339,86 @@ export function HomeForm({
         Review Home Service Enquiry
       </button>
     </form>
+  );
+}
+
+function RequestSchedule({
+  prefix,
+  data,
+  errors,
+  times,
+  updateDate,
+  updateTime,
+}: {
+  prefix: string;
+  data: StudioRequest;
+  errors: Errors;
+  times: string[];
+  updateDate: (date: string) => void;
+  updateTime: (time: string) => void;
+}) {
+  const [timeNotice, setTimeNotice] = useState("");
+  return (
+    <>
+      <div className="uc-form-row">
+        <Field
+          label="Preferred date (required)"
+          id={`${prefix}-date`}
+          error={errors.date}
+        >
+          <input
+            id={`${prefix}-date`}
+            type="date"
+            required
+            min={firstRequestDate()}
+            value={data.date}
+            onChange={(e) => {
+              if (data.time)
+                setTimeNotice(
+                  "Date changed. Check your preferred start; if cleared, please choose another time.",
+                );
+              updateDate(e.target.value);
+            }}
+            {...inputError(`${prefix}-date`, errors.date)}
+          />
+        </Field>
+        <Field
+          label="Preferred start time (required)"
+          id={`${prefix}-time`}
+          error={errors.time}
+        >
+          <select
+            id={`${prefix}-time`}
+            required
+            disabled={!data.date}
+            value={data.time}
+            onChange={(e) => {
+              updateTime(e.target.value);
+              setTimeNotice("");
+            }}
+            {...inputError(`${prefix}-time`, errors.time)}
+          >
+            <option value="">
+              {data.date ? "Choose a time" : "Choose a date first"}
+            </option>
+            {times.map((t) => (
+              <option key={t} value={t}>
+                {timeLabel(t)} · Abuja time
+              </option>
+            ))}
+          </select>
+        </Field>
+      </div>
+      <p className="uc-fine" role="status">
+        {timeNotice}
+      </p>
+      <div className="uc-schedule-help">
+        <OpeningHours />
+        <p>
+          {advanceNotice} These are preferred starts, subject to confirmation,
+          not live availability.
+        </p>
+      </div>
+    </>
   );
 }

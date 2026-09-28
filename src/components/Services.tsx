@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import { Tag, Timer, ShoppingCart } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import {
   categories,
@@ -67,8 +68,16 @@ function Price({ service }: { service: Service }) {
   return (
     <p className="uc-service-meta">
       {service.status === "coming-soon" && <span>Planned price </span>}
-      <strong>{money(service.price)}</strong>
-      {service.duration && <span> · {service.duration} minutes</span>}
+      <span className="uc-meta-item">
+        <Tag aria-hidden="true" />
+        <strong>{money(service.price)}</strong>
+      </span>
+      {service.duration && (
+        <span className="uc-meta-item">
+          <Timer aria-hidden="true" />
+          {service.duration} minutes
+        </span>
+      )}
     </p>
   );
 }
@@ -100,10 +109,11 @@ export default function Services() {
     view?.kind === "list" ? view.category : currentService?.category;
   const currentCategory = categories.find((c) => c.id === categoryId);
   const isStudio =
-    view?.kind === "list" || view?.kind === "detail" || view?.kind === "studio";
+    view?.kind === "studio" ||
+    (view?.kind === "list" && currentCategory?.kind === "studio") ||
+    (view?.kind === "detail" && currentService?.status === "bookable");
   const lines = selection(basket);
   const count = lines.reduce((s, l) => s + l.quantity, 0);
-  const total = lines.reduce((s, l) => s + l.total, 0);
 
   useEffect(() => {
     const node = dialog.current;
@@ -140,7 +150,7 @@ export default function Services() {
     event: React.MouseEvent<HTMLButtonElement>,
   ) {
     trigger.current = event.currentTarget;
-    if (category.kind === "studio") {
+    if (category.kind === "studio" || category.id === "wellness") {
       lastCategory.current = category.id as CategoryId;
       go({ kind: "list", category: category.id as CategoryId });
     } else go({ kind: category.id === "home" ? "home" : "membership" });
@@ -223,10 +233,15 @@ export default function Services() {
             Our Services
           </h2>
         </div>
-        <p>
-          Explore our grooming services at the studio, or enquire about premium
-          grooming at your location.
-        </p>
+        <div className="uc-section-intro">
+          <p className="uc-intro-lead">
+            Precision in every detail. Confidence in every finish.
+          </p>
+          <p>
+            Explore cuts, grooming and care shaped around the way you want to
+            look and feel.
+          </p>
+        </div>
       </div>
       <div className="uc-category-grid">
         {categories.map((category) => (
@@ -235,7 +250,7 @@ export default function Services() {
             className="uc-category-card"
             onClick={(event) => open(category, event)}
             aria-haspopup="dialog"
-            aria-label={`${category.name} — ${category.kind === "studio" ? "View All Services" : "View Details"}`}
+            aria-label={`${category.name} — ${category.kind === "studio" ? "View All Services" : category.kind === "coming-soon" ? "Coming Soon — View Preview" : "View Details"}`}
           >
             <div className="uc-card-image">
               <Image
@@ -245,8 +260,8 @@ export default function Services() {
                 height={1000}
                 sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw"
               />
-              {category.id === "membership" && (
-                <span className="uc-status uc-card-status">Coming Soon</span>
+              {category.kind === "coming-soon" && (
+                <span className="uc-status uc-card-status">COMING SOON</span>
               )}
             </div>
             <div className="uc-card-copy">
@@ -255,17 +270,15 @@ export default function Services() {
               <span className="uc-card-action">
                 {category.kind === "studio"
                   ? "View All Services"
-                  : "View Details"}
+                  : category.kind === "coming-soon"
+                    ? "View Preview"
+                    : "View Details"}
               </span>
             </div>
           </button>
         ))}
       </div>
       <div className="uc-section-foot">
-        <p>
-          Category artwork illustrates each offering. Availability is shown in
-          the service details.
-        </p>
         {count > 0 && (
           <button
             className="uc-primary"
@@ -274,7 +287,7 @@ export default function Services() {
               go({ kind: "studio" });
             }}
           >
-            Review selection · {count} · {money(total)}
+            <ShoppingCart size={19} aria-hidden="true" /> CONTINUE TO BOOKING
           </button>
         )}
       </div>
@@ -312,16 +325,34 @@ export default function Services() {
                   Close
                 </button>
               </div>
-              <p className="uc-kicker">
-                {isStudio || view.kind === "studio-review"
-                  ? "URBANCUT / STUDIO VISIT"
-                  : view.kind === "membership"
-                    ? "URBANCUT / MEMBERSHIP PREVIEW"
-                    : "URBANCUT / BY ARRANGEMENT"}
-              </p>
-              <h2 id="uc-dialog-title" ref={heading} tabIndex={-1}>
-                {title}
-              </h2>
+              <div className="uc-panel-identity">
+                <div className="uc-panel-title">
+                  {!isStudio && (
+                    <p className="uc-kicker">
+                      {view.kind === "membership" ||
+                      currentCategory?.kind === "coming-soon"
+                        ? "Coming Soon / Preview"
+                        : "By arrangement"}
+                    </p>
+                  )}
+                  <h2 id="uc-dialog-title" ref={heading} tabIndex={-1}>
+                    {title}
+                  </h2>
+                </div>
+                {(isStudio ||
+                  view.kind === "home" ||
+                  view.kind === "home-form" ||
+                  view.kind === "home-review" ||
+                  view.kind === "studio-review") && (
+                  <Image
+                    className="uc-panel-logo"
+                    src="/media/urbancut-logo-header.svg"
+                    alt="URBANCUT Grooming Studio"
+                    width={1368}
+                    height={692}
+                  />
+                )}
+              </div>
             </header>
             <div className="uc-modal-scroll" ref={scroll}>
               <div

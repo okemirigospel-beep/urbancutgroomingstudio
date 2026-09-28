@@ -1,5 +1,10 @@
 import { services, money, homeOffering } from "./catalogue.ts";
-import { dateError, timeOptions, firstRequestDate } from "./appointments.ts";
+import {
+  dateError,
+  hourlyTimes,
+  advanceNotice,
+  studioSchedule,
+} from "./appointments.ts";
 export const whatsappNumber = "2349163444436";
 export const whatsappBase = `https://wa.me/${whatsappNumber}`;
 export const whatsappUrl = (message: string) =>
@@ -49,16 +54,13 @@ export function quantityService(
     return basket;
   return { ...basket, [id]: quantity };
 }
-export function preferredTimes(basket: Basket) {
+export function preferredTimes(basket: Basket, date: string) {
   // Known work is a lower bound, not a promised combined appointment duration.
   const knownMinutes = selection(basket).reduce(
     (sum, line) => sum + (line.service.duration ?? 0) * line.quantity,
     0,
   );
-  return timeOptions.filter((t) => {
-    const [h, m] = t.split(":").map(Number);
-    return h * 60 + m + knownMinutes <= 18 * 60;
-  });
+  return hourlyTimes(date, knownMinutes);
 }
 export function validateStudio(
   data: StudioRequest,
@@ -71,9 +73,8 @@ export function validateStudio(
     errors.basket = "Add at least one available studio service.";
   const dateIssue = dateError(data.date, now);
   if (dateIssue) errors.date = dateIssue;
-  if (!preferredTimes(basket).includes(data.time))
-    errors.time =
-      "Choose a preferred start time that allows the selected timed services to finish by 6 p.m.";
+  if (!preferredTimes(basket, data.date).includes(data.time))
+    errors.time = `Choose an eligible hourly start for this day that allows known service durations to finish by ${studioSchedule.close - 12} PM.`;
   return errors;
 }
 export function validateHome(data: HomeRequest, now = new Date()): Errors {
@@ -88,20 +89,11 @@ export function validateHome(data: HomeRequest, now = new Date()): Errors {
         : "Enter the destination address or venue details.";
   if (data.region === "Outside Abuja" && !data.destination.trim())
     errors.destination = "Enter the destination city, state and country.";
-  // Home visits are by arrangement: no invented studio-hours rule for international visits.
-  if (data.date) {
-    const day = new Date(`${data.date}T12:00:00Z`);
-    if (
-      !/^\d{4}-\d{2}-\d{2}$/.test(data.date) ||
-      !Number.isFinite(day.getTime()) ||
-      day.toISOString().slice(0, 10) !== data.date
-    )
-      errors.date = "Choose a valid preferred date.";
-    else if (data.date < firstRequestDate(now))
-      errors.date = "Choose an advance date for your enquiry.";
-  }
-  if (data.time && !/^([01]\d|2[0-3]):[0-5]\d$/.test(data.time))
-    errors.time = "Choose a valid preferred time.";
+  const dateIssue = dateError(data.date, now);
+  if (dateIssue) errors.date = dateIssue;
+  if (!hourlyTimes(data.date).includes(data.time))
+    errors.time =
+      "Choose an hourly preferred start for the selected day, in Abuja time.";
   return errors;
 }
 export function studioMessage(
@@ -123,6 +115,7 @@ export function studioMessage(
     `Preferred date: ${data.date}`,
     `Preferred time: ${data.time} (Abuja time)`,
     `Notes: ${data.notes.trim() || "None"}`,
+    advanceNotice,
     "Please confirm availability, final amount and appointment details.",
   ].join("\n");
 }
@@ -140,9 +133,10 @@ export function homeMessage(data: HomeRequest, now = new Date()) {
           `Listed package price: ${money(homeOffering.price)}, subject to confirmed arrangements`,
         ]),
     `Address / venue: ${data.address.trim()}`,
-    `Preferred date: ${data.date || "To be arranged"}`,
-    `Preferred time: ${data.time || "To be arranged"}${data.region === "Abuja" ? " (Abuja time)" : " (destination local time; please confirm)"}`,
+    `Preferred date: ${data.date}`,
+    `Preferred time: ${data.time} (Abuja time)`,
     `Notes: ${data.notes.trim() || "None"}`,
+    advanceNotice,
     "Please confirm treatments, visit arrangements, availability and final quote.",
   ].join("\n");
 }

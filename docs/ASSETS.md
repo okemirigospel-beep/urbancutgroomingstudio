@@ -54,3 +54,8 @@ The supplied artwork is not represented as documentary studio/staff/treatment ph
 ## Self-hosted typography — 27 September 2026
 
 Four licensed WOFF2 assets and three OFL licenses are tracked under src/app/fonts. The fonts/README.md records source URLs, real weights, Unicode coverage, currency-only fallback, conversion and hashes. All runtime font assets are included in Git; no separate storage or API credentials are required. Screenshot evidence is under docs/screenshots/typography. The original logo and all existing media remain byte-for-byte unchanged.
+
+
+## Services refinement references — 28 September 2026
+
+Inspected icons for service section.zip: clock icon.png, duration icon.png, price tag.png, shopping cart.png. These are shape references, adapted using the existing Lucide SVG family, not imported as raster production controls. No new runtime asset dependency. The new supplied logo is byte-identical to the original tracked SVG; panel headers reuse the already approved tight-bounds derivative. Source ZIP/originals remain unchanged. See SERVICES-REFINEMENT.md.

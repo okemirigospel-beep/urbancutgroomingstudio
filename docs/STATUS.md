@@ -1,3 +1,7 @@
+# Current Services and schedule milestone — 28 September 2026
+
+Services/booking refinements are implemented. Open every day: Mon–Sat 9 AM–9 PM; Sunday 1 PM–9 PM, Africa/Lagos. Shared hourly preferred starts end at 8 PM, filtered by known studio durations. Both forms enforce next-day requests; Home enquiries require date/time in Abuja time and detailed address. Wellness and Black Card are non-bookable previews. See SERVICES-REFINEMENT.md for exact rules, verification and screenshots. This supersedes all older hours/Sunday-closure notes below.
+
 # Current typography milestone — 27 September 2026
 
 Site-wide DM Sans + selective Crimson Text is implemented locally. Self-hosted real italic, explicit semantic font roles and a naira-only fallback preserve readable service/booking information. Build, typecheck and all 10 tests pass. Browser evidence and remaining native-zoom verification limitation are documented in docs/TYPOGRAPHY-VERIFICATION.md. No deployment or backend changes. Existing service scope and pending business inputs below remain applicable.
