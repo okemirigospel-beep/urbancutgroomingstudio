@@ -78,7 +78,7 @@ export const faqs = [
   ],
   [
     "Can I buy grooming products?",
-    "The product range has not launched. Beard oil, beard balm and styling cream are sample previews with no checkout or stock promise.",
+    "Yes. Choose a product and quantity, then request studio pickup or delivery within Abuja through WhatsApp. Delivery fees are confirmed there.",
   ],
   [
     "Do I need to pay a deposit?",

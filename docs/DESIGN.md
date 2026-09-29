@@ -76,3 +76,6 @@ Reference lock: latest owner brief, inspected current site, four supplied PNG ic
 Booking handoff: one compact cream/gold callout with Lucide MessageCircle immediately above CONTINUE TO BOOKING. Removed repetitive explanatory paragraphs; retained clear request summary and necessary field/scheduling labels. No confirmation claim.
 
 Latest service-panel direction supersedes prior logo-in-panel guidance: no emblem inside service-flow headers. Full-width titles below the back/close row; no reserved logo gap. Existing callout styling/icon and CONTINUE TO BOOKING remain unchanged.
+
+
+Products reference lock (29 September 2026): current About screenshot supplies the dark-container position; the supplied product photographs and new brief govern the design. Bold DM Sans OUR PRODUCTS heading, one supporting line, square uncropped imagery, white rectangular actions and restrained gold tag/focus accents. Three columns at 1000px+, two at 600–999px and one below 600px. Purchase panels reuse service typography/controls with separate state and validation. No logo in the panel header.

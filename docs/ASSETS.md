@@ -59,3 +59,6 @@ Four licensed WOFF2 assets and three OFL licenses are tracked under src/app/font
 ## Services refinement references — 28 September 2026
 
 Inspected icons for service section.zip: clock icon.png, duration icon.png, price tag.png, shopping cart.png. These are shape references, adapted using the existing Lucide SVG family, not imported as raster production controls. No new runtime asset dependency. The new supplied logo is byte-identical to the original tracked SVG; panel headers reuse the already approved tight-bounds derivative. Source ZIP/originals remain unchanged. See SERVICES-REFINEMENT.md.
+
+
+Products (29 September 2026): six extensionless files in C:/Users/LENOVO/Pictures/PRODUCTS IMAGES_.zip verified as PNG 1254x1254. Exact filename/product mapping is documented in PRODUCTS-VERIFICATION.md. Original archive remains untouched; descriptively named original PNG copies are at C:/Users/LENOVO/.cache/urbancut-product-originals. Source originals require separate storage/backup. Tracked web assets in public/media/products are uncropped 960x960 WebP derivatives (quality 88), about 461KB total, with responsive Next Image delivery. Packaging/labels/colours were not redesigned.

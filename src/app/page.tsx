@@ -2,18 +2,11 @@ import OpeningHours from "@/components/OpeningHours";
 import { advanceNotice } from "@/lib/appointments";
 import { whatsappBase } from "@/lib/booking";
 import Image from "next/image";
-import {
-  Clock3,
-  CalendarDays,
-  MapPin,
-  Scissors,
-  Sparkles,
-  Check,
-  Plus,
-} from "lucide-react";
+import { Clock3, CalendarDays, MapPin, Check, Plus } from "lucide-react";
 import Header from "@/components/Header";
 import HeroSlideshow from "@/components/HeroSlideshow";
 import { hero } from "@/lib/hero";
+import Products from "@/components/Products";
 import Services from "@/components/Services";
 import { academy, faqs, money, brand } from "@/lib/content";
 
@@ -73,59 +66,7 @@ export default function Home() {
         <div className="shell">
           <Services />
         </div>
-        <section id="about" className="dark-panel about-panel shell section">
-          <div className="about-heading">
-            <p className="eyebrow">02 / THE URBANCUT WAY</p>
-            <h2 className="type-editorial">
-              A considered cut.
-              <br />
-              <em className="headline-emphasis">A personal experience.</em>
-            </h2>
-            <p>
-              Professional grooming and thoughtful personal service, together in
-              Abuja. From barbering to braiding and loc care, we focus on
-              careful work, a considered finish and an experience shaped around
-              you.
-            </p>
-          </div>
-          <div className="standards">
-            {[
-              [
-                "01",
-                "First, we listen.",
-                "Your preferences give every service its direction.",
-              ],
-              [
-                "02",
-                "Care in the process.",
-                "Hygiene and careful work are part of our commitment.",
-              ],
-              [
-                "03",
-                "Your time matters.",
-                "Punctuality and attentive service guide the experience.",
-              ],
-              [
-                "04",
-                "Made personal.",
-                "A finish that feels like you, not just another haircut.",
-              ],
-            ].map(([n, t, d]) => (
-              <div key={n}>
-                <span>{n}</span>
-                <h3>{t}</h3>
-                <p>{d}</p>
-              </div>
-            ))}
-          </div>
-          <div className="about-bottom">
-            <span>Our purpose</span>
-            <p>
-              To help every client leave looking sharp and feeling confident.
-            </p>
-            <Scissors size={26} />
-          </div>
-        </section>
+        <Products />
         <section id="gallery" className="section shell">
           <div className="section-top">
             <div>
@@ -229,43 +170,6 @@ export default function Home() {
               </details>
             ))}
           </div>
-        </section>
-        <section id="products" className="section shell">
-          <div className="section-top">
-            <div>
-              <p className="eyebrow">06 / BEYOND THE CHAIR</p>
-              <h2>
-                A little care,
-                <br />
-                <em className="headline-emphasis">to take with you.</em>
-              </h2>
-            </div>
-            <p className="section-intro">
-              Our grooming range is coming soon. Here’s a first look at the
-              planned line-up.
-            </p>
-          </div>
-          <div className="product-list">
-            {[
-              ["Beard oil", 8000, "01"],
-              ["Beard balm", 7000, "02"],
-              ["Styling cream", 6000, "03"],
-            ].map(([name, price, n]) => (
-              <article key={name} className="product-item">
-                <span className="product-index">{n}</span>
-                <div>
-                  <span className="tag">Coming soon</span>
-                  <h3>{name}</h3>
-                  <p>Sample price · {money(Number(price))}</p>
-                </div>
-                <Sparkles size={28} strokeWidth={1} aria-hidden="true" />
-              </article>
-            ))}
-          </div>
-          <p className="prototype-note">
-            Product imagery and specifications are pending. No products are
-            available to purchase.
-          </p>
         </section>
         <section id="faq" className="faq-section section shell">
           <div className="faq-intro">
@@ -380,7 +284,6 @@ export default function Home() {
           </p>
           <nav aria-label="Footer navigation">
             <a href="#services">Services</a>
-            <a href="#about">About</a>
             <a href="#gallery">Gallery</a>
             <a href="#reviews">Reviews</a>
             <a href="#academy">Academy</a>

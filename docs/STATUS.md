@@ -37,3 +37,6 @@ Mobile header refined to a fluid 160–190px visible emblem with approximately 9
 Booking copy cleanup (28 September 2026): concise current-state studio request, Listed total, optional notes only when supplied, one WhatsApp handoff callout and CONTINUE TO BOOKING. Date/time restrictions and existing agent destination preserved. See BOOKING-COPY-VERIFICATION.md for checks and screenshots.
 
 Service-panel correction (28 September 2026): removed branding from the shared category, detail and booking header; titles now occupy the full available width. WhatsApp callout wording updated to 'redirected'. Browser review at 360/768/1440 verified no header logo or overflow; category/detail navigation checked. Main navigation logo preserved. Build and TypeScript passed. Screenshots: docs/screenshots/panel-header/.
+
+
+Products implementation (29 September 2026): the About block and obsolete white product previews are replaced by one black six-product catalogue immediately after Services. Navigation/FAQ now point to this catalogue. Independent purchase form supports quantity, studio pickup and Abuja-only delivery through the existing manual WhatsApp destination. No appointment validation, payments or storage added. See PRODUCTS-VERIFICATION.md.
