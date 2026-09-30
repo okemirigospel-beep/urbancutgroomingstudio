@@ -161,7 +161,7 @@ function LookbookPhotos() {
     if (!eligible.current || busy) return;
     autoplay.current = setTimeout(() => {
       if (!manualRef.current && eligible.current) navigateRef.current(1, true);
-    }, 4000);
+    }, 3000);
     return () => {
       if (autoplay.current) clearTimeout(autoplay.current);
     };

@@ -1,7 +1,7 @@
 # Lookbook continuation — 30 September 2026
 Supersedes the manual-only default in LOOKBOOK-VERIFICATION.md.
 
-- Fresh visits advance automatically after 4000ms of visible idle time; the existing 400ms ease-in-out directional transition remains. All 26 assets, order and framing retained.
+- Fresh visits advance automatically after 3000ms of visible idle time; the existing 400ms ease-in-out directional transition remains. All 26 assets, order and framing retained.
 - Either arrow synchronously latches manual mode and cancels autoplay for this mounted page visit. One pending manual direction is queued during an active transition. A decoding autoplay request checks eligibility again before displaying a new image.
 - Offscreen/hidden-tab suspension restarts a fresh interval only in automatic mode. Reduced motion latches manual mode and disables swipe; removing the preference does not restart automatic mode.
 - Video component and hero remain unchanged.
