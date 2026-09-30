@@ -117,7 +117,7 @@ export default function HeroSlideshow() {
             ) : (
               <img
                 src={`/media/grooming/look-${photo.id}-720.webp`}
-                srcSet={`/media/grooming/look-${photo.id}-480.webp 480w, /media/grooming/look-${photo.id}-720.webp 720w`}
+                srcSet={`/media/grooming/look-${photo.id}-480.webp 480w, /media/grooming/look-${photo.id}-720.webp ${photo.width}w`}
                 sizes="(max-width: 760px) calc(100vw - 40px), (max-width: 900px) 620px, 576px"
                 style={{ objectPosition: photo.position }}
                 onLoad={() =>

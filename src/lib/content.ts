@@ -78,7 +78,7 @@ export const faqs = [
   ],
   [
     "Can I buy grooming products?",
-    "Yes. Choose a product and quantity, then request studio pickup or delivery within Abuja through WhatsApp. Delivery fees are confirmed there.",
+    "Our grooming collection is launching soon. Listed products are not yet available for purchase.",
   ],
   [
     "Do I need to pay a deposit?",

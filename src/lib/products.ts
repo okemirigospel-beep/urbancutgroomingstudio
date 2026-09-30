@@ -1,6 +1,7 @@
 export const products = [
   {
     id: "wildgro-beard-growth-oil",
+    status: "coming-soon" as "coming-soon" | "available",
     name: "WildGro Beard Growth Oil",
     price: 18500,
     image: "/media/products/wildgro-beard-growth-oil.webp",
@@ -8,6 +9,7 @@ export const products = [
   },
   {
     id: "beard-balm",
+    status: "coming-soon" as "coming-soon" | "available",
     name: "Beard Balm",
     price: 16500,
     image: "/media/products/beard-balm.webp",
@@ -15,6 +17,7 @@ export const products = [
   },
   {
     id: "volumizing-shampoo",
+    status: "coming-soon" as "coming-soon" | "available",
     name: "Volumizing Shampoo with Protein",
     price: 20500,
     image: "/media/products/volumizing-shampoo.webp",
@@ -22,6 +25,7 @@ export const products = [
   },
   {
     id: "leave-in-milk-conditioner",
+    status: "coming-soon" as "coming-soon" | "available",
     name: "Cloves-Infused Leave-In Milk Conditioner with Caffeine",
     price: 20500,
     image: "/media/products/leave-in-milk-conditioner.webp",
@@ -29,6 +33,7 @@ export const products = [
   },
   {
     id: "wildgro-hair-growth",
+    status: "coming-soon" as "coming-soon" | "available",
     name: "WildGro Hair Growth",
     price: 18500,
     image: "/media/products/wildgro-hair-growth.webp",
@@ -36,12 +41,17 @@ export const products = [
   },
   {
     id: "witch-hazel-aftershave-tonic",
+    status: "coming-soon" as "coming-soon" | "available",
     name: "Witch Hazel Aftershave Tonic",
     price: 18500,
     image: "/media/products/witch-hazel-aftershave-tonic.webp",
     alt: "UrbanCut Witch Hazel Aftershave Tonic in an amber bottle",
   },
 ] as const;
+export const isProductAvailable = (id: string) =>
+  products.some(
+    (product) => product.id === id && product.status === "available",
+  );
 export type Product = (typeof products)[number];
 export type Purchase = {
   name: string;
@@ -79,7 +89,8 @@ export function productSubtotal(id: string, quantity: string): number | null {
 }
 export function validatePurchase(id: string, data: Purchase): PurchaseErrors {
   const errors: PurchaseErrors = {};
-  if (!products.some((p) => p.id === id)) errors.product = "Choose a product.";
+  if (!isProductAvailable(id))
+    errors.product = "This product is not available for purchase.";
   if (!data.name.trim()) errors.name = "Enter your name.";
   if (productSubtotal(id, data.quantity) === null)
     errors.quantity = "Enter a valid positive whole-number quantity.";

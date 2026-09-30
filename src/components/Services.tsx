@@ -236,7 +236,7 @@ export default function Services() {
     >
       <div className="uc-section-heading">
         <div>
-          <h2 id="services-heading" className="type-editorial">
+          <h2 id="services-heading" className="type-editorial uc-section-title">
             Our Services
           </h2>
         </div>

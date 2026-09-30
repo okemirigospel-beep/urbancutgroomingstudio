@@ -62,3 +62,6 @@ Inspected icons for service section.zip: clock icon.png, duration icon.png, pric
 
 
 Products (29 September 2026): six extensionless files in C:/Users/LENOVO/Pictures/PRODUCTS IMAGES_.zip verified as PNG 1254x1254. Exact filename/product mapping is documented in PRODUCTS-VERIFICATION.md. Original archive remains untouched; descriptively named original PNG copies are at C:/Users/LENOVO/.cache/urbancut-product-originals. Source originals require separate storage/backup. Tracked web assets in public/media/products are uncropped 960x960 WebP derivatives (quality 88), about 461KB total, with responsive Next Image delivery. Packaging/labels/colours were not redesigned.
+
+
+homepageadditives.zip: 14 valid JPEG photographs appended as IDs 7–20 in the requested order. Byte hashes/source dimensions and mapping recorded in slideshow-additions.json. All EXIF orientations normalized; 480/720-name WebP derivatives generated without cropping or upscaling. Narrow source WA0068 remains 607px wide in its larger derivative; srcset reports its true width. No decoded-pixel duplicates found against the six original slideshow JPEGs or within additions. Original ZIP remains in Downloads and requires separate source-asset backup; optimized derivatives are tracked. Original six derivatives unchanged.

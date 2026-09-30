@@ -1900,7 +1900,8 @@ textarea {
   gap: 40px;
   margin-bottom: 36px;
 }
-.uc-section-heading h2 {
+.uc-section-heading h2,
+.uc-section-title {
   font-size: clamp(40px, 4.5vw, 64px);
 }
 .uc-section-heading > p {
@@ -2831,11 +2832,7 @@ textarea {
   margin-bottom: 38px;
 }
 .uc-products-heading h2 {
-  font-family: var(--font-interface);
-  font-size: clamp(32px, 4.5vw, 56px);
-  font-weight: 700;
-  letter-spacing: -0.045em;
-  line-height: 1.1;
+  color: #fff;
 }
 .uc-products-heading p {
   margin-top: 16px;
@@ -3099,4 +3096,49 @@ textarea {
   color: #3e423e;
   line-height: 1.6;
   margin-block: 24px 28px;
+}
+
+.uc-product-status {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 13px 12px;
+  border: 1px solid #4d5049;
+  border-radius: 3px;
+  background: #22241f;
+  color: #e1e2d9;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  cursor: default;
+}
+.uc-product-status:focus-visible {
+  outline: 2px solid #dcc67d;
+  outline-offset: 4px;
+}
+.uc-product-tooltip {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  width: max-content;
+  max-width: calc(100% + 10px);
+  padding: 9px 12px;
+  border: 1px solid #696b61;
+  border-radius: 3px;
+  background: #f3f1e9;
+  color: #25261f;
+  font-size: 12px;
+  line-height: 1.5;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-align: center;
+  visibility: hidden;
+}
+.uc-product-status:not([data-dismissed="true"]):is(:hover, :focus-within)
+  .uc-product-tooltip {
+  visibility: visible;
 }
