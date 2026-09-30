@@ -3184,3 +3184,17 @@ textarea {
     animation: none !important;
   }
 }
+
+/* Shared scale for the three catalogue/media section headings only. */
+#services-heading, #products-heading, #lookbook-heading {
+  font-size: clamp(44px, 5.5vw, 78px);
+}
+.lookbook > h2 { margin-bottom: 16px; }
+.lookbook-intro {
+  max-width: 60ch;
+  font-size: 17px;
+  line-height: 1.65;
+  color: #4e514e;
+  margin-bottom: 32px;
+}
+#services-heading, #products-heading, #lookbook-heading { overflow-wrap: anywhere; }

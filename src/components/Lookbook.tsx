@@ -104,7 +104,7 @@ function LookbookVideo() {
   );
 }
 
-function ManualPhotos() {
+function LookbookPhotos() {
   const [index, setIndex] = useState(0);
   const [transition, setTransition] = useState<{
     next: number;
@@ -117,6 +117,56 @@ function ManualPhotos() {
   const mounted = useRef(false);
   const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const imageLoads = useRef(new Map<string, Promise<void>>());
+  const frame = useRef<HTMLDivElement>(null);
+  const [manual, setManual] = useState(false);
+  const manualRef = useRef(false);
+  const [visible, setVisible] = useState(false);
+  const [tabVisible, setTabVisible] = useState(true);
+  const eligible = useRef(false);
+  const autoplay = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const queued = useRef<-1 | 1 | null>(null);
+  const navigateRef = useRef<
+    (direction: -1 | 1, automatic?: boolean, base?: number) => void
+  >(() => {});
+  function stopAutoplay() {
+    manualRef.current = true;
+    setManual(true);
+    if (autoplay.current) clearTimeout(autoplay.current);
+  }
+  useEffect(() => {
+    const media = matchMedia("(prefers-reduced-motion: reduce)");
+    const motion = () => {
+      if (media.matches) stopAutoplay();
+    };
+    const visibility = () => setTabVisible(!document.hidden);
+    motion();
+    visibility();
+    media.addEventListener("change", motion);
+    document.addEventListener("visibilitychange", visibility);
+    const observer = new IntersectionObserver(
+      ([entry]) =>
+        setVisible(entry.isIntersecting && entry.intersectionRatio >= 0.1),
+      { threshold: 0.1 },
+    );
+    if (frame.current) observer.observe(frame.current);
+    return () => {
+      observer.disconnect();
+      media.removeEventListener("change", motion);
+      document.removeEventListener("visibilitychange", visibility);
+      if (autoplay.current) clearTimeout(autoplay.current);
+    };
+  }, []);
+  eligible.current = visible && tabVisible && !reduced && !manual;
+  useEffect(() => {
+    if (!eligible.current || busy) return;
+    autoplay.current = setTimeout(() => {
+      if (!manualRef.current && eligible.current) navigateRef.current(1, true);
+    }, 4000);
+    return () => {
+      if (autoplay.current) clearTimeout(autoplay.current);
+    };
+  }, [visible, tabVisible, reduced, manual, busy, index]);
+
   useEffect(() => {
     mounted.current = true;
     return () => {
@@ -150,19 +200,33 @@ function ManualPhotos() {
     setTransition(null);
     setBusy(false);
     locked.current = false;
+    const direction = queued.current;
+    queued.current = null;
+    if (direction !== null)
+      queueMicrotask(() => {
+        if (mounted.current) navigateRef.current(direction, false, next);
+      });
   }
   useEffect(() => {
     if (reduced && transition) finish(transition.next);
   }, [reduced, transition]);
-  async function navigate(direction: -1 | 1) {
-    if (locked.current) return;
+  async function navigate(direction: -1 | 1, automatic = false, base = index) {
+    if (!automatic) stopAutoplay();
+    if (locked.current) {
+      if (!automatic && queued.current === null) queued.current = direction;
+      return;
+    }
     locked.current = true;
     setBusy(true);
     setError("");
-    const next = galleryIndex(index, direction);
+    const next = galleryIndex(base, direction);
     try {
       await prepare(next);
       if (!mounted.current) return;
+      if (automatic && (manualRef.current || !eligible.current)) {
+        finish(base);
+        return;
+      }
       if (reduced) {
         finish(next);
         return;
@@ -175,11 +239,11 @@ function ManualPhotos() {
       );
     } catch {
       if (!mounted.current) return;
-      locked.current = false;
-      setBusy(false);
+      finish(base);
       setError("This photograph could not load. Please try again.");
     }
   }
+  navigateRef.current = navigate;
   const photo = (next: number, className: string, hidden: boolean) => {
     const item = lookbookPhotos[next];
     return (
@@ -203,6 +267,7 @@ function ManualPhotos() {
     <div className="lookbook-photo-column" aria-label="Photograph gallery">
       <div
         className={`lookbook-frame lookbook-photos ${transition ? (transition.direction === 1 ? "go-next" : "go-previous") : ""}`}
+        ref={frame}
         aria-busy={busy}
       >
         {photo(
@@ -216,7 +281,6 @@ function ManualPhotos() {
         <button
           type="button"
           aria-label="Previous photograph"
-          aria-disabled={busy}
           onClick={() => void navigate(-1)}
         >
           <ArrowLeft size={22} strokeWidth={1.8} aria-hidden="true" />
@@ -224,13 +288,16 @@ function ManualPhotos() {
         <button
           type="button"
           aria-label="Next photograph"
-          aria-disabled={busy}
           onClick={() => void navigate(1)}
         >
           <ArrowRight size={22} strokeWidth={1.8} aria-hidden="true" />
         </button>
       </div>
-      <p className="sr-only" aria-live="polite" aria-atomic="true">
+      <p
+        className="sr-only"
+        aria-live={manual ? "polite" : "off"}
+        aria-atomic="true"
+      >
         {error || `Photograph ${index + 1} of ${lookbookPhotos.length}.`}
       </p>
     </div>
@@ -247,9 +314,13 @@ export default function Lookbook() {
       <h2 id="lookbook-heading" className="type-editorial uc-section-title">
         The Lookbook
       </h2>
+      <p className="lookbook-intro">
+        Precision in every cut. Care in every detail. Explore the finishes that
+        define the UrbanCut experience.
+      </p>
       <div className="lookbook-grid">
         <LookbookVideo />
-        <ManualPhotos />
+        <LookbookPhotos />
       </div>
     </section>
   );
