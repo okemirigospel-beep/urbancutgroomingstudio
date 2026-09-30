@@ -40,3 +40,5 @@ Service-panel correction (28 September 2026): removed branding from the shared c
 
 
 Products implementation (29 September 2026): the About block and obsolete white product previews are replaced by one black six-product catalogue immediately after Services. Navigation/FAQ now point to this catalogue. Independent purchase form supports quantity, studio pickup and Abuja-only delivery through the existing manual WhatsApp destination. No appointment validation, payments or storage added. See PRODUCTS-VERIFICATION.md.
+
+Hero Version 2 (30 September 2026): approved GROOMING, / ELEVATED. copy and paragraph implemented with DM Sans 700 and upright Crimson Text 600. Existing slideshow and Services action preserved. Responsive, enlarged-text, keyboard and build verification recorded in HERO-V2-VERIFICATION.md.

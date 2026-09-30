@@ -25,11 +25,8 @@ export default function Home() {
         <section className="grooming-hero shell" aria-labelledby="hero-title">
           <div className="grooming-copy">
             <h1 id="hero-title">
-              {hero.headline[0]}
-              <br />
-              <em className="hero-editorial">{hero.headline[1]}</em>
-              <br />
-              {hero.headline[2]}
+              <span className="hero-strength">{hero.headline[0]}</span>{" "}
+              <span className="hero-elevated">{hero.headline[1]}</span>
             </h1>
             <p className="grooming-description">{hero.description}</p>
             <a className="booking-button hero-booking" href="#services">

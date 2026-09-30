@@ -1644,14 +1644,7 @@ textarea {
   line-height: 1.1;
   letter-spacing: -0.035em;
 }
-.grooming-copy .hero-editorial {
-  color: #896815;
-  font-family: var(--font-editorial);
-  font-weight: 600;
-  font-style: italic;
-  font-size: 1.12em;
-  letter-spacing: -0.025em;
-}
+
 .grooming-description {
   color: #535650;
   max-width: 410px;
@@ -3069,4 +3062,41 @@ textarea {
     grid-template-columns: 95px minmax(0, 1fr);
     gap: 12px;
   }
+}
+
+/* Version 2: real upright display type, scoped to the homepage hero. */
+.grooming-copy {
+  container-type: inline-size;
+}
+.grooming-copy h1 {
+  font-family: var(--font-interface);
+  font-size: clamp(2.5rem, 14.8cqw, 5.25rem);
+  font-weight: 700;
+  font-style: normal;
+  line-height: 1.04;
+  letter-spacing: -0.035em;
+  text-wrap: initial;
+  overflow-wrap: anywhere;
+}
+.hero-strength {
+  display: block;
+  color: #101110;
+}
+.grooming-copy .hero-elevated {
+  display: block;
+  margin-top: 0.015em;
+  font-family: var(--font-editorial);
+  font-size: 1.19em;
+  font-weight: 600;
+  font-style: normal;
+  line-height: 1.04;
+  letter-spacing: -0.025em;
+  color: #896815;
+}
+.grooming-copy .grooming-description {
+  max-width: 30rem;
+  font-size: clamp(1rem, 2.1cqw + 0.5rem, 1.125rem);
+  color: #3e423e;
+  line-height: 1.6;
+  margin-block: 24px 28px;
 }

@@ -79,3 +79,5 @@ Latest service-panel direction supersedes prior logo-in-panel guidance: no emble
 
 
 Products reference lock (29 September 2026): current About screenshot supplies the dark-container position; the supplied product photographs and new brief govern the design. Bold DM Sans OUR PRODUCTS heading, one supporting line, square uncropped imagery, white rectangular actions and restrained gold tag/focus accents. Three columns at 1000px+, two at 600–999px and one below 600px. Purchase panels reuse service typography/controls with separate state and validation. No logo in the panel header.
+
+Hero Version 2 supersedes the former three-line/italic headline: substantial DM Sans bold first line, upright Crimson Text semibold gold second line, scoped container-responsive sizing, normal style and flat #896815. Reference: supplied HOMEPAGE TEXT PNG. Existing body font and compact black CTA retained.
