@@ -6,6 +6,7 @@ import { Clock3, CalendarDays, MapPin, Check, Plus } from "lucide-react";
 import Header from "@/components/Header";
 import HeroSlideshow from "@/components/HeroSlideshow";
 import { hero } from "@/lib/hero";
+import Lookbook from "@/components/Lookbook";
 import Products from "@/components/Products";
 import Services from "@/components/Services";
 import { academy, faqs, money, brand } from "@/lib/content";
@@ -64,43 +65,7 @@ export default function Home() {
           <Services />
         </div>
         <Products />
-        <section id="gallery" className="section shell">
-          <div className="section-top">
-            <div>
-              <p className="eyebrow">03 / THE LOOKBOOK</p>
-              <h2>
-                The finish
-                <br />
-                <em className="headline-emphasis">says it all.</em>
-              </h2>
-            </div>
-            <div className="section-intro">
-              <p>A space for cuts, braids and locs from the studio.</p>
-              <p>
-                Our approved work photographs are being prepared. The hero film
-                is stock inspiration.
-              </p>
-            </div>
-          </div>
-          <div className="gallery-placeholders">
-            {[
-              ["01", "Cuts & grooming", "Sharp lines. Individual style."],
-              ["02", "Braids", "Pattern. Shape. Personality."],
-              ["03", "Loc care", "Every stage of your journey."],
-            ].map(([n, t, d]) => (
-              <div className="gallery-slot" key={n}>
-                <div className="gallery-slot-top">
-                  <span>{n}</span>
-                  <span>PHOTOGRAPHS TO COME</span>
-                </div>
-                <div>
-                  <h3>{t}</h3>
-                  <p>{d}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
+        <Lookbook />
         <section id="reviews" className="reviews-section shell section">
           <p className="eyebrow">04 / WORD FROM THE CHAIR</p>
           <h2>
@@ -281,7 +246,7 @@ export default function Home() {
           </p>
           <nav aria-label="Footer navigation">
             <a href="#services">Services</a>
-            <a href="#gallery">Gallery</a>
+            <a href="#gallery">The Lookbook</a>
             <a href="#reviews">Reviews</a>
             <a href="#academy">Academy</a>
             <a href="#products">Products</a>
