@@ -6,7 +6,7 @@ import { hero } from "@/lib/hero";
 const links = [
   ["Services", "#services"],
   ["Products", "#products"],
-  ["The Lookbook", "#gallery"],
+  ["Gallery", "#gallery"],
   ["Academy", "#academy"],
   ["Contact", "#contact"],
 ];
