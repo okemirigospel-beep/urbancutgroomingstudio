@@ -1,3 +1,4 @@
+import Reviews from "@/components/Reviews";
 import OpeningHours from "@/components/OpeningHours";
 import { advanceNotice } from "@/lib/appointments";
 import { whatsappBase } from "@/lib/booking";
@@ -66,19 +67,7 @@ export default function Home() {
         </div>
         <Products />
         <Lookbook />
-        <section id="reviews" className="reviews-section shell section">
-          <p className="eyebrow">04 / WORD FROM THE CHAIR</p>
-          <h2>
-            Good experiences.
-            <br />
-            <em className="headline-emphasis">In your own words.</em>
-          </h2>
-          <div className="reviews-empty">
-            <span aria-hidden="true">“</span>
-            <p>Customer reviews will be added here.</p>
-            <small>Real words from real clients, published with care.</small>
-          </div>
-        </section>
+        <Reviews />
         <section
           id="academy"
           className="academy-panel dark-panel shell section"

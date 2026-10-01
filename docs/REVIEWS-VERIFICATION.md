@@ -1,0 +1,6 @@
+# Customer reviews implementation — 1 October 2026
+Exact approved text centralized in src/lib/reviews.ts. Static server component replaces placeholder in place after Lookbook. Three semantic blockquotes with secondary Client’s review labels; only the third has five Lucide stars and a combined accessible description. No identities, attribution, avatars, aggregate rating or structured rating metadata.
+Heading shares existing Crimson Text600 scale44–78px; body is inherited DM Sans, regular18–22px supporting and21–28px featured. Composition approximately55/45, stacked below850px; content height follows text. No motion, controls or keyboard stops.
+TypeScript and Next production build passed. Source diff confines changes to reviews and adds its ID to unchanged shared heading values.
+Browser verification could not finish: both agent-browser and fresh in-app browser tabs repeatedly timed out. Development server also remained compiling the route; switched local preview to the completed production build bound only to127.0.0.1:3000. No deployment.
+Outstanding: rendered screenshots at360/390/768/1024/1440 and849/850, actual overflow/zoom/anchor checks. Do not treat this checkpoint as visually approved. Original customer screenshots excluded from repository/public assets.
