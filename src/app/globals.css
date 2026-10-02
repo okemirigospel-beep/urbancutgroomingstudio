@@ -667,64 +667,6 @@ details[open] > summary > svg {
   padding: 5px 8px;
   border-radius: 5px;
 }
-.faq-section {
-  padding-top: 0;
-  display: grid;
-  grid-template-columns: 0.85fr 1.15fr;
-  gap: 90px;
-}
-.faq-intro > p:not(.eyebrow) {
-  font-size: 15px;
-  color: var(--muted);
-  margin-top: 24px;
-}
-.faq-intro .text-link {
-  margin-top: 20px;
-}
-.faq-list {
-  border-top: 1px solid var(--line);
-}
-.faq-list details {
-  border-bottom: 1px solid var(--line);
-}
-.faq-list summary {
-  padding: 22px 0;
-  display: flex;
-  justify-content: space-between;
-  gap: 22px;
-  font-size: 14px;
-  font-weight: 500;
-}
-.faq-list details p {
-  font-size: 14px;
-  color: var(--muted);
-  margin: 0 30px 24px 0;
-}
-.contact-section {
-  padding-top: 0;
-}
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 45px;
-  margin-top: 40px;
-}
-.visit-card {
-  background: var(--surface);
-  border-radius: 18px;
-  padding: 35px;
-}
-.visit-card > svg {
-  margin-bottom: 25px;
-}
-.visit-card h3 {
-  font-size: 30px;
-}
-.visit-card > p {
-  margin-top: 20px;
-  color: var(--muted);
-  font-size: 14px;
-}
 .pending-label {
   display: inline-block;
   font-size: 11px;
@@ -734,57 +676,11 @@ details[open] > summary > svg {
   padding-top: 18px;
   width: 100%;
 }
-.contact-links {
-  padding-top: 12px;
-}
-.contact-links > p:first-child {
-  font-size: 20px;
-  font-weight: 600;
-  letter-spacing: -0.04em;
-  margin-bottom: 25px;
-}
-.contact-link {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 15px;
-  padding: 19px 0;
-  border-bottom: 1px solid var(--line);
-  font-size: 14px;
-}
-.contact-link > span:last-child {
-  color: var(--muted);
-  font-size: 10px;
-}
 .field-help {
   font-size: 11px;
   color: var(--muted);
   margin: 20px 0;
   line-height: 1.65;
-}
-.closing {
-  text-align: center;
-  padding: 65px 30px;
-}
-.closing .eyebrow {
-  justify-content: center;
-  color: #afb1a9;
-}
-.closing h2 em {
-  color: #a9ada1;
-}
-.closing .button {
-  margin-top: 30px;
-  min-width: 240px;
-}
-.closing > p:last-child {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  font-size: 11px;
-  color: #acafa4;
-  margin-top: 20px;
 }
 .site-footer {
   padding-top: 65px;
@@ -1024,9 +920,6 @@ textarea {
     gap: 35px;
     padding: 55px 35px;
   }
-  .faq-section {
-    gap: 40px;
-  }
 }
 @media (max-width: 760px) {
   .shell {
@@ -1177,31 +1070,6 @@ textarea {
   .academy-levels {
     padding-top: 5px;
   }
-
-  .faq-section {
-    padding-top: 0;
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
-  .contact-section {
-    padding-top: 0;
-  }
-  .contact-grid {
-    gap: 25px;
-  }
-  .visit-card {
-    padding: 25px;
-  }
-  .visit-card h3 {
-    font-size: 25px;
-  }
-  .contact-link {
-    flex-wrap: wrap;
-    gap: 5px;
-  }
-  .closing {
-    padding: 55px 25px;
-  }
   .footer-top {
     gap: 20px;
   }
@@ -1336,23 +1204,6 @@ textarea {
   }
   .academy-levels summary {
     gap: 13px;
-  }
-
-  .contact-grid {
-    grid-template-columns: 1fr;
-    gap: 25px;
-  }
-  .contact-links {
-    padding-top: 0;
-  }
-  .contact-link {
-    flex-wrap: nowrap;
-  }
-  .closing h2 {
-    font-size: 38px;
-  }
-  .closing > p:last-child {
-    font-size: 9px;
   }
   .site-footer {
     padding-top: 45px;
@@ -3248,3 +3099,34 @@ textarea {
  .academy-dialog-header { padding: 18px; gap: 10px; }
  .academy-dialog-body { padding-inline: 18px; }
 }
+/* Visit & Connect: one studio card and the complete FAQ collection. */
+.visit-connect { padding-top: 0; scroll-margin-top: 28px; }
+#connect-heading { font-size: clamp(44px, 5.5vw, 78px); overflow-wrap: anywhere; margin-bottom: 40px; }
+.connect-grid { display: grid; grid-template-columns: minmax(0, 9fr) minmax(0, 11fr); gap: clamp(40px, 4vw, 64px); align-items: start; }
+.connect-studio { background: #f5f2ea; border-radius: 8px; padding: 32px; min-width: 0; }
+.connect-grid h3 { font-size: 24px; font-weight: 600; line-height: 1.3; letter-spacing: -.02em; margin-bottom: 24px; }
+.connect-name { font-size: 18px; font-weight: 600; margin-bottom: 10px; }
+.connect-studio address { font-style: normal; font-size: 16px; line-height: 1.65; }
+.connect-hours { margin: 24px 0; font-size: 15px; }
+.connect-hours > div { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 4px 16px; padding-block: 6px; }
+.connect-hours dd { margin: 0; white-space: nowrap; }
+.connect-directions { display: inline-flex; align-items: center; justify-content: center; gap: 10px; background: var(--ink); color: white; min-height: 48px; padding: 12px 20px; border-radius: 2px; font-size: 15px; font-weight: 600; }
+.connect-directions:hover { background: #34332e; }
+.connect-links { display: flex; flex-wrap: wrap; gap: 4px 22px; border-top: 1px solid #d9d3c5; margin-top: 28px; padding-top: 20px; }
+.connect-links a { display: inline-flex; align-items: center; gap: 10px; min-height: 44px; font-size: 15px; }
+.connect-links svg { flex-shrink: 0; color: #866514; }
+.connect-links a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.connect-faq { min-width: 0; }
+.connect-question { border-bottom: 1px solid var(--line); }
+.connect-question h4 { margin: 0; }
+.connect-question button { display: flex; align-items: center; justify-content: space-between; gap: 20px; width: 100%; text-align: left; padding: 18px 0; font-size: 17px; line-height: 1.5; font-weight: 500; background: none; border: 0; cursor: pointer; }
+.connect-question button:hover, .connect-more:hover { color: #806014; }
+.connect-question svg, .connect-more svg { flex-shrink: 0; transition: transform .18s ease; }
+.connect-question [aria-expanded="true"] svg, .connect-more[aria-expanded="true"] svg { transform: rotate(180deg); }
+.connect-question p { margin: 0; padding: 0 0 20px; font-size: 16px; line-height: 1.65; color: #50534c; }
+.connect-more { display: inline-flex; align-items: center; gap: 14px; background: none; border: 0; padding: 14px 0; margin-top: 12px; min-height: 48px; font-size: 16px; font-weight: 600; cursor: pointer; }
+.visit-connect :is(a, button):focus-visible { outline: 2px solid #866514; outline-offset: 5px; }
+#studio, #faq, #directions { scroll-margin-top: 28px; }
+@media (max-width: 949px) { .connect-grid { grid-template-columns: 1fr; gap: 40px; } }
+@media (max-width: 599px) { .connect-studio { padding: 24px 20px; } .connect-grid h3 { font-size: 22px; } }
+@media (prefers-reduced-motion: reduce) { .connect-question svg, .connect-more svg { transition: none; } }
