@@ -130,9 +130,6 @@ export default function Academy() {
               </li>
             ))}
           </ol>
-          <p>
-            Choose your programme. Previous UrbanCut training is not required.
-          </p>
         </div>
         <div className="academy-grid">
           {programmes.map((p) => (
