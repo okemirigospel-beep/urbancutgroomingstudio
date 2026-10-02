@@ -5,47 +5,6 @@ export const brand = {
   hours: openingHoursSummary,
   timezone: studioSchedule.timeZone,
 };
-export const academy = [
-  {
-    title: "Foundation",
-    fee: 110000,
-    duration: "4 months",
-    audience: "An introduction to the craft",
-    outline:
-      "Tool familiarisation, hygiene basics, client consultation and introductory haircutting.",
-  },
-  {
-    title: "Elevated Skills",
-    fee: 160000,
-    duration: "4 months",
-    audience: "Build on the basics",
-    outline: "Sectioning, blending, introductory fades and beard shaping.",
-  },
-  {
-    title: "Professional Grooming",
-    fee: 230000,
-    duration: "5 months",
-    audience: "Develop consistent practice",
-    outline:
-      "Advanced haircut practice, styling, service consistency and client care.",
-  },
-  {
-    title: "Advanced Artistry",
-    fee: 320000,
-    duration: "5 months",
-    audience: "Explore more creative work",
-    outline:
-      "Creative finishing, introductory braiding and loc techniques, and corrective practice.",
-  },
-  {
-    title: "Mastery Programme",
-    fee: 450000,
-    duration: "6 months",
-    audience: "Refine a broader skill set",
-    outline:
-      "Complex practical work, portfolio development and studio workflow fundamentals.",
-  },
-];
 export const faqs = [
   [
     "Where can I find the studio?",
@@ -74,7 +33,7 @@ export const faqs = [
   ],
   [
     "Is the academy operating?",
-    "Yes. Enquire about current training options. The five programme outlines, fees and durations shown here are provisional, not enrolment terms.",
+    "Yes. Admissions are open for five standalone programmes. Previous UrbanCut training is not required. Explore UrbanCut Academy and enquire about your chosen programme.",
   ],
   [
     "Can I buy grooming products?",

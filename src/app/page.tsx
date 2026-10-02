@@ -1,3 +1,4 @@
+import Academy from "@/components/Academy";
 import Reviews from "@/components/Reviews";
 import OpeningHours from "@/components/OpeningHours";
 import { advanceNotice } from "@/lib/appointments";
@@ -10,7 +11,7 @@ import { hero } from "@/lib/hero";
 import Lookbook from "@/components/Lookbook";
 import Products from "@/components/Products";
 import Services from "@/components/Services";
-import { academy, faqs, money, brand } from "@/lib/content";
+import { faqs, brand } from "@/lib/content";
 
 export default function Home() {
   return (
@@ -68,60 +69,7 @@ export default function Home() {
         <Products />
         <Lookbook />
         <Reviews />
-        <section
-          id="academy"
-          className="academy-panel dark-panel shell section"
-        >
-          <div className="academy-intro">
-            <p className="eyebrow">05 / URBANCUT ACADEMY</p>
-            <h2 className="type-editorial">
-              Learn the craft.
-              <br />
-              <em className="headline-emphasis">Find your edge.</em>
-            </h2>
-            <p>
-              From first principles to more advanced practice. Explore a
-              progressive path into professional grooming.
-            </p>
-            <a className="button gold" href="#contact">
-              Enquire about training
-            </a>
-            <p className="academy-note">
-              The academy is operating. Programme names, fees, durations and
-              outlines below are provisional; confirm current options with the
-              studio.
-            </p>
-          </div>
-          <div className="academy-levels">
-            {academy.map((a, i) => (
-              <details key={a.title}>
-                <summary>
-                  <span className="level-number">0{i + 1}</span>
-                  <span>
-                    <strong>{a.title}</strong>
-                    <small>{a.audience}</small>
-                  </span>
-                  <Plus size={19} />
-                </summary>
-                <div className="level-content">
-                  <p>{a.outline}</p>
-                  <div>
-                    <span>
-                      Sample fee <strong>{money(a.fee)}</strong>
-                    </span>
-                    <span>
-                      Draft duration <strong>{a.duration}</strong>
-                    </span>
-                  </div>
-                  <p className="muted-light">
-                    Syllabus, prerequisites and intake dates require
-                    confirmation.
-                  </p>
-                </div>
-              </details>
-            ))}
-          </div>
-        </section>
+        <Academy />
         <section id="faq" className="faq-section section shell">
           <div className="faq-intro">
             <p className="eyebrow">07 / BEFORE YOUR VISIT</p>
