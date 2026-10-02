@@ -3157,25 +3157,29 @@ textarea {
 }
 #services-heading, #products-heading, #lookbook-heading, #reviews-heading, #academy-heading { overflow-wrap: anywhere; }
 
-/* Static customer quotations; the source screenshots are not display assets. */
+/* Static customer quotations share one editorial surface. */
 .reviews-section { padding-top: 0; text-align: left; scroll-margin-top: 28px; }
-.reviews-section > h2 { margin-bottom: 36px; }
-.reviews-composition { display: grid; grid-template-columns: 1.22fr 1fr; gap: clamp(28px, 4vw, 56px); align-items: start; }
-.client-review { margin: 0; min-width: 0; }
-.client-review blockquote { margin: 0; }
-.client-review blockquote p { font-size: clamp(18px, 1.55vw, 22px); line-height: 1.6; font-weight: 400; color: #303330; overflow-wrap: break-word; }
-.client-review figcaption { font-size: 14px; line-height: 1.5; color: #62665f; margin-top: 20px; }
-.featured-review { background: #101110; border-radius: 4px; padding: clamp(28px, 3.4vw, 48px); }
-.featured-review blockquote p { color: #fafaf7; font-size: clamp(21px, 1.95vw, 28px); line-height: 1.55; }
-.featured-review figcaption { color: #c4c7bd; }
-.review-quote-mark { display: block; font-family: var(--font-editorial); font-size: 40px; line-height: .8; color: #bd982c; margin-bottom: 20px; }
-.supporting-reviews { padding-top: 4px; }
-.supporting-reviews .client-review + .client-review { margin-top: 28px; padding-top: 28px; border-top: 1px solid var(--line); }
-.review-rating { display: flex; gap: 4px; color: #947015; margin-bottom: 14px; }
-@media (max-width: 849px) {
-  .reviews-composition { grid-template-columns: 1fr; gap: 28px; }
-  .reviews-section > h2 { margin-bottom: 28px; }
-  .supporting-reviews { padding-top: 0; }
+.reviews-panel { background: #f5f2ea; border-radius: 8px; padding: clamp(32px, 4vw, 56px); }
+.reviews-panel > h2 { margin-bottom: 40px; }
+.reviews-composition { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 56px; }
+.reviews-section .client-review { margin: 0; min-width: 0; position: relative; }
+.reviews-section .client-review + .client-review::before { content: ""; position: absolute; left: -28px; top: 0; bottom: 0; border-left: 1px solid #d9d3c5; }
+.reviews-section blockquote { margin: 0; }
+.reviews-section blockquote p { font-family: var(--font-editorial); font-style: italic; font-weight: 600; font-size: clamp(22px, 1.9vw, 27px); line-height: 1.5; color: #24221f; overflow-wrap: break-word; }
+.reviews-section figcaption { font-family: var(--font-interface); font-style: normal; font-size: 14px; line-height: 1.5; color: #62645f; margin-top: 20px; }
+.reviews-section .review-quote-mark { display: block; font-family: var(--font-editorial); font-weight: 600; font-size: 34px; line-height: 1; color: var(--gold); margin-bottom: 12px; }
+@media (max-width: 1099px) {
+  .reviews-composition { grid-template-columns: 1fr; gap: 0; }
+  .reviews-section .client-review + .client-review::before { display: none; }
+  .reviews-section .client-review { padding: 0; }
+  .reviews-section .client-review + .client-review { border-left: 0; border-top: 1px solid #d9d3c5; margin-top: 32px; padding-top: 32px; }
+  .reviews-section blockquote { max-width: 60ch; }
+  .reviews-section blockquote p { font-size: 24px; }
+}
+@media (max-width: 599px) {
+  .reviews-panel { padding: 28px 22px; }
+  .reviews-panel > h2 { margin-bottom: 32px; }
+  .reviews-section blockquote p { font-size: 22px; }
 }
 
 /* Academy-specific surfaces preserve the shared Services panel styling. */
