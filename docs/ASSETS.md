@@ -72,3 +72,5 @@ Academy images: Downloads/urbancut academy.zip preserved. Five extensionless PNG
 Visit & Connect (2026-10-02): supplied map screenshot excluded because its business popup shows conflicting 7 p.m. hours and provider attribution is not visible. No map derivative or third-party map service added.
 
 Footer now reuses approved urbancut-logo-header.svg with footer-only sizing. Both SVG files remain unchanged; no new logo variant generated.
+
+SEO: icon.png (192x192) and urbancut-share.png (1200x630) rasterise the approved tight-bounds SVG on black without altering artwork. Original SVGs untouched; no new branding or external image service.

@@ -1,10 +1,18 @@
-import { studioSchedule } from "./appointments";
-import { whatsappBase } from "./booking";
+import { studioSchedule } from "./appointments.ts";
+import { whatsappBase } from "./booking.ts";
 
 const hour = (h: number) => `${h % 12 || 12} ${h >= 12 ? "p.m." : "a.m."}`;
+const postalAddress = {
+  streetAddress: "45 1st Avenue, Gwarinpa",
+  addressLocality: "Abuja",
+  postalCode: "900108",
+  addressRegion: "Federal Capital Territory",
+  addressCountry: "NG",
+};
 export const studio = {
+  postalAddress,
   name: "UrbanCut Grooming Studio",
-  address: "45 1st Avenue, Gwarinpa, Abuja 900108, Federal Capital Territory",
+  address: `${postalAddress.streetAddress}, ${postalAddress.addressLocality} ${postalAddress.postalCode}, ${postalAddress.addressRegion}`,
   hours: [
     {
       days: "Monday–Saturday",

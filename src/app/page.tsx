@@ -1,3 +1,5 @@
+import { indexingConfig } from "@/lib/indexing";
+import { homepageMetadata, businessSchema, jsonLd } from "@/lib/seo";
 import Academy from "@/components/Academy";
 import Reviews from "@/components/Reviews";
 import OpeningHours from "@/components/OpeningHours";
@@ -13,9 +15,17 @@ import Products from "@/components/Products";
 import Services from "@/components/Services";
 import { brand } from "@/lib/content";
 
+export const metadata = homepageMetadata(indexingConfig());
+
 export default function Home() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: jsonLd(businessSchema(indexingConfig())),
+        }}
+      />
       <a href="#main" className="skip-link">
         Skip to content
       </a>

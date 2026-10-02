@@ -92,3 +92,5 @@ Academy: near-black section, shared editorial heading, Admissions Open badge, ac
 Visit & Connect: shared editorial heading; white background, ivory studio card, 9:11 desktop columns, stack below 950px. Six initial FAQ buttons, expand remaining collection, one answer open, chevrons and visible focus. No map placeholder or final promotional banner.
 
 Footer: continuous black surface; compact Crimson Text invitation, white Services CTA; brand/Explore/Visit & Connect grid; restrained dividers; DM Sans tagline; copyright and Back to Top. Footer-only responsive rules preserve header sizing.
+
+SEO preparation preserves all approved page visuals. Social image uses existing logo on black; no on-page layout changes.

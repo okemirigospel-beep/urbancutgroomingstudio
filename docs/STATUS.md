@@ -53,3 +53,5 @@ Lookbook continuation: default 3-second visible autoplay switches permanently to
 2026-10-02: Visit & Connect consolidates FAQ, studio/contact and closing CTA. All 13 original FAQs retained (address/deposit corrections only), six policy additions, 19 total. Local browser and build checks passed; map omitted due unsuitable supplied popup. See VISIT-CONNECT-VERIFICATION.md.
 
 2026-10-02: Footer redesigned with integrated Services CTA, approved SVG, grouped links and Back to Top. Preview badge removed. Build/type and browser checks pass; see FOOTER-VERIFICATION.md.
+
+2026-10-02: Core pre-launch SEO prepared with safe noindex default, configurable origin/launch flag, metadata, robots/sitemap, HairSalon JSON-LD, favicon/share image and five focused tests. See SEO-PREPARATION.md for baseline, verification, launch matrix and blocked rendering follow-ups. No domain configured or deployment performed.

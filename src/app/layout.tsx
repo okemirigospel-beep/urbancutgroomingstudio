@@ -1,3 +1,5 @@
+import { indexingConfig } from "@/lib/indexing";
+import { baseMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
@@ -41,12 +43,7 @@ const naira = localFont({
   declarations: [{ prop: "unicode-range", value: "U+20A6" }],
 });
 
-export const metadata: Metadata = {
-  title: "URBANCUT — Grooming Studio, Abuja",
-  description:
-    "Barbering, braiding and loc care in Abuja. Explore services and plan your visit.",
-  robots: { index: false, follow: false },
-};
+export const metadata: Metadata = baseMetadata(indexingConfig());
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
