@@ -70,3 +70,5 @@ Customer review source ZIP inspected privately. Raw screenshots remain in Downlo
 Academy images: Downloads/urbancut academy.zip preserved. Five extensionless PNGs1448x1086 mapped by basename to their corresponding programme. Genuine1080x810 WebP derivatives at public/media/academy/urbancut-{foundation,professional,master,elite,executive}.webp, quality86, no upscaling/crop. Original source ZIP requires separate storage.
 
 Visit & Connect (2026-10-02): supplied map screenshot excluded because its business popup shows conflicting 7 p.m. hours and provider attribution is not visible. No map derivative or third-party map service added.
+
+Footer now reuses approved urbancut-logo-header.svg with footer-only sizing. Both SVG files remain unchanged; no new logo variant generated.

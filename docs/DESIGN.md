@@ -90,3 +90,5 @@ Reviews: shared Crimson Text600 heading clamp(44px,5.5vw,78px); DM Sans body. St
 Academy: near-black section, shared editorial heading, Admissions Open badge, accessible wrapping pathway, 3+2/2+2+1/1 card layouts at1100/650px. Full4:3 images; native detail/enquiry dialog, persistent close header and scrollable content. Latest Academy brief authorizes restrained directional arrows.
 
 Visit & Connect: shared editorial heading; white background, ivory studio card, 9:11 desktop columns, stack below 950px. Six initial FAQ buttons, expand remaining collection, one answer open, chevrons and visible focus. No map placeholder or final promotional banner.
+
+Footer: continuous black surface; compact Crimson Text invitation, white Services CTA; brand/Explore/Visit & Connect grid; restrained dividers; DM Sans tagline; copyright and Back to Top. Footer-only responsive rules preserve header sizing.

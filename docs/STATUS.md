@@ -51,3 +51,5 @@ Lookbook continuation: default 3-second visible autoplay switches permanently to
 2 October 2026: Academy rebuilt with five approved standalone programmes, complete curricula and isolated enquiry drafts.21tests, types/build and responsive browser flows passed. See ACADEMY-VERIFICATION.md for evidence and zoom/device limitations.
 
 2026-10-02: Visit & Connect consolidates FAQ, studio/contact and closing CTA. All 13 original FAQs retained (address/deposit corrections only), six policy additions, 19 total. Local browser and build checks passed; map omitted due unsuitable supplied popup. See VISIT-CONNECT-VERIFICATION.md.
+
+2026-10-02: Footer redesigned with integrated Services CTA, approved SVG, grouped links and Back to Top. Preview badge removed. Build/type and browser checks pass; see FOOTER-VERIFICATION.md.

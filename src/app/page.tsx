@@ -3,7 +3,7 @@ import Reviews from "@/components/Reviews";
 import OpeningHours from "@/components/OpeningHours";
 import { advanceNotice } from "@/lib/appointments";
 import VisitConnect from "@/components/VisitConnect";
-import Image from "next/image";
+import Footer from "@/components/Footer";
 import { Clock3, CalendarDays, MapPin } from "lucide-react";
 import Header from "@/components/Header";
 import HeroSlideshow from "@/components/HeroSlideshow";
@@ -72,41 +72,7 @@ export default function Home() {
         <Academy />
         <VisitConnect />
       </main>
-      <footer className="site-footer shell">
-        <div className="footer-top">
-          <a
-            className="footer-logo"
-            href="#home"
-            aria-label="Back to URBANCUT home"
-          >
-            <Image
-              src="/media/urbancut-logo.svg"
-              alt="URBANCUT Grooming Studio"
-              width={130}
-              height={130}
-            />
-          </a>
-          <p>
-            Good grooming.
-            <br />
-            Entirely you.
-          </p>
-          <nav aria-label="Footer navigation">
-            <a href="#services">Services</a>
-            <a href="#gallery">The Lookbook</a>
-            <a href="#reviews">Reviews</a>
-            <a href="#academy">Academy</a>
-            <a href="#products">Products</a>
-            <a href="#faq">FAQ</a>
-            <a href="#contact">Contact & social</a>
-          </nav>
-        </div>
-        <div className="footer-bottom">
-          <span>© {new Date().getFullYear()} URBANCUT Grooming Studio</span>
-          <span>Abuja, Nigeria</span>
-          <span className="preview-label">Local preview · Sample content</span>
-        </div>
-      </footer>
+      <Footer />
     </>
   );
 }
