@@ -3,12 +3,11 @@ import { studio } from "@/lib/studio";
 
 const explore = [
   ["Our Services", "#services"],
-  ["Our Products", "#products"],
   ["The Lookbook", "#gallery"],
-  ["UrbanCut Academy", "#academy"],
   ["Client Reviews", "#reviews"],
+  ["UrbanCut Academy", "#academy"],
+  ["Our Products", "#products"],
 ];
-
 export default function Footer() {
   return (
     <footer className="site-footer">

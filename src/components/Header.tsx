@@ -5,9 +5,9 @@ import { useRef, useState } from "react";
 import { hero } from "@/lib/hero";
 const links = [
   ["Services", "#services"],
-  ["Products", "#products"],
   ["Gallery", "#gallery"],
   ["Academy", "#academy"],
+  ["Products", "#products"],
   ["Contact", "#contact"],
 ];
 export default function Header() {

@@ -2473,6 +2473,7 @@ textarea {
 
 /* Product photography leads; the catalogue replaces the former About block. */
 .uc-products {
+  margin-bottom: clamp(56px, 7vw, 100px);
   background: #101110;
   color: #fff;
   padding: clamp(28px, 5vw, 64px);

@@ -96,3 +96,5 @@ Footer: continuous black surface; compact Crimson Text invitation, white Service
 SEO preparation preserves all approved page visuals. Social image uses existing logo on black; no on-page layout changes.
 
 2026-10-03: No visual redesign. Hero renders a bounded current/outgoing/upcoming set; closed service articles use native hidden within the original dialog. Active controls remain conditional. Verified390/768/1440px. Approved layout, copy, booking and transition styling preserved.
+
+2026-10-03 final composition: Products follows Academy and precedes Visit & Connect. Actual DOM order is used at every breakpoint. Header links are Services, Gallery, Academy, Products, Contact; footer Explore follows page order. Products uses the existing clamp(56px,7vw,100px) bottom separation. Existing backgrounds and content are retained.

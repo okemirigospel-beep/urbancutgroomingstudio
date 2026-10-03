@@ -76,10 +76,10 @@ export default function Home() {
         <div className="shell">
           <Services />
         </div>
-        <Products />
         <Lookbook />
         <Reviews />
         <Academy />
+        <Products />
         <VisitConnect />
       </main>
       <Footer />
