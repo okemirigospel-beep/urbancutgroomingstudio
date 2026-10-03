@@ -94,3 +94,5 @@ Visit & Connect: shared editorial heading; white background, ivory studio card, 
 Footer: continuous black surface; compact Crimson Text invitation, white Services CTA; brand/Explore/Visit & Connect grid; restrained dividers; DM Sans tagline; copyright and Back to Top. Footer-only responsive rules preserve header sizing.
 
 SEO preparation preserves all approved page visuals. Social image uses existing logo on black; no on-page layout changes.
+
+2026-10-03: No visual redesign. Hero renders a bounded current/outgoing/upcoming set; closed service articles use native hidden within the original dialog. Active controls remain conditional. Verified390/768/1440px. Approved layout, copy, booking and transition styling preserved.

@@ -74,3 +74,5 @@ Visit & Connect (2026-10-02): supplied map screenshot excluded because its busin
 Footer now reuses approved urbancut-logo-header.svg with footer-only sizing. Both SVG files remain unchanged; no new logo variant generated.
 
 SEO: icon.png (192x192) and urbancut-share.png (1200x630) rasterise the approved tight-bounds SVG on black without altering artwork. Original SVGs untouched; no new branding or external image service.
+
+2026-10-03: No assets changed. All20 hero photographs retain IDs/order,480/720WebP variants and focal positions; only request timing changed. Mobile cold-load selected480w sources. See SEO-PREPARATION.md.

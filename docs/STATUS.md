@@ -55,3 +55,5 @@ Lookbook continuation: default 3-second visible autoplay switches permanently to
 2026-10-02: Footer redesigned with integrated Services CTA, approved SVG, grouped links and Back to Top. Preview badge removed. Build/type and browser checks pass; see FOOTER-VERIFICATION.md.
 
 2026-10-02: Core pre-launch SEO prepared with safe noindex default, configurable origin/launch flag, metadata, robots/sitemap, HairSalon JSON-LD, favicon/share image and five focused tests. See SEO-PREPARATION.md for baseline, verification, launch matrix and blocked rendering follow-ups. No domain configured or deployment performed.
+
+2026-10-03: Focused pre-deployment follow-up verified: progressive hero loading (20 photos, unchanged2.8s/280ms motion) and existing service-detail HTML retained in the single dialog. All27 tests/build/typecheck and booking/browser checks pass. See SEO-PREPARATION.md for measured requests, slow/failure tests and limitations. Local only; indexing/deployments remain disabled.
