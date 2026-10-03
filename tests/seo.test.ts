@@ -104,3 +104,23 @@ test("JSON-LD escapes script terminators without altering parsed content", () =>
   assert.equal(jsonLd(input).includes("<"), false);
   assert.deepEqual(JSON.parse(jsonLd(input)), input);
 });
+
+test("explicit Vercel testing origin retains noindex and an empty sitemap", () => {
+  const config = indexingConfig({
+    SITE_URL: "https://urbancut-test-fixture.vercel.app",
+    SITE_INDEXING_ENABLED: "false",
+  });
+  assert.equal(config.enabled, false);
+  assert.equal(config.origin, "https://urbancut-test-fixture.vercel.app");
+  assert.deepEqual(sitemapEntries(config), []);
+  assert.equal(
+    homepageMetadata(config).alternates?.canonical,
+    config.origin + "/",
+  );
+  assert.deepEqual(indexingHeaders(config), [
+    { key: "X-Robots-Tag", value: "noindex, follow" },
+  ]);
+  assert.throws(() =>
+    indexingConfig({ SITE_URL: config.origin!, SITE_INDEXING_ENABLED: "true" }),
+  );
+});

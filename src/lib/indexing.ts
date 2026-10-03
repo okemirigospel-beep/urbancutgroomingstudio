@@ -18,6 +18,8 @@ export function indexingConfig(
     } catch {
       throw new Error("SITE_URL must be an absolute HTTPS public origin.");
     }
+    // SITE_URL is explicitly supplied; never infer it from deployment/request hosts.
+    // Vercel testing origins are accepted only while indexing is disabled.
     const host = url.hostname.toLowerCase();
     if (
       url.protocol !== "https:" ||
@@ -32,7 +34,9 @@ export function indexingConfig(
       /^[\d.]+$/.test(host) ||
       host.includes(":") ||
       /(^|\.)(localhost|local|internal)$/.test(host) ||
-      /\.(vercel\.app|netlify\.app|ngrok\.io|ngrok-free\.app)$/.test(host)
+      /\.(netlify\.app|ngrok\.io|ngrok-free\.app)$/.test(host) ||
+      (host.endsWith(".vercel.app") &&
+        (flag === "true" || host.split(".").length !== 3))
     ) {
       throw new Error(
         "SITE_URL must be a public HTTPS origin without credentials, path, port, query, fragment or preview hostname.",
