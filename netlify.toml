@@ -1,0 +1,17 @@
+# Next.js is handled by Netlify's automatic OpenNext integration.
+[build]
+  base = "."
+  command = "npm run build"
+  publish = ".next"
+
+# Non-secret build values. These take precedence over dashboard values.
+[build.environment]
+  SITE_URL = "https://urbancutgroomingstudio.netlify.app"
+  SITE_INDEXING_ENABLED = "false"
+
+# Keep these overrides when production indexing is separately authorised.
+[context.deploy-preview.environment]
+  SITE_INDEXING_ENABLED = "false"
+
+[context.branch-deploy.environment]
+  SITE_INDEXING_ENABLED = "false"

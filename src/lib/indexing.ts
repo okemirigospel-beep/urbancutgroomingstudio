@@ -1,9 +1,14 @@
 export type IndexingConfig = { origin: string | null; enabled: boolean };
 
 export function indexingConfig(
-  env: { SITE_URL?: string; SITE_INDEXING_ENABLED?: string } = {
+  env: {
+    SITE_URL?: string;
+    SITE_INDEXING_ENABLED?: string;
+    CONTEXT?: string;
+  } = {
     SITE_URL: process.env.SITE_URL,
     SITE_INDEXING_ENABLED: process.env.SITE_INDEXING_ENABLED,
+    CONTEXT: process.env.CONTEXT,
   },
 ): IndexingConfig {
   const flag = env.SITE_INDEXING_ENABLED?.trim() || "false";
@@ -34,7 +39,9 @@ export function indexingConfig(
       /^[\d.]+$/.test(host) ||
       host.includes(":") ||
       /(^|\.)(localhost|local|internal)$/.test(host) ||
-      /\.(netlify\.app|ngrok\.io|ngrok-free\.app)$/.test(host) ||
+      /\.(ngrok\.io|ngrok-free\.app)$/.test(host) ||
+      (host.endsWith(".netlify.app") &&
+        host !== "urbancutgroomingstudio.netlify.app") ||
       (host.endsWith(".vercel.app") &&
         (flag === "true" || host.split(".").length !== 3))
     ) {
@@ -46,7 +53,10 @@ export function indexingConfig(
   }
   if (flag === "true" && !origin)
     throw new Error("Enabling indexing requires a valid final SITE_URL.");
-  return { origin, enabled: flag === "true" };
+  // Netlify supplies CONTEXT at build time. Never index preview/branch/dev builds,
+  // even if a shared production flag is accidentally inherited.
+  const productionContext = !env.CONTEXT || env.CONTEXT === "production";
+  return { origin, enabled: flag === "true" && productionContext };
 }
 
 export const publicRoutes = ["/"] as const;

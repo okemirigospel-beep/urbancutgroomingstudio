@@ -1,3 +1,5 @@
+> Current hosting update — 3 October 2026: Netlify is the authorised host at https://urbancutgroomingstudio.netlify.app. Indexing remains disabled. Earlier Vercel/local-only deployment notes below are historical and superseded by MANUAL-DEPLOYMENT.md and NETLIFY-VERIFICATION.md. Website design and booking behavior are unchanged.
+
 # Current Services and schedule milestone — 28 September 2026
 
 Services/booking refinements are implemented. Open every day: Mon–Sat 9 AM–9 PM; Sunday 1 PM–9 PM, Africa/Lagos. Shared hourly preferred starts end at 8 PM, filtered by known studio durations. Both forms enforce next-day requests; Home enquiries require date/time in Abuja time and detailed address. Wellness and Black Card are non-bookable previews. See SERVICES-REFINEMENT.md for exact rules, verification and screenshots. This supersedes all older hours/Sunday-closure notes below.

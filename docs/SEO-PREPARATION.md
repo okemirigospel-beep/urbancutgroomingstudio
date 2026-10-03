@@ -1,3 +1,5 @@
+> Current hosting update — 3 October 2026: Netlify is the authorised host at https://urbancutgroomingstudio.netlify.app. Indexing remains disabled. Earlier Vercel/local-only deployment notes below are historical and superseded by MANUAL-DEPLOYMENT.md and NETLIFY-VERIFICATION.md. Website design and booking behavior are unchanged.
+
 # Pre-launch SEO preparation — 2026-10-02
 
 ## Status and boundaries

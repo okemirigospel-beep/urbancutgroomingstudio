@@ -2,7 +2,7 @@
 
 This is a NEW implementation, not recovered source. Preserve the supplied root assets, ZIPs and original repository history.
 
-- Local development only; bind to 127.0.0.1. No tunnels, public previews, Sites or Vercel deployment without explicit authorisation. Keep Vercel Git deployments disabled.
+- Local development binds to 127.0.0.1. Netlify is the authorised host: urbancutgroomingstudio.netlify.app, Git production branch urbancut-continuation. Pushes publish automatically when authorised; local edits do not. Keep indexing disabled and Vercel Git deployments disabled. No tunnels or alternate hosting without explicit authorisation. See docs/MANUAL-DEPLOYMENT.md.
 - Stack: Next.js App Router, TypeScript, Tailwind; one SVG icon family, Lucide.
 - Git checkpoint remote: https://github.com/okemirigospel-beep/urbancutgroomingstudio . Use urbancut-continuation; never force-push or overwrite main.
 - Commit meaningful verified milestones and verify remote SHA after each push. No secrets, actual .env, customer data, dependencies or builds in Git.

@@ -124,3 +124,62 @@ test("explicit Vercel testing origin retains noindex and an empty sitemap", () =
     indexingConfig({ SITE_URL: config.origin!, SITE_INDEXING_ENABLED: "true" }),
   );
 });
+
+test("approved Netlify origin generates stable metadata without enabling indexing", () => {
+  const config = indexingConfig({
+    SITE_URL: "https://urbancutgroomingstudio.netlify.app",
+    SITE_INDEXING_ENABLED: "false",
+    CONTEXT: "production",
+  });
+  assert.equal(config.enabled, false);
+  assert.equal(
+    homepageMetadata(config).alternates?.canonical,
+    config.origin + "/",
+  );
+  assert.equal(businessSchema(config)["@id"], config.origin + "/#business");
+  assert.deepEqual(sitemapEntries(config), []);
+});
+
+test("Netlify non-production contexts cannot inherit production indexing", () => {
+  for (const CONTEXT of ["deploy-preview", "branch-deploy", "dev", "unknown"]) {
+    const config = indexingConfig({
+      SITE_URL: origin,
+      SITE_INDEXING_ENABLED: "true",
+      CONTEXT,
+    });
+    assert.equal(config.enabled, false, CONTEXT);
+    assert.deepEqual(baseMetadata(config).robots, {
+      index: false,
+      follow: true,
+    });
+    assert.equal(indexingHeaders(config)[0].value, "noindex, follow");
+    assert.deepEqual(sitemapEntries(config), []);
+    assert.equal(robotsPolicy(config).sitemap, undefined);
+    assert.equal(homepageMetadata(config).alternates?.canonical, origin + "/");
+  }
+  assert.equal(
+    indexingConfig({
+      SITE_URL: origin,
+      SITE_INDEXING_ENABLED: "true",
+      CONTEXT: "production",
+    }).enabled,
+    true,
+  );
+});
+
+test("temporary Netlify deploy URLs cannot become the canonical origin", () => {
+  for (const prefix of [
+    "deploy-preview-12",
+    "feature",
+    "6ac0fc7530acd9000879bb43",
+  ]) {
+    assert.throws(
+      () =>
+        indexingConfig({
+          SITE_URL: `https://${prefix}--urbancutgroomingstudio.netlify.app`,
+          SITE_INDEXING_ENABLED: "false",
+        }),
+      /SITE_URL/,
+    );
+  }
+});
