@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import { heroPhotos } from "@/lib/hero";
+import { nextPhotoIndex } from "@/lib/slideshow";
 
 export default function HeroSlideshow() {
   const region = useRef<HTMLDivElement>(null);
@@ -14,6 +15,9 @@ export default function HeroSlideshow() {
   const [tabVisible, setTabVisible] = useState(true);
   const [loaded, setLoaded] = useState<number[]>([]);
   const [failed, setFailed] = useState<number[]>([]);
+  const [manualStep, setManualStep] = useState<number | null>(null);
+  const upcoming = nextPhotoIndex(heroPhotos, active, failed, manualStep ?? 1);
+  const ready = upcoming !== null && loaded.includes(heroPhotos[upcoming].id);
   const running = !paused && !reduced && visible && tabVisible;
 
   useEffect(() => {
@@ -45,28 +49,46 @@ export default function HeroSlideshow() {
     };
   }, []);
 
+  // Readiness belongs to the currently mounted image, not a past download.
+  // A browser may revalidate or evict a previously displayed photo.
   useEffect(() => {
-    if (
-      !running ||
-      !loaded.includes(heroPhotos[(active + 1) % heroPhotos.length].id)
-    )
-      return;
+    if (upcoming === null) return;
+    const id = heroPhotos[upcoming].id;
+    const image = region.current?.querySelector<HTMLImageElement>(
+      `img[data-photo-id="${id}"]`,
+    );
+    setLoaded((ids) => {
+      const readyNow = image?.complete && image.naturalWidth > 0;
+      if (readyNow) return ids.includes(id) ? ids : [...ids, id];
+      return ids.includes(id) ? ids.filter((value) => value !== id) : ids;
+    });
+  }, [upcoming]);
+  // Hold the current portrait while loading; skip failed/stalled requests
+  // for this mount instead of retrying forever or running catch-up transitions.
+  useEffect(() => {
+    if (upcoming === null || ready) return;
+    const id = heroPhotos[upcoming].id;
     const timer = window.setTimeout(
-      () =>
-        setSlide(({ active }) => ({
-          active: (active + 1) % heroPhotos.length,
-          previous: active,
-        })),
-      2800,
+      () => setFailed((ids) => (ids.includes(id) ? ids : [...ids, id])),
+      15000,
     );
     return () => window.clearTimeout(timer);
-  }, [running, active, loaded]);
+  }, [upcoming, ready]);
 
-  const move = (step: number) =>
-    setSlide(({ active }) => ({
-      active: (active + step + heroPhotos.length) % heroPhotos.length,
-      previous: active,
-    }));
+  useEffect(() => {
+    if (upcoming === null || !ready || (!running && manualStep === null))
+      return;
+    const timer = window.setTimeout(
+      () => {
+        setSlide({ active: upcoming, previous: active });
+        setManualStep(null);
+      },
+      manualStep === null ? 2800 : 0,
+    );
+    return () => window.clearTimeout(timer);
+  }, [running, active, upcoming, ready, manualStep]);
+
+  const move = (step: number) => setManualStep(step);
   const toggle = () => {
     if (!reduced) setPaused((value) => !value);
   };
@@ -101,46 +123,48 @@ export default function HeroSlideshow() {
         aria-live={running ? "off" : "polite"}
         aria-atomic="true"
       >
-        {heroPhotos.map((photo, index) => (
-          <div
-            key={photo.id}
-            className={`grooming-frame${index === active ? " is-active" : ""}${index === previous ? " is-previous" : ""}${index === active && previous !== null ? " is-entering" : ""}`}
-            aria-hidden={index !== active}
-            role="group"
-            aria-roledescription="slide"
-            aria-label={`${index + 1} of ${heroPhotos.length}`}
-          >
-            {failed.includes(photo.id) ? (
-              <p className="photo-unavailable">
-                This photograph could not load.
-              </p>
-            ) : (
-              <img
-                src={`/media/grooming/look-${photo.id}-720.webp`}
-                srcSet={`/media/grooming/look-${photo.id}-480.webp 480w, /media/grooming/look-${photo.id}-720.webp ${photo.width}w`}
-                sizes="(max-width: 760px) calc(100vw - 40px), (max-width: 900px) 620px, 576px"
-                style={{ objectPosition: photo.position }}
-                onLoad={() =>
-                  setLoaded((ids) =>
-                    ids.includes(photo.id) ? ids : [...ids, photo.id],
-                  )
-                }
-                width={photo.width}
-                height={photo.height}
-                alt={photo.alt}
-                data-photo-id={photo.id}
-                loading={
-                  index === 0 || index === (active + 1) % heroPhotos.length
-                    ? "eager"
-                    : "lazy"
-                }
-                fetchPriority={index === 0 ? "high" : "auto"}
-                decoding="async"
-                onError={() => setFailed((ids) => [...ids, photo.id])}
-              />
-            )}
-          </div>
-        ))}
+        {heroPhotos.map((photo, index) =>
+          index === active || index === previous || index === upcoming ? (
+            <div
+              key={photo.id}
+              className={`grooming-frame${index === active ? " is-active" : ""}${index === previous ? " is-previous" : ""}${index === active && previous !== null ? " is-entering" : ""}`}
+              aria-hidden={index !== active}
+              role="group"
+              aria-roledescription="slide"
+              aria-label={`${index + 1} of ${heroPhotos.length}`}
+            >
+              {failed.includes(photo.id) ? (
+                <p className="photo-unavailable">
+                  This photograph could not load.
+                </p>
+              ) : (
+                <img
+                  src={`/media/grooming/look-${photo.id}-720.webp`}
+                  srcSet={`/media/grooming/look-${photo.id}-480.webp 480w, /media/grooming/look-${photo.id}-720.webp ${photo.width}w`}
+                  sizes="(max-width: 760px) calc(100vw - 40px), (max-width: 900px) 620px, 576px"
+                  style={{ objectPosition: photo.position }}
+                  onLoad={() =>
+                    setLoaded((ids) =>
+                      ids.includes(photo.id) ? ids : [...ids, photo.id],
+                    )
+                  }
+                  width={photo.width}
+                  height={photo.height}
+                  alt={photo.alt}
+                  data-photo-id={photo.id}
+                  loading="eager"
+                  fetchPriority={index === 0 ? "high" : "auto"}
+                  decoding="async"
+                  onError={() =>
+                    setFailed((ids) =>
+                      ids.includes(photo.id) ? ids : [...ids, photo.id],
+                    )
+                  }
+                />
+              )}
+            </div>
+          ) : null,
+        )}
       </div>
     </div>
   );
