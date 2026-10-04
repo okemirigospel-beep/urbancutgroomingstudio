@@ -6,6 +6,9 @@
   --font-serif: var(--font-editorial);
 }
 :root {
+  --masthead-logo-width: 300px;
+  --masthead-padding: 16px;
+  --masthead-height: calc(var(--masthead-logo-width) * 692 / 1368 + var(--masthead-padding) * 2);
   --font-interface: var(--font-naira), var(--font-dm-sans);
   --font-editorial: var(--font-crimson-text);
   --ink: #101110;
@@ -25,7 +28,7 @@
 }
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 28px;
+  scroll-padding-top: calc(var(--masthead-height) + 16px);
 }
 body {
   margin: 0;
@@ -1204,16 +1207,20 @@ textarea {
 
 /* Responsive header and photo hero, locked to the latest supplied re-edit. */
 .masthead-wrap {
+  position: sticky;
+  top: 0;
+  z-index: 20;
   background: #000;
   color: #fff;
 }
 .masthead {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 24px;
   flex-wrap: wrap;
-  padding-block: 16px;
+  padding-block: var(--masthead-padding);
 }
 .masthead-logo {
   display: flex;
@@ -1222,7 +1229,7 @@ textarea {
   flex-shrink: 0;
 }
 .masthead-logo img {
-  width: 300px;
+  width: var(--masthead-logo-width);
   height: auto;
   display: block;
 }
@@ -1401,9 +1408,8 @@ textarea {
   flex-shrink: 0;
 }
 @media (max-width: 1179px) {
-  .masthead-logo img {
-    width: 260px;
-    height: auto;
+  :root {
+    --masthead-logo-width: 260px;
   }
   .masthead-links,
   .masthead-booking {
@@ -1413,10 +1419,17 @@ textarea {
     display: flex;
   }
   .masthead-mobile {
+    position: absolute;
+    inset: 100% 0 auto;
+    background: #000;
+    max-height: calc(100vh - var(--masthead-height) - 8px);
+    max-height: calc(100dvh - var(--masthead-height) - 8px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
     display: flex;
     flex-direction: column;
     flex-basis: 100%;
-    padding: 4px 0 18px;
+    padding: 4px 16px max(18px, env(safe-area-inset-bottom));
     border-top: 1px solid #383934;
   }
   .masthead-mobile > a {
@@ -1470,16 +1483,16 @@ textarea {
   }
 }
 @media (max-width: 600px) {
+  :root {
+    --masthead-logo-width: clamp(164px, 46vw, 194px);
+    --masthead-padding: 8px;
+  }
   .masthead {
     gap: 16px;
-    padding-block: 8px;
+    padding-block: var(--masthead-padding);
   }
   .masthead-logo {
     gap: 10px;
-  }
-  .masthead-logo img {
-    width: clamp(164px, 46vw, 194px);
-    height: auto;
   }
   .grooming-hero {
     padding-block: 30px;
@@ -2478,7 +2491,7 @@ textarea {
   color: #fff;
   padding: clamp(28px, 5vw, 64px);
   border-radius: 20px;
-  scroll-margin-top: 24px;
+  scroll-margin-top: 0;
 }
 .uc-products-heading {
   margin-bottom: 38px;
@@ -2797,7 +2810,7 @@ textarea {
 
 /* The Lookbook is independent from the autoplaying hero collection. */
 .lookbook {
-  scroll-margin-top: 28px;
+  scroll-margin-top: 0;
 }
 .lookbook > h2 {
   margin-bottom: 36px;
@@ -2924,7 +2937,7 @@ textarea {
 #services-heading, #products-heading, #lookbook-heading, #reviews-heading, #academy-heading { overflow-wrap: anywhere; }
 
 /* Static customer quotations share one editorial surface. */
-.reviews-section { padding-top: 0; text-align: left; scroll-margin-top: 28px; }
+.reviews-section { padding-top: 0; text-align: left; scroll-margin-top: 0; }
 .reviews-panel { background: #f5f2ea; border-radius: 8px; padding: clamp(32px, 4vw, 56px); }
 .reviews-panel > h2 { margin-bottom: 40px; }
 .reviews-composition { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 56px; }
@@ -2949,7 +2962,7 @@ textarea {
 }
 
 /* Academy-specific surfaces preserve the shared Services panel styling. */
-.academy-section { background: #101110; color: #fafaf7; border-radius: 8px; padding: clamp(28px, 4vw, 56px); scroll-margin-top: 24px; margin-bottom: clamp(56px, 7vw, 100px); }
+.academy-section { background: #101110; color: #fafaf7; border-radius: 8px; padding: clamp(28px, 4vw, 56px); scroll-margin-top: 0; margin-bottom: clamp(56px, 7vw, 100px); }
 #academy-heading { color: #fafaf7; }
 .academy-heading-row { display: flex; flex-wrap: wrap; gap: 20px; align-items: center; justify-content: space-between; }
 .academy-admissions { display: inline-flex; padding: 7px 12px; border: 1px solid #70603b; border-radius: 3px; font-size: 14px; color: #f2e3b3; white-space: nowrap; }
@@ -3015,7 +3028,7 @@ textarea {
  .academy-dialog-body { padding-inline: 18px; }
 }
 /* Visit & Connect: one studio card and the complete FAQ collection. */
-.visit-connect { padding-top: 0; scroll-margin-top: 28px; }
+.visit-connect { padding-top: 0; scroll-margin-top: 0; }
 #connect-heading { font-size: clamp(44px, 5.5vw, 78px); overflow-wrap: anywhere; margin-bottom: 40px; }
 .connect-grid { display: grid; grid-template-columns: minmax(0, 9fr) minmax(0, 11fr); gap: clamp(40px, 4vw, 64px); align-items: start; }
 .connect-studio { background: #f5f2ea; border-radius: 8px; padding: 32px; min-width: 0; }
@@ -3041,7 +3054,7 @@ textarea {
 .connect-question p { margin: 0; padding: 0 0 20px; font-size: 16px; line-height: 1.65; color: #50534c; }
 .connect-more { display: inline-flex; align-items: center; gap: 14px; background: none; border: 0; padding: 14px 0; margin-top: 12px; min-height: 48px; font-size: 16px; font-weight: 600; cursor: pointer; }
 .visit-connect :is(a, button):focus-visible { outline: 2px solid #866514; outline-offset: 5px; }
-#studio, #faq, #directions { scroll-margin-top: 28px; }
+#studio, #faq, #directions { scroll-margin-top: 0; }
 @media (max-width: 949px) { .connect-grid { grid-template-columns: 1fr; gap: 40px; } }
 @media (max-width: 599px) { .connect-studio { padding: 24px 20px; } .connect-grid h3 { font-size: 22px; } }
 @media (prefers-reduced-motion: reduce) { .connect-question svg, .connect-more svg { transition: none; } }

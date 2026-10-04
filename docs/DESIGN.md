@@ -98,3 +98,16 @@ SEO preparation preserves all approved page visuals. Social image uses existing 
 2026-10-03: No visual redesign. Hero renders a bounded current/outgoing/upcoming set; closed service articles use native hidden within the original dialog. Active controls remain conditional. Verified390/768/1440px. Approved layout, copy, booking and transition styling preserved.
 
 2026-10-03 final composition: Products follows Academy and precedes Visit & Connect. Actual DOM order is used at every breakpoint. Header links are Services, Gallery, Academy, Products, Contact; footer Explore follows page order. Products uses the existing clamp(56px,7vw,100px) bottom separation. Existing backgrounds and content are retained.
+
+
+## Persistent navigation — 4 October 2026
+
+The existing main navigation wrapper is sticky at top: 0 with z-index 20 and its opaque black background. No duplicate header, scroll listener or size effect. The original logo widths and paddings now share CSS variables with the document scroll-padding calculation (actual SVG aspect ratio plus vertical padding, then a 16px anchor gap). Old section scroll margins were removed to avoid double offsets. The #home anchor remains at the document start, separate from the sticky wrapper, so Back to Top works.
+
+Mobile/tablet menus use an absolutely positioned dropdown with a dynamic-viewport maximum height, internal scrolling and contained overscroll. Opening it does not displace content or lock the page. Native modal dialogs retain browser top-layer precedence over the header. Existing reduced-motion smooth-scroll override remains intact.
+
+Verification: production build and typecheck pass. Browser simulation at 360, 390, 768, 1024 and 1440px confirms pinned header from page top to footer and upward, no layout jump/overflow, anchor clearance for all sections plus FAQ/studio/directions, and modal dialogs above the header. Header heights: about 100px at 360, 107px at 390, 164px at 768/1024 and 184px at 1440. Direct Services/FAQ loads, hero/footer booking links and Back to Top passed. Escape returns visible focus to the menu toggle; orientation changes leave the menu contained and page unlocked. A 720x450 short viewport requires and supports internal menu scrolling.
+
+Limitation: native 200% browser zoom could not be inspected because the normal-browser control timed out. 720x450 responsive reflow was tested separately, not claimed as actual browser zoom. Physical devices were not tested. Screenshots are in C:/Users/LENOVO/.cache/sticky-360.png, sticky-768.png, sticky-1024.png, sticky-1440.png and sticky-short-menu.png.
+
+No booking/content/media/SEO configuration changed. Indexing remains disabled. Pre-publication rollback target: Netlify 6ac14ce7e88c900008fc69fc at b4f2a70b9240d650841dc1ccc1ab59d931bacbe0. Publication follows the authorised urbancut-continuation Git workflow; the handover reports the final published commit and live check.

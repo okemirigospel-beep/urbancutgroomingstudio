@@ -29,7 +29,8 @@ export default function Home() {
       <a href="#main" className="skip-link">
         Skip to content
       </a>
-      <div id="home" className="masthead-wrap">
+      <div id="home" />
+      <div className="masthead-wrap">
         <div className="shell">
           <Header />
         </div>
