@@ -2,11 +2,12 @@
 
 Next.js / React website with self-hosted fonts and images, service and academy enquiries through WhatsApp, and products marked Coming Soon. No database or payment service is required.
 
-Live testing site: https://urbancutgroomingstudio.netlify.app — indexing disabled.
+Hosting is paused. The owner confirms Netlify builds are stopped. This milestone is local development and GitHub backup only; indexing remains disabled and the configured origin is unchanged.
 
-GitHub source: okemirigospel-beep/urbancutgroomingstudio, production branch `urbancut-continuation`. Authorised pushes trigger Netlify continuous deployment. Local edits alone do not publish.
+GitHub source: okemirigospel-beep/urbancutgroomingstudio, production branch `urbancut-continuation`. Push only after confirming builds remain stopped. Do not enable Netlify, trigger a deployment or create a public preview.
 
-- [Current Netlify setup, publishing and rollback](docs/MANUAL-DEPLOYMENT.md)
+- [October refinement and verification](docs/OCTOBER-REFINEMENT.md)
+- [Netlify setup for a future authorised relaunch](docs/MANUAL-DEPLOYMENT.md)
 - [Verification record](docs/NETLIFY-VERIFICATION.md)
 - [Local development](docs/LOCAL-DEVELOPMENT.md)
 - [SEO preparation](docs/SEO-PREPARATION.md)

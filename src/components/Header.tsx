@@ -5,10 +5,11 @@ import { useRef, useState } from "react";
 import { hero } from "@/lib/hero";
 const links = [
   ["Services", "#services"],
-  ["Gallery", "#gallery"],
+  ["Home Service", "#home-service"],
+  ["Lookbook", "#gallery"],
   ["Academy", "#academy"],
   ["Products", "#products"],
-  ["Contact", "#contact"],
+  ["About", "#about"],
 ];
 export default function Header() {
   const [open, setOpen] = useState(false);

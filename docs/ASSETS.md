@@ -76,3 +76,7 @@ Footer now reuses approved urbancut-logo-header.svg with footer-only sizing. Bot
 SEO: icon.png (192x192) and urbancut-share.png (1200x630) rasterise the approved tight-bounds SVG on black without altering artwork. Original SVGs untouched; no new branding or external image service.
 
 2026-10-03: No assets changed. All20 hero photographs retain IDs/order,480/720WebP variants and focal positions; only request timing changed. Mobile cold-load selected480w sources. See SEO-PREPARATION.md.
+
+## 6 October 2026 — temporary approved placeholders
+
+Founder portrait pending: `src/lib/presentation.ts` currently uses decorative NW, not a photograph. Four Services category IDs (`haircuts`, `beard`, `hair-care`, `home`) now render plain neutral media areas; home kit image also removed from detail view. `wellness` and `membership` retain their existing images and unavailable states. All original files retained. Product mockups are no longer rendered; historical files preserved. Hero, Lookbook and Academy media unchanged.

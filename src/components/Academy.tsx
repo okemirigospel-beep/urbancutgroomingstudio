@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import BeyondTheChair from "./BeyondTheChair";
 import { ArrowRight, Timer, Tag, X, Info } from "lucide-react";
 import {
   useEffect,
@@ -160,6 +161,7 @@ export default function Academy() {
             </article>
           ))}
         </div>
+        <BeyondTheChair />
       </section>
       <dialog
         ref={dialog}

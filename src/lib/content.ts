@@ -1,7 +1,7 @@
 import { openingHoursSummary, studioSchedule } from "./appointments.ts";
 export const brand = {
   name: "URBANCUT",
-  region: "Abuja, Nigeria",
+  region: "Gwarinpa, Abuja · Nigeria",
   hours: openingHoursSummary,
   timezone: studioSchedule.timeZone,
 };
@@ -54,7 +54,7 @@ export const faqs: readonly FAQ[] = [
     id: "products",
     question: "Can I buy grooming products?",
     answer:
-      "Our grooming collection is launching soon. Listed products are not yet available for purchase.",
+      "The UrbanCut Grooming Collection is coming soon. Products are not available to order yet.",
   },
   {
     id: "deposit",
@@ -78,7 +78,7 @@ export const faqs: readonly FAQ[] = [
     id: "listed-prices",
     question: "Are these final prices, and is this a live booking?",
     answer:
-      "Our Services shows published listed prices, with planned nail-care prices marked Coming Soon. Your selection creates an appointment request, not a confirmed reservation. Review it, continue to WhatsApp and press Send there. The studio must confirm availability, final amount and arrangements. The website does not save or send your request.",
+      "Choose your services and preferred appointment time, then continue to WhatsApp. Our team will confirm availability and any required payment or deposit before confirming your appointment.",
   },
   {
     id: "confirmation",

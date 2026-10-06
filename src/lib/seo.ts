@@ -4,9 +4,9 @@ import { studio } from "./studio.ts";
 import { studioSchedule } from "./appointments.ts";
 
 export const pageTitle =
-  "UrbanCut Grooming Studio | Barber Shop in Gwarinpa, Abuja";
+  "UrbanCut Grooming Studio | Premium Grooming in Gwarinpa, Abuja";
 export const pageDescription =
-  "Explore haircuts, beard grooming and barbering training at UrbanCut Grooming Studio in Gwarinpa, Abuja. View services and request an appointment.";
+  "Discover UrbanCut Grooming Studio in Gwarinpa, Abuja. Explore barbering, personal grooming, home service and professional training at UrbanCut Academy.";
 
 export function baseMetadata(config: IndexingConfig): Metadata {
   return {
@@ -57,9 +57,10 @@ export function businessSchema(config: IndexingConfig) {
     "@context": "https://schema.org",
     "@type": "HairSalon",
     name: studio.name,
+    legalName: studio.legalName,
     address: { "@type": "PostalAddress", ...studio.postalAddress },
     email: studio.email,
-    sameAs: [studio.instagram],
+    sameAs: [studio.instagram, studio.tiktok],
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "booking enquiries via WhatsApp",

@@ -1,3 +1,5 @@
+> Current update — 6 October 2026: LOCAL DEVELOPMENT + GITHUB BACKUP ONLY. The owner confirms Netlify Build status is **Stopped builds**; the project is reported disabled. Do not enable or trigger deployment. Indexing remains disabled and origin unchanged. See [October refinement and verification](OCTOBER-REFINEMENT.md). Earlier deployment permissions and visible product-catalogue instructions are historical and superseded.
+
 # Netlify deployment workflow
 
 Netlify is the current host. The former Vercel handover is historical only.

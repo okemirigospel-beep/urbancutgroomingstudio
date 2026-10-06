@@ -13,6 +13,8 @@ import { hero } from "@/lib/hero";
 import Lookbook from "@/components/Lookbook";
 import Products from "@/components/Products";
 import Services from "@/components/Services";
+import Story from "@/components/Story";
+import WhyUrbanCut from "@/components/WhyUrbanCut";
 import { brand } from "@/lib/content";
 
 export const metadata = homepageMetadata(indexingConfig());
@@ -43,9 +45,17 @@ export default function Home() {
               <span className="hero-elevated">{hero.headline[1]}</span>
             </h1>
             <p className="grooming-description">{hero.description}</p>
-            <a className="booking-button hero-booking" href="#services">
-              {hero.action.toUpperCase()}
-            </a>
+            <div className="hero-actions">
+              <a className="booking-button hero-booking" href="#services">
+                {hero.action.toUpperCase()}
+              </a>
+              <a
+                className="booking-button hero-home-service"
+                href="#home-service"
+              >
+                REQUEST HOME SERVICE
+              </a>
+            </div>
           </div>
           <HeroSlideshow />
         </section>
@@ -74,9 +84,9 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="shell">
-          <Services />
-        </div>
+        <Story />
+        <Services />
+        <WhyUrbanCut />
         <Lookbook />
         <Reviews />
         <Academy />

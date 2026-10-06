@@ -2,11 +2,14 @@ import Image from "next/image";
 import { studio } from "@/lib/studio";
 
 const explore = [
+  ["About", "#about"],
+  ["Home Service", "#home-service"],
   ["Our Services", "#services"],
   ["The Lookbook", "#gallery"],
   ["Client Reviews", "#reviews"],
   ["UrbanCut Academy", "#academy"],
-  ["Our Products", "#products"],
+  ["Products", "#products"],
+  ["Contact", "#contact"],
 ];
 export default function Footer() {
   return (
@@ -59,11 +62,17 @@ export default function Footer() {
             >
               Instagram
             </a>
+            <a href={studio.tiktok} target="_blank" rel="noopener noreferrer">
+              TikTok
+            </a>
             <a href={`mailto:${studio.email}`}>Email Us</a>
           </nav>
         </div>
         <div className="footer-bottom">
-          <span>© {new Date().getFullYear()} UrbanCut Grooming Studio</span>
+          <span>
+            © {new Date().getFullYear()} {studio.legalName}. All rights
+            reserved.
+          </span>
           <a href="#home">
             Back to Top <span aria-hidden="true">↑</span>
           </a>

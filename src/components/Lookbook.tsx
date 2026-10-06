@@ -312,7 +312,7 @@ export default function Lookbook() {
       aria-labelledby="lookbook-heading"
     >
       <h2 id="lookbook-heading" className="type-editorial uc-section-title">
-        The Lookbook
+        The UrbanCut Lookbook
       </h2>
       <p className="lookbook-intro">
         Precision in every cut. Care in every detail. Explore the finishes that

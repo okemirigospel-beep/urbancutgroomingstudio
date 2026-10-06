@@ -110,6 +110,9 @@ export default function VisitConnect() {
               <Instagram size={20} aria-hidden="true" />
               Instagram
             </a>
+            <a href={studio.tiktok} target="_blank" rel="noopener noreferrer">
+              TikTok
+            </a>
             <a href={`mailto:${studio.email}`}>
               <Mail size={20} aria-hidden="true" />
               Email Us

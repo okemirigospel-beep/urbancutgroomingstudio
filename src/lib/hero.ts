@@ -2,7 +2,7 @@ export const hero = {
   brand: "URBANCUT Grooming Studio",
   headline: ["GROOMING,", "ELEVATED."],
   description:
-    "Premium grooming, wellness and professional development — built for people who value how they look, feel and present themselves.",
+    "Precision barbering and personal grooming in Abuja, at our studio or your location. Professional training through UrbanCut Academy.",
   action: "Book an Appointment",
   bookingNotice: "Appointments requested at least one day ahead",
 };

@@ -1,3 +1,5 @@
+> Current update — 6 October 2026: LOCAL DEVELOPMENT + GITHUB BACKUP ONLY. The owner confirms Netlify Build status is **Stopped builds**; the project is reported disabled. Do not enable or trigger deployment. Indexing remains disabled and origin unchanged. See [October refinement and verification](OCTOBER-REFINEMENT.md). Earlier deployment permissions and visible product-catalogue instructions are historical and superseded.
+
 > Current hosting update — 3 October 2026: Netlify is the authorised host at https://urbancutgroomingstudio.netlify.app. Indexing remains disabled. Earlier Vercel/local-only deployment notes below are historical and superseded by MANUAL-DEPLOYMENT.md and NETLIFY-VERIFICATION.md. Website design and booking behavior are unchanged.
 
 # Current Services and schedule milestone — 28 September 2026

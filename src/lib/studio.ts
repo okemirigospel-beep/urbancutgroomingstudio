@@ -12,6 +12,8 @@ const postalAddress = {
 export const studio = {
   postalAddress,
   name: "UrbanCut Grooming Studio",
+  legalName: "UrbanCut Grooming Lounge & Spa Ltd",
+  tiktok: "https://www.tiktok.com/@urbancut",
   address: `${postalAddress.streetAddress}, ${postalAddress.addressLocality} ${postalAddress.postalCode}, ${postalAddress.addressRegion}`,
   hours: [
     {

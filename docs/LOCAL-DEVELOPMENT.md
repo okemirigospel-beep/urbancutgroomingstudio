@@ -1,3 +1,5 @@
+> Current update — 6 October 2026: LOCAL DEVELOPMENT + GITHUB BACKUP ONLY. The owner confirms Netlify Build status is **Stopped builds**; the project is reported disabled. Do not enable or trigger deployment. Indexing remains disabled and origin unchanged. See [October refinement and verification](OCTOBER-REFINEMENT.md). Earlier deployment permissions and visible product-catalogue instructions are historical and superseded.
+
 # Local development
 
 Project: C:\UCUTS on the user's Windows computer. Node.js 24 recommended (app minimum 20.9; the built-in TypeScript test runner needs newer Node, verified with 24.19). npm lockfile is authoritative: use npm ci for subsequent installs.

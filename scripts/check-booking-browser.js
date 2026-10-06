@@ -43,5 +43,20 @@
  await click('.uc-close');
  const ids=[...document.querySelectorAll('[id]')].map(e=>e.id);check('No duplicate IDs',ids.length===new Set(ids).size);
  check('No hidden detail controls after close',!q('.uc-service-detail button')&&!q('.uc-dialog input'));
+ // Both Home Service entry points share the original state and restore their own opener.
+ const promo=q('#home-service button');promo.focus();await click(promo);await click('.uc-offering button');
+ check('Dedicated entry retains category enquiry',q('#home-name').value==='QA Home'&&q('#home-address').value==='QA test venue, Abuja');
+ await set('home-region','Outside Abuja');await set('home-destination','Lagos, Nigeria');await set('home-address','QA hotel, Lagos');
+ await click('.uc-form button[type=submit]');
+ const outside=new URL(q('.uc-review a').href).searchParams.get('text');
+ check('Outside-Abuja handoff uses destination without Abuja price',outside.includes('Lagos, Nigeria')&&outside.includes('QA hotel, Lagos')&&!outside.includes('100,000'));
+ await click('.uc-close');check('Dedicated opener regains focus',document.activeElement===promo);
+ const homeCard=category.find(e=>e.textContent.includes('UrbanCut Home Service'));homeCard.focus();await click(homeCard);await click('.uc-offering button');
+ check('Category retains edits made through dedicated entry',q('#home-region').value==='Outside Abuja'&&q('#home-destination').value==='Lagos, Nigeria'&&document.querySelectorAll('.uc-dialog form').length===1);
+ await click('.uc-close');check('Category opener regains focus',document.activeElement===homeCard);
+ await click(category[0]);check('Studio basket survives Home Service enquiries',document.querySelectorAll('.uc-selection-line').length===2);
+ await click([...document.querySelectorAll('.uc-selection .uc-primary')].find(e=>e.checkVisibility()));
+ check('Studio entries survive Home Service enquiries',q('#studio-name').value==='QA Example'&&q('#studio-date').value===sunday);
+ await click('.uc-close');
  return results;
 })()

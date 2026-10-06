@@ -1,5 +1,7 @@
 "use client";
 import Image from "next/image";
+import HomeService from "./HomeService";
+import { categoryPhotography } from "@/lib/presentation";
 import { Tag, Timer, ShoppingCart, MessageCircle } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import {
@@ -229,338 +231,354 @@ export default function Services() {
       view?.kind,
     );
   return (
-    <section
-      id="services"
-      className="section uc-services"
-      aria-labelledby="services-heading"
-    >
-      <div className="uc-section-heading">
-        <div>
-          <h2 id="services-heading" className="type-editorial uc-section-title">
-            Our Services
-          </h2>
-        </div>
-        <div className="uc-section-intro">
-          <p className="uc-intro-lead">
-            Precision in every detail. Confidence in every finish.
-          </p>
-          <p>
-            Explore cuts, grooming and care shaped around the way you want to
-            look and feel.
-          </p>
-        </div>
-      </div>
-      <div className="uc-category-grid">
-        {categories.map((category) => (
-          <button
-            key={category.id}
-            className="uc-category-card"
-            onClick={(event) => open(category, event)}
-            aria-haspopup="dialog"
-            aria-label={`${category.name} — ${category.kind === "studio" ? "View All Services" : category.kind === "coming-soon" ? "Coming Soon — View Preview" : "View Details"}`}
-          >
-            <div className="uc-card-image">
-              <Image
-                src={`/media/services/${category.image}.webp`}
-                alt=""
-                width={800}
-                height={1000}
-                sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw"
-              />
-              {category.kind === "coming-soon" && (
-                <span className="uc-status uc-card-status">COMING SOON</span>
-              )}
-            </div>
-            <div className="uc-card-copy">
-              <h3>{category.name}</h3>
-              <p>{category.caption}</p>
-              <span className="uc-card-action">
-                {category.kind === "studio"
-                  ? "View All Services"
-                  : category.kind === "coming-soon"
-                    ? "View Preview"
-                    : "View Details"}
-              </span>
-            </div>
-          </button>
-        ))}
-      </div>
-      <div className="uc-section-foot">
-        {count > 0 && (
-          <button
-            className="uc-primary"
-            onClick={(event) => {
-              trigger.current = event.currentTarget;
-              go({ kind: "studio" });
-            }}
-          >
-            <ShoppingCart size={19} aria-hidden="true" /> CONTINUE TO BOOKING
-          </button>
-        )}
-      </div>
-      <dialog
-        ref={dialog}
-        className="uc-dialog"
-        aria-labelledby="uc-dialog-title"
-        onClose={(event) => {
-          if (!event.currentTarget.open) setView(null);
-        }}
-        onCancel={(event) => {
-          event.preventDefault();
-          setView(null);
-        }}
+    <>
+      <section
+        id="services"
+        className="shell section uc-services"
+        aria-labelledby="services-heading"
       >
-        <div className="uc-dialog-shell">
-          <p className="sr-only" role="status">
-            {announcement}
-          </p>
-          <header className="uc-dialog-header">
-            {view && (
-              <div className="uc-dialog-nav">
-                {hasBack && (
-                  <button onClick={back}>
-                    {view?.kind === "detail"
-                      ? `Back to ${currentCategory?.name}`
-                      : "Back"}
-                  </button>
-                )}
-                <button
-                  className="uc-close"
-                  onClick={() => setView(null)}
-                  aria-label="Close services dialog"
-                >
-                  Close
-                </button>
-              </div>
-            )}
-            <div className="uc-panel-identity">
-              <div className="uc-panel-title">
-                {(view?.kind === "membership" ||
-                  currentCategory?.kind === "coming-soon") && (
-                  <p className="uc-kicker">Coming Soon / Preview</p>
-                )}
-                <h2 id="uc-dialog-title" ref={heading} tabIndex={-1}>
-                  {services.map((service) => (
-                    <span
-                      key={service.id}
-                      hidden={currentService?.id !== service.id}
-                    >
-                      {service.name}
-                    </span>
-                  ))}
-                  {!currentService && (view ? title : "Service details")}
-                </h2>
-              </div>
-            </div>
-          </header>
-          <div className="uc-modal-scroll" ref={scroll}>
-            <div
-              className={`uc-dialog-layout ${isStudio ? "with-selection" : ""}`}
+        <div className="uc-section-heading">
+          <div>
+            <h2
+              id="services-heading"
+              className="type-editorial uc-section-title"
             >
-              <div className="uc-dialog-main">
-                {view?.kind === "list" && (
-                  <>
-                    <p className="uc-list-intro">
-                      {view.category === "wellness"
-                        ? "Nail & Foot Care. These services are Coming Soon; explore the planned menu below."
-                        : "Explore the details, then add services for your visit to the Abuja studio."}
-                    </p>
-                    <div className="uc-service-list">
-                      {services
-                        .filter((s) => s.category === view.category)
-                        .map((service) => (
-                          <article className="uc-service-row" key={service.id}>
-                            <div>
-                              <h3>{service.name}</h3>
-                              <Price service={service} />
-                            </div>
-                            <div className="uc-row-actions">
-                              <button
-                                className="uc-text-action"
-                                aria-label={`View Service: ${service.name}`}
-                                onClick={() =>
-                                  go({ kind: "detail", id: service.id })
-                                }
-                              >
-                                View Service
-                              </button>
-                              <AddAction
-                                service={service}
-                                basket={basket}
-                                add={add}
-                              />
-                            </div>
-                          </article>
-                        ))}
-                    </div>
-                  </>
-                )}
-                {services.map((service) => (
-                  <article
-                    key={service.id}
-                    className="uc-service-detail"
-                    hidden={currentService?.id !== service.id}
-                    aria-label={service.name}
-                  >
-                    <Price service={service} />
-                    <p className="uc-detail-description">
-                      {service.description}
-                    </p>
-                    {service.inclusions && (
-                      <div className="uc-inclusions">
-                        <h3>What’s included</h3>
-                        <ul>
-                          {service.inclusions.map((i) => (
-                            <li key={i}>{i}</li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
-                    {currentService?.id === service.id && (
-                      <AddAction service={service} basket={basket} add={add} />
-                    )}
-                  </article>
-                ))}
-                {view?.kind === "studio" && (
-                  <StudioForm
-                    data={studio}
-                    update={setStudio}
-                    basket={basket}
-                    errors={errors}
-                    submit={submitStudio}
-                  />
-                )}
-                {(view?.kind === "studio-review" ||
-                  view?.kind === "home-review") && (
-                  <div className="uc-review">
-                    <pre>{message}</pre>
-                    <div className="uc-handoff-note">
-                      <MessageCircle
-                        size={22}
-                        strokeWidth={1.8}
-                        aria-hidden="true"
-                      />
-                      <p>
-                        You’ll be redirected to WhatsApp to send your booking
-                        request.
-                      </p>
-                    </div>
-                    <a
-                      className="uc-primary"
-                      href={whatsappUrl(message)}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onClick={(event) => {
-                        const next =
-                          view?.kind === "studio-review"
-                            ? validateStudio(studio, basket)
-                            : validateHome(home);
-                        if (Object.keys(next).length) {
-                          event.preventDefault();
-                          setView({
-                            kind:
-                              view?.kind === "studio-review"
-                                ? "studio"
-                                : "home-form",
-                          });
-                          focusErrors(
-                            next,
-                            view?.kind === "studio-review" ? "studio" : "home",
-                          );
-                        }
-                      }}
-                    >
-                      CONTINUE TO BOOKING
-                    </a>
-                  </div>
-                )}
-                {view?.kind === "home" && (
-                  <div className="uc-offering">
-                    <Image
-                      src="/media/services/home.webp"
-                      width={800}
-                      height={1000}
-                      alt="Illustrative portable grooming kit"
-                      sizes="(max-width: 600px) 100vw, 40vw"
-                    />
-                    <div>
-                      <p className="uc-offering-price">
-                        {money(homeOffering.price)} in Abuja
-                      </p>
-                      <h3>{homeOffering.package}</h3>
-                      <p>{homeOffering.description}</p>
-                      <p className="uc-callout">{homeOffering.outside}</p>
-                      <button
-                        className="uc-primary"
-                        onClick={() => go({ kind: "home-form" })}
-                      >
-                        Enquire About Home Service
-                      </button>
-                    </div>
-                  </div>
-                )}
-                {view?.kind === "home-form" && (
-                  <HomeForm
-                    data={home}
-                    update={setHome}
-                    errors={errors}
-                    submit={submitHome}
-                  />
-                )}
-                {view?.kind === "membership" && (
-                  <div className="uc-offering uc-membership">
-                    <Image
-                      src="/media/services/membership.webp"
-                      width={800}
-                      height={1000}
-                      alt="Illustrative Black Card membership concept, not currently available"
-                      sizes="(max-width: 600px) 100vw, 40vw"
-                    />
-                    <div>
-                      <p className="uc-kicker">Monthly Grooming Membership</p>
-                      <span className="uc-status">Coming Soon</span>
-                      <h3 className="uc-membership-heading">
-                        {membership.headline}
-                      </h3>
-                      <p>{membership.introduction}</p>
-                      <div className="uc-callout">
-                        <strong>
-                          Registration fee: {money(membership.registrationFee)}
-                        </strong>
-                        <p>
-                          Registration is not open. This is not a monthly
-                          subscription fee or an amount payable on this website
-                          now.
-                        </p>
-                      </div>
-                      <h4>Proposed benefits</h4>
-                      <ul>
-                        {membership.benefits.map((b) => (
-                          <li key={b}>{b}</li>
-                        ))}
-                      </ul>
-                      <p className="uc-fine">
-                        Proposed benefits are not confirmed entitlements. This
-                        preview does not make unavailable treatments bookable.
-                      </p>
-                      <span className="uc-status">Coming Soon</span>
-                    </div>
-                  </div>
-                )}
-              </div>
-              {isStudio && (
-                <SelectionSummary
-                  basket={basket}
-                  adjust={adjust}
-                  onContinue={() => go({ kind: "studio" })}
-                  canContinue={view?.kind !== "studio"}
-                  error={errors.basket}
-                />
-              )}
-            </div>
+              Our Services
+            </h2>
+          </div>
+          <div className="uc-section-intro">
+            <p className="uc-intro-lead">
+              Precision in every detail. Confidence in every finish.
+            </p>
+            <p>
+              Explore cuts, grooming and care shaped around the way you want to
+              look and feel.
+            </p>
           </div>
         </div>
-      </dialog>
-    </section>
+        <div className="uc-category-grid">
+          {categories.map((category) => (
+            <button
+              key={category.id}
+              className="uc-category-card"
+              onClick={(event) => open(category, event)}
+              aria-haspopup="dialog"
+              aria-label={`${category.name} — ${category.kind === "studio" ? "View All Services" : category.kind === "coming-soon" ? "Coming Soon — View Preview" : "View Details"}`}
+            >
+              <div className="uc-card-image">
+                {categoryPhotography[category.id] && (
+                  <Image
+                    src={categoryPhotography[category.id]!}
+                    alt=""
+                    width={800}
+                    height={1000}
+                    sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw"
+                  />
+                )}
+                {category.kind === "coming-soon" && (
+                  <span className="uc-status uc-card-status">COMING SOON</span>
+                )}
+              </div>
+              <div className="uc-card-copy">
+                <h3>{category.name}</h3>
+                <p>{category.caption}</p>
+                <span className="uc-card-action">
+                  {category.kind === "studio"
+                    ? "View All Services"
+                    : category.kind === "coming-soon"
+                      ? "View Preview"
+                      : "View Details"}
+                </span>
+              </div>
+            </button>
+          ))}
+        </div>
+        <div className="uc-section-foot">
+          {count > 0 && (
+            <button
+              className="uc-primary"
+              onClick={(event) => {
+                trigger.current = event.currentTarget;
+                go({ kind: "studio" });
+              }}
+            >
+              <ShoppingCart size={19} aria-hidden="true" /> CONTINUE TO BOOKING
+            </button>
+          )}
+        </div>
+        <dialog
+          ref={dialog}
+          className="uc-dialog"
+          aria-labelledby="uc-dialog-title"
+          onClose={(event) => {
+            if (!event.currentTarget.open) setView(null);
+          }}
+          onCancel={(event) => {
+            event.preventDefault();
+            setView(null);
+          }}
+        >
+          <div className="uc-dialog-shell">
+            <p className="sr-only" role="status">
+              {announcement}
+            </p>
+            <header className="uc-dialog-header">
+              {view && (
+                <div className="uc-dialog-nav">
+                  {hasBack && (
+                    <button onClick={back}>
+                      {view?.kind === "detail"
+                        ? `Back to ${currentCategory?.name}`
+                        : "Back"}
+                    </button>
+                  )}
+                  <button
+                    className="uc-close"
+                    onClick={() => setView(null)}
+                    aria-label="Close services dialog"
+                  >
+                    Close
+                  </button>
+                </div>
+              )}
+              <div className="uc-panel-identity">
+                <div className="uc-panel-title">
+                  {(view?.kind === "membership" ||
+                    currentCategory?.kind === "coming-soon") && (
+                    <p className="uc-kicker">Coming Soon / Preview</p>
+                  )}
+                  <h2 id="uc-dialog-title" ref={heading} tabIndex={-1}>
+                    {services.map((service) => (
+                      <span
+                        key={service.id}
+                        hidden={currentService?.id !== service.id}
+                      >
+                        {service.name}
+                      </span>
+                    ))}
+                    {!currentService && (view ? title : "Service details")}
+                  </h2>
+                </div>
+              </div>
+            </header>
+            <div className="uc-modal-scroll" ref={scroll}>
+              <div
+                className={`uc-dialog-layout ${isStudio ? "with-selection" : ""}`}
+              >
+                <div className="uc-dialog-main">
+                  {view?.kind === "list" && (
+                    <>
+                      <p className="uc-list-intro">
+                        {view.category === "wellness"
+                          ? "Nail & Foot Care. These services are Coming Soon; explore the planned menu below."
+                          : "Explore the details, then add services for your visit to the Abuja studio."}
+                      </p>
+                      <div className="uc-service-list">
+                        {services
+                          .filter((s) => s.category === view.category)
+                          .map((service) => (
+                            <article
+                              className="uc-service-row"
+                              key={service.id}
+                            >
+                              <div>
+                                <h3>{service.name}</h3>
+                                <Price service={service} />
+                              </div>
+                              <div className="uc-row-actions">
+                                <button
+                                  className="uc-text-action"
+                                  aria-label={`View Service: ${service.name}`}
+                                  onClick={() =>
+                                    go({ kind: "detail", id: service.id })
+                                  }
+                                >
+                                  View Service
+                                </button>
+                                <AddAction
+                                  service={service}
+                                  basket={basket}
+                                  add={add}
+                                />
+                              </div>
+                            </article>
+                          ))}
+                      </div>
+                    </>
+                  )}
+                  {services.map((service) => (
+                    <article
+                      key={service.id}
+                      className="uc-service-detail"
+                      hidden={currentService?.id !== service.id}
+                      aria-label={service.name}
+                    >
+                      <Price service={service} />
+                      <p className="uc-detail-description">
+                        {service.description}
+                      </p>
+                      {service.inclusions && (
+                        <div className="uc-inclusions">
+                          <h3>What’s included</h3>
+                          <ul>
+                            {service.inclusions.map((i) => (
+                              <li key={i}>{i}</li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+                      {currentService?.id === service.id && (
+                        <AddAction
+                          service={service}
+                          basket={basket}
+                          add={add}
+                        />
+                      )}
+                    </article>
+                  ))}
+                  {view?.kind === "studio" && (
+                    <StudioForm
+                      data={studio}
+                      update={setStudio}
+                      basket={basket}
+                      errors={errors}
+                      submit={submitStudio}
+                    />
+                  )}
+                  {(view?.kind === "studio-review" ||
+                    view?.kind === "home-review") && (
+                    <div className="uc-review">
+                      <pre>{message}</pre>
+                      <div className="uc-handoff-note">
+                        <MessageCircle
+                          size={22}
+                          strokeWidth={1.8}
+                          aria-hidden="true"
+                        />
+                        <p>
+                          You’ll be redirected to WhatsApp to send your booking
+                          request.
+                        </p>
+                      </div>
+                      <a
+                        className="uc-primary"
+                        href={whatsappUrl(message)}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(event) => {
+                          const next =
+                            view?.kind === "studio-review"
+                              ? validateStudio(studio, basket)
+                              : validateHome(home);
+                          if (Object.keys(next).length) {
+                            event.preventDefault();
+                            setView({
+                              kind:
+                                view?.kind === "studio-review"
+                                  ? "studio"
+                                  : "home-form",
+                            });
+                            focusErrors(
+                              next,
+                              view?.kind === "studio-review"
+                                ? "studio"
+                                : "home",
+                            );
+                          }
+                        }}
+                      >
+                        CONTINUE TO BOOKING
+                      </a>
+                    </div>
+                  )}
+                  {view?.kind === "home" && (
+                    <div className="uc-offering uc-home-offering">
+                      <div>
+                        <p className="uc-offering-price">
+                          {money(homeOffering.price)} in Abuja
+                        </p>
+                        <h3>{homeOffering.package}</h3>
+                        <p>{homeOffering.description}</p>
+                        <p className="uc-callout">{homeOffering.outside}</p>
+                        <button
+                          className="uc-primary"
+                          onClick={() => go({ kind: "home-form" })}
+                        >
+                          Enquire About Home Service
+                        </button>
+                      </div>
+                    </div>
+                  )}
+                  {view?.kind === "home-form" && (
+                    <HomeForm
+                      data={home}
+                      update={setHome}
+                      errors={errors}
+                      submit={submitHome}
+                    />
+                  )}
+                  {view?.kind === "membership" && (
+                    <div className="uc-offering uc-membership">
+                      <Image
+                        src="/media/services/membership.webp"
+                        width={800}
+                        height={1000}
+                        alt="Illustrative Black Card membership concept, not currently available"
+                        sizes="(max-width: 600px) 100vw, 40vw"
+                      />
+                      <div>
+                        <p className="uc-kicker">Monthly Grooming Membership</p>
+                        <span className="uc-status">Coming Soon</span>
+                        <h3 className="uc-membership-heading">
+                          {membership.headline}
+                        </h3>
+                        <p>{membership.introduction}</p>
+                        <div className="uc-callout">
+                          <strong>
+                            Registration fee:{" "}
+                            {money(membership.registrationFee)}
+                          </strong>
+                          <p>
+                            Registration is not open. This is not a monthly
+                            subscription fee or an amount payable on this
+                            website now.
+                          </p>
+                        </div>
+                        <h4>Proposed benefits</h4>
+                        <ul>
+                          {membership.benefits.map((b) => (
+                            <li key={b}>{b}</li>
+                          ))}
+                        </ul>
+                        <p className="uc-fine">
+                          Proposed benefits are not confirmed entitlements. This
+                          preview does not make unavailable treatments bookable.
+                        </p>
+                        <span className="uc-status">Coming Soon</span>
+                      </div>
+                    </div>
+                  )}
+                </div>
+                {isStudio && (
+                  <SelectionSummary
+                    basket={basket}
+                    adjust={adjust}
+                    onContinue={() => go({ kind: "studio" })}
+                    canContinue={view?.kind !== "studio"}
+                    error={errors.basket}
+                  />
+                )}
+              </div>
+            </div>
+          </div>
+        </dialog>
+      </section>
+      <HomeService
+        onRequest={(event) => {
+          trigger.current = event.currentTarget;
+          go({ kind: "home" });
+        }}
+      />
+    </>
   );
 }
