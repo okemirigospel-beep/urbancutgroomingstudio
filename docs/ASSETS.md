@@ -80,3 +80,7 @@ SEO: icon.png (192x192) and urbancut-share.png (1200x630) rasterise the approved
 ## 6 October 2026 — temporary approved placeholders
 
 Founder portrait pending: `src/lib/presentation.ts` currently uses decorative NW, not a photograph. Four Services category IDs (`haircuts`, `beard`, `hair-care`, `home`) now render plain neutral media areas; home kit image also removed from detail view. `wellness` and `membership` retain their existing images and unavailable states. All original files retained. Product mockups are no longer rendered; historical files preserved. Hero, Lookbook and Academy media unchanged.
+
+## 10 October 2026 — supplied web edits assets
+
+Originals preserved in assets/originals/oct10. Extensionless collection identified as PNG 1672×941; 1092×941 WebP crop in public/media/urbancut-collection-teaser.webp. Transparent TikTok derivative in public/media/tiktok-mark.png. No Home Service video supplied or loaded. Full bounds, compression and evidence: OCT10-SCOPED-UPDATE.md.

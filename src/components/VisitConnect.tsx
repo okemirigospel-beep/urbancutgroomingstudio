@@ -111,6 +111,7 @@ export default function VisitConnect() {
               Instagram
             </a>
             <a href={studio.tiktok} target="_blank" rel="noopener noreferrer">
+              <span className="tiktok-mark" aria-hidden="true" />
               TikTok
             </a>
             <a href={`mailto:${studio.email}`}>

@@ -16,6 +16,8 @@
   --muted: #62645f;
   --line: #dedfd9;
   --surface: #f2f2ef;
+  --ivory: #f5f2ea;
+  --contact-icon-gold: #866514;
   color-scheme: light;
   font-family: var(--font-interface);
   font-optical-sizing: auto;
@@ -2938,7 +2940,7 @@ textarea {
 
 /* Static customer quotations share one editorial surface. */
 .reviews-section { padding-top: 0; text-align: left; scroll-margin-top: 0; }
-.reviews-panel { background: #f5f2ea; border-radius: 8px; padding: clamp(32px, 4vw, 56px); }
+.reviews-panel { background: var(--ivory); border-radius: 8px; padding: clamp(32px, 4vw, 56px); }
 .reviews-panel > h2 { margin-bottom: 40px; }
 .reviews-composition { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 56px; }
 .reviews-section .client-review { margin: 0; min-width: 0; position: relative; }
@@ -3042,7 +3044,7 @@ textarea {
 .connect-directions:hover { background: #34332e; }
 .connect-links { display: flex; flex-wrap: wrap; gap: 4px 22px; border-top: 1px solid #d9d3c5; margin-top: 28px; padding-top: 20px; }
 .connect-links a { display: inline-flex; align-items: center; gap: 10px; min-height: 44px; font-size: 15px; }
-.connect-links svg { flex-shrink: 0; color: #866514; }
+.connect-links svg { flex-shrink: 0; color: var(--contact-icon-gold); }
 .connect-links a:hover { text-decoration: underline; text-underline-offset: 4px; }
 .connect-faq { min-width: 0; }
 .connect-question { border-bottom: 1px solid var(--line); }
@@ -3103,12 +3105,16 @@ textarea {
 .founder-profile p { color: var(--muted); }
 .uc-card-image { background: var(--surface); }
 .uc-home-offering { display: block; }
-.home-service-section { background: var(--surface); padding: clamp(28px, 5vw, 64px); display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: clamp(32px, 5vw, 72px); align-items: center; }
-.home-service-copy > p { margin-top: 22px; max-width: 54ch; }
-.home-service-copy .home-service-lead { font-size: 23px; color: var(--ink); }
-.home-service-coverage, .home-service-scheduling { color: var(--muted); font-size: 15px; }
-.home-service-price { font-size: clamp(40px, 4vw, 56px); font-weight: 600; line-height: 1.2; margin-bottom: 10px; }
-.home-service-action .uc-primary { margin-block: 28px 20px; }
+/* Ratio is provisional until the genuine Home Service video is supplied. */
+.home-service-section { --home-media-ratio: 4 / 3; background: var(--ink); color: white; border: 1px solid var(--gold); border-radius: 4px; padding: clamp(32px, 4.5vw, 64px); display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(32px, 3.5vw, 56px); align-items: center; }
+.home-service-copy .home-service-lead { margin-top: 24px; color: #d8d8d0; font-size: 20px; max-width: 34ch; }
+.home-service-copy .home-service-price { font-size: clamp(36px, 3.4vw, 48px); font-weight: 600; line-height: 1.2; margin-top: 28px; color: var(--gold); }
+.home-service-package { margin-top: 8px; }
+.home-service-copy .uc-primary { background: white; color: var(--ink); margin-top: 28px; }
+.home-service-copy .uc-primary:hover { background: var(--surface); }
+.home-service-scheduling { color: #d8d8d0; font-size: 15px; margin-top: 20px; max-width: 36ch; }
+.home-service-media { width: 100%; aspect-ratio: var(--home-media-ratio); background: #1b1c1b; }
+.why-section { background: var(--ivory); border-radius: 8px; padding: clamp(32px, 4vw, 56px); margin-block: clamp(48px, 6vw, 80px); }
 .why-points { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 32px; margin-top: 40px; }
 .why-points p { margin-top: 14px; color: var(--muted); }
 .beyond-chair { margin-top: 64px; display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 40px; }
@@ -3119,14 +3125,14 @@ textarea {
 .beyond-chair ul { list-style: none; padding: 0; margin: 18px 0 28px; display: grid; gap: 8px; }
 .beyond-chair .uc-primary { background: white; color: var(--ink); width: 100%; }
 .beyond-chair .uc-primary:hover { background: var(--surface); }
-.collection-announcement { border-radius: 4px; }
+.collection-announcement { border-radius: 4px; display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); align-items: center; gap: clamp(32px, 3.5vw, 56px); }
 .collection-announcement h2 { max-width: 19ch; }
 .collection-announcement .launch-status { margin-top: 28px; }
 .collection-copy { margin-top: 18px; max-width: 52ch; color: #d8d8d0; font-size: 18px; }
 @media (max-width: 1023px) {
  .why-points { grid-template-columns: repeat(2, minmax(0, 1fr)); }
- .home-service-section, .beyond-chair { grid-template-columns: 1fr; }
- .home-service-action, .beyond-chair > div { max-width: 600px; }
+ .beyond-chair { grid-template-columns: 1fr; }
+ .beyond-chair > div { max-width: 600px; }
 }
 @media (max-width: 767px) {
  .story-section { grid-template-columns: 1fr; gap: 32px; }
@@ -3139,4 +3145,22 @@ textarea {
  .why-points { grid-template-columns: 1fr; gap: 28px; margin-top: 28px; }
  .hero-actions { align-items: flex-start; flex-direction: column; gap: 4px; }
  .beyond-chair { margin-top: 44px; gap: 28px; }
+}
+
+/* Scoped media-led offers; no active player or product-purchase affordance. */
+.collection-closing { margin-top: 24px; color: #d8d8d0; }
+.collection-media { min-width: 0; mask-image: linear-gradient(to right, transparent, #000 8%); }
+.collection-media img { display: block; width: 100%; height: auto; }
+.tiktok-mark { display: inline-block; flex: 0 0 20px; width: 20px; height: 20px; background: var(--contact-icon-gold); mask: url('/media/tiktok-mark.png') center / contain no-repeat; }
+@media (max-width: 1099px) {
+ .home-service-section, .collection-announcement { grid-template-columns: 1fr; }
+ .home-service-copy, .collection-text { max-width: 620px; }
+ .home-service-section { --home-media-ratio: 16 / 9; }
+ .collection-media { width: 100%; max-width: 700px; justify-self: center; }
+}
+@media (max-width: 599px) {
+ .home-service-section { padding: 24px 20px; gap: 28px; }
+ .why-section { padding: 28px 22px; }
+ .collection-announcement { padding: 28px 24px; gap: 28px; }
+ .home-service-copy .home-service-lead { font-size: 18px; }
 }

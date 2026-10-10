@@ -115,3 +115,7 @@ No booking/content/media/SEO configuration changed. Indexing remains disabled. P
 ## 6 October 2026 — approved expansion
 
 Existing UrbanCut design remains the primary reference. Added editorial Story with NW, neutral service-media surfaces, a typography-led Home Service offer, four unboxed Why statements, subordinate Beyond the Chair in Academy and a black collection announcement. Existing tokens/fonts, header and authentic media retained. New order and verified responsive/200% zoom behavior: see OCTOBER-REFINEMENT.md. No publication authorised.
+
+## 10 October 2026 — scoped media composition
+
+Approved existing system retained. Home Service: single black/gold container, copy left and silent media frame right; responsive stack. Why: shared Reviews ivory #f5f2ea. Collection: supplied covered forms with excess negative space cropped, no commerce controls. TikTok: supplied transparent mark matches adjacent contact gold. No other layout redesigned. See OCT10-SCOPED-UPDATE.md.

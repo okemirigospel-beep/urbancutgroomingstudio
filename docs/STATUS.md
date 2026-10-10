@@ -76,3 +76,7 @@ Verification: production build and typecheck pass. Browser simulation at 360, 39
 Limitation: native 200% browser zoom could not be inspected because the normal-browser control timed out. 720x450 responsive reflow was tested separately, not claimed as actual browser zoom. Physical devices were not tested. Screenshots are in C:/Users/LENOVO/.cache/sticky-360.png, sticky-768.png, sticky-1024.png, sticky-1440.png and sticky-short-menu.png.
 
 No booking/content/media/SEO configuration changed. Indexing remains disabled. Pre-publication rollback target: Netlify 6ac14ce7e88c900008fc69fc at b4f2a70b9240d650841dc1ccc1ab59d931bacbe0. Publication follows the authorised urbancut-continuation Git workflow; the handover reports the final published commit and live check.
+
+## 10 October 2026 — four scoped visual refinements
+
+Home Service, Why UrbanCut ivory, covered Collection teaser and supplied TikTok mark completed and verified locally. See OCT10-SCOPED-UPDATE.md for assets, checks and screenshot paths. Home Service video remains pending. Netlify builds remain stopped; GitHub backup only, indexing off.

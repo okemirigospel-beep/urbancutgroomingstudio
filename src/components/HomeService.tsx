@@ -19,18 +19,11 @@ export default function HomeService({
         >
           UrbanCut at Your Location
         </h2>
-        <p className="home-service-lead">Premium grooming, brought to you.</p>
-        <p>
-          A one-person premium grooming experience at your home, hotel or
-          office, with package details and arrangements confirmed by our team.
+        <p className="home-service-lead">
+          Premium grooming at your home, hotel or office.
         </p>
-        <p className="home-service-coverage">
-          Available in Abuja. Locations outside Abuja are considered by enquiry.
-        </p>
-      </div>
-      <div className="home-service-action">
         <p className="home-service-price">{money(homeOffering.price)}</p>
-        <p>{homeOffering.package}</p>
+        <p className="home-service-package">{homeOffering.package}</p>
         <button
           className="uc-primary"
           aria-haspopup="dialog"
@@ -39,10 +32,10 @@ export default function HomeService({
           REQUEST HOME SERVICE
         </button>
         <p className="home-service-scheduling">
-          Home-service appointments are scheduled in advance and subject to
-          location and availability.
+          Abuja and beyond, by enquiry. Advance booking required.
         </p>
       </div>
+      <div className="home-service-media" aria-hidden="true" />
     </section>
   );
 }
