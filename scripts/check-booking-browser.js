@@ -33,7 +33,7 @@
  await set('studio-date',sunday);check('Sunday starts 13:00 and clears invalid time',q('#studio-time option:nth-child(2)').value==='13:00'&&q('#studio-time').value==='');
  await set('studio-time','13:00');await set('studio-notes','QA only');await click('.uc-form button[type=submit]');
  const link=q('.uc-review a');const url=new URL(link.href),msg=url.searchParams.get('text');
- check('Prepared studio chat current, no address',url.pathname==='/2349163444436'&&msg.includes('QA Example')&&msg.includes(name)&&msg.includes('Listed total:')&&msg.includes(sunday)&&msg.includes('13:00')&&msg.includes('QA only')&&!msg.includes('Address:'));
+ check('Prepared studio chat current, no address',url.pathname==='/2347063291013'&&msg.includes('QA Example')&&msg.includes(name)&&msg.includes('Listed total:')&&msg.includes(sunday)&&msg.includes('13:00')&&msg.includes('QA only')&&!msg.includes('Address:'));
  results.push({studioMessage:msg});
  await click('.uc-close');await click(category[3]);await click('.uc-service-row .uc-text-action');check('Coming Soon cannot be selected',!q('.uc-service-detail:not([hidden]) button'));
  await click('.uc-close');await click(category[4]);await click('.uc-offering button');

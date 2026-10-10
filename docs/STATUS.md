@@ -18,7 +18,7 @@ New implementation, not recovered code. The original GitHub initial commit, READ
 
 Services now uses the approved six-category artwork and 16-service catalogue (13 bookable, three Coming Soon, three verified durations). The single accessible dialog supports category lists, details, persistent-in-visit selection/quantities, studio form and final review. Standard services are studio visits; no customer address is requested. Abuja advance-date/Sunday rules and known-duration closing-time limits are enforced.
 
-The authorised manual WhatsApp handoff targets 2349163444436. The visitor must press Send in WhatsApp; this website does not save, send or confirm a request. Form data and selection live only in React memory for the current page visit, are retained when dialogs close, and are lost on reload. No database, WhatsApp agent, payments or production availability system exists.
+The authorised manual WhatsApp handoff targets 2347063291013. The visitor must press Send in WhatsApp; this website does not save, send or confirm a request. Form data and selection live only in React memory for the current page visit, are retained when dialogs close, and are lost on reload. No database, WhatsApp agent, payments or production availability system exists.
 
 Home Service is a separate enquiry: ₦100,000 for a one-person premium package in Abuja; outside-Abuja requests are quoted separately. Treatments and arrangements are confirmed during enquiry. Black Card remains a non-actionable Coming Soon preview with a ₦50,000 registration fee, not a supplied monthly fee. Nail-care planned prices are not payable or selectable.
 
@@ -80,3 +80,7 @@ No booking/content/media/SEO configuration changed. Indexing remains disabled. P
 ## 10 October 2026 — four scoped visual refinements
 
 Home Service, Why UrbanCut ivory, covered Collection teaser and supplied TikTok mark completed and verified locally. See OCT10-SCOPED-UPDATE.md for assets, checks and screenshot paths. Home Service video remains pending. Netlify builds remain stopped; GitHub backup only, indexing off.
+
+## 10 October — service previews, portrait film, Academy imagery and WhatsApp
+
+Implemented the supplied media brief on urbancut-continuation. Desktop Gallery retains #gallery; four-image service previews share a pause control; Home Service has separate silent card and click-to-play full-film assets; all five Academy images use the supplied workstations/tools, including revised Master. WhatsApp is centrally 2347063291013. Build/type checks, 34 tests and desktop/mobile/browser checks pass. Local/GitHub only, owner-confirmed stopped Netlify builds, indexing disabled. Audio speech/caption review and physical-device app behavior remain unverified. Full asset mapping and evidence: [OCT10-MEDIA-UPDATE.md](OCT10-MEDIA-UPDATE.md).

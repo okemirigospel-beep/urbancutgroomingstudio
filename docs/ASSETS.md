@@ -84,3 +84,7 @@ Founder portrait pending: `src/lib/presentation.ts` currently uses decorative NW
 ## 10 October 2026 — supplied web edits assets
 
 Originals preserved in assets/originals/oct10. Extensionless collection identified as PNG 1672×941; 1092×941 WebP crop in public/media/urbancut-collection-teaser.webp. Transparent TikTok derivative in public/media/tiktok-mark.png. No Home Service video supplied or loaded. Full bounds, compression and evidence: OCT10-SCOPED-UPDATE.md.
+
+## 10 October supplied services / Home Service / Academy media
+
+Active mapping and sizes are documented in [OCT10-MEDIA-UPDATE.md](OCT10-MEDIA-UPDATE.md). Source: owner-supplied UC supply images and video for work.zip. New service assets are in public/media/service-previews, Academy replacements end in -workstation.webp. Loose Academy PNG files are authoritative, especially revised Master; nested archive is not imported. Approved Academy imagery is illustrative, not evidence of actual premises. Originals and the 172.6 MB film stay outside public/Git; only web derivatives are added. Original sequence preserved, decorative clip audio removed, main audio retained pending speech/caption review. Earlier asset records are historical and do not specify active fallbacks.

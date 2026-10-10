@@ -1,6 +1,6 @@
 import { services, money, homeOffering } from "./catalogue.ts";
 import { dateError, hourlyTimes, studioSchedule } from "./appointments.ts";
-export const whatsappNumber = "2349163444436";
+export const whatsappNumber = "2347063291013";
 export const whatsappBase = `https://wa.me/${whatsappNumber}`;
 export const whatsappUrl = (message: string) =>
   `${whatsappBase}?text=${encodeURIComponent(message)}`;

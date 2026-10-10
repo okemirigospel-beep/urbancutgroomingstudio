@@ -119,3 +119,7 @@ Existing UrbanCut design remains the primary reference. Added editorial Story wi
 ## 10 October 2026 — scoped media composition
 
 Approved existing system retained. Home Service: single black/gold container, copy left and silent media frame right; responsive stack. Why: shared Reviews ivory #f5f2ea. Collection: supplied covered forms with excess negative space cropped, no commerce controls. TikTok: supplied transparent mark matches adjacent contact gold. No other layout redesigned. See OCT10-SCOPED-UPDATE.md.
+
+## 10 October media refinement
+
+The existing visual system and supplied brief remain the reference lock. Services photos share 4:5 frames with per-photo focal positions, 3-second holds and 400 ms leftward slides. One separate preview control governs only service-card media. The equipment clip retains its full composition with contain fitting. Dedicated Home Service uses flexible copy plus a controlled 330 px portrait column, stacking below 900 px and shrinking for short screens; the player is true 9:16. Academy images remain static 4:3. Desktop-only Gallery label preserves navigation structure. See OCT10-MEDIA-UPDATE.md for verification and limitations.

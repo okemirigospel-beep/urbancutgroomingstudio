@@ -67,7 +67,7 @@ test("explicit launch enables only the canonical homepage and consistent schema 
   );
   for (const key of ["telephone", "aggregateRating", "review", "offers", "geo"])
     assert.equal(key in schema, false);
-  assert.equal(schema.contactPoint.url, "https://wa.me/2349163444436");
+  assert.equal(schema.contactPoint.url, "https://wa.me/2347063291013");
   assert.equal(schema.email, "urbancut2020@gmail.com");
 });
 

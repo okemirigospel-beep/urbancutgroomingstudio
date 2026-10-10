@@ -147,7 +147,7 @@ test("studio handoff preserves quantity, total, Unicode and reserved URL charact
   assert.match(text, /Listed total: ₦25,000/);
   assert.doesNotMatch(text, /Address|Region|Location/);
   const url = new URL(whatsappUrl(text));
-  assert.equal(url.origin + url.pathname, "https://wa.me/2349163444436");
+  assert.equal(url.origin + url.pathname, "https://wa.me/2347063291013");
   assert.equal(url.searchParams.get("text"), text);
   assert.equal([...url.searchParams].length, 1);
   assert.doesNotMatch(

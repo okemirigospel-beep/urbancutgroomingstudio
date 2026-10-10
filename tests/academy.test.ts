@@ -77,7 +77,7 @@ test("Every Academy handoff derives current fee and duration and safely round-tr
   };
   for (const p of programmes) {
     const url = new URL(academyEnquiryUrl(p.id, draft)!);
-    assert.equal(url.origin + url.pathname, "https://wa.me/2349163444436");
+    assert.equal(url.origin + url.pathname, "https://wa.me/2347063291013");
     const message = url.searchParams.get("text")!;
     assert.equal(message, academyMessage(p.id, draft));
     assert.ok(

@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import HomeService from "./HomeService";
+import ServiceMedia, { ServiceMediaProvider } from "./ServiceMedia";
 import { categoryPhotography } from "@/lib/presentation";
 import { Tag, Timer, ShoppingCart, MessageCircle } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
@@ -256,43 +257,48 @@ export default function Services() {
             </p>
           </div>
         </div>
-        <div className="uc-category-grid">
-          {categories.map((category) => (
-            <button
-              key={category.id}
-              className="uc-category-card"
-              onClick={(event) => open(category, event)}
-              aria-haspopup="dialog"
-              aria-label={`${category.name} — ${category.kind === "studio" ? "View All Services" : category.kind === "coming-soon" ? "Coming Soon — View Preview" : "View Details"}`}
-            >
-              <div className="uc-card-image">
-                {categoryPhotography[category.id] && (
-                  <Image
-                    src={categoryPhotography[category.id]!}
-                    alt=""
-                    width={800}
-                    height={1000}
-                    sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw"
-                  />
-                )}
-                {category.kind === "coming-soon" && (
-                  <span className="uc-status uc-card-status">COMING SOON</span>
-                )}
-              </div>
-              <div className="uc-card-copy">
-                <h3>{category.name}</h3>
-                <p>{category.caption}</p>
-                <span className="uc-card-action">
-                  {category.kind === "studio"
-                    ? "View All Services"
-                    : category.kind === "coming-soon"
-                      ? "View Preview"
-                      : "View Details"}
-                </span>
-              </div>
-            </button>
-          ))}
-        </div>
+        <ServiceMediaProvider>
+          <div className="uc-category-grid">
+            {categories.map((category) => (
+              <button
+                key={category.id}
+                className="uc-category-card"
+                onClick={(event) => open(category, event)}
+                aria-haspopup="dialog"
+                aria-label={`${category.name} — ${category.kind === "studio" ? "View All Services" : category.kind === "coming-soon" ? "Coming Soon — View Preview" : "View Details"}`}
+              >
+                <div className="uc-card-image">
+                  <ServiceMedia category={category.id} />
+                  {categoryPhotography[category.id] && (
+                    <Image
+                      src={categoryPhotography[category.id]!}
+                      alt=""
+                      width={800}
+                      height={1000}
+                      sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw"
+                    />
+                  )}
+                  {category.kind === "coming-soon" && (
+                    <span className="uc-status uc-card-status">
+                      COMING SOON
+                    </span>
+                  )}
+                </div>
+                <div className="uc-card-copy">
+                  <h3>{category.name}</h3>
+                  <p>{category.caption}</p>
+                  <span className="uc-card-action">
+                    {category.kind === "studio"
+                      ? "View All Services"
+                      : category.kind === "coming-soon"
+                        ? "View Preview"
+                        : "View Details"}
+                  </span>
+                </div>
+              </button>
+            ))}
+          </div>
+        </ServiceMediaProvider>
         <div className="uc-section-foot">
           {count > 0 && (
             <button

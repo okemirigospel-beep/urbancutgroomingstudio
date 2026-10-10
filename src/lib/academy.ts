@@ -41,9 +41,8 @@ export const programmes: readonly Programme[] = [
         ],
       },
     ],
-    imageSrc: "/media/academy/urbancut-foundation.webp",
-    imageAlt:
-      "Barbering clipper, guards and comb arranged on a dark work surface.",
+    imageSrc: "/media/academy/urbancut-foundation-workstation.webp",
+    imageAlt: "Essential clippers, guards and comb on a dark work surface.",
     certificateTitle: "UrbanCut Foundation Certificate",
   },
   {
@@ -73,8 +72,8 @@ export const programmes: readonly Programme[] = [
         ],
       },
     ],
-    imageSrc: "/media/academy/urbancut-professional.webp",
-    imageAlt: "Barber refining a short haircut with clippers.",
+    imageSrc: "/media/academy/urbancut-professional-workstation.webp",
+    imageAlt: "Clippers and grooming tools organised at a workstation.",
     certificateTitle: "UrbanCut Professional Barber Certificate",
   },
   {
@@ -105,8 +104,9 @@ export const programmes: readonly Programme[] = [
         ],
       },
     ],
-    imageSrc: "/media/academy/urbancut-master.webp",
-    imageAlt: "Barber detailing a client’s beard.",
+    imageSrc: "/media/academy/urbancut-master-workstation.webp",
+    imageAlt:
+      "Specialist grooming workstation with clippers, detail tools and mirror.",
     certificateTitle: "UrbanCut Certified Master Barber",
   },
   {
@@ -156,8 +156,9 @@ export const programmes: readonly Programme[] = [
         ],
       },
     ],
-    imageSrc: "/media/academy/urbancut-elite.webp",
-    imageAlt: "Barber photographing a finished haircut.",
+    imageSrc: "/media/academy/urbancut-elite-workstation.webp",
+    imageAlt:
+      "Unoccupied grooming station with a tripod for content production.",
     certificateTitle: "UrbanCut Elite Professional Certificate",
   },
   {
@@ -184,9 +185,9 @@ export const programmes: readonly Programme[] = [
         items: ["How to build a recognisable personal or business brand."],
       },
     ],
-    imageSrc: "/media/academy/urbancut-executive.webp",
+    imageSrc: "/media/academy/urbancut-executive-workstation.webp",
     imageAlt:
-      "Grooming professional reviewing a notebook in a barbering studio.",
+      "Business planning desk with notebook and laptop beside a grooming chair.",
     subtitle: "Grooming & Business Certification",
   },
 ];

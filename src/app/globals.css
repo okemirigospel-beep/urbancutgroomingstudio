@@ -3164,3 +3164,29 @@ textarea {
  .collection-announcement { padding: 28px 24px; gap: 28px; }
  .home-service-copy .home-service-lead { font-size: 18px; }
 }
+
+/* Service previews share a stable frame; only the photographs move. */
+.uc-card-image { height: auto; aspect-ratio: 4 / 5; }
+.service-preview { position: absolute; inset: 0; overflow: hidden; }
+.service-preview .service-preview-frame { position: absolute; inset: 0; visibility: hidden; }
+.service-preview .active, .service-preview .previous { visibility: visible; }
+.service-preview .active { z-index: 2; }
+.service-preview .entering { animation: service-enter 400ms ease both; }
+.service-preview .previous { animation: service-leave 400ms ease both; }
+@keyframes service-enter { from { transform: translateX(100%); } to { transform: translateX(0); } }
+@keyframes service-leave { from { transform: translateX(0); } to { transform: translateX(-100%); } }
+.service-preview-video { background: #101210; }
+.service-preview-video img, .service-preview-video video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
+.service-preview-controls { display: flex; justify-content: flex-end; margin: -12px 0 20px; }
+.service-preview-toggle { display: inline-flex; gap: 8px; align-items: center; min-height: 44px; padding: 8px 12px; border: 1px solid var(--line); background: transparent; font-size: 13px; }
+.service-preview-toggle svg { width: 15px; height: 15px; }
+.service-preview-toggle:disabled { opacity: .65; cursor: default; }
+.home-service-section { grid-template-columns: minmax(0, 1fr) minmax(0, 330px); }
+.home-service-media { position: relative; width: min(100%, 330px); aspect-ratio: 9 / 16; justify-self: center; background: #101210; }
+.home-service-media video, .home-film-start, .home-film-start img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
+.home-film-start { padding: 0; border: 0; background: transparent; }
+.home-film-start span { position: absolute; inset: 0; margin: auto; width: 64px; height: 64px; display: grid; place-items: center; border-radius: 50%; color: white; background: #101210dc; border: 1px solid #fff9; }
+.home-film-start svg { width: 25px; height: 25px; }
+@media (max-width: 900px) { .home-service-section { grid-template-columns: 1fr; } .home-service-media { width: min(100%, 310px, 42svh); } }
+@media (max-height: 500px) { .home-service-media { width: min(100%, 220px, 42svh); } }
+@media (prefers-reduced-motion: reduce) { .service-preview .entering, .service-preview .previous { animation: none; } }

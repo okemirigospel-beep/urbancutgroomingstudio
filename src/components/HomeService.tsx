@@ -1,3 +1,4 @@
+import HomeServiceVideo from "./HomeServiceVideo";
 import type { MouseEventHandler } from "react";
 import { homeOffering, money } from "@/lib/catalogue";
 
@@ -35,7 +36,7 @@ export default function HomeService({
           Abuja and beyond, by enquiry. Advance booking required.
         </p>
       </div>
-      <div className="home-service-media" aria-hidden="true" />
+      <HomeServiceVideo />
     </section>
   );
 }

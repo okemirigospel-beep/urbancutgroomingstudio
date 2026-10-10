@@ -40,7 +40,7 @@ export default function Header() {
       <nav className="masthead-links" aria-label="Main navigation">
         {links.map(([name, href]) => (
           <a key={href} href={href}>
-            {name}
+            {href === "#gallery" ? "Gallery" : name}
           </a>
         ))}
       </nav>
