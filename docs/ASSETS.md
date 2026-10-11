@@ -88,3 +88,7 @@ Originals preserved in assets/originals/oct10. Extensionless collection identifi
 ## 10 October supplied services / Home Service / Academy media
 
 Active mapping and sizes are documented in [OCT10-MEDIA-UPDATE.md](OCT10-MEDIA-UPDATE.md). Source: owner-supplied UC supply images and video for work.zip. New service assets are in public/media/service-previews, Academy replacements end in -workstation.webp. Loose Academy PNG files are authoritative, especially revised Master; nested archive is not imported. Approved Academy imagery is illustrative, not evidence of actual premises. Originals and the 172.6 MB film stay outside public/Git; only web derivatives are added. Original sequence preserved, decorative clip audio removed, main audio retained pending speech/caption review. Earlier asset records are historical and do not specify active fallbacks.
+
+## 11 October — focused autoplay update
+
+The active main film is now public/media/service-previews/home-service-feature-silent.mp4 (14,723,956 bytes); the prior public audio-bearing derivative was removed. H.264 video copied losslessly between containers; no audio stream; 720×1280, 30 fps, 59.17 seconds. Source originals remain outside public. Existing grooming poster retained.

@@ -84,3 +84,7 @@ Home Service, Why UrbanCut ivory, covered Collection teaser and supplied TikTok 
 ## 10 October — service previews, portrait film, Academy imagery and WhatsApp
 
 Implemented the supplied media brief on urbancut-continuation. Desktop Gallery retains #gallery; four-image service previews share a pause control; Home Service has separate silent card and click-to-play full-film assets; all five Academy images use the supplied workstations/tools, including revised Master. WhatsApp is centrally 2347063291013. Build/type checks, 34 tests and desktop/mobile/browser checks pass. Local/GitHub only, owner-confirmed stopped Netlify builds, indexing disabled. Audio speech/caption review and physical-device app behavior remain unverified. Full asset mapping and evidence: [OCT10-MEDIA-UPDATE.md](OCT10-MEDIA-UPDATE.md).
+
+## 11 October — focused autoplay update
+
+Services preview control and its obsolete pause state removed; main Home Service film now silently autoplays/loops with native controls, persistent explicit pause and reduced-motion/visibility handling. Build, 35 tests and browser checks pass. See OCT11-AUTOPLAY-UPDATE.md, including the private motion-accessibility limitation. Audio-caption uncertainty from the previous derivative no longer applies: the website film has no audio stream.

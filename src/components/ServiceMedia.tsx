@@ -7,7 +7,6 @@ import {
   useState,
   type ReactNode,
 } from "react";
-import { Pause, Play } from "lucide-react";
 import {
   servicePreviews,
   nextPreview,
@@ -15,7 +14,6 @@ import {
 } from "@/lib/service-media";
 
 const MediaContext = createContext({
-  paused: false,
   reduced: true,
   hidden: false,
   dialog: false,
@@ -23,7 +21,6 @@ const MediaContext = createContext({
 
 // This provider owns preview state; slide ticks never rerender the booking form.
 export function ServiceMediaProvider({ children }: { children: ReactNode }) {
-  const [paused, setPaused] = useState(false);
   const [reduced, setReduced] = useState(true);
   const [hidden, setHidden] = useState(false);
   const [dialog, setDialog] = useState(false);
@@ -50,25 +47,7 @@ export function ServiceMediaProvider({ children }: { children: ReactNode }) {
     };
   }, []);
   return (
-    <MediaContext.Provider value={{ paused, reduced, hidden, dialog }}>
-      <div className="service-preview-controls">
-        <button
-          type="button"
-          className="service-preview-toggle"
-          disabled={reduced}
-          aria-label={
-            reduced ? "Service previews paused for reduced motion" : undefined
-          }
-          onClick={() => setPaused((value) => !value)}
-        >
-          {paused || reduced ? (
-            <Play aria-hidden="true" />
-          ) : (
-            <Pause aria-hidden="true" />
-          )}
-          {paused || reduced ? "Play previews" : "Pause previews"}
-        </button>
-      </div>
+    <MediaContext.Provider value={{ reduced, hidden, dialog }}>
       {children}
     </MediaContext.Provider>
   );

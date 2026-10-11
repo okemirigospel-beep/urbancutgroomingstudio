@@ -1,38 +1,116 @@
 "use client";
-import Image from "next/image";
-import { Play } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
+import { shouldAutoplayFeature } from "@/lib/service-media";
 
 export default function HomeServiceVideo() {
   const video = useRef<HTMLVideoElement>(null);
-  const [started, setStarted] = useState(false);
   useEffect(() => {
     const node = video.current;
     if (!node) return;
-    const pauseHidden = () => {
-      if (document.hidden || document.querySelector("dialog[open]"))
+    const motion = matchMedia("(prefers-reduced-motion: reduce)");
+    let visible = false;
+    let userPaused = false;
+    let blocked = false;
+    let pending = false;
+    let disposed = false;
+    let lifecyclePauses = 0;
+    const suspended = () =>
+      !visible || document.hidden || !!document.querySelector("dialog[open]");
+    const pauseForLifecycle = () => {
+      if (!node.paused) {
+        lifecyclePauses++;
         node.pause();
+      }
     };
+    const sync = () => {
+      if (suspended() || motion.matches) {
+        pauseForLifecycle();
+        return;
+      }
+      if (
+        !node.getAttribute("src") ||
+        pending ||
+        !node.paused ||
+        !shouldAutoplayFeature({
+          visible,
+          hidden: document.hidden,
+          dialog: !!document.querySelector("dialog[open]"),
+          reduced: motion.matches,
+          userPaused,
+          blocked,
+        })
+      )
+        return;
+      pending = true;
+      void node
+        .play()
+        .then(() => {
+          if (disposed || suspended() || motion.matches) pauseForLifecycle();
+        })
+        .catch((error) => {
+          // A lifecycle interruption is not an autoplay-policy refusal.
+          if (!disposed && error.name !== "AbortError") blocked = true;
+        })
+        .finally(() => {
+          pending = false;
+          if (!disposed) sync();
+        });
+    };
+    const onPause = () => {
+      if (lifecyclePauses) {
+        lifecyclePauses--;
+        return;
+      }
+      userPaused = true;
+    };
+    const onPlay = () => {
+      if (suspended()) {
+        pauseForLifecycle();
+        return;
+      }
+      // Native controls are also the recovery path after blocked autoplay.
+      userPaused = false;
+      blocked = false;
+    };
+    node.addEventListener("pause", onPause);
+    node.addEventListener("play", onPlay);
+    const nearby = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) return;
+        node.preload = "metadata";
+        node.src = "/media/service-previews/home-service-feature-silent.mp4";
+        nearby.disconnect();
+        sync();
+      },
+      { rootMargin: "400px" },
+    );
     const viewport = new IntersectionObserver(
       ([entry]) => {
-        if (!entry.isIntersecting || entry.intersectionRatio < 0.15)
-          node.pause();
+        visible = entry.isIntersecting && entry.intersectionRatio >= 0.15;
+        sync();
       },
       { threshold: [0, 0.15] },
     );
+    nearby.observe(node);
     viewport.observe(node);
-    const dialogs = new MutationObserver(pauseHidden);
+    const dialogs = new MutationObserver(sync);
     dialogs.observe(document.body, {
       subtree: true,
       attributes: true,
       attributeFilter: ["open"],
     });
-    document.addEventListener("visibilitychange", pauseHidden);
+    document.addEventListener("visibilitychange", sync);
+    motion.addEventListener("change", sync);
     return () => {
+      disposed = true;
+      nearby.disconnect();
       viewport.disconnect();
       dialogs.disconnect();
-      document.removeEventListener("visibilitychange", pauseHidden);
-      node.pause();
+      document.removeEventListener("visibilitychange", sync);
+      motion.removeEventListener("change", sync);
+      node.removeEventListener("pause", onPause);
+      node.removeEventListener("play", onPlay);
+      pauseForLifecycle();
     };
   }, []);
   return (
@@ -41,42 +119,14 @@ export default function HomeServiceVideo() {
         ref={video}
         width={720}
         height={1280}
+        muted
         playsInline
-        controls={started}
-        tabIndex={started ? 0 : -1}
+        loop
+        controls
         preload="none"
+        poster="/media/service-previews/home-service-grooming-poster.webp"
         aria-label="UrbanCut grooming at your location"
       />
-      {!started && (
-        <button
-          type="button"
-          className="home-film-start"
-          aria-label="Play UrbanCut Home Service film"
-          onClick={() => {
-            const node = video.current;
-            if (!node) return;
-            node.src = "/media/service-previews/home-service-feature.mp4";
-            node.poster =
-              "/media/service-previews/home-service-grooming-poster.webp";
-            setStarted(true);
-            void node.play().catch(() => {
-              /* Native controls remain available after failed playback. */
-            });
-            requestAnimationFrame(() => node.focus());
-          }}
-        >
-          <Image
-            src="/media/service-previews/home-service-grooming-poster.webp"
-            width={720}
-            height={1280}
-            alt=""
-            sizes="(max-width: 600px) 80vw, 340px"
-          />
-          <span>
-            <Play aria-hidden="true" fill="currentColor" />
-          </span>
-        </button>
-      )}
     </div>
   );
 }

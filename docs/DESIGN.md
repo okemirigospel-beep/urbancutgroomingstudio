@@ -123,3 +123,7 @@ Approved existing system retained. Home Service: single black/gold container, co
 ## 10 October media refinement
 
 The existing visual system and supplied brief remain the reference lock. Services photos share 4:5 frames with per-photo focal positions, 3-second holds and 400 ms leftward slides. One separate preview control governs only service-card media. The equipment clip retains its full composition with contain fitting. Dedicated Home Service uses flexible copy plus a controlled 330 px portrait column, stacking below 900 px and shrinking for short screens; the player is true 9:16. Academy images remain static 4:3. Desktop-only Gallery label preserves navigation structure. See OCT10-MEDIA-UPDATE.md for verification and limitations.
+
+## 11 October — focused autoplay update
+
+Services cards directly follow the introduction without a preview-control row. Main Home Service keeps identical portrait layout and uses native video controls with no custom overlay. No other visual or content changes. See OCT11-AUTOPLAY-UPDATE.md.

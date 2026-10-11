@@ -91,7 +91,6 @@ export function nextPreview(
   return null;
 }
 export function canPreviewRun(state: {
-  paused: boolean;
   reduced: boolean;
   hidden: boolean;
   dialog: boolean;
@@ -100,10 +99,27 @@ export function canPreviewRun(state: {
 }) {
   return (
     state.visible &&
-    !state.paused &&
     !state.reduced &&
     !state.hidden &&
     !state.dialog &&
     !state.interacting
+  );
+}
+
+export function shouldAutoplayFeature(state: {
+  visible: boolean;
+  hidden: boolean;
+  dialog: boolean;
+  reduced: boolean;
+  userPaused: boolean;
+  blocked: boolean;
+}) {
+  return (
+    state.visible &&
+    !state.hidden &&
+    !state.dialog &&
+    !state.reduced &&
+    !state.userPaused &&
+    !state.blocked
   );
 }

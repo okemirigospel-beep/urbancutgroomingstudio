@@ -4,6 +4,7 @@ import {
   servicePreviews,
   nextPreview,
   canPreviewRun,
+  shouldAutoplayFeature,
 } from "../src/lib/service-media.ts";
 import { whatsappUrl, whatsappBase } from "../src/lib/booking.ts";
 
@@ -21,9 +22,8 @@ test("each preview has four ordered, isolated assets; wrap and failures remain f
   assert.equal(nextPreview(3, 4, [0]), 1);
   assert.equal(nextPreview(0, 4, [1, 2, 3]), null);
 });
-test("temporary suspension never overrides an explicit pause or reduced motion", () => {
+test("service preview lifecycle respects reduced motion and temporary suspension", () => {
   const state = {
-    paused: false,
     reduced: false,
     hidden: false,
     dialog: false,
@@ -31,19 +31,9 @@ test("temporary suspension never overrides an explicit pause or reduced motion",
     interacting: false,
   };
   assert.equal(canPreviewRun(state), true);
-  for (const key of [
-    "paused",
-    "reduced",
-    "hidden",
-    "dialog",
-    "interacting",
-  ] as const)
+  for (const key of ["reduced", "hidden", "dialog", "interacting"] as const)
     assert.equal(canPreviewRun({ ...state, [key]: true }), false);
   assert.equal(canPreviewRun({ ...state, visible: false }), false);
-  assert.equal(
-    canPreviewRun({ ...state, paused: true, visible: true, dialog: false }),
-    false,
-  );
 });
 test("new shared WhatsApp destination encodes punctuation and multiline data exactly once", () => {
   const message =
@@ -53,4 +43,29 @@ test("new shared WhatsApp destination encodes punctuation and multiline data exa
   assert.equal(url.origin + url.pathname, whatsappBase);
   assert.equal(url.searchParams.get("text"), message);
   assert.equal(url.searchParams.size, 1);
+});
+
+test("feature autoplay respects explicit pause and never retries a blocked attempt automatically", () => {
+  const state = {
+    visible: true,
+    hidden: false,
+    dialog: false,
+    reduced: false,
+    userPaused: false,
+    blocked: false,
+  };
+  assert.equal(shouldAutoplayFeature(state), true);
+  for (const key of [
+    "hidden",
+    "dialog",
+    "reduced",
+    "userPaused",
+    "blocked",
+  ] as const)
+    assert.equal(shouldAutoplayFeature({ ...state, [key]: true }), false);
+  assert.equal(shouldAutoplayFeature({ ...state, visible: false }), false);
+  assert.equal(
+    shouldAutoplayFeature({ ...state, userPaused: true, visible: true }),
+    false,
+  );
 });
