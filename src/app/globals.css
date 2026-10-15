@@ -3094,7 +3094,15 @@ textarea {
 /* October refinement: retain existing type, surfaces and button vocabulary. */
 .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; }
 .hero-home-service { min-height: 50px; padding: 12px 0; font-size: 14px; font-weight: 600; text-decoration: underline; text-underline-offset: 5px; }
-.story-section { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: clamp(40px, 7vw, 100px); align-items: center; }
+.story-section { padding-block: clamp(36px, 4vw, 56px); }
+.story-panel > * { min-width: 0; overflow-wrap: anywhere; }
+.story-panel { background: var(--ivory); border-radius: 8px; padding: clamp(32px, 4vw, 56px); display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(280px, 1fr); gap: clamp(32px, 4vw, 56px); align-items: center; }
+@media (max-width: 899px) {
+ .story-panel { grid-template-columns: minmax(0, 1fr); gap: 32px; }
+}
+@media (max-width: 599px) {
+ .story-panel { padding: 24px 22px; }
+}
 .story-copy > p { max-width: 62ch; margin-top: 28px; font-size: 18px; }
 .story-copy .story-closing { color: var(--muted); font-family: var(--font-editorial); font-size: 24px; line-height: 1.4; }
 .founder-profile { max-width: 350px; }
@@ -3136,7 +3144,6 @@ textarea {
  .beyond-chair > div { max-width: 600px; }
 }
 @media (max-width: 767px) {
- .story-section { grid-template-columns: 1fr; gap: 32px; }
  .founder-portrait { width: 180px; padding: 6px; border-radius: 10px; }
  .story-copy > p { font-size: 17px; }
  .story-copy .story-closing { font-size: 22px; }

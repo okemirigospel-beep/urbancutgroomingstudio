@@ -9,36 +9,38 @@ export default function Story() {
       className="story-section shell section"
       aria-labelledby="story-heading"
     >
-      <div className="story-copy">
-        <h2 id="story-heading" className="type-editorial uc-section-title">
-          The UrbanCut Story
-        </h2>
-        <p>
-          UrbanCut was built on a simple belief: grooming is about more than
-          appearance. It shapes confidence, self-expression and the way we
-          present ourselves. Through personal grooming and professional
-          training, we serve clients and help aspiring professionals develop
-          their craft.
-        </p>
-        <p className="story-closing">
-          Built for the glory of God, the service of humanity, the dignity of
-          work, and the legacy of generations.
-        </p>
-      </div>
-      <div className="founder-profile">
-        <div className="founder-portrait">
-          <div className="founder-portrait-image">
-            <Image
-              src={founder.portrait.src}
-              alt={founder.portrait.alt}
-              fill
-              sizes="(max-width: 767px) 168px, 264px"
-            />
-          </div>
+      <div className="story-panel">
+        <div className="story-copy">
+          <h2 id="story-heading" className="type-editorial uc-section-title">
+            The UrbanCut Story
+          </h2>
+          <p>
+            UrbanCut was built on a simple belief: grooming is about more than
+            appearance. It shapes confidence, self-expression and the way we
+            present ourselves. Through personal grooming and professional
+            training, we serve clients and help aspiring professionals develop
+            their craft.
+          </p>
+          <p className="story-closing">
+            Built for the glory of God, the service of humanity, the dignity of
+            work, and the legacy of generations.
+          </p>
         </div>
-        <h3>{founder.name}</h3>
-        <p className="founder-title">{founder.title}</p>
-        <p>{studio.legalName}</p>
+        <div className="founder-profile">
+          <div className="founder-portrait">
+            <div className="founder-portrait-image">
+              <Image
+                src={founder.portrait.src}
+                alt={founder.portrait.alt}
+                fill
+                sizes="(max-width: 767px) 168px, 264px"
+              />
+            </div>
+          </div>
+          <h3>{founder.name}</h3>
+          <p className="founder-title">{founder.title}</p>
+          <p>{studio.legalName}</p>
+        </div>
       </div>
     </section>
   );
