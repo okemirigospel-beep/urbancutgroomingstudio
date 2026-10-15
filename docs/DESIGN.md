@@ -135,3 +135,5 @@ Authentic founder portrait replaces NW; existing placement, 4:5 frame, widths an
 ## 15 October — precise founder framing
 
 User screenshot and explicit frame specification are the reference lock. Outer black padded wrapper contains a positioned 4:5 image wrapper, preserving crop with Next Image fill; 8px/6px surround stays inside the prior width. Attribution remains outside, left-aligned, 20px below. Scoped title class changes only its colour/opacity. No new decorative treatments.
+
+15 October follow-up: owner requested subtle rounding, superseding square corners. Outer radius 12px desktop/tablet and 10px mobile; inner image radius 4px matches the 8px/6px frame. Dimensions/crop/spacing unchanged. Build/TypeScript and 390/1440px visual checks passed.
