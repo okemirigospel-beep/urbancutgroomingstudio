@@ -88,3 +88,9 @@ Implemented the supplied media brief on urbancut-continuation. Desktop Gallery r
 ## 11 October — focused autoplay update
 
 Services preview control and its obsolete pause state removed; main Home Service film now silently autoplays/loops with native controls, persistent explicit pause and reduced-motion/visibility handling. Build, 35 tests and browser checks pass. See OCT11-AUTOPLAY-UPDATE.md, including the private motion-accessibility limitation. Audio-caption uncertainty from the previous derivative no longer applies: the website film has no audio stream.
+
+## 15 October 2026 — founder portrait
+
+Replaced the Story initials placeholder with the supplied IMG-20261015-WA0008.jpg, delivered as a 77,284-byte WebP. Retained the previously approved full name Naadubon Williams Kpoobari (the portrait brief repeats the older short name but asks to preserve attribution). Story/title/company text unchanged. Build and included TypeScript checks pass. Local Chromium responsive screenshots reviewed at 320, 390, 768, 1024 and 1440px: image loads, no placeholder, natural top-aligned crop, no bands/overflow. Rendered frames: 180x225 mobile, about 260x325 at 768, 280x350 at 1024/1440. Reserved height stays 225px when mobile image is hidden; no image-driven layout jump. Menu open/Escape and service dialog open/Escape pass; no browser errors. Physical devices not tested; unrelated full booking/media regressions not rerun. Screenshots: C:/Users/LENOVO/.cache/founder-portrait-check/portrait-{width}.png.
+
+GitHub-only workflow: prior owner-confirmed Stopped builds remains the authorization basis. Netlify account connector requires reauthentication; public API still reports published deploy 6ac29a002068a600080fd9d6 but does not expose stopped-build status. No hosting/environment/indexing changes, deployment or reactivation performed. Local HTML remains noindex, follow.

@@ -1,13 +1,11 @@
-// Replace the initials with approved portrait media here when supplied.
 export const founder = {
-  name: "Naad Williams",
+  name: "Naadubon Williams Kpoobari",
   title: "Founder & Creative Director",
-  initials: "NW",
-  portrait: null as null | {
-    src: string;
-    width: number;
-    height: number;
-    alt: string;
+  portrait: {
+    src: "/media/naadubon-williams-kpoobari-founder.webp",
+    width: 720,
+    height: 1080,
+    alt: "Naadubon Williams Kpoobari, Founder & Creative Director of UrbanCut Grooming Studio.",
   },
 };
 

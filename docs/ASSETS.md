@@ -92,3 +92,7 @@ Active mapping and sizes are documented in [OCT10-MEDIA-UPDATE.md](OCT10-MEDIA-U
 ## 11 October — focused autoplay update
 
 The active main film is now public/media/service-previews/home-service-feature-silent.mp4 (14,723,956 bytes); the prior public audio-bearing derivative was removed. H.264 video copied losslessly between containers; no audio stream; 720×1280, 30 fps, 59.17 seconds. Source originals remain outside public. Existing grooming poster retained.
+
+## 15 October — genuine founder portrait
+
+Source: C:/Users/LENOVO/Downloads/IMG-20261015-WA0008.jpg, 720x1080 RGB, no EXIF orientation. Original kept intact. public/media/naadubon-williams-kpoobari-founder.webp retains 720x1080, encoded once at quality 88, 77,284 bytes, metadata omitted. No retouching, recolouring or AI generation. Next Image lazy delivery with responsive sizes, meaningful full-name alt text.
