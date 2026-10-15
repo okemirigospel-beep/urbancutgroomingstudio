@@ -131,3 +131,7 @@ Services cards directly follow the introduction without a preview-control row. M
 ## 15 October — Story portrait replacement
 
 Authentic founder portrait replaces NW; existing placement, 4:5 frame, widths and margins retained. Positioned wrapper and Next Image fill reserve space and prevent intrinsic image height from enlarging the grid. Cover fitting is top-centred to keep headroom while trimming only lower torso. Removed placeholder rendering and initials-only styles. No new decoration or copy.
+
+## 15 October — precise founder framing
+
+User screenshot and explicit frame specification are the reference lock. Outer black padded wrapper contains a positioned 4:5 image wrapper, preserving crop with Next Image fill; 8px/6px surround stays inside the prior width. Attribution remains outside, left-aligned, 20px below. Scoped title class changes only its colour/opacity. No new decorative treatments.

@@ -27,15 +27,17 @@ export default function Story() {
       </div>
       <div className="founder-profile">
         <div className="founder-portrait">
-          <Image
-            src={founder.portrait.src}
-            alt={founder.portrait.alt}
-            fill
-            sizes="(max-width: 767px) 180px, 280px"
-          />
+          <div className="founder-portrait-image">
+            <Image
+              src={founder.portrait.src}
+              alt={founder.portrait.alt}
+              fill
+              sizes="(max-width: 767px) 168px, 264px"
+            />
+          </div>
         </div>
         <h3>{founder.name}</h3>
-        <p>{founder.title}</p>
+        <p className="founder-title">{founder.title}</p>
         <p>{studio.legalName}</p>
       </div>
     </section>

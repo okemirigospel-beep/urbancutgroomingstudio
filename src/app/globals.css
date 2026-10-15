@@ -3098,10 +3098,12 @@ textarea {
 .story-copy > p { max-width: 62ch; margin-top: 28px; font-size: 18px; }
 .story-copy .story-closing { color: var(--muted); font-family: var(--font-editorial); font-size: 24px; line-height: 1.4; }
 .founder-profile { max-width: 350px; }
-.founder-portrait { position: relative; overflow: hidden; width: 280px; max-width: 100%; aspect-ratio: 4 / 5; background: var(--ink); color: var(--gold); display: grid; place-items: center; margin-bottom: 24px; }
+.founder-portrait { box-sizing: border-box; width: 280px; max-width: 100%; padding: 8px; background: #000000; margin-bottom: 20px; }
+.founder-portrait-image { position: relative; overflow: hidden; aspect-ratio: 4 / 5; }
 .founder-portrait img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center top; }
 .founder-profile h3 { margin-bottom: 8px; }
 .founder-profile p { color: var(--muted); }
+.founder-profile .founder-title { color: #000000; opacity: 1; }
 .uc-card-image { background: var(--surface); }
 .uc-home-offering { display: block; }
 /* Ratio is provisional until the genuine Home Service video is supplied. */
@@ -3135,7 +3137,7 @@ textarea {
 }
 @media (max-width: 767px) {
  .story-section { grid-template-columns: 1fr; gap: 32px; }
- .founder-portrait { position: relative; overflow: hidden; width: 180px; margin-bottom: 20px; }
+ .founder-portrait { width: 180px; padding: 6px; }
  .story-copy > p { font-size: 17px; }
  .story-copy .story-closing { font-size: 22px; }
 }
