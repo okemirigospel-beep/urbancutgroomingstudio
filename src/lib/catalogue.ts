@@ -111,6 +111,25 @@ export const services: Service[] = [
   },
 
   {
+    id: "signature-experience",
+
+    category: "haircuts",
+
+    name: "UrbanCut Signature Grooming Experience",
+
+    price: 25000,
+
+    duration: 60,
+
+    status: "bookable",
+
+    description:
+      "A complete grooming refresh combining a haircut, dye, shave, hairline detailing and shampoo for a polished, coordinated finish.",
+
+    inclusions: ["Haircut", "Dye", "Shave", "Hairline detailing", "Shampoo"],
+  },
+
+  {
     id: "kids-cut",
 
     category: "haircuts",
@@ -138,25 +157,6 @@ export const services: Service[] = [
 
     description:
       "A personalised cut that complements your features and style, whether you prefer a close crop, a shaped short cut or a refresh of your current look.",
-  },
-
-  {
-    id: "signature-experience",
-
-    category: "haircuts",
-
-    name: "UrbanCut Signature Experience",
-
-    price: 25000,
-
-    duration: 60,
-
-    status: "bookable",
-
-    description:
-      "A complete grooming refresh combining a haircut, dye, shave, hairline detailing and shampoo for a polished, coordinated finish.",
-
-    inclusions: ["Haircut", "Dye", "Shave", "Hairline detailing", "Shampoo"],
   },
 
   {
