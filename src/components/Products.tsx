@@ -1,3 +1,4 @@
+import StoryReveal from "./StoryReveal";
 import Image from "next/image";
 
 export default function Products() {
@@ -7,7 +8,7 @@ export default function Products() {
       className="uc-products collection-announcement shell section"
       aria-labelledby="products-heading"
     >
-      <div className="collection-text">
+      <StoryReveal className="collection-text">
         <h2 id="products-heading" className="type-editorial uc-section-title">
           The UrbanCut Grooming Collection
         </h2>
@@ -20,8 +21,8 @@ export default function Products() {
         <p className="collection-closing">
           A new chapter in everyday grooming is coming.
         </p>
-      </div>
-      <div className="collection-media">
+      </StoryReveal>
+      <StoryReveal className="collection-media" delay={250}>
         <Image
           src="/media/urbancut-collection-teaser.webp"
           width={1092}
@@ -29,7 +30,7 @@ export default function Products() {
           sizes="(max-width: 599px) calc(100vw - 88px), (max-width: 1099px) 85vw, 560px"
           alt="Gold fabric concealing the upcoming UrbanCut grooming collection"
         />
-      </div>
+      </StoryReveal>
     </section>
   );
 }

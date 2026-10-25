@@ -1,8 +1,13 @@
+import StoryReveal from "./StoryReveal";
 import { reviews, type ClientReview } from "@/lib/reviews";
 
-function Review({ review }: { review: ClientReview }) {
+function Review({ review, index }: { review: ClientReview; index: number }) {
   return (
-    <figure className="client-review">
+    <StoryReveal
+      as="figure"
+      className="client-review"
+      delay={200 * (index + 1)}
+    >
       <span className="review-quote-mark" aria-hidden="true">
         “
       </span>
@@ -10,7 +15,7 @@ function Review({ review }: { review: ClientReview }) {
         <p>{review.text}</p>
       </blockquote>
       <figcaption>{review.label}</figcaption>
-    </figure>
+    </StoryReveal>
   );
 }
 
@@ -22,12 +27,14 @@ export default function Reviews() {
       aria-labelledby="reviews-heading"
     >
       <div className="reviews-panel">
-        <h2 id="reviews-heading" className="type-editorial uc-section-title">
-          What Our Clients Say
-        </h2>
+        <StoryReveal>
+          <h2 id="reviews-heading" className="type-editorial uc-section-title">
+            What Our Clients Say
+          </h2>
+        </StoryReveal>
         <div className="reviews-composition">
-          {reviews.map((review) => (
-            <Review key={review.id} review={review} />
+          {reviews.map((review, index) => (
+            <Review key={review.id} review={review} index={index} />
           ))}
         </div>
       </div>

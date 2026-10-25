@@ -1,3 +1,4 @@
+import StoryReveal from "./StoryReveal";
 const points = [
   ["Precision", "Attention to the cut, finish and details."],
   ["Personal Attention", "Grooming shaped around your preferences."],
@@ -13,15 +14,17 @@ export default function WhyUrbanCut() {
       className="why-section shell section"
       aria-labelledby="why-heading"
     >
-      <h2 id="why-heading" className="type-editorial uc-section-title">
-        Why UrbanCut
-      </h2>
+      <StoryReveal>
+        <h2 id="why-heading" className="type-editorial uc-section-title">
+          Why UrbanCut
+        </h2>
+      </StoryReveal>
       <div className="why-points">
-        {points.map(([title, body]) => (
-          <div key={title}>
+        {points.map(([title, body], index) => (
+          <StoryReveal key={title} delay={180 * (index + 1)}>
             <h3>{title}</h3>
             <p>{body}</p>
-          </div>
+          </StoryReveal>
         ))}
       </div>
     </section>

@@ -15,6 +15,7 @@ import Products from "@/components/Products";
 import Services from "@/components/Services";
 import BeyondTheChair from "@/components/BeyondTheChair";
 import Story from "@/components/Story";
+import StoryReveal from "@/components/StoryReveal";
 import WhyUrbanCut from "@/components/WhyUrbanCut";
 import { brand } from "@/lib/content";
 
@@ -42,12 +43,18 @@ export default function Home() {
         <section className="grooming-hero" aria-labelledby="hero-title">
           <HeroSlideshow />
           <div className="hero-content shell">
-            <div className="grooming-copy">
+            <StoryReveal className="grooming-copy" sequence>
               <h1 id="hero-title">
-                <span className="hero-strength">{hero.headline[0]}</span>{" "}
-                <span className="hero-elevated">{hero.headline[1]}</span>
+                <span className="hero-strength" data-reveal-step>
+                  {hero.headline[0]}
+                </span>{" "}
+                <span className="hero-elevated" data-reveal-step>
+                  {hero.headline[1]}
+                </span>
               </h1>
-              <p className="hero-mantra">Inspire | Style | Confidence</p>
+              <p className="hero-mantra" data-reveal-step>
+                Inspire | Style | Confidence
+              </p>
               <p className="grooming-description">{hero.description}</p>
               <div className="hero-actions">
                 <a className="booking-button hero-booking" href="#services">
@@ -60,7 +67,7 @@ export default function Home() {
                   REQUEST HOME SERVICE
                 </a>
               </div>
-            </div>
+            </StoryReveal>
           </div>
         </section>
         <Story />

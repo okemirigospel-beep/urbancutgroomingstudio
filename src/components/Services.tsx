@@ -1,4 +1,5 @@
 "use client";
+import PackageInclusions from "./PackageInclusions";
 import Image from "next/image";
 import HomeService from "./HomeService";
 import ServiceMedia, { ServiceMediaProvider } from "./ServiceMedia";
@@ -506,11 +507,7 @@ export default function Services() {
                         </p>
                         <h3>{homeOffering.package}</h3>
                         <p>{homeOffering.description}</p>
-                        <ul>
-                          {homeOffering.inclusions.map((item) => (
-                            <li key={item}>{item}</li>
-                          ))}
-                        </ul>
+                        <PackageInclusions />
                         <p className="uc-callout">{homeOffering.outside}</p>
                         <button
                           className="uc-primary"

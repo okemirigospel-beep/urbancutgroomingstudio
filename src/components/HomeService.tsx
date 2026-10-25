@@ -1,3 +1,4 @@
+import PackageInclusions from "./PackageInclusions";
 import HomeServiceVideo from "./HomeServiceVideo";
 import type { MouseEventHandler } from "react";
 import { homeOffering, money } from "@/lib/catalogue";
@@ -25,11 +26,7 @@ export default function HomeService({
         </p>
         <p className="home-service-price">{money(homeOffering.price)}</p>
         <p className="home-service-package">{homeOffering.package}</p>
-        <ul className="home-service-inclusions">
-          {homeOffering.inclusions.map((item) => (
-            <li key={item}>{item}</li>
-          ))}
-        </ul>
+        <PackageInclusions />
         <button
           className="uc-primary"
           aria-haspopup="dialog"

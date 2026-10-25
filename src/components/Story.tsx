@@ -22,12 +22,12 @@ export default function Story() {
             training, we serve clients and help aspiring professionals develop
             their craft.
           </p>
-          <p className="story-closing">
+          <p>
             Built for the glory of God, the service of humanity, the dignity of
             work, and the legacy of generations.
           </p>
         </StoryReveal>
-        <StoryReveal className="founder-profile">
+        <StoryReveal className="founder-profile" direction="inward" delay={250}>
           <div className="founder-portrait">
             <div className="founder-portrait-image">
               <Image

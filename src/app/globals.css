@@ -3104,7 +3104,6 @@ textarea {
  .story-panel { padding: 24px 22px; }
 }
 .story-copy > p { max-width: 62ch; margin-top: 28px; font-size: 18px; }
-.story-copy .story-closing { color: var(--muted); font-family: var(--font-editorial); font-size: 24px; line-height: 1.4; }
 .founder-profile { max-width: 350px; }
 .founder-portrait { box-sizing: border-box; width: 280px; max-width: 100%; padding: 8px; border-radius: 12px; background: #000000; margin-bottom: 20px; }
 .founder-portrait-image { position: relative; overflow: hidden; border-radius: 4px; aspect-ratio: 4 / 5; }
@@ -3146,7 +3145,6 @@ textarea {
 @media (max-width: 767px) {
  .founder-portrait { width: 180px; padding: 6px; border-radius: 10px; }
  .story-copy > p { font-size: 17px; }
- .story-copy .story-closing { font-size: 22px; }
 }
 @media (max-width: 599px) {
  .why-points { grid-template-columns: 1fr; gap: 28px; margin-top: 28px; }
@@ -3204,11 +3202,6 @@ textarea {
   color: var(--gold);
   margin-bottom: 16px;
 }
-.home-service-inclusions {
-  padding-left: 20px;
-  margin-top: 18px;
-  line-height: 1.8;
-}
 
 /* Approved full-hero photography; foreground remains sharp and independent. */
 .grooming-hero { position: relative; isolation: isolate; display: flex; align-items: center; min-height: 620px; padding: 64px 0; overflow: hidden; background: var(--ink); }
@@ -3224,26 +3217,34 @@ textarea {
 .grooming-hero .hero-elevated { color: #dcc67d; }
 .grooming-hero .grooming-description { color: #f1f0ec; }
 .hero-mantra { color: #eee3bc; font-size: clamp(15px, 2vw, 21px); margin-top: 24px; letter-spacing: .04em; }
-.hero-strength { animation: hero-reveal .65s ease both; }
-.hero-elevated { animation: hero-reveal .65s .18s ease both; }
-.hero-mantra { animation: hero-reveal .65s .38s ease both; }
 .grooming-hero .hero-booking { border: 1px solid #dcc67d; }
 .grooming-hero .hero-home-service { background: #fff; color: #101110; padding: 14px 21px; text-decoration: none; font-size: 13px; }
 .founder-portrait { padding: 0; background: transparent; border-radius: 8px; }
 .founder-portrait-image { aspect-ratio: 2 / 3; border-radius: 8px; }
 .founder-portrait img { object-fit: contain; }
-.story-reveal.has-entered { animation: story-rise .65s ease both; }
-.founder-profile.story-reveal.has-entered { animation: story-inward .65s .15s ease both; }
 @keyframes hero-crossfade { from { opacity: 0; } to { opacity: 1; } }
-@keyframes hero-reveal { from { opacity: 0; clip-path: inset(0 100% 0 0); transform: translateY(10px); } to { opacity: 1; clip-path: inset(0); transform: none; } }
-@keyframes story-rise { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
-@keyframes story-inward { from { opacity: 0; transform: translateX(20px); } to { opacity: 1; transform: none; } }
 @media (max-width: 767px) {
  .grooming-hero { min-height: 590px; padding-block: 48px; }
  .grooming-hero .grooming-copy h1 { font-size: clamp(36px, 12vw, 70px); }
  .founder-portrait { padding: 0; }
- .founder-profile.story-reveal.has-entered { animation-name: story-rise; }
 }
 @media (prefers-reduced-motion: reduce) {
- .grooming-hero .grooming-frame.is-entering, .hero-strength, .hero-elevated, .hero-mantra, .story-reveal.has-entered, .founder-profile.story-reveal.has-entered { animation: none; }
+ .grooming-hero .grooming-frame.is-entering { animation: none; }
 }
+
+/* Approved relaxed-motion refinement: content is visible without JavaScript. */
+.package-inclusions { list-style: none; padding: 0; margin: 20px 0; display: grid; gap: 10px; }
+.package-inclusions li { display: flex; align-items: flex-start; gap: 10px; }
+.package-inclusions svg { width: 19px; height: 19px; flex: 0 0 19px; margin-top: .2em; color: var(--gold); stroke-width: 2.5; }
+.beyond-section { grid-template-columns: minmax(0, 1.22fr) minmax(0, 1fr); gap: 36px; align-items: center; }
+.beyond-section > div { min-width: 0; }
+.beyond-white { display: block; color: #fff; }
+.beyond-section ul { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px 18px; }
+.beyond-image img { display: block; width: 100%; height: auto; border-radius: 8px; }
+.home-service-media video { pointer-events: none; }
+@media (max-width: 899px) { .beyond-section { grid-template-columns: 1fr; } .beyond-section > div { max-width: none; } }
+@media (max-width: 479px) { .beyond-section ul { grid-template-columns: 1fr; } }
+
+.home-service-poster { display: block; width: 100%; height: 100%; object-fit: contain; }
+
+.beyond-copy > [data-reveal-group] + [data-reveal-group] { margin-top: 24px; }

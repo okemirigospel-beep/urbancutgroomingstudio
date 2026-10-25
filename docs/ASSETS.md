@@ -1,3 +1,5 @@
+> Latest refinement: [relaxed motion, chair layout and full Home video](RELAXED-MOTION-VERIFICATION.md) supersedes the earlier once-only motion and trimmed Home video.
+
 > Current approved scope — 25 October 2026: see [final scope and verification](FINAL-SCOPE-VERIFICATION.md) and [asset mapping](oct25-media.json). Older conflicting catalogue, hero and hosting notes below are historical. Owner re-enabled Netlify builds; final scoped push is authorized; indexing remains off.
 
 # Asset inventory and recovery

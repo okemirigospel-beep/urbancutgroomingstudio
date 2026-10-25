@@ -1,98 +1,68 @@
 "use client";
-import { useEffect, useRef } from "react";
-import { shouldAutoplayFeature } from "@/lib/service-media";
-
+import { useEffect, useRef, useState } from "react";
 export default function HomeServiceVideo() {
   const video = useRef<HTMLVideoElement>(null);
+  const [showVideo, setShowVideo] = useState(false);
   useEffect(() => {
     const node = video.current;
     if (!node) return;
     const motion = matchMedia("(prefers-reduced-motion: reduce)");
-    let visible = false;
-    let userPaused = false;
-    let blocked = false;
-    let pending = false;
-    let disposed = false;
-    let lifecyclePauses = 0;
+    let visible = false,
+      pending = false,
+      blocked = false,
+      disposed = false;
     const suspended = () =>
-      !visible || document.hidden || !!document.querySelector("dialog[open]");
-    const pauseForLifecycle = () => {
-      if (!node.paused) {
-        lifecyclePauses++;
-        node.pause();
-      }
-    };
+      !visible ||
+      document.hidden ||
+      !!document.querySelector("dialog[open]") ||
+      motion.matches;
     const sync = () => {
-      if (suspended() || motion.matches) {
-        pauseForLifecycle();
+      if (suspended()) {
+        node.pause();
+        if (motion.matches) setShowVideo(false);
         return;
       }
-      if (
-        !node.getAttribute("src") ||
-        pending ||
-        !node.paused ||
-        !shouldAutoplayFeature({
-          visible,
-          hidden: document.hidden,
-          dialog: !!document.querySelector("dialog[open]"),
-          reduced: motion.matches,
-          userPaused,
-          blocked,
-        })
-      )
+      if (!node.getAttribute("src") || pending || blocked || !node.paused)
         return;
       pending = true;
+      node.muted = true;
       void node
         .play()
         .then(() => {
-          if (disposed || suspended() || motion.matches) pauseForLifecycle();
+          if (disposed || suspended()) node.pause();
+          else setShowVideo(true);
         })
         .catch((error) => {
-          // A lifecycle interruption is not an autoplay-policy refusal.
-          if (!disposed && error.name !== "AbortError") blocked = true;
+          if (!disposed && error.name !== "AbortError") {
+            blocked = true;
+            setShowVideo(false);
+          }
         })
         .finally(() => {
           pending = false;
-          if (!disposed) sync();
+          // Retry only an interrupted attempt when eligible again, never a policy refusal.
+          if (!disposed && !blocked && !suspended() && node.paused) sync();
         });
     };
-    const onPause = () => {
-      if (lifecyclePauses) {
-        lifecyclePauses--;
-        return;
-      }
-      userPaused = true;
-    };
-    const onPlay = () => {
-      if (suspended()) {
-        pauseForLifecycle();
-        return;
-      }
-      // Native controls are also the recovery path after blocked autoplay.
-      userPaused = false;
-      blocked = false;
-    };
-    node.addEventListener("pause", onPause);
-    node.addEventListener("play", onPlay);
-    const nearby = new IntersectionObserver(
+    const near = new IntersectionObserver(
       ([entry]) => {
         if (!entry.isIntersecting) return;
         node.preload = "metadata";
-        node.src = "/media/oct25/home-service.mp4";
-        nearby.disconnect();
+        node.src = "/media/refinement/home-service-full.mp4";
+        near.disconnect();
         sync();
       },
       { rootMargin: "400px" },
     );
-    const viewport = new IntersectionObserver(
+    const observer = new IntersectionObserver(
       ([entry]) => {
         visible = entry.isIntersecting && entry.intersectionRatio >= 0.15;
         sync();
       },
       { threshold: [0, 0.15] },
     );
-    nearby.observe(node);
-    viewport.observe(node);
+    near.observe(node);
+    observer.observe(node);
     const dialogs = new MutationObserver(sync);
     dialogs.observe(document.body, {
       subtree: true,
@@ -103,18 +73,24 @@ export default function HomeServiceVideo() {
     motion.addEventListener("change", sync);
     return () => {
       disposed = true;
-      nearby.disconnect();
-      viewport.disconnect();
+      near.disconnect();
+      observer.disconnect();
       dialogs.disconnect();
       document.removeEventListener("visibilitychange", sync);
       motion.removeEventListener("change", sync);
-      node.removeEventListener("pause", onPause);
-      node.removeEventListener("play", onPlay);
-      pauseForLifecycle();
+      node.pause();
     };
   }, []);
   return (
     <div className="home-service-media">
+      <img
+        className="home-service-poster"
+        src="/media/refinement/home-service-poster.webp"
+        alt="UrbanCut grooming at your location"
+        width={720}
+        height={1280}
+        loading="lazy"
+      />
       <video
         ref={video}
         width={720}
@@ -122,10 +98,15 @@ export default function HomeServiceVideo() {
         muted
         playsInline
         loop
-        controls
+        controls={false}
+        disablePictureInPicture
+        disableRemotePlayback
+        tabIndex={-1}
+        aria-hidden="true"
         preload="none"
-        poster="/media/oct25/home-poster.webp"
-        aria-label="UrbanCut grooming at your location"
+        poster="/media/refinement/home-service-poster.webp"
+        style={{ opacity: showVideo ? 1 : 0 }}
+        onError={() => setShowVideo(false)}
       />
     </div>
   );
