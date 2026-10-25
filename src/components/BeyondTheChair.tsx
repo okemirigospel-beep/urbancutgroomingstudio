@@ -3,9 +3,13 @@ const message =
   "Hello UrbanCut, I’m interested in the upcoming Beyond the Chair business-support pathway. Please share more information about the planned offering and its availability.";
 export default function BeyondTheChair() {
   return (
-    <div className="beyond-chair" aria-labelledby="beyond-heading">
+    <section
+      id="beyond-the-chair"
+      className="beyond-chair beyond-section shell section"
+      aria-labelledby="beyond-heading"
+    >
       <div>
-        <h3 id="beyond-heading">Beyond the Chair</h3>
+        <h2 id="beyond-heading">Beyond the Chair</h2>
         <h4>Build More Than a Career. Build a Business.</h4>
         <p>
           UrbanCut is developing a business-support pathway for aspiring
@@ -36,6 +40,6 @@ export default function BeyondTheChair() {
           ENQUIRE ABOUT FUTURE BUSINESS SUPPORT
         </a>
       </div>
-    </div>
+    </section>
   );
 }

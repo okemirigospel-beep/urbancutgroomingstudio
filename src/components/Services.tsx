@@ -68,6 +68,7 @@ function AddAction({
   );
 }
 function Price({ service }: { service: Service }) {
+  if (service.price === undefined) return null;
   return (
     <p className="uc-service-meta">
       {service.status === "coming-soon" && <span>Planned price </span>}
@@ -505,6 +506,11 @@ export default function Services() {
                         </p>
                         <h3>{homeOffering.package}</h3>
                         <p>{homeOffering.description}</p>
+                        <ul>
+                          {homeOffering.inclusions.map((item) => (
+                            <li key={item}>{item}</li>
+                          ))}
+                        </ul>
                         <p className="uc-callout">{homeOffering.outside}</p>
                         <button
                           className="uc-primary"

@@ -3190,3 +3190,22 @@ textarea {
 @media (max-width: 900px) { .home-service-section { grid-template-columns: 1fr; } .home-service-media { width: min(100%, 310px, 42svh); } }
 @media (max-height: 500px) { .home-service-media { width: min(100%, 220px, 42svh); } }
 @media (prefers-reduced-motion: reduce) { .service-preview .entering, .service-preview .previous { animation: none; } }
+
+/* Approved October 25 section placement and package details. */
+.beyond-section {
+  background: var(--ink);
+  color: white;
+  border-radius: 8px;
+  padding: clamp(28px, 4vw, 56px);
+  margin-block: 48px;
+}
+.beyond-section h2 {
+  font-size: 18px;
+  color: var(--gold);
+  margin-bottom: 16px;
+}
+.home-service-inclusions {
+  padding-left: 20px;
+  margin-top: 18px;
+  line-height: 1.8;
+}

@@ -26,36 +26,36 @@ const studio: StudioRequest = {
   time: "10:00",
   notes: "Test only: A&B #?\nSecond line",
 };
-test("approved catalogue has six categories, 16 services, 13 bookable and exactly three durations", () => {
-  assert.deepEqual(
-    categories.map((c) => c.name),
-    [
-      "Haircuts & Grooming",
-      "Beard & Shave",
-      "Hair & Scalp Care",
-      "UrbanCut Wellness",
-      "UrbanCut Home Service",
-      "UrbanCut Black Card",
-    ],
-  );
-  assert.equal(services.length, 16);
-  assert.equal(new Set(services.map((s) => s.id)).size, 16);
-  assert.equal(services.filter((s) => s.status === "bookable").length, 13);
+test("October catalogue preserves availability and approved prices/durations", () => {
+  assert.equal(categories.length, 5);
+  assert.ok(!categories.some((c) => c.id === "home"));
+  assert.equal(services.length, 19);
+  assert.equal(services.filter((s) => s.status === "bookable").length, 14);
+  assert.ok(!services.some((s) => s.id === "express-cut"));
   assert.deepEqual(
     services.filter((s) => s.duration).map((s) => [s.id, s.duration]),
     [
       ["signature-cut", 45],
-      ["express-cut", 35],
-      ["signature-experience", 45],
+      ["signature-experience", 60],
     ],
   );
-  assert.deepEqual(
-    services.map((s) => s.price),
-    [
-      15000, 10000, 5000, 15000, 32000, 5000, 8000, 5000, 5000, 6000, 15000,
-      25000, 30000, 7000, 10000, 15000,
-    ],
-  );
+  for (const [id, price] of Object.entries({
+    "signature-cut": 10000,
+    "signature-experience": 25000,
+    "sporting-waves": 25000,
+    "sporting-waves-products": 50000,
+    "black-dye": 3500,
+    texturizer: 4000,
+  }))
+    assert.equal(services.find((s) => s.id === id)?.price, price);
+  for (const id of ["massage", "facial"]) {
+    const s = services.find((s) => s.id === id)!;
+    assert.equal(s.price, undefined);
+    assert.equal(s.status, "coming-soon");
+    assert.deepEqual(addService({}, id), {});
+  }
+  for (const id of ["sporting-waves", "sporting-waves-products"])
+    assert.equal(services.find((s) => s.id === id)?.duration, undefined);
   assert.equal(homeOffering.price, 100000);
   assert.equal(membership.registrationFee, 50000);
 });
@@ -77,7 +77,7 @@ test("basket is idempotent and enforces availability even for tampered IDs", () 
   basket = quantityService(addService(basket, "kids-cut"), "kids-cut", 2);
   assert.equal(
     selection(basket).reduce((sum, l) => sum + l.total, 0),
-    25000,
+    20000,
   );
   assert.equal(
     selection({ ...basket, manicure: 1, home: 1, "premium-shave": -2 }).length,
@@ -90,7 +90,9 @@ test("known duration filters closing-time overruns without invented unknown dura
     preferredTimes({ "signature-cut": 1 }, studio.date).includes("20:00"),
   );
   assert.ok(
-    preferredTimes({ "express-cut": 1 }, studio.date).includes("20:00"),
+    preferredTimes({ "signature-experience": 1 }, studio.date).includes(
+      "20:00",
+    ),
   );
   assert.ok(preferredTimes({ "kids-cut": 1 }, studio.date).includes("20:00"));
   assert.ok(
@@ -144,7 +146,7 @@ test("studio handoff preserves quantity, total, Unicode and reserved URL charact
     now,
   );
   assert.match(text, /Kids Haircut × 2 — ₦10,000/);
-  assert.match(text, /Listed total: ₦25,000/);
+  assert.match(text, /Listed total: ₦20,000/);
   assert.doesNotMatch(text, /Address|Region|Location/);
   const url = new URL(whatsappUrl(text));
   assert.equal(url.origin + url.pathname, "https://wa.me/2347063291013");
@@ -232,10 +234,10 @@ test("studio message matches the concise template and recalculates edited select
       "Name: Ada",
       "",
       "Services:",
-      "• UrbanCut Signature Haircut × 1 — ₦15,000",
+      "• UrbanCut Signature Haircut × 1 — ₦10,000",
       "• Kids Haircut × 2 — ₦10,000",
       "",
-      "Listed total: ₦25,000",
+      "Listed total: ₦20,000",
       "",
       "Preferred date: 2026-09-29",
       "Preferred time: 10:00 (Abuja time)",

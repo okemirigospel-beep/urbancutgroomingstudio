@@ -22,13 +22,14 @@ export function selection(basket: Basket) {
     .filter(
       (s) =>
         s.status === "bookable" &&
+        typeof s.price === "number" &&
         Number.isSafeInteger(basket[s.id]) &&
         basket[s.id] > 0,
     )
     .map((service) => ({
       service,
       quantity: basket[service.id],
-      total: service.price * basket[service.id],
+      total: service.price! * basket[service.id],
     }));
 }
 export function addService(basket: Basket, id: string): Basket {

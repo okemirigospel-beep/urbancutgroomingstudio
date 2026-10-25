@@ -13,6 +13,7 @@ import { hero } from "@/lib/hero";
 import Lookbook from "@/components/Lookbook";
 import Products from "@/components/Products";
 import Services from "@/components/Services";
+import BeyondTheChair from "@/components/BeyondTheChair";
 import Story from "@/components/Story";
 import WhyUrbanCut from "@/components/WhyUrbanCut";
 import { brand } from "@/lib/content";
@@ -59,6 +60,7 @@ export default function Home() {
           </div>
           <HeroSlideshow />
         </section>
+        <Story />
         <div className="studio-band">
           <div className="studio-band-inner shell">
             <div className="studio-info-group">
@@ -84,13 +86,13 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <Story />
         <Services />
-        <WhyUrbanCut />
         <Lookbook />
-        <Reviews />
         <Academy />
+        <WhyUrbanCut />
+        <BeyondTheChair />
         <Products />
+        <Reviews />
         <VisitConnect />
       </main>
       <Footer />

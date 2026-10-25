@@ -96,7 +96,7 @@ export function SelectionSummary({
           <div className="uc-selection-line" key={service.id}>
             <h4>{service.name}</h4>
             <p>
-              {money(service.price)} each <strong>{money(lineTotal)}</strong>
+              {money(service.price!)} each <strong>{money(lineTotal)}</strong>
             </p>
             <div className="uc-quantity">
               <button

@@ -21,10 +21,15 @@ export default function HomeService({
           UrbanCut at Your Location
         </h2>
         <p className="home-service-lead">
-          Premium grooming at your home, hotel or office.
+          Premium grooming services at your home, hotel, or office.
         </p>
         <p className="home-service-price">{money(homeOffering.price)}</p>
         <p className="home-service-package">{homeOffering.package}</p>
+        <ul className="home-service-inclusions">
+          {homeOffering.inclusions.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
         <button
           className="uc-primary"
           aria-haspopup="dialog"
