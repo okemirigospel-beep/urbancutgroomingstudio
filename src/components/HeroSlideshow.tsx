@@ -83,7 +83,7 @@ export default function HeroSlideshow() {
         setSlide({ active: upcoming, previous: active });
         setManualStep(null);
       },
-      manualStep === null ? 2800 : 0,
+      manualStep === null ? 3600 : 0,
     );
     return () => window.clearTimeout(timer);
   }, [running, active, upcoming, ready, manualStep]);
@@ -139,9 +139,9 @@ export default function HeroSlideshow() {
                 </p>
               ) : (
                 <img
-                  src={`/media/grooming/look-${photo.id}-720.webp`}
-                  srcSet={`/media/grooming/look-${photo.id}-480.webp 480w, /media/grooming/look-${photo.id}-720.webp ${photo.width}w`}
-                  sizes="(max-width: 760px) calc(100vw - 40px), (max-width: 900px) 620px, 576px"
+                  src={`${photo.src}.webp`}
+                  srcSet={`${photo.src}-480.webp 480w, ${photo.src}.webp ${photo.width}w`}
+                  sizes="100vw"
                   style={{ objectPosition: photo.position }}
                   onLoad={() =>
                     setLoaded((ids) =>

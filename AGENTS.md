@@ -1,5 +1,7 @@
 # URBANCUT project instructions
 
+Current override (25 October): docs/FINAL-SCOPE-VERIFICATION.md and docs/oct25-media.json govern the latest approved scope. Owner explicitly re-enabled Netlify builds and authorized final pushes; do not repeat the superseded stopped-build confirmation. Preserve hosting configuration and indexing off. The five-image background hero, 19-service catalogue (14 bookable), approved 28-photo Lookbook and section order supersede historical specifics below.
+
 This is a NEW implementation, not recovered source. Preserve the supplied root assets, ZIPs and original repository history.
 
 - Local development binds to 127.0.0.1. Netlify is the authorised host: urbancutgroomingstudio.netlify.app, Git production branch urbancut-continuation. Current mode (6 October): local development and GitHub backup only; owner confirms Netlify builds stopped. Do not enable builds or deploy. Verify stopped builds before a push; public site disablement alone is not sufficient. Keep indexing disabled and Vercel Git deployments disabled. No tunnels or alternate hosting without explicit authorisation. See docs/MANUAL-DEPLOYMENT.md.

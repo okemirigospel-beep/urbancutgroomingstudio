@@ -2,7 +2,7 @@ export const founder = {
   name: "Naadubon Williams Kpoobari",
   title: "Founder & Creative Director",
   portrait: {
-    src: "/media/naadubon-williams-kpoobari-founder.webp",
+    src: "/media/oct25/founder.webp",
     width: 720,
     height: 1080,
     alt: "Naadubon Williams Kpoobari, Founder & Creative Director of UrbanCut Grooming Studio.",

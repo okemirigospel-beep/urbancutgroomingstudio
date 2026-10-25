@@ -8,13 +8,13 @@ import {
 } from "../src/lib/service-media.ts";
 import { whatsappUrl, whatsappBase } from "../src/lib/booking.ts";
 
-test("each preview has four ordered, isolated assets; wrap and failures remain forward", () => {
+test("previews retain ordered, isolated assets; wrap and failures remain forward", () => {
   for (const [category, photos] of Object.entries(servicePreviews)) {
-    assert.equal(photos.length, 4);
+    assert.equal(photos.length, category === "hair-care" ? 5 : 4);
     photos.forEach((photo, index) =>
       assert.equal(
         photo.src,
-        `/media/service-previews/${category}-${index + 1}`,
+        `/media/${category === "haircuts" ? "service-previews" : "oct25"}/${category}-${index + 1}`,
       ),
     );
   }

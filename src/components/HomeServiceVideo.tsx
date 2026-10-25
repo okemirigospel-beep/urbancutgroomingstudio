@@ -78,7 +78,7 @@ export default function HomeServiceVideo() {
       ([entry]) => {
         if (!entry.isIntersecting) return;
         node.preload = "metadata";
-        node.src = "/media/service-previews/home-service-feature-silent.mp4";
+        node.src = "/media/oct25/home-service.mp4";
         nearby.disconnect();
         sync();
       },
@@ -124,7 +124,7 @@ export default function HomeServiceVideo() {
         loop
         controls
         preload="none"
-        poster="/media/service-previews/home-service-grooming-poster.webp"
+        poster="/media/oct25/home-poster.webp"
         aria-label="UrbanCut grooming at your location"
       />
     </div>

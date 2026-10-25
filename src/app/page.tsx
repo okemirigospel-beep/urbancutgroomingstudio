@@ -39,26 +39,29 @@ export default function Home() {
         </div>
       </div>
       <main id="main">
-        <section className="grooming-hero shell" aria-labelledby="hero-title">
-          <div className="grooming-copy">
-            <h1 id="hero-title">
-              <span className="hero-strength">{hero.headline[0]}</span>{" "}
-              <span className="hero-elevated">{hero.headline[1]}</span>
-            </h1>
-            <p className="grooming-description">{hero.description}</p>
-            <div className="hero-actions">
-              <a className="booking-button hero-booking" href="#services">
-                {hero.action.toUpperCase()}
-              </a>
-              <a
-                className="booking-button hero-home-service"
-                href="#home-service"
-              >
-                REQUEST HOME SERVICE
-              </a>
+        <section className="grooming-hero" aria-labelledby="hero-title">
+          <HeroSlideshow />
+          <div className="hero-content shell">
+            <div className="grooming-copy">
+              <h1 id="hero-title">
+                <span className="hero-strength">{hero.headline[0]}</span>{" "}
+                <span className="hero-elevated">{hero.headline[1]}</span>
+              </h1>
+              <p className="hero-mantra">Inspire | Style | Confidence</p>
+              <p className="grooming-description">{hero.description}</p>
+              <div className="hero-actions">
+                <a className="booking-button hero-booking" href="#services">
+                  {hero.action.toUpperCase()}
+                </a>
+                <a
+                  className="booking-button hero-home-service"
+                  href="#home-service"
+                >
+                  REQUEST HOME SERVICE
+                </a>
+              </div>
             </div>
           </div>
-          <HeroSlideshow />
         </section>
         <Story />
         <div className="studio-band">

@@ -1,3 +1,5 @@
+> Current approved scope — 25 October 2026: see [final scope and verification](FINAL-SCOPE-VERIFICATION.md) and [asset mapping](oct25-media.json). Older conflicting catalogue, hero and hosting notes below are historical. Owner re-enabled Netlify builds; final scoped push is authorized; indexing remains off.
+
 # Design decisions
 
 Primary reference: supplied refero.design 5af49096-2a34-424c-8f91-4b5713a04e31.jpg (Spyglass). Direct Refero lookup returned NO_SUBSCRIPTION. The supplied screenshot provides the visual lock; there is no missing reference dependency.

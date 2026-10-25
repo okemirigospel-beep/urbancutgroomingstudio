@@ -72,7 +72,7 @@ export const programmes: readonly Programme[] = [
         ],
       },
     ],
-    imageSrc: "/media/academy/urbancut-professional-workstation.webp",
+    imageSrc: "/media/oct25/academy-professional.webp",
     imageAlt: "Clippers and grooming tools organised at a workstation.",
     certificateTitle: "UrbanCut Professional Barber Certificate",
   },
@@ -104,9 +104,9 @@ export const programmes: readonly Programme[] = [
         ],
       },
     ],
-    imageSrc: "/media/academy/urbancut-master-workstation.webp",
+    imageSrc: "/media/oct25/academy-master.webp",
     imageAlt:
-      "Specialist grooming workstation with clippers, detail tools and mirror.",
+      "Professional grooming tools and kit arranged on a dark surface.",
     certificateTitle: "UrbanCut Certified Master Barber",
   },
   {
@@ -185,9 +185,9 @@ export const programmes: readonly Programme[] = [
         items: ["How to build a recognisable personal or business brand."],
       },
     ],
-    imageSrc: "/media/academy/urbancut-executive-workstation.webp",
+    imageSrc: "/media/oct25/academy-executive.webp",
     imageAlt:
-      "Business planning desk with notebook and laptop beside a grooming chair.",
+      "UrbanCut grooming studio storefront.",
     subtitle: "Grooming & Business Certification",
   },
 ];

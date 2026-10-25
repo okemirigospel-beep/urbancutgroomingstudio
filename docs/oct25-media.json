@@ -1,0 +1,356 @@
+{
+  "hero": [
+    {
+      "id": 1,
+      "src": "/media/oct25/hero-1",
+      "width": 720,
+      "height": 825,
+      "position": "50% 35%",
+      "alt": "Child with patterned cornrows",
+      "source": "2 (2).jpg"
+    },
+    {
+      "id": 2,
+      "src": "/media/oct25/hero-2",
+      "width": 720,
+      "height": 813,
+      "position": "50% 35%",
+      "alt": "Locs with neatly defined sections",
+      "source": "5 (2).jpg"
+    },
+    {
+      "id": 3,
+      "src": "/media/oct25/hero-3",
+      "width": 720,
+      "height": 960,
+      "position": "50% 35%",
+      "alt": "Smooth fade and shaped beard",
+      "source": "IMG-20260929-WA0055.jpg"
+    },
+    {
+      "id": 4,
+      "src": "/media/oct25/hero-4",
+      "width": 720,
+      "height": 960,
+      "position": "50% 35%",
+      "alt": "Textured haircut and full beard",
+      "source": "IMG-20260929-WA0057.jpg"
+    },
+    {
+      "id": 5,
+      "src": "/media/oct25/hero-5",
+      "width": 720,
+      "height": 960,
+      "position": "50% 35%",
+      "alt": "Waves with a defined hairline",
+      "source": "IMG-20260929-WA0090.jpg"
+    }
+  ],
+  "lookbook": [
+    {
+      "id": "gallery-1",
+      "src": "/media/oct25/gallery-1.webp",
+      "width": 607,
+      "height": 1080,
+      "alt": "Patterned braids viewed from the front",
+      "fit": "contain",
+      "position": "50% 50%",
+      "source": "1.jpg"
+    },
+    {
+      "id": "gallery-2",
+      "src": "/media/oct25/gallery-2.webp",
+      "width": 720,
+      "height": 960,
+      "alt": "Detailed braided hairstyle",
+      "fit": "contain",
+      "position": "50% 50%",
+      "source": "2.jpg"
+    },
+    {
+      "id": "gallery-3",
+      "src": "/media/oct25/gallery-3.webp",
+      "width": 720,
+      "height": 825,
+      "alt": "Child with patterned cornrows",
+      "fit": "contain",
+      "position": "50% 50%",
+      "source": "2 (2).jpg"
+    },
+    {
+      "id": "gallery-4",
+      "src": "/media/oct25/gallery-4.webp",
+      "width": 720,
+      "height": 960,
+      "alt": "Braided hair with defined sections",
+      "fit": "contain",
+      "position": "50% 50%",
+      "source": "3.jpg"
+    },
+    {
+      "id": "gallery-5",
+      "src": "/media/oct25/gallery-5.webp",
+      "width": 720,
+      "height": 748,
+      "alt": "Centre-parted twists",
+      "fit": "contain",
+      "position": "50% 50%",
+      "source": "3 (2).jpg"
+    },
+    {
+      "id": "gallery-6",
+      "src": "/media/oct25/gallery-6.webp",
+      "width": 720,
+      "height": 960,
+      "alt": "Styled braided hair",
+      "fit": "contain",
+      "position": "50% 50%",
+      "source": "4.jpg"
+    },
+    {
+      "id": "gallery-7",
+      "src": "/media/oct25/gallery-7.webp",
+      "width": 720,
+      "height": 960,
+      "alt": "Finished loc hairstyle",
+      "fit": "contain",
+      "position": "50% 50%",
+      "source": "5.jpg"
+    },
+    {
+      "id": "gallery-8",
+      "src": "/media/oct25/gallery-8.webp",
+      "width": 720,
+      "height": 813,
+      "alt": "Locs with neatly defined sections",
+      "fit": "contain",
+      "position": "50% 50%",
+      "source": "5 (2).jpg"
+    },
+    {
+      "id": "gallery-9",
+      "src": "/media/oct25/gallery-9.webp",
+      "width": 720,
+      "height": 960,
+      "alt": "Finished haircut",
+      "fit": "contain",
+      "position": "50% 50%",
+      "source": "6.jpg"
+    },
+    {
+      "id": "gallery-10",
+      "src": "/media/oct25/gallery-10.webp",
+      "width": 720,
+      "height": 960,
+      "alt": "Dyed haircut",
+      "fit": "contain",
+      "position": "50% 50%",
+      "source": "7.jpg"
+    },
+    {
+      "id": "gallery-11",
+      "src": "/media/oct25/gallery-11.webp",
+      "width": 720,
+      "height": 960,
+      "alt": "Colour-treated hairstyle",
+      "fit": "contain",
+      "position": "50% 50%",
+      "source": "8 (2).jpg"
+    },
+    {
+      "id": "gallery-12",
+      "src": "/media/oct25/gallery-12.webp",
+      "width": 720,
+      "height": 960,
+      "alt": "Dyed hair with shaped sides",
+      "fit": "contain",
+      "position": "50% 50%",
+      "source": "9.jpg"
+    },
+    {
+      "id": "gallery-13",
+      "src": "/media/oct25/gallery-13.webp",
+      "width": 720,
+      "height": 960,
+      "alt": "Groomed hairstyle",
+      "fit": "contain",
+      "position": "50% 50%",
+      "source": "10.jpg"
+    },
+    {
+      "id": "gallery-14",
+      "src": "/media/oct25/gallery-14.webp",
+      "width": 720,
+      "height": 960,
+      "alt": "Detailed haircut",
+      "fit": "contain",
+      "position": "50% 50%",
+      "source": "14.jpg"
+    },
+    {
+      "id": "gallery-15",
+      "src": "/media/oct25/gallery-15.webp",
+      "width": 720,
+      "height": 960,
+      "alt": "Textured top with a defined hairline",
+      "fit": "contain",
+      "position": "50% 50%",
+      "source": "IMG-20260929-WA0020.jpg"
+    },
+    {
+      "id": "gallery-16",
+      "src": "/media/oct25/gallery-16.webp",
+      "width": 720,
+      "height": 540,
+      "alt": "Side view of curls and a tapered neckline",
+      "fit": "contain",
+      "position": "50% 50%",
+      "source": "IMG-20260929-WA0048.jpg"
+    },
+    {
+      "id": "gallery-17",
+      "src": "/media/oct25/gallery-17.webp",
+      "width": 720,
+      "height": 960,
+      "alt": "Textured curls and side fade",
+      "fit": "contain",
+      "position": "50% 50%",
+      "source": "IMG-20260929-WA0070.jpg"
+    },
+    {
+      "id": "gallery-18",
+      "src": "/media/oct25/gallery-18.webp",
+      "width": 720,
+      "height": 961,
+      "alt": "Textured top and shaped beard",
+      "fit": "contain",
+      "position": "50% 50%",
+      "source": "IMG-20260929-WA0088.jpg"
+    },
+    {
+      "id": "gallery-19",
+      "src": "/media/oct25/gallery-19.webp",
+      "width": 720,
+      "height": 960,
+      "alt": "Textured haircut and full beard",
+      "fit": "contain",
+      "position": "50% 50%",
+      "source": "IMG-20260929-WA0057.jpg"
+    },
+    {
+      "id": "gallery-20",
+      "src": "/media/oct25/gallery-20.webp",
+      "width": 720,
+      "height": 1022,
+      "alt": "Textured top and beard in profile",
+      "fit": "contain",
+      "position": "50% 50%",
+      "source": "IMG-20260929-WA0074.jpg"
+    },
+    {
+      "id": "gallery-21",
+      "src": "/media/oct25/gallery-21.webp",
+      "width": 720,
+      "height": 960,
+      "alt": "Smooth fade and shaped beard",
+      "fit": "contain",
+      "position": "50% 50%",
+      "source": "IMG-20260929-WA0055.jpg"
+    },
+    {
+      "id": "gallery-22",
+      "src": "/media/oct25/gallery-22.webp",
+      "width": 720,
+      "height": 960,
+      "alt": "Short fade and defined beard",
+      "fit": "contain",
+      "position": "50% 50%",
+      "source": "IMG-20260929-WA0066.jpg"
+    },
+    {
+      "id": "gallery-23",
+      "src": "/media/oct25/gallery-23.webp",
+      "width": 720,
+      "height": 961,
+      "alt": "Close fade and sharp line-up",
+      "fit": "contain",
+      "position": "50% 50%",
+      "source": "IMG-20260929-WA0067.jpg"
+    },
+    {
+      "id": "gallery-24",
+      "src": "/media/oct25/gallery-24.webp",
+      "width": 720,
+      "height": 960,
+      "alt": "Short haircut with frontal line-up",
+      "fit": "contain",
+      "position": "50% 50%",
+      "source": "IMG-20260929-WA0085.jpg"
+    },
+    {
+      "id": "gallery-25",
+      "src": "/media/oct25/gallery-25.webp",
+      "width": 720,
+      "height": 960,
+      "alt": "Short waves viewed from above",
+      "fit": "contain",
+      "position": "50% 50%",
+      "source": "IMG-20260929-WA0032.jpg"
+    },
+    {
+      "id": "gallery-26",
+      "src": "/media/oct25/gallery-26.webp",
+      "width": 720,
+      "height": 960,
+      "alt": "Waves with a defined hairline",
+      "fit": "contain",
+      "position": "50% 50%",
+      "source": "IMG-20260929-WA0090.jpg"
+    },
+    {
+      "id": "gallery-27",
+      "src": "/media/oct25/gallery-27.webp",
+      "width": 720,
+      "height": 882,
+      "alt": "Finished UrbanCut hairstyle",
+      "fit": "contain",
+      "position": "50% 50%",
+      "source": "IMG_20260924_230009.jpg"
+    },
+    {
+      "id": "gallery-28",
+      "src": "/media/oct25/gallery-28.webp",
+      "width": 720,
+      "height": 747,
+      "alt": "Finished UrbanCut haircut",
+      "fit": "contain",
+      "position": "50% 50%",
+      "source": "IMG_20260924_230807.jpg"
+    }
+  ],
+  "previews": {
+    "beard": [
+      "IMG-20260929-WA0055.jpg",
+      "IMG-20260929-WA0067.jpg",
+      "IMG-20260929-WA0074.jpg",
+      "IMG-20260929-WA0088.jpg"
+    ],
+    "hair-care": [
+      "7.jpg",
+      "8 (2).jpg",
+      "9.jpg",
+      "2 (2).jpg",
+      "3.jpg"
+    ]
+  },
+  "homeVideo": {
+    "source": "updated home service section vid.mp4",
+    "keep": "11.3 seconds to end",
+    "audio": false
+  },
+  "lookbookVideo": {
+    "source": "updated lookbook vid.mp4",
+    "remove": "2.3 to 4.1 seconds",
+    "audio": false
+  }
+}

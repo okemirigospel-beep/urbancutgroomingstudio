@@ -2,47 +2,35 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { existsSync, readFileSync } from "node:fs";
 import { heroPhotos } from "../src/lib/hero.ts";
-test("slideshow retains six originals then appends fourteen unique ordered assets", () => {
-  assert.equal(heroPhotos.length, 20);
-  assert.deepEqual(
-    heroPhotos.map((p) => p.id),
-    Array.from({ length: 20 }, (_, i) => i + 1),
-  );
-  for (const photo of heroPhotos) {
-    for (const size of [480, 720])
-      assert.ok(
-        existsSync(
-          new URL(
-            `../public/media/grooming/look-${photo.id}-${size}.webp`,
-            import.meta.url,
-          ),
-        ),
-      );
-    assert.ok(photo.width > 0 && photo.height > 0 && photo.alt);
-  }
+import { lookbookPhotos } from "../src/lib/lookbook.ts";
+test("approved hero and 28-photo Lookbook use supplied order and available assets", () => {
   const manifest = JSON.parse(
-    readFileSync(
-      new URL("../docs/slideshow-additions.json", import.meta.url),
-      "utf8",
-    ),
+    readFileSync(new URL("../docs/oct25-media.json", import.meta.url), "utf8"),
   );
+  assert.equal(heroPhotos.length, 5);
   assert.deepEqual(
-    manifest.map((p: { source: string }) => p.source),
+    heroPhotos.map((p) => p.source),
     [
-      "0077",
-      "0066",
-      "0075",
-      "0048",
-      "0071",
-      "0026",
-      "0025",
-      "0084",
-      "0068",
-      "0046",
-      "0090",
-      "0024",
-      "0051",
-      "0033",
-    ].map((n) => `IMG-20260929-WA${n}.jpg`),
+      "2 (2).jpg",
+      "5 (2).jpg",
+      "IMG-20260929-WA0055.jpg",
+      "IMG-20260929-WA0057.jpg",
+      "IMG-20260929-WA0090.jpg",
+    ],
   );
+  assert.equal(lookbookPhotos.length, 28);
+  assert.deepEqual(
+    lookbookPhotos.map((p) => p.source),
+    manifest.lookbook.map((p: { source: string }) => p.source),
+  );
+  for (const p of [...heroPhotos, ...lookbookPhotos])
+    assert.ok(
+      existsSync(
+        new URL(
+          `../public${p.src}${p.src.endsWith("webp") ? "" : ".webp"}`,
+          import.meta.url,
+        ),
+      ),
+    );
+  assert.ok(!lookbookPhotos.some((p) => p.source.includes("WA0027")));
 });

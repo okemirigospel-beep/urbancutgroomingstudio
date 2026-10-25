@@ -75,7 +75,7 @@ function LookbookVideo() {
     >
       <img
         className="lookbook-poster"
-        src="/media/lookbook/lookbook-poster.jpg"
+        src="/media/oct25/lookbook-poster.webp"
         width={540}
         height={960}
         alt=""
@@ -84,9 +84,9 @@ function LookbookVideo() {
       <video
         ref={video}
         src={
-          near && !reduced ? "/media/lookbook/lookbook-grooming.mp4" : undefined
+          near && !reduced ? "/media/oct25/lookbook.mp4" : undefined
         }
-        poster="/media/lookbook/lookbook-poster.jpg"
+        poster="/media/oct25/lookbook-poster.webp"
         muted
         loop
         playsInline

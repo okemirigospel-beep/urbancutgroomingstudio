@@ -1,4 +1,5 @@
 import Image from "next/image";
+import StoryReveal from "./StoryReveal";
 import { founder } from "@/lib/presentation";
 import { studio } from "@/lib/studio";
 
@@ -10,7 +11,7 @@ export default function Story() {
       aria-labelledby="story-heading"
     >
       <div className="story-panel">
-        <div className="story-copy">
+        <StoryReveal className="story-copy">
           <h2 id="story-heading" className="type-editorial uc-section-title">
             The UrbanCut Story
           </h2>
@@ -25,22 +26,22 @@ export default function Story() {
             Built for the glory of God, the service of humanity, the dignity of
             work, and the legacy of generations.
           </p>
-        </div>
-        <div className="founder-profile">
+        </StoryReveal>
+        <StoryReveal className="founder-profile">
           <div className="founder-portrait">
             <div className="founder-portrait-image">
               <Image
                 src={founder.portrait.src}
                 alt={founder.portrait.alt}
                 fill
-                sizes="(max-width: 767px) 168px, 264px"
+                sizes="(max-width: 767px) 180px, 280px"
               />
             </div>
           </div>
           <h3>{founder.name}</h3>
           <p className="founder-title">{founder.title}</p>
           <p>{studio.legalName}</p>
-        </div>
+        </StoryReveal>
       </div>
     </section>
   );

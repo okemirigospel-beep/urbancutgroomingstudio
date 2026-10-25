@@ -10,7 +10,7 @@ export default function BeyondTheChair() {
     >
       <div>
         <h2 id="beyond-heading">Beyond the Chair</h2>
-        <h4>Build More Than a Career. Build a Business.</h4>
+        <h3>Build More Than a Career. Build a Business.</h3>
         <p>
           UrbanCut is developing a business-support pathway for aspiring
           grooming entrepreneurs, bringing together professional training,
