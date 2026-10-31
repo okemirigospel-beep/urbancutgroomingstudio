@@ -27,7 +27,7 @@ export const servicePreviews = {
   ],
   beard: [
     {
-      src: "/media/oct25/beard-1",
+      src: "/media/oct31/beard-1",
       width: 720,
       height: 960,
       position: "50% 45%",
@@ -71,9 +71,9 @@ export const servicePreviews = {
       position: "50% 45%",
     },
     {
-      src: "/media/oct25/hair-care-4",
-      width: 720,
-      height: 825,
+      src: "/media/oct31/hair-care-4",
+      width: 607,
+      height: 1080,
       position: "50% 45%",
     },
     {
@@ -81,6 +81,24 @@ export const servicePreviews = {
       width: 720,
       height: 960,
       position: "50% 45%",
+    },
+    {
+      src: "/media/oct31/hair-care-6",
+      width: 720,
+      height: 948,
+      position: "50% 40%",
+    },
+    {
+      src: "/media/oct31/hair-care-7",
+      width: 720,
+      height: 954,
+      position: "50% 40%",
+    },
+    {
+      src: "/media/oct31/hair-care-8",
+      width: 720,
+      height: 949,
+      position: "50% 40%",
     },
   ],
 } as const;

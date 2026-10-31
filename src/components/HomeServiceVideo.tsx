@@ -48,7 +48,7 @@ export default function HomeServiceVideo() {
       ([entry]) => {
         if (!entry.isIntersecting) return;
         node.preload = "metadata";
-        node.src = "/media/refinement/home-service-full.mp4";
+        node.src = "/media/oct31/home.mp4";
         near.disconnect();
         sync();
       },
@@ -85,7 +85,7 @@ export default function HomeServiceVideo() {
     <div className="home-service-media">
       <img
         className="home-service-poster"
-        src="/media/refinement/home-service-poster.webp"
+        src="/media/oct31/home-poster.webp"
         alt="UrbanCut grooming at your location"
         width={720}
         height={1280}
@@ -104,7 +104,7 @@ export default function HomeServiceVideo() {
         tabIndex={-1}
         aria-hidden="true"
         preload="none"
-        poster="/media/refinement/home-service-poster.webp"
+        poster="/media/oct31/home-poster.webp"
         style={{ opacity: showVideo ? 1 : 0 }}
         onError={() => setShowVideo(false)}
       />

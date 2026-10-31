@@ -1,0 +1,1131 @@
+{
+  "rules": "Source photographs grouped across aliases/crops/colour edits. Responsive variants and poster plus fallback rendering in one player are one placement. Mounted source records only; retired unused assets, logos and video footage itself are not additional photograph placements.",
+  "excluded": [
+    "IMG-20260929-WA0027.jpg",
+    "old window/cape portrait",
+    "old sunglasses/grey-shirt portrait",
+    "old glasses/dark-shirt side profile"
+  ],
+  "unusedNew": [
+    "1001242353.jpg",
+    "1001242354.jpg"
+  ],
+  "photos": [
+    {
+      "source": "2 (2).jpg",
+      "aliases": [],
+      "placements": [
+        {
+          "location": "Hero background 1",
+          "assets": [
+            "/media/oct25/hero-1.webp",
+            "/media/oct25/hero-1-480.webp"
+          ]
+        },
+        {
+          "location": "Lookbook 3",
+          "assets": [
+            "/media/oct25/gallery-3.webp"
+          ]
+        }
+      ],
+      "count": 2,
+      "variantHashes": {
+        "/media/oct25/hero-1.webp": "eafe6fb55898bb6cd0d25993635321360a4cac2fe1e6706b9992dc7e1d706360",
+        "/media/oct25/hero-1-480.webp": "c048ff056d7cb37b4b25aae7f1b3f574a7575fc01309d1fd6bd106fbda1c5abd",
+        "/media/oct25/gallery-3.webp": "eafe6fb55898bb6cd0d25993635321360a4cac2fe1e6706b9992dc7e1d706360"
+      },
+      "sourceSha256": "b3c0718e985c5237cd31d56629123786348b103389292d7b134d142de94ef1ea"
+    },
+    {
+      "source": "5 (2).jpg",
+      "aliases": [],
+      "placements": [
+        {
+          "location": "Hero background 2",
+          "assets": [
+            "/media/oct25/hero-2.webp",
+            "/media/oct25/hero-2-480.webp"
+          ]
+        },
+        {
+          "location": "Lookbook 8",
+          "assets": [
+            "/media/oct25/gallery-8.webp"
+          ]
+        }
+      ],
+      "count": 2,
+      "variantHashes": {
+        "/media/oct25/hero-2.webp": "b9c19e5dfb7f64339db7c761b5978382091f4757102e3a0f524d79c18dd01114",
+        "/media/oct25/hero-2-480.webp": "1920dcfb0c0f23aa323e102638a713ef44d0ca6f92fd6f60b5feaa27708f8f32",
+        "/media/oct25/gallery-8.webp": "b9c19e5dfb7f64339db7c761b5978382091f4757102e3a0f524d79c18dd01114"
+      },
+      "sourceSha256": "ba1e47ccaf177ecb89104109fab63ccdca457a07ba25df8b9466c24e40927901"
+    },
+    {
+      "source": "IMG-20260929-WA0055.jpg",
+      "aliases": [],
+      "placements": [
+        {
+          "location": "Hero background 3",
+          "assets": [
+            "/media/oct25/hero-3.webp",
+            "/media/oct25/hero-3-480.webp"
+          ]
+        },
+        {
+          "location": "Lookbook 21",
+          "assets": [
+            "/media/oct25/gallery-21.webp"
+          ]
+        }
+      ],
+      "count": 2,
+      "variantHashes": {
+        "/media/oct25/hero-3.webp": "52fb481e22e2e4bd7dc62c9f11a66c66549deb9232794611f354f9a342a99ddf",
+        "/media/oct25/hero-3-480.webp": "e749b523f57e5a92b1daece380987ede27767fb61fca2d888f69253a822d9839",
+        "/media/oct25/gallery-21.webp": "52fb481e22e2e4bd7dc62c9f11a66c66549deb9232794611f354f9a342a99ddf"
+      },
+      "sourceSha256": "6695131ddb99b28e543e03ec5becb3a5f09b5fb648176301b75f34b7fc1d5459"
+    },
+    {
+      "source": "IMG-20260929-WA0057.jpg",
+      "aliases": [],
+      "placements": [
+        {
+          "location": "Hero background 4",
+          "assets": [
+            "/media/oct25/hero-4.webp",
+            "/media/oct25/hero-4-480.webp"
+          ]
+        },
+        {
+          "location": "Lookbook 19",
+          "assets": [
+            "/media/oct25/gallery-19.webp"
+          ]
+        }
+      ],
+      "count": 2,
+      "variantHashes": {
+        "/media/oct25/hero-4.webp": "bf00d3ab5b3f9d18217b78e4a797bbb33be6c0906c31be49fede365a2878bf0b",
+        "/media/oct25/hero-4-480.webp": "84fb6a5cea061afbc1da25883aec590d8b86f7c94907432ca2562728b338e97f",
+        "/media/oct25/gallery-19.webp": "bf00d3ab5b3f9d18217b78e4a797bbb33be6c0906c31be49fede365a2878bf0b"
+      },
+      "sourceSha256": "e86d7cd0e1d7628befae09253f9b2092e3839000fa69872962dd7fc7ca263e7a"
+    },
+    {
+      "source": "IMG-20260929-WA0090.jpg",
+      "aliases": [],
+      "placements": [
+        {
+          "location": "Hero background 5",
+          "assets": [
+            "/media/oct25/hero-5.webp",
+            "/media/oct25/hero-5-480.webp"
+          ]
+        },
+        {
+          "location": "Lookbook 26",
+          "assets": [
+            "/media/oct25/gallery-26.webp"
+          ]
+        }
+      ],
+      "count": 2,
+      "variantHashes": {
+        "/media/oct25/hero-5.webp": "67189e900cd4f1ebccbfab9b2a6759b9e7b7c51e1a6ae54608d06d0cbf065af5",
+        "/media/oct25/hero-5-480.webp": "8d22c3ff17b760272ce0d220f5e56df0d99359245af7802cebe215f13e906b85",
+        "/media/oct25/gallery-26.webp": "67189e900cd4f1ebccbfab9b2a6759b9e7b7c51e1a6ae54608d06d0cbf065af5"
+      },
+      "sourceSha256": "770017313da0d48d45bb54b77b8752a99f8e4300412c02d44762d2f2eb618d03"
+    },
+    {
+      "source": "1.jpg",
+      "aliases": [],
+      "placements": [
+        {
+          "location": "Lookbook 1",
+          "assets": [
+            "/media/oct25/gallery-1.webp"
+          ]
+        },
+        {
+          "location": "hair-care card slide 4",
+          "assets": [
+            "/media/oct31/hair-care-4-480.webp",
+            "/media/oct31/hair-care-4-720.webp"
+          ]
+        }
+      ],
+      "count": 2,
+      "variantHashes": {
+        "/media/oct25/gallery-1.webp": "54ffe69b7d0fe718376f3c979183832453cc19ed55eac6ec6a7495d4a43e305b",
+        "/media/oct31/hair-care-4-480.webp": "0a7fc7116e55ee37badcfd15d44d097677a001ff30ff7a1ca4190d73c73296a4",
+        "/media/oct31/hair-care-4-720.webp": "f5533a5402da6501a0ef937b0a50707ede7c3d2c99e7cb68b6ca3e25dd7dd752"
+      },
+      "sourceSha256": "457ef623b63fe873c3052a4d1f07f98b98c70938cc05a88e715ac1f5cf27172f"
+    },
+    {
+      "source": "2.jpg",
+      "aliases": [],
+      "placements": [
+        {
+          "location": "Lookbook 2",
+          "assets": [
+            "/media/oct25/gallery-2.webp"
+          ]
+        }
+      ],
+      "count": 1,
+      "variantHashes": {
+        "/media/oct25/gallery-2.webp": "20cc4424f21fec4556865c3f88a3e84bde9ccda336dda6de1ab15da3534fb8fb"
+      },
+      "sourceSha256": "a5f868dbfcf32f25b771b2230ea6bd590dffaccc288a1a69d89031065e8d3c15"
+    },
+    {
+      "source": "3.jpg",
+      "aliases": [],
+      "placements": [
+        {
+          "location": "Lookbook 4",
+          "assets": [
+            "/media/oct25/gallery-4.webp"
+          ]
+        },
+        {
+          "location": "hair-care card slide 5",
+          "assets": [
+            "/media/oct25/hair-care-5-480.webp",
+            "/media/oct25/hair-care-5-720.webp"
+          ]
+        }
+      ],
+      "count": 2,
+      "variantHashes": {
+        "/media/oct25/gallery-4.webp": "093e8cd387267c68e8c8abbcceb384841b114b6d39d3c47e39a145518325c0c0",
+        "/media/oct25/hair-care-5-480.webp": "373ffa8b33919100beee5bbe949840b618f29f9578a4c15217ece9c47911e917",
+        "/media/oct25/hair-care-5-720.webp": "093e8cd387267c68e8c8abbcceb384841b114b6d39d3c47e39a145518325c0c0"
+      },
+      "sourceSha256": "3daf33357e0033f05047039242eb9c05ac4147a9edc117e064f3f67b110b2443"
+    },
+    {
+      "source": "3 (2).jpg",
+      "aliases": [],
+      "placements": [
+        {
+          "location": "Lookbook 5",
+          "assets": [
+            "/media/oct25/gallery-5.webp"
+          ]
+        }
+      ],
+      "count": 1,
+      "variantHashes": {
+        "/media/oct25/gallery-5.webp": "05217ae06848ecaa243c3a4658a9e70c88a25a65f4d7f105a1ff68b98abe7ad7"
+      },
+      "sourceSha256": "e53f1f1efd7b2e3562bbda14597f1b62f40d4c67e8155ac26b43a9fb5f5aa52a"
+    },
+    {
+      "source": "4.jpg",
+      "aliases": [],
+      "placements": [
+        {
+          "location": "Lookbook 6",
+          "assets": [
+            "/media/oct25/gallery-6.webp"
+          ]
+        }
+      ],
+      "count": 1,
+      "variantHashes": {
+        "/media/oct25/gallery-6.webp": "bb6b244b1cb562bf17bc711229d2efc9014df7b986ecbe9b1994c781261a7e13"
+      },
+      "sourceSha256": "f7f41457785037edcfd21d062ef09f1518da1b7f983a10ee7722e56651a21a12"
+    },
+    {
+      "source": "5.jpg",
+      "aliases": [],
+      "placements": [
+        {
+          "location": "Lookbook 7",
+          "assets": [
+            "/media/oct25/gallery-7.webp"
+          ]
+        }
+      ],
+      "count": 1,
+      "variantHashes": {
+        "/media/oct25/gallery-7.webp": "f3d29b8729d73d521427dfb920014404a527bd01330892f23bf2aab2d089d40e"
+      },
+      "sourceSha256": "46d4d5442372cf93f66d7d37f0e8bec9ac0bb291580bad0e166f661d6b4ef80e"
+    },
+    {
+      "source": "6.jpg",
+      "aliases": [],
+      "placements": [
+        {
+          "location": "Lookbook 9",
+          "assets": [
+            "/media/oct25/gallery-9.webp"
+          ]
+        }
+      ],
+      "count": 1,
+      "variantHashes": {
+        "/media/oct25/gallery-9.webp": "11154e982c62ab3483c4df73e4f1950a43e180e18fd310e6ffef0c49e1a44f28"
+      },
+      "sourceSha256": "3c3b87df81bf0e9002e82b44dcde700130476aefdb324bc15e22bab149b65ec6"
+    },
+    {
+      "source": "7.jpg",
+      "aliases": [],
+      "placements": [
+        {
+          "location": "Lookbook 10",
+          "assets": [
+            "/media/oct25/gallery-10.webp"
+          ]
+        },
+        {
+          "location": "hair-care card slide 1",
+          "assets": [
+            "/media/oct25/hair-care-1-480.webp",
+            "/media/oct25/hair-care-1-720.webp"
+          ]
+        }
+      ],
+      "count": 2,
+      "variantHashes": {
+        "/media/oct25/gallery-10.webp": "f5b6fd8846d65980d709e4829d35a016a20b88926b1076e2ca849bf2226b7bac",
+        "/media/oct25/hair-care-1-480.webp": "53ee4f3bc2302d70cb9c9a1bea446f52e498e6d8e977786cacdd2dda66981530",
+        "/media/oct25/hair-care-1-720.webp": "f5b6fd8846d65980d709e4829d35a016a20b88926b1076e2ca849bf2226b7bac"
+      },
+      "sourceSha256": "9ed0360d50cf86f9973c18cdfeea818df074f5206cb95388d9852c758769a922"
+    },
+    {
+      "source": "8 (2).jpg",
+      "aliases": [],
+      "placements": [
+        {
+          "location": "Lookbook 11",
+          "assets": [
+            "/media/oct25/gallery-11.webp"
+          ]
+        },
+        {
+          "location": "hair-care card slide 2",
+          "assets": [
+            "/media/oct25/hair-care-2-480.webp",
+            "/media/oct25/hair-care-2-720.webp"
+          ]
+        }
+      ],
+      "count": 2,
+      "variantHashes": {
+        "/media/oct25/gallery-11.webp": "2e9dd999ceb6b95f3e944f46dabf27e8c668de57280f1c5bec331088557c6fb7",
+        "/media/oct25/hair-care-2-480.webp": "314374c6b2926f86ca45cd58cf0fe16205b368d950e4fd2a5133f990ca61bc44",
+        "/media/oct25/hair-care-2-720.webp": "2e9dd999ceb6b95f3e944f46dabf27e8c668de57280f1c5bec331088557c6fb7"
+      },
+      "sourceSha256": "f0332972a042240bbd9d102c3b4c39aa9a487071d493f8ae096deb1276de59d2"
+    },
+    {
+      "source": "9.jpg",
+      "aliases": [],
+      "placements": [
+        {
+          "location": "Lookbook 12",
+          "assets": [
+            "/media/oct25/gallery-12.webp"
+          ]
+        },
+        {
+          "location": "hair-care card slide 3",
+          "assets": [
+            "/media/oct25/hair-care-3-480.webp",
+            "/media/oct25/hair-care-3-720.webp"
+          ]
+        }
+      ],
+      "count": 2,
+      "variantHashes": {
+        "/media/oct25/gallery-12.webp": "befe61957c798917e9a835946c1130d320a196922b1af6f986e790c7f100194b",
+        "/media/oct25/hair-care-3-480.webp": "02d1fe90007fccebe32a3e640480581aed03fa2cb3b30a6adb1256e4e872c345",
+        "/media/oct25/hair-care-3-720.webp": "befe61957c798917e9a835946c1130d320a196922b1af6f986e790c7f100194b"
+      },
+      "sourceSha256": "9c6c02e97d420fc65b8571d5ccea87291770012b2b9689697179a5aaf3c7687f"
+    },
+    {
+      "source": "10.jpg",
+      "aliases": [],
+      "placements": [
+        {
+          "location": "Lookbook 13",
+          "assets": [
+            "/media/oct25/gallery-13.webp"
+          ]
+        }
+      ],
+      "count": 1,
+      "variantHashes": {
+        "/media/oct25/gallery-13.webp": "fef2e49f2c22d183871171cc4a4121fad47a08523276e838b5110e69b9e6269f"
+      },
+      "sourceSha256": "55b9f5551f0738eb21e1f02093cad9d550ac02c3b0e8559faf2e39bc0c3244e1"
+    },
+    {
+      "source": "14.jpg",
+      "aliases": [],
+      "placements": [
+        {
+          "location": "Lookbook 14",
+          "assets": [
+            "/media/oct25/gallery-14.webp"
+          ]
+        }
+      ],
+      "count": 1,
+      "variantHashes": {
+        "/media/oct25/gallery-14.webp": "89aa8c7802c275adb9a884b626ccb56362a5e9ca8abd0dfb712f5da87f2502fa"
+      },
+      "sourceSha256": "f2cf4b52f9833cbe9a5956a5529f188e0dc7c14b185c200fccb0295173f533ac"
+    },
+    {
+      "source": "IMG-20260929-WA0020.jpg",
+      "aliases": [],
+      "placements": [
+        {
+          "location": "Lookbook 15",
+          "assets": [
+            "/media/oct25/gallery-15.webp"
+          ]
+        }
+      ],
+      "count": 1,
+      "variantHashes": {
+        "/media/oct25/gallery-15.webp": "5e479a9bc997b79d928e64bfb1a22504d097bbb1a4acaecdced4e7d2b011ce01"
+      },
+      "sourceSha256": "fc9061da93b0bac2cb1151bfc9bf58051fd536a11deb08a8d3b1b3170532fa64"
+    },
+    {
+      "source": "IMG-20260929-WA0048.jpg",
+      "aliases": [],
+      "placements": [
+        {
+          "location": "Lookbook 16",
+          "assets": [
+            "/media/oct25/gallery-16.webp"
+          ]
+        }
+      ],
+      "count": 1,
+      "variantHashes": {
+        "/media/oct25/gallery-16.webp": "374225b488615a4a39aaf60eed4e9d71f507918caf658de9238005ca55af4046"
+      },
+      "sourceSha256": "226448fe47fd543c511acb39a4150593bcfea7b3450cf06d56c3146b23280239"
+    },
+    {
+      "source": "IMG-20260929-WA0070.jpg",
+      "aliases": [],
+      "placements": [
+        {
+          "location": "Lookbook 17",
+          "assets": [
+            "/media/oct25/gallery-17.webp"
+          ]
+        }
+      ],
+      "count": 1,
+      "variantHashes": {
+        "/media/oct25/gallery-17.webp": "3dda1c098eeea268fc19b41c40ce2bce2f4a89bfbfb836c31fcfa5f215b457bc"
+      },
+      "sourceSha256": "b1aef69e6b7e1a9d9b88b1adb867258ee4db8333be4bbff44f7d66171cc9dc1c"
+    },
+    {
+      "source": "IMG-20260929-WA0088.jpg",
+      "aliases": [],
+      "placements": [
+        {
+          "location": "Lookbook 18",
+          "assets": [
+            "/media/oct25/gallery-18.webp"
+          ]
+        },
+        {
+          "location": "beard card slide 4",
+          "assets": [
+            "/media/oct25/beard-4-480.webp",
+            "/media/oct25/beard-4-720.webp"
+          ]
+        }
+      ],
+      "count": 2,
+      "variantHashes": {
+        "/media/oct25/gallery-18.webp": "f615e71367a366ac1b8bebedea6d8fd7448e156971447dec9d408b671a3023ef",
+        "/media/oct25/beard-4-480.webp": "a4cf35d7cb192dba8d31751689dbbae02c2a6863d8d56a9dc86dcae4c13dfa21",
+        "/media/oct25/beard-4-720.webp": "f615e71367a366ac1b8bebedea6d8fd7448e156971447dec9d408b671a3023ef"
+      },
+      "sourceSha256": "f55a044d2578ea48f809a3eebd18a91cb4b1a0d86bb95b42bb2be7e53d8ed947"
+    },
+    {
+      "source": "IMG-20260929-WA0074.jpg",
+      "aliases": [],
+      "placements": [
+        {
+          "location": "Lookbook 20",
+          "assets": [
+            "/media/oct25/gallery-20.webp"
+          ]
+        },
+        {
+          "location": "beard card slide 3",
+          "assets": [
+            "/media/oct25/beard-3-480.webp",
+            "/media/oct25/beard-3-720.webp"
+          ]
+        }
+      ],
+      "count": 2,
+      "variantHashes": {
+        "/media/oct25/gallery-20.webp": "810a46a612ddf5d218b425e45ceec26c2d1b52a5f75f17314bb034de71da51b0",
+        "/media/oct25/beard-3-480.webp": "5b72bad6abf32121606fb14a13c7a5d5152069ba6f35214b4ab6fb9565b2f8ff",
+        "/media/oct25/beard-3-720.webp": "810a46a612ddf5d218b425e45ceec26c2d1b52a5f75f17314bb034de71da51b0"
+      },
+      "sourceSha256": "4006c7eb62684662b68952ce728f4d1dc873045ca73ca8b37305a4db6bb8881e"
+    },
+    {
+      "source": "IMG-20260929-WA0066.jpg",
+      "aliases": [],
+      "placements": [
+        {
+          "location": "Lookbook 22",
+          "assets": [
+            "/media/oct25/gallery-22.webp"
+          ]
+        }
+      ],
+      "count": 1,
+      "variantHashes": {
+        "/media/oct25/gallery-22.webp": "02309b9c7efd72e98d64d02f2ee4f3d05bf0ae4e7030604de1918628a1035246"
+      },
+      "sourceSha256": "797a03aaa18a8721575d15f11fc153d0d67ca249adb537316abf73192aa465ad"
+    },
+    {
+      "source": "IMG-20260929-WA0067.jpg",
+      "aliases": [],
+      "placements": [
+        {
+          "location": "Lookbook 23",
+          "assets": [
+            "/media/oct25/gallery-23.webp"
+          ]
+        },
+        {
+          "location": "beard card slide 2",
+          "assets": [
+            "/media/oct25/beard-2-480.webp",
+            "/media/oct25/beard-2-720.webp"
+          ]
+        }
+      ],
+      "count": 2,
+      "variantHashes": {
+        "/media/oct25/gallery-23.webp": "0014f04e92264907b66d48dcb437ef9fcfc555cecedc9a10f38204b67fb8d9c9",
+        "/media/oct25/beard-2-480.webp": "2fec3916bc48cf11fd0b018e723a00c17f628a6af49ad15aa325165910460db6",
+        "/media/oct25/beard-2-720.webp": "0014f04e92264907b66d48dcb437ef9fcfc555cecedc9a10f38204b67fb8d9c9"
+      },
+      "sourceSha256": "0cda567fab3fa76cd60e76520ac503a72b45aa499741438f56aa39a1ff946043"
+    },
+    {
+      "source": "IMG-20260929-WA0085.jpg",
+      "aliases": [],
+      "placements": [
+        {
+          "location": "Lookbook 24",
+          "assets": [
+            "/media/oct25/gallery-24.webp"
+          ]
+        }
+      ],
+      "count": 1,
+      "variantHashes": {
+        "/media/oct25/gallery-24.webp": "ba82d2e48a6a0df1f3bccfb34b67a2a56aa143e8af128c511ecac1508d55189b"
+      },
+      "sourceSha256": "85adf84587cf19fb5db6a1c026e15f745265eb84ec02b0fb0e5c80974693b635"
+    },
+    {
+      "source": "IMG-20260929-WA0032.jpg",
+      "aliases": [],
+      "placements": [
+        {
+          "location": "Lookbook 25",
+          "assets": [
+            "/media/oct25/gallery-25.webp"
+          ]
+        }
+      ],
+      "count": 1,
+      "variantHashes": {
+        "/media/oct25/gallery-25.webp": "3f08cef721c82da32fd8ae5afe9617c6c4eaf2c431570ee6f312aeefefbfcc24"
+      },
+      "sourceSha256": "ab474a27011ffeaffa9e5c050b742a45b22ddc162a5ad2e6b9ca2ba76aa81f6b"
+    },
+    {
+      "source": "IMG_20260924_230009.jpg",
+      "aliases": [
+        "H&G IMG 2.jpeg"
+      ],
+      "placements": [
+        {
+          "location": "Lookbook 27",
+          "assets": [
+            "/media/oct25/gallery-27.webp"
+          ]
+        },
+        {
+          "location": "haircuts card slide 2",
+          "assets": [
+            "/media/service-previews/haircuts-2-480.webp",
+            "/media/service-previews/haircuts-2-720.webp"
+          ]
+        }
+      ],
+      "count": 2,
+      "variantHashes": {
+        "/media/oct25/gallery-27.webp": "bb6184687768b2ae03cf44627f7f22df6cc1e634385e1183b5a2fecb173258b4",
+        "/media/service-previews/haircuts-2-480.webp": "8284769537d07020ccd442c7437e90e6ad86a24e04c41ed1dad347106a55f928",
+        "/media/service-previews/haircuts-2-720.webp": "96511dd5dd590ecf01e35441b8555f377fc151247b243d6c47be4879178875af"
+      },
+      "sourceSha256": "ca1b7be0f991d12117799db462e2d75f0cfde2fcefae4aaec697e463796e547f"
+    },
+    {
+      "source": "IMG_20260924_230807.jpg",
+      "aliases": [
+        "H&G IMG 1.jpeg"
+      ],
+      "placements": [
+        {
+          "location": "Lookbook 28",
+          "assets": [
+            "/media/oct25/gallery-28.webp"
+          ]
+        },
+        {
+          "location": "haircuts card slide 1",
+          "assets": [
+            "/media/service-previews/haircuts-1-480.webp",
+            "/media/service-previews/haircuts-1-720.webp"
+          ]
+        }
+      ],
+      "count": 2,
+      "variantHashes": {
+        "/media/oct25/gallery-28.webp": "c0afa29378a772f0c11aa39fa3dfa2d5b543832a49d7b20bff8caf41d13db015",
+        "/media/service-previews/haircuts-1-480.webp": "c7f1dc96b1aa131170e830a24171108c91bd66eb5a0ebd426c3a7421498d9a88",
+        "/media/service-previews/haircuts-1-720.webp": "b490168407150058ddd9a8f4ddcd67c98c48ec97d2d65edfcc1a6db32888fbe6"
+      },
+      "sourceSha256": "bda3a04b1e77cbbde287c6954e09d97cb79f1b5566beab92da69dc57a0fc72ee"
+    },
+    {
+      "source": "1001242392.jpg",
+      "aliases": [],
+      "placements": [
+        {
+          "location": "Lookbook 29",
+          "assets": [
+            "/media/oct31/1001242392.webp"
+          ]
+        }
+      ],
+      "count": 1,
+      "variantHashes": {
+        "/media/oct31/1001242392.webp": "7dac3b36956e56882000dca3ffe885f47cca52688a71d4fc5b6363f76a63a48b"
+      },
+      "sourceSha256": "9af9b503720b95563b941c5d45206ad991f5bb51c5d60e12db0fb80c700a5dfd"
+    },
+    {
+      "source": "1001242391.jpg",
+      "aliases": [],
+      "placements": [
+        {
+          "location": "Lookbook 30",
+          "assets": [
+            "/media/oct31/1001242391.webp"
+          ]
+        }
+      ],
+      "count": 1,
+      "variantHashes": {
+        "/media/oct31/1001242391.webp": "ce1912cab5756a9cdd23c9a2296037a72d68dd9302d751b7fa9326b991845741"
+      },
+      "sourceSha256": "6d4cd7731bca9a185649ce021f22906dadc35d76bc4693a8b24f44a4ba569988"
+    },
+    {
+      "source": "1001242395.jpg",
+      "aliases": [],
+      "placements": [
+        {
+          "location": "Lookbook 31",
+          "assets": [
+            "/media/oct31/1001242395.webp"
+          ]
+        }
+      ],
+      "count": 1,
+      "variantHashes": {
+        "/media/oct31/1001242395.webp": "4870015b992da12002b771859beac0d5ef098eff5bbbff9cb503ae0c948f3792"
+      },
+      "sourceSha256": "5c107cbdf65cdbd999cb21e950544ddfa90e2d7f9b377b078cb24d4337ba2755"
+    },
+    {
+      "source": "1001242396.jpg",
+      "aliases": [],
+      "placements": [
+        {
+          "location": "Lookbook 32",
+          "assets": [
+            "/media/oct31/1001242396.webp"
+          ]
+        }
+      ],
+      "count": 1,
+      "variantHashes": {
+        "/media/oct31/1001242396.webp": "74a3716e1e77b8f25499a67a1e2d4f8892bcdcbc5f22052d88ec2dc404010496"
+      },
+      "sourceSha256": "cf86be8b3b8364f91670ab6b84e15c6b1860b7c1bdb455cd00549b87039b7aba"
+    },
+    {
+      "source": "1001242389.jpg",
+      "aliases": [],
+      "placements": [
+        {
+          "location": "Lookbook 33",
+          "assets": [
+            "/media/oct31/1001242389.webp"
+          ]
+        }
+      ],
+      "count": 1,
+      "variantHashes": {
+        "/media/oct31/1001242389.webp": "30066cb94c07f2cf5891e99f7c6ff5b3decf28ae380db0fc7ccd7b47eaa51230"
+      },
+      "sourceSha256": "bdf90250ccb83038ef3653dc6441aaa37d32a7bac081274bc9367d52f9abc52b"
+    },
+    {
+      "source": "1001242393.jpg",
+      "aliases": [],
+      "placements": [
+        {
+          "location": "Lookbook 34",
+          "assets": [
+            "/media/oct31/1001242393.webp"
+          ]
+        }
+      ],
+      "count": 1,
+      "variantHashes": {
+        "/media/oct31/1001242393.webp": "0d52cb8fe74fd0ce09a43fd8e207200afeffc69285880a2480315b3b5776749d"
+      },
+      "sourceSha256": "fbd25e5a81523c7a86630a5f78f27428d8a49cac3fb9366a76bda6738a41ad03"
+    },
+    {
+      "source": "H&G IMG 3.jpeg",
+      "aliases": [],
+      "placements": [
+        {
+          "location": "haircuts card slide 3",
+          "assets": [
+            "/media/service-previews/haircuts-3-480.webp",
+            "/media/service-previews/haircuts-3-720.webp"
+          ]
+        }
+      ],
+      "count": 1,
+      "variantHashes": {
+        "/media/service-previews/haircuts-3-480.webp": "ecf26e13e41917f30d78193a02543821ac7a8f280e3ba71c77ea6818c326f4c1",
+        "/media/service-previews/haircuts-3-720.webp": "3b560568519c7cd00ac6764703f0b4305f499d531836730c88b1384cbebeac0c"
+      }
+    },
+    {
+      "source": "H&G IMG 4.jpeg",
+      "aliases": [],
+      "placements": [
+        {
+          "location": "haircuts card slide 4",
+          "assets": [
+            "/media/service-previews/haircuts-4-480.webp",
+            "/media/service-previews/haircuts-4-720.webp"
+          ]
+        }
+      ],
+      "count": 1,
+      "variantHashes": {
+        "/media/service-previews/haircuts-4-480.webp": "273ef5d1fadfb91aec09d01802881ce94b6393fc2373a96092f4c6ad3993e662",
+        "/media/service-previews/haircuts-4-720.webp": "3143c0a8464c623b4a854797d2a6cf26fc46cd33349ec6bc998d10122eaceaa7"
+      }
+    },
+    {
+      "source": "1001242355.jpg",
+      "aliases": [],
+      "placements": [
+        {
+          "location": "beard card slide 1",
+          "assets": [
+            "/media/oct31/beard-1-480.webp",
+            "/media/oct31/beard-1-720.webp"
+          ]
+        }
+      ],
+      "count": 1,
+      "variantHashes": {
+        "/media/oct31/beard-1-480.webp": "e15299f0bf7398515cec093b870e5399f415be2421b50b35a1cf4ee871e990d2",
+        "/media/oct31/beard-1-720.webp": "cf1d3f6b93f3d8e4f18741d91311f2a839db085e13e14f681aaf21ae4a7c2e0e"
+      },
+      "sourceSha256": "90141cf0313ce5cc94fd15671372440066717ffec35c124644a4cd19e91aa18a"
+    },
+    {
+      "source": "1001242368.jpg",
+      "aliases": [],
+      "placements": [
+        {
+          "location": "hair-care card slide 6",
+          "assets": [
+            "/media/oct31/hair-care-6-480.webp",
+            "/media/oct31/hair-care-6-720.webp"
+          ]
+        }
+      ],
+      "count": 1,
+      "variantHashes": {
+        "/media/oct31/hair-care-6-480.webp": "6815cf7db8cbf0747bb63a38b1b2d6f2ee98b703818805993410f2bef69b040f",
+        "/media/oct31/hair-care-6-720.webp": "88bf0be2dc5b49ae59396c26e0c10d4c30c707e1f84d85ad5808e2966dbf49d7"
+      },
+      "sourceSha256": "a0ae2f29906cd996aec69f05c1b7494c245f98b68e75deef2666ad71e133d8e4"
+    },
+    {
+      "source": "1001242363.jpg",
+      "aliases": [],
+      "placements": [
+        {
+          "location": "hair-care card slide 7",
+          "assets": [
+            "/media/oct31/hair-care-7-480.webp",
+            "/media/oct31/hair-care-7-720.webp"
+          ]
+        }
+      ],
+      "count": 1,
+      "variantHashes": {
+        "/media/oct31/hair-care-7-480.webp": "119d19826f5d13f4e3843f50d84e2f29f0c4240636cc54c09102f7a43fa328d4",
+        "/media/oct31/hair-care-7-720.webp": "b254a15fcaee8d9748134940368e2ed40feec9273e899ff00f590fec3f67bc9d"
+      },
+      "sourceSha256": "0d16bd38120a39cbb08de44fc67dd01767324eda2dcedaf5bef8019051b23477"
+    },
+    {
+      "source": "1001242361.jpg",
+      "aliases": [],
+      "placements": [
+        {
+          "location": "hair-care card slide 8",
+          "assets": [
+            "/media/oct31/hair-care-8-480.webp",
+            "/media/oct31/hair-care-8-720.webp"
+          ]
+        }
+      ],
+      "count": 1,
+      "variantHashes": {
+        "/media/oct31/hair-care-8-480.webp": "6b6425f0b061fadd828a205ef74189eb47035915d9c8d21b0d5f1e83e5ed1b3f",
+        "/media/oct31/hair-care-8-720.webp": "0472dcd8eb8a9c942dce3cc95c84bf68d43ea28cd5ed86542adece81a04aa218"
+      },
+      "sourceSha256": "dbb961d9818342bd445434e7ffe218cda81030c57d413ba6516c5b584e40282d"
+    },
+    {
+      "source": "1001242376.jpg",
+      "aliases": [],
+      "placements": [
+        {
+          "location": "sporting-waves detail",
+          "assets": [
+            "/media/oct31/1001242376.webp"
+          ]
+        },
+        {
+          "location": "sporting-waves-products detail",
+          "assets": [
+            "/media/oct31/1001242376.webp"
+          ]
+        }
+      ],
+      "count": 2,
+      "variantHashes": {
+        "/media/oct31/1001242376.webp": "84b54beae2795a72284150d06d912a689010871b1ee10940f53acf193c236e62"
+      },
+      "sourceSha256": "79fb35bf6ac2e4ce263efb805204808b63f29d81a23322d36bc8571838ec39b4"
+    },
+    {
+      "source": "1001242380.jpg",
+      "aliases": [],
+      "placements": [
+        {
+          "location": "sporting-waves detail",
+          "assets": [
+            "/media/oct31/1001242380.webp"
+          ]
+        },
+        {
+          "location": "sporting-waves-products detail",
+          "assets": [
+            "/media/oct31/1001242380.webp"
+          ]
+        }
+      ],
+      "count": 2,
+      "variantHashes": {
+        "/media/oct31/1001242380.webp": "9d2ba11f12bb5c99305712de9032df605b3d2c1eb23e9a7902f89a11330d1316"
+      },
+      "sourceSha256": "9b1bbec4dc96ef240071a36bc764df4391b452037a95e54ab7ebf1787e7b2ebd"
+    },
+    {
+      "source": "1001242382.jpg",
+      "aliases": [
+        "1001242378.jpg (mirrored monochrome alternate; not displayed)"
+      ],
+      "placements": [
+        {
+          "location": "sporting-waves detail",
+          "assets": [
+            "/media/oct31/1001242382.webp"
+          ]
+        },
+        {
+          "location": "sporting-waves-products detail",
+          "assets": [
+            "/media/oct31/1001242382.webp"
+          ]
+        }
+      ],
+      "count": 2,
+      "variantHashes": {
+        "/media/oct31/1001242382.webp": "b4dae3bb450d8148ddad9ee186617a2cc0b067e537ed449f65cc4901f0e40b43"
+      },
+      "sourceSha256": "4e246f32778eea1a1b2dea0379ee0774ff240732a9dc441b1fadb8a425f9a678"
+    },
+    {
+      "source": "Premium wave grooming essentials still life.png",
+      "aliases": [],
+      "placements": [
+        {
+          "location": "sporting-waves-products detail kit",
+          "assets": [
+            "/media/oct31/wave-kit.webp"
+          ]
+        }
+      ],
+      "count": 1,
+      "variantHashes": {
+        "/media/oct31/wave-kit.webp": "695976682797f4bb26a07cdb2375c64673d39aa7439cecec8780c5f5200cdb28"
+      },
+      "sourceSha256": "17dbebf18923f89136955da429b905e1650e7c0e3b4d226eae27d0e953e82f22"
+    },
+    {
+      "source": "urbancut-foundation-workstation.webp",
+      "aliases": [],
+      "placements": [
+        {
+          "location": "Academy foundation",
+          "assets": [
+            "/media/academy/urbancut-foundation-workstation.webp"
+          ]
+        }
+      ],
+      "count": 1,
+      "variantHashes": {
+        "/media/academy/urbancut-foundation-workstation.webp": "2968a7a133216b36e4b6f4a18716d4d9929440bfdc273ddefcfc526415c029c8"
+      }
+    },
+    {
+      "source": "academy-professional.webp",
+      "aliases": [],
+      "placements": [
+        {
+          "location": "Academy professional",
+          "assets": [
+            "/media/oct25/academy-professional.webp"
+          ]
+        }
+      ],
+      "count": 1,
+      "variantHashes": {
+        "/media/oct25/academy-professional.webp": "ce804fdb1814edd0fe9a55e445b752e8f8e0545a8dbb6d2d71aa5976f6d7d3f5"
+      }
+    },
+    {
+      "source": "academy-master.webp",
+      "aliases": [],
+      "placements": [
+        {
+          "location": "Academy master",
+          "assets": [
+            "/media/oct25/academy-master.webp"
+          ]
+        }
+      ],
+      "count": 1,
+      "variantHashes": {
+        "/media/oct25/academy-master.webp": "859973df036c2ef6d6dc6cf71abfc5221fd9bf6a375415df14a9ea60897dc9db"
+      }
+    },
+    {
+      "source": "urbancut-elite-workstation.webp",
+      "aliases": [],
+      "placements": [
+        {
+          "location": "Academy elite",
+          "assets": [
+            "/media/academy/urbancut-elite-workstation.webp"
+          ]
+        }
+      ],
+      "count": 1,
+      "variantHashes": {
+        "/media/academy/urbancut-elite-workstation.webp": "c7cdaa946cf8efc366d19d14eaec30697df2bc2d80133babcce730694abb1370"
+      }
+    },
+    {
+      "source": "academy-executive.webp",
+      "aliases": [],
+      "placements": [
+        {
+          "location": "Academy executive",
+          "assets": [
+            "/media/oct25/academy-executive.webp"
+          ]
+        }
+      ],
+      "count": 1,
+      "variantHashes": {
+        "/media/oct25/academy-executive.webp": "1d03e002f29aea674f8ee72780fb2c131c2d33bf4c89b2053120820d1c3a8dae"
+      }
+    },
+    {
+      "source": "founder image.jpeg",
+      "aliases": [],
+      "placements": [
+        {
+          "location": "Story founder",
+          "assets": [
+            "/media/oct25/founder.webp"
+          ]
+        }
+      ],
+      "count": 1,
+      "variantHashes": {
+        "/media/oct25/founder.webp": "b1db2ffa26a87582a01970125bd1998c4786909fcd3c1c7f2030a946108cfe4e"
+      },
+      "sourceSha256": "b117adcd6153f9d3967a5b9e16cb5325ece67cfa6ac4fd5a429056080791cc39"
+    },
+    {
+      "source": "Premium black barber chair station.png",
+      "aliases": [],
+      "placements": [
+        {
+          "location": "Beyond the Chair",
+          "assets": [
+            "/media/refinement/barber-chair.webp"
+          ]
+        }
+      ],
+      "count": 1,
+      "variantHashes": {
+        "/media/refinement/barber-chair.webp": "30ed2b7deb67cde4800b294f4bda232f62f1c960ed2f376009ab7101ae345f59"
+      }
+    },
+    {
+      "source": "UrbanCut collection teaser",
+      "aliases": [],
+      "placements": [
+        {
+          "location": "Collection",
+          "assets": [
+            "/media/urbancut-collection-teaser.webp"
+          ]
+        }
+      ],
+      "count": 1,
+      "variantHashes": {
+        "/media/urbancut-collection-teaser.webp": "8547faa756cf272c64596eb3509be324db7cec3de3f6cc7087ed2ab9ca110a83"
+      }
+    },
+    {
+      "source": "Wellness category photograph",
+      "aliases": [],
+      "placements": [
+        {
+          "location": "Wellness card",
+          "assets": [
+            "/media/services/wellness.webp"
+          ]
+        }
+      ],
+      "count": 1,
+      "variantHashes": {
+        "/media/services/wellness.webp": "dc59029317db161d51f8e2c33186591fde85ad621ae05f9959ab319f97d0abed"
+      }
+    },
+    {
+      "source": "Black Card photograph",
+      "aliases": [],
+      "placements": [
+        {
+          "location": "Black Card card",
+          "assets": [
+            "/media/services/membership.webp"
+          ]
+        },
+        {
+          "location": "Black Card detail",
+          "assets": [
+            "/media/services/membership.webp"
+          ]
+        }
+      ],
+      "count": 2,
+      "variantHashes": {
+        "/media/services/membership.webp": "565dd884db875855976cfce1539796fab6c8ef4305dac65b6c82f30b590c8451"
+      }
+    },
+    {
+      "source": "home service updated.mp4 opening frame",
+      "aliases": [],
+      "placements": [
+        {
+          "location": "Home video poster",
+          "assets": [
+            "/media/oct31/home-poster.webp"
+          ]
+        }
+      ],
+      "count": 1,
+      "variantHashes": {
+        "/media/oct31/home-poster.webp": "b8db2f94ca300236080f0a2acc7916457b500367f8f5921b4621617c497cc762"
+      }
+    },
+    {
+      "source": "lookbook updated vid.mp4 opening frame",
+      "aliases": [],
+      "placements": [
+        {
+          "location": "Lookbook video poster",
+          "assets": [
+            "/media/oct31/lookbook-poster.webp"
+          ]
+        }
+      ],
+      "count": 1,
+      "variantHashes": {
+        "/media/oct31/lookbook-poster.webp": "248f0714422d850264948fd89cf59f4649f8bd966dc1d9275f6e902c5da99a90"
+      }
+    }
+  ]
+}
