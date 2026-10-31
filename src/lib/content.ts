@@ -9,6 +9,16 @@ export const brand = {
 export type FAQ = { id: string; question: string; answer: string };
 export const faqs: readonly FAQ[] = [
   {
+    id: "deposit",
+    question: "Do I need to pay before my appointment?",
+    answer: "Yes. " + studioPolicies[0].text,
+  },
+  {
+    id: "missed-appointment",
+    question: "What happens if I miss my appointment?",
+    answer: "You may reschedule for a later available date. Payments are non-refundable.",
+  },
+  {
     id: "location",
     question: "Where can I find the studio?",
     answer:
@@ -58,11 +68,6 @@ export const faqs: readonly FAQ[] = [
       "The UrbanCut Grooming Collection is coming soon. Products are not available to order yet.",
   },
   {
-    id: "deposit",
-    question: "Is advance payment required for studio appointments?",
-    answer: studioPolicies[0].text,
-  },
-  {
     id: "changes",
     question: "What if I need to change my studio appointment?",
     answer:
@@ -104,11 +109,6 @@ export const faqs: readonly FAQ[] = [
   {
     id: "cancellation-policy",
     question: "How does rescheduling a missed studio appointment work?",
-    answer: studioPolicies[1].text,
-  },
-  {
-    id: "missed-appointment",
-    question: "What happens if I miss my studio appointment?",
     answer: studioPolicies[1].text,
   },
   {
