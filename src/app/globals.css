@@ -3248,3 +3248,22 @@ textarea {
 .home-service-poster { display: block; width: 100%; height: 100%; object-fit: contain; }
 
 .beyond-copy > [data-reveal-group] + [data-reveal-group] { margin-top: 24px; }
+
+/* Manual Sporting Waves galleries stay inside the existing detail/basket layout. */
+.wave-media { margin: 24px 0; min-width: 0; }
+.wave-media.with-kit { display: grid; grid-template-columns: minmax(0, 1.8fr) minmax(150px, 1fr); gap: 20px; align-items: start; }
+.wave-gallery, .wave-kit { min-width: 0; }
+.wave-stage { height: clamp(230px, 32vw, 340px); background: var(--ivory); border-radius: 6px; overflow: hidden; display: grid; place-items: center; touch-action: pan-y; }
+.wave-stage img { width: 100%; height: 100%; object-fit: contain; min-height: 0; user-select: none; }
+.wave-stage p { padding: 24px; }
+.wave-navigation { display: flex; justify-content: center; align-items: center; gap: 20px; margin-top: 10px; }
+.wave-navigation button { display: grid; place-items: center; width: 44px; height: 44px; border: 1px solid var(--line); border-radius: 3px; background: var(--ivory); }
+.wave-navigation span { min-width: 42px; text-align: center; font-size: 14px; }
+.wave-kit > img { width: 100%; height: auto; display: block; border-radius: 6px; }
+.wave-kit .uc-inclusions { margin-top: 16px; padding: 0; background: transparent; }
+.studio-policies { border: 1px solid #d9d3c5; border-left: 3px solid var(--gold); padding: 20px; margin-block: 24px; background: var(--ivory); }
+.studio-policies h3 { font-size: 18px; margin-bottom: 14px; }
+.studio-policies h4 { font-size: 15px; margin-block: 14px 6px; }
+.studio-policies p { font-size: 14px; line-height: 1.6; }
+.studio-policies .studio-request-notice { margin-top: 16px; }
+@media(max-width: 699px) { .wave-media.with-kit { grid-template-columns: minmax(0,1fr); } .wave-kit { max-width: 360px; } .wave-stage { height: 300px; max-height: 45svh; } }

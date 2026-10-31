@@ -1,4 +1,6 @@
 "use client";
+import WaveMedia from "./WaveMedia";
+import StudioPolicies from "./StudioPolicies";
 import PackageInclusions from "./PackageInclusions";
 import Image from "next/image";
 import HomeService from "./HomeService";
@@ -425,16 +427,25 @@ export default function Services() {
                       <p className="uc-detail-description">
                         {service.description}
                       </p>
-                      {service.inclusions && (
-                        <div className="uc-inclusions">
-                          <h3>What’s included</h3>
-                          <ul>
-                            {service.inclusions.map((i) => (
-                              <li key={i}>{i}</li>
-                            ))}
-                          </ul>
-                        </div>
-                      )}
+                      {(service.id === "sporting-waves" ||
+                        service.id === "sporting-waves-products") &&
+                        currentService?.id === service.id && (
+                          <WaveMedia
+                            key={service.id}
+                            inclusions={service.inclusions}
+                          />
+                        )}
+                      {service.inclusions &&
+                        service.id !== "sporting-waves-products" && (
+                          <div className="uc-inclusions">
+                            <h3>What’s included</h3>
+                            <ul>
+                              {service.inclusions.map((i) => (
+                                <li key={i}>{i}</li>
+                              ))}
+                            </ul>
+                          </div>
+                        )}
                       {currentService?.id === service.id && (
                         <AddAction
                           service={service}
@@ -457,6 +468,7 @@ export default function Services() {
                     view?.kind === "home-review") && (
                     <div className="uc-review">
                       <pre>{message}</pre>
+                      {view.kind === "studio-review" && <StudioPolicies />}
                       <div className="uc-handoff-note">
                         <MessageCircle
                           size={22}

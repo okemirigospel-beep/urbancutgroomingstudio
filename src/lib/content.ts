@@ -1,3 +1,4 @@
+import { studioPolicies, studioRequestNotice } from "./studio-policies.ts";
 import { openingHoursSummary, studioSchedule } from "./appointments.ts";
 export const brand = {
   name: "URBANCUT",
@@ -58,15 +59,15 @@ export const faqs: readonly FAQ[] = [
   },
   {
     id: "deposit",
-    question: "Do I need to pay a deposit?",
-    answer:
-      "Please ask the studio to confirm any deposit requirement before your appointment. Your appointment is confirmed after the required payment or deposit is received and our team confirms your booking.",
+    question: "Is advance payment required for studio appointments?",
+    answer: studioPolicies[0].text,
   },
   {
     id: "changes",
-    question: "What if I need to cancel, reschedule or arrive late?",
+    question: "What if I need to change my studio appointment?",
     answer:
-      "Contact the studio with your appointment details as soon as possible. Applicable notice requirements and charges must be confirmed with the studio.",
+      "Contact the studio on WhatsApp with your appointment details. " +
+      studioPolicies[1].text,
   },
   {
     id: "walk-ins",
@@ -76,15 +77,17 @@ export const faqs: readonly FAQ[] = [
   },
   {
     id: "listed-prices",
-    question: "Are these final prices, and is this a live booking?",
+    question: "Is this a confirmed studio booking?",
     answer:
-      "Choose your services and preferred appointment time, then continue to WhatsApp. Our team will confirm availability and any required payment or deposit before confirming your appointment.",
+      "Choose your services and preferred time, then continue to WhatsApp to request an appointment. " +
+      studioRequestNotice,
   },
   {
     id: "confirmation",
-    question: "When is my appointment confirmed?",
+    question: "When is my studio appointment confirmed?",
     answer:
-      "Your appointment is confirmed after the required payment or deposit is received and our team confirms your booking. Payment details will be provided on WhatsApp.",
+      studioRequestNotice +
+      " Payment details will be provided by the studio on WhatsApp.",
   },
   {
     id: "arrival",
@@ -100,15 +103,13 @@ export const faqs: readonly FAQ[] = [
   },
   {
     id: "cancellation-policy",
-    question: "How do cancellations and rescheduling work?",
-    answer:
-      "Please contact us on WhatsApp as soon as your plans change. Our team will advise you on the cancellation or rescheduling terms applicable to your booking.",
+    question: "How does rescheduling a missed studio appointment work?",
+    answer: studioPolicies[1].text,
   },
   {
     id: "missed-appointment",
-    question: "What happens if I miss my appointment?",
-    answer:
-      "Contact the studio on WhatsApp to discuss your missed appointment, the applicable no-show terms and arrangements for rebooking.",
+    question: "What happens if I miss my studio appointment?",
+    answer: studioPolicies[1].text,
   },
   {
     id: "home-booking-terms",

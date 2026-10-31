@@ -17,6 +17,7 @@ import {
   advanceNotice,
 } from "@/lib/appointments";
 import { ShoppingCart } from "lucide-react";
+import StudioPolicies from "./StudioPolicies";
 import OpeningHours from "./OpeningHours";
 
 export function Field({
@@ -220,6 +221,7 @@ export function StudioForm({
           {errors.basket}
         </p>
       )}
+      <StudioPolicies />
       <button className="uc-primary" type="submit">
         Review Studio Request
       </button>
