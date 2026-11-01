@@ -1,0 +1,762 @@
+{
+  "status": "Owner confirmation required; global two-appearances-per-person compliance is NOT verified.",
+  "method": "Only supplied labels and exact/recompressed photograph records. No face recognition or facial identity inference. Source-photo groups do not establish distinct people. Background people and practitioners may also recur.",
+  "groups": [
+    {
+      "groupLabel": "Unconfirmed source group 1",
+      "sourceFilenames": [
+        "2 (2).jpg"
+      ],
+      "placements": [
+        "Hero background 1",
+        "Lookbook 3"
+      ],
+      "sourcePlacementCount": 2,
+      "personAppearanceCount": null,
+      "uncertainty": "Cross-photograph person grouping not supplied; count is not a validated person total.",
+      "contactSheetNumber": 1
+    },
+    {
+      "groupLabel": "Unconfirmed source group 2",
+      "sourceFilenames": [
+        "5 (2).jpg"
+      ],
+      "placements": [
+        "Hero background 2",
+        "Lookbook 8"
+      ],
+      "sourcePlacementCount": 2,
+      "personAppearanceCount": null,
+      "uncertainty": "Cross-photograph person grouping not supplied; count is not a validated person total.",
+      "contactSheetNumber": 2
+    },
+    {
+      "groupLabel": "Unconfirmed source group 3",
+      "sourceFilenames": [
+        "IMG-20260929-WA0055.jpg"
+      ],
+      "placements": [
+        "Hero background 3",
+        "Lookbook 21"
+      ],
+      "sourcePlacementCount": 2,
+      "personAppearanceCount": null,
+      "uncertainty": "Cross-photograph person grouping not supplied; count is not a validated person total.",
+      "contactSheetNumber": 3
+    },
+    {
+      "groupLabel": "Unconfirmed source group 4",
+      "sourceFilenames": [
+        "IMG-20260929-WA0057.jpg"
+      ],
+      "placements": [
+        "Hero background 4",
+        "Lookbook 19"
+      ],
+      "sourcePlacementCount": 2,
+      "personAppearanceCount": null,
+      "uncertainty": "Cross-photograph person grouping not supplied; count is not a validated person total.",
+      "contactSheetNumber": 4
+    },
+    {
+      "groupLabel": "Unconfirmed source group 5",
+      "sourceFilenames": [
+        "IMG-20260929-WA0090.jpg"
+      ],
+      "placements": [
+        "Hero background 5",
+        "Lookbook 26"
+      ],
+      "sourcePlacementCount": 2,
+      "personAppearanceCount": null,
+      "uncertainty": "Cross-photograph person grouping not supplied; count is not a validated person total.",
+      "contactSheetNumber": 5
+    },
+    {
+      "groupLabel": "Unconfirmed source group 6",
+      "sourceFilenames": [
+        "1.jpg"
+      ],
+      "placements": [
+        "Lookbook 1",
+        "hair-care card slide 4"
+      ],
+      "sourcePlacementCount": 2,
+      "personAppearanceCount": null,
+      "uncertainty": "Cross-photograph person grouping not supplied; count is not a validated person total.",
+      "contactSheetNumber": 6
+    },
+    {
+      "groupLabel": "Unconfirmed source group 7",
+      "sourceFilenames": [
+        "2.jpg"
+      ],
+      "placements": [
+        "Lookbook 2"
+      ],
+      "sourcePlacementCount": 1,
+      "personAppearanceCount": null,
+      "uncertainty": "Cross-photograph person grouping not supplied; count is not a validated person total.",
+      "contactSheetNumber": 7
+    },
+    {
+      "groupLabel": "Unconfirmed source group 8",
+      "sourceFilenames": [
+        "3.jpg"
+      ],
+      "placements": [
+        "Lookbook 4"
+      ],
+      "sourcePlacementCount": 1,
+      "personAppearanceCount": null,
+      "uncertainty": "Cross-photograph person grouping not supplied; count is not a validated person total.",
+      "contactSheetNumber": 8
+    },
+    {
+      "groupLabel": "Unconfirmed source group 9",
+      "sourceFilenames": [
+        "3 (2).jpg"
+      ],
+      "placements": [
+        "Lookbook 5"
+      ],
+      "sourcePlacementCount": 1,
+      "personAppearanceCount": null,
+      "uncertainty": "Cross-photograph person grouping not supplied; count is not a validated person total.",
+      "contactSheetNumber": 9
+    },
+    {
+      "groupLabel": "Unconfirmed source group 10",
+      "sourceFilenames": [
+        "4.jpg"
+      ],
+      "placements": [
+        "Lookbook 6"
+      ],
+      "sourcePlacementCount": 1,
+      "personAppearanceCount": null,
+      "uncertainty": "Cross-photograph person grouping not supplied; count is not a validated person total.",
+      "contactSheetNumber": 10
+    },
+    {
+      "groupLabel": "Unconfirmed source group 11",
+      "sourceFilenames": [
+        "5.jpg"
+      ],
+      "placements": [
+        "Lookbook 7"
+      ],
+      "sourcePlacementCount": 1,
+      "personAppearanceCount": null,
+      "uncertainty": "Cross-photograph person grouping not supplied; count is not a validated person total.",
+      "contactSheetNumber": 11
+    },
+    {
+      "groupLabel": "Unconfirmed source group 12",
+      "sourceFilenames": [
+        "6.jpg"
+      ],
+      "placements": [
+        "Lookbook 9"
+      ],
+      "sourcePlacementCount": 1,
+      "personAppearanceCount": null,
+      "uncertainty": "Cross-photograph person grouping not supplied; count is not a validated person total.",
+      "contactSheetNumber": 12
+    },
+    {
+      "groupLabel": "Unconfirmed source group 13",
+      "sourceFilenames": [
+        "7.jpg"
+      ],
+      "placements": [
+        "Lookbook 10",
+        "other-colours detail"
+      ],
+      "sourcePlacementCount": 2,
+      "personAppearanceCount": null,
+      "uncertainty": "Cross-photograph person grouping not supplied; count is not a validated person total.",
+      "contactSheetNumber": 13
+    },
+    {
+      "groupLabel": "Unconfirmed source group 14",
+      "sourceFilenames": [
+        "8 (2).jpg"
+      ],
+      "placements": [
+        "Lookbook 11",
+        "other-colours detail"
+      ],
+      "sourcePlacementCount": 2,
+      "personAppearanceCount": null,
+      "uncertainty": "Cross-photograph person grouping not supplied; count is not a validated person total.",
+      "contactSheetNumber": 14
+    },
+    {
+      "groupLabel": "Unconfirmed source group 15",
+      "sourceFilenames": [
+        "9.jpg"
+      ],
+      "placements": [
+        "Lookbook 12",
+        "hair-care card slide 3"
+      ],
+      "sourcePlacementCount": 2,
+      "personAppearanceCount": null,
+      "uncertainty": "Cross-photograph person grouping not supplied; count is not a validated person total.",
+      "contactSheetNumber": 15
+    },
+    {
+      "groupLabel": "Unconfirmed source group 16",
+      "sourceFilenames": [
+        "10.jpg"
+      ],
+      "placements": [
+        "Lookbook 13"
+      ],
+      "sourcePlacementCount": 1,
+      "personAppearanceCount": null,
+      "uncertainty": "Cross-photograph person grouping not supplied; count is not a validated person total.",
+      "contactSheetNumber": 16
+    },
+    {
+      "groupLabel": "Unconfirmed source group 17",
+      "sourceFilenames": [
+        "14.jpg"
+      ],
+      "placements": [
+        "Lookbook 14"
+      ],
+      "sourcePlacementCount": 1,
+      "personAppearanceCount": null,
+      "uncertainty": "Cross-photograph person grouping not supplied; count is not a validated person total.",
+      "contactSheetNumber": 17
+    },
+    {
+      "groupLabel": "Unconfirmed source group 18",
+      "sourceFilenames": [
+        "IMG-20260929-WA0020.jpg"
+      ],
+      "placements": [
+        "Lookbook 15"
+      ],
+      "sourcePlacementCount": 1,
+      "personAppearanceCount": null,
+      "uncertainty": "Cross-photograph person grouping not supplied; count is not a validated person total.",
+      "contactSheetNumber": 18
+    },
+    {
+      "groupLabel": "Unconfirmed source group 19",
+      "sourceFilenames": [
+        "IMG-20260929-WA0048.jpg"
+      ],
+      "placements": [
+        "Lookbook 16"
+      ],
+      "sourcePlacementCount": 1,
+      "personAppearanceCount": null,
+      "uncertainty": "Cross-photograph person grouping not supplied; count is not a validated person total.",
+      "contactSheetNumber": 19
+    },
+    {
+      "groupLabel": "Unconfirmed source group 20",
+      "sourceFilenames": [
+        "IMG-20260929-WA0070.jpg"
+      ],
+      "placements": [
+        "Lookbook 17"
+      ],
+      "sourcePlacementCount": 1,
+      "personAppearanceCount": null,
+      "uncertainty": "Cross-photograph person grouping not supplied; count is not a validated person total.",
+      "contactSheetNumber": 20
+    },
+    {
+      "groupLabel": "Unconfirmed source group 21",
+      "sourceFilenames": [
+        "IMG-20260929-WA0088.jpg"
+      ],
+      "placements": [
+        "Lookbook 18",
+        "beard card slide 4"
+      ],
+      "sourcePlacementCount": 2,
+      "personAppearanceCount": null,
+      "uncertainty": "Cross-photograph person grouping not supplied; count is not a validated person total.",
+      "contactSheetNumber": 21
+    },
+    {
+      "groupLabel": "Unconfirmed source group 22",
+      "sourceFilenames": [
+        "IMG-20260929-WA0074.jpg"
+      ],
+      "placements": [
+        "Lookbook 20",
+        "beard card slide 3"
+      ],
+      "sourcePlacementCount": 2,
+      "personAppearanceCount": null,
+      "uncertainty": "Cross-photograph person grouping not supplied; count is not a validated person total.",
+      "contactSheetNumber": 22
+    },
+    {
+      "groupLabel": "Unconfirmed source group 23",
+      "sourceFilenames": [
+        "IMG-20260929-WA0066.jpg"
+      ],
+      "placements": [
+        "Lookbook 22"
+      ],
+      "sourcePlacementCount": 1,
+      "personAppearanceCount": null,
+      "uncertainty": "Cross-photograph person grouping not supplied; count is not a validated person total.",
+      "contactSheetNumber": 23
+    },
+    {
+      "groupLabel": "Unconfirmed source group 24",
+      "sourceFilenames": [
+        "IMG-20260929-WA0067.jpg"
+      ],
+      "placements": [
+        "Lookbook 23",
+        "beard card slide 2"
+      ],
+      "sourcePlacementCount": 2,
+      "personAppearanceCount": null,
+      "uncertainty": "Cross-photograph person grouping not supplied; count is not a validated person total.",
+      "contactSheetNumber": 24
+    },
+    {
+      "groupLabel": "Unconfirmed source group 25",
+      "sourceFilenames": [
+        "IMG-20260929-WA0085.jpg"
+      ],
+      "placements": [
+        "Lookbook 24"
+      ],
+      "sourcePlacementCount": 1,
+      "personAppearanceCount": null,
+      "uncertainty": "Cross-photograph person grouping not supplied; count is not a validated person total.",
+      "contactSheetNumber": 25
+    },
+    {
+      "groupLabel": "Unconfirmed source group 26",
+      "sourceFilenames": [
+        "IMG-20260929-WA0032.jpg"
+      ],
+      "placements": [
+        "Lookbook 25"
+      ],
+      "sourcePlacementCount": 1,
+      "personAppearanceCount": null,
+      "uncertainty": "Cross-photograph person grouping not supplied; count is not a validated person total.",
+      "contactSheetNumber": 26
+    },
+    {
+      "groupLabel": "Unconfirmed source group 27",
+      "sourceFilenames": [
+        "IMG_20260924_230009.jpg",
+        "H&G IMG 2.jpeg"
+      ],
+      "placements": [
+        "Lookbook 27",
+        "haircuts card slide 2"
+      ],
+      "sourcePlacementCount": 2,
+      "personAppearanceCount": null,
+      "uncertainty": "Cross-photograph person grouping not supplied; count is not a validated person total.",
+      "contactSheetNumber": 27
+    },
+    {
+      "groupLabel": "Unconfirmed source group 28",
+      "sourceFilenames": [
+        "IMG_20260924_230807.jpg",
+        "H&G IMG 1.jpeg"
+      ],
+      "placements": [
+        "Lookbook 28",
+        "haircuts card slide 1"
+      ],
+      "sourcePlacementCount": 2,
+      "personAppearanceCount": null,
+      "uncertainty": "Cross-photograph person grouping not supplied; count is not a validated person total.",
+      "contactSheetNumber": 28
+    },
+    {
+      "groupLabel": "Unconfirmed source group 29",
+      "sourceFilenames": [
+        "1001242392.jpg"
+      ],
+      "placements": [
+        "Lookbook 29"
+      ],
+      "sourcePlacementCount": 1,
+      "personAppearanceCount": null,
+      "uncertainty": "Cross-photograph person grouping not supplied; count is not a validated person total.",
+      "contactSheetNumber": 29
+    },
+    {
+      "groupLabel": "Unconfirmed source group 30",
+      "sourceFilenames": [
+        "1001242391.jpg"
+      ],
+      "placements": [
+        "Lookbook 30"
+      ],
+      "sourcePlacementCount": 1,
+      "personAppearanceCount": null,
+      "uncertainty": "Cross-photograph person grouping not supplied; count is not a validated person total.",
+      "contactSheetNumber": 30
+    },
+    {
+      "groupLabel": "Unconfirmed source group 31",
+      "sourceFilenames": [
+        "1001242395.jpg"
+      ],
+      "placements": [
+        "Lookbook 31"
+      ],
+      "sourcePlacementCount": 1,
+      "personAppearanceCount": null,
+      "uncertainty": "Cross-photograph person grouping not supplied; count is not a validated person total.",
+      "contactSheetNumber": 31
+    },
+    {
+      "groupLabel": "Unconfirmed source group 32",
+      "sourceFilenames": [
+        "1001242396.jpg"
+      ],
+      "placements": [
+        "Lookbook 32"
+      ],
+      "sourcePlacementCount": 1,
+      "personAppearanceCount": null,
+      "uncertainty": "Cross-photograph person grouping not supplied; count is not a validated person total.",
+      "contactSheetNumber": 32
+    },
+    {
+      "groupLabel": "Unconfirmed source group 33",
+      "sourceFilenames": [
+        "1001242389.jpg"
+      ],
+      "placements": [
+        "Lookbook 33"
+      ],
+      "sourcePlacementCount": 1,
+      "personAppearanceCount": null,
+      "uncertainty": "Cross-photograph person grouping not supplied; count is not a validated person total.",
+      "contactSheetNumber": 33
+    },
+    {
+      "groupLabel": "Unconfirmed source group 34",
+      "sourceFilenames": [
+        "1001242393.jpg"
+      ],
+      "placements": [
+        "Lookbook 34"
+      ],
+      "sourcePlacementCount": 1,
+      "personAppearanceCount": null,
+      "uncertainty": "Cross-photograph person grouping not supplied; count is not a validated person total.",
+      "contactSheetNumber": 34
+    },
+    {
+      "groupLabel": "Unconfirmed source group 35",
+      "sourceFilenames": [
+        "H&G IMG 3.jpeg"
+      ],
+      "placements": [
+        "haircuts card slide 3"
+      ],
+      "sourcePlacementCount": 1,
+      "personAppearanceCount": null,
+      "uncertainty": "Cross-photograph person grouping not supplied; count is not a validated person total.",
+      "contactSheetNumber": 35
+    },
+    {
+      "groupLabel": "Unconfirmed source group 36",
+      "sourceFilenames": [
+        "H&G IMG 4.jpeg"
+      ],
+      "placements": [
+        "haircuts card slide 4"
+      ],
+      "sourcePlacementCount": 1,
+      "personAppearanceCount": null,
+      "uncertainty": "Cross-photograph person grouping not supplied; count is not a validated person total.",
+      "contactSheetNumber": 36
+    },
+    {
+      "groupLabel": "Unconfirmed source group 37",
+      "sourceFilenames": [
+        "1001242355.jpg"
+      ],
+      "placements": [
+        "beard card slide 1"
+      ],
+      "sourcePlacementCount": 1,
+      "personAppearanceCount": null,
+      "uncertainty": "Cross-photograph person grouping not supplied; count is not a validated person total.",
+      "contactSheetNumber": 37
+    },
+    {
+      "groupLabel": "Unconfirmed source group 38",
+      "sourceFilenames": [
+        "1001242368.jpg"
+      ],
+      "placements": [
+        "hair-care card slide 1"
+      ],
+      "sourcePlacementCount": 1,
+      "personAppearanceCount": null,
+      "uncertainty": "Cross-photograph person grouping not supplied; count is not a validated person total.",
+      "contactSheetNumber": 38
+    },
+    {
+      "groupLabel": "Unconfirmed source group 39",
+      "sourceFilenames": [
+        "1001242363.jpg"
+      ],
+      "placements": [
+        "other-colours detail"
+      ],
+      "sourcePlacementCount": 1,
+      "personAppearanceCount": null,
+      "uncertainty": "Cross-photograph person grouping not supplied; count is not a validated person total.",
+      "contactSheetNumber": 39
+    },
+    {
+      "groupLabel": "Unconfirmed source group 40",
+      "sourceFilenames": [
+        "1001242361.jpg"
+      ],
+      "placements": [
+        "hair-care card slide 2"
+      ],
+      "sourcePlacementCount": 1,
+      "personAppearanceCount": null,
+      "uncertainty": "Cross-photograph person grouping not supplied; count is not a validated person total.",
+      "contactSheetNumber": 40
+    },
+    {
+      "groupLabel": "Unconfirmed source group 41",
+      "sourceFilenames": [
+        "1001242376.jpg"
+      ],
+      "placements": [
+        "sporting-waves detail",
+        "sporting-waves-products detail"
+      ],
+      "sourcePlacementCount": 2,
+      "personAppearanceCount": null,
+      "uncertainty": "Cross-photograph person grouping not supplied; count is not a validated person total.",
+      "contactSheetNumber": 41
+    },
+    {
+      "groupLabel": "Unconfirmed source group 42",
+      "sourceFilenames": [
+        "1001242380.jpg"
+      ],
+      "placements": [
+        "sporting-waves detail",
+        "sporting-waves-products detail"
+      ],
+      "sourcePlacementCount": 2,
+      "personAppearanceCount": null,
+      "uncertainty": "Cross-photograph person grouping not supplied; count is not a validated person total.",
+      "contactSheetNumber": 42
+    },
+    {
+      "groupLabel": "Unconfirmed source group 43",
+      "sourceFilenames": [
+        "Premium wave grooming essentials still life.png"
+      ],
+      "placements": [
+        "sporting-waves-products detail kit"
+      ],
+      "sourcePlacementCount": 1,
+      "personAppearanceCount": null,
+      "uncertainty": "Cross-photograph person grouping not supplied; count is not a validated person total.",
+      "contactSheetNumber": 43
+    },
+    {
+      "groupLabel": "Unconfirmed source group 44",
+      "sourceFilenames": [
+        "urbancut-foundation-workstation.webp"
+      ],
+      "placements": [
+        "Academy foundation"
+      ],
+      "sourcePlacementCount": 1,
+      "personAppearanceCount": null,
+      "uncertainty": "Cross-photograph person grouping not supplied; count is not a validated person total.",
+      "contactSheetNumber": 44
+    },
+    {
+      "groupLabel": "Unconfirmed source group 45",
+      "sourceFilenames": [
+        "academy-professional.webp"
+      ],
+      "placements": [
+        "Academy professional"
+      ],
+      "sourcePlacementCount": 1,
+      "personAppearanceCount": null,
+      "uncertainty": "Cross-photograph person grouping not supplied; count is not a validated person total.",
+      "contactSheetNumber": 45
+    },
+    {
+      "groupLabel": "Unconfirmed source group 46",
+      "sourceFilenames": [
+        "academy-master.webp"
+      ],
+      "placements": [
+        "Academy master"
+      ],
+      "sourcePlacementCount": 1,
+      "personAppearanceCount": null,
+      "uncertainty": "Cross-photograph person grouping not supplied; count is not a validated person total.",
+      "contactSheetNumber": 46
+    },
+    {
+      "groupLabel": "Unconfirmed source group 47",
+      "sourceFilenames": [
+        "urbancut-elite-workstation.webp"
+      ],
+      "placements": [
+        "Academy elite"
+      ],
+      "sourcePlacementCount": 1,
+      "personAppearanceCount": null,
+      "uncertainty": "Cross-photograph person grouping not supplied; count is not a validated person total.",
+      "contactSheetNumber": 47
+    },
+    {
+      "groupLabel": "Unconfirmed source group 48",
+      "sourceFilenames": [
+        "academy-executive.webp"
+      ],
+      "placements": [
+        "Academy executive"
+      ],
+      "sourcePlacementCount": 1,
+      "personAppearanceCount": null,
+      "uncertainty": "Cross-photograph person grouping not supplied; count is not a validated person total.",
+      "contactSheetNumber": 48
+    },
+    {
+      "groupLabel": "Naadubon Williams Kpoobari (owner-labelled founder portrait)",
+      "sourceFilenames": [
+        "founder image.jpeg"
+      ],
+      "placements": [
+        "Story founder"
+      ],
+      "sourcePlacementCount": 1,
+      "personAppearanceCount": null,
+      "uncertainty": "Cross-photograph person grouping not supplied; count is not a validated person total.",
+      "contactSheetNumber": 49
+    },
+    {
+      "groupLabel": "Unconfirmed source group 50",
+      "sourceFilenames": [
+        "Premium black barber chair station.png"
+      ],
+      "placements": [
+        "Beyond the Chair"
+      ],
+      "sourcePlacementCount": 1,
+      "personAppearanceCount": null,
+      "uncertainty": "Cross-photograph person grouping not supplied; count is not a validated person total.",
+      "contactSheetNumber": 50
+    },
+    {
+      "groupLabel": "Unconfirmed source group 51",
+      "sourceFilenames": [
+        "UrbanCut collection teaser"
+      ],
+      "placements": [
+        "Collection"
+      ],
+      "sourcePlacementCount": 1,
+      "personAppearanceCount": null,
+      "uncertainty": "Cross-photograph person grouping not supplied; count is not a validated person total.",
+      "contactSheetNumber": 51
+    },
+    {
+      "groupLabel": "Unconfirmed source group 52",
+      "sourceFilenames": [
+        "Wellness category photograph"
+      ],
+      "placements": [
+        "Wellness card"
+      ],
+      "sourcePlacementCount": 1,
+      "personAppearanceCount": null,
+      "uncertainty": "Cross-photograph person grouping not supplied; count is not a validated person total.",
+      "contactSheetNumber": 52
+    },
+    {
+      "groupLabel": "Unconfirmed source group 53",
+      "sourceFilenames": [
+        "Black Card photograph"
+      ],
+      "placements": [
+        "Black Card card",
+        "Black Card detail"
+      ],
+      "sourcePlacementCount": 2,
+      "personAppearanceCount": null,
+      "uncertainty": "Cross-photograph person grouping not supplied; count is not a validated person total.",
+      "contactSheetNumber": 53
+    },
+    {
+      "groupLabel": "Unconfirmed source group 54",
+      "sourceFilenames": [
+        "home service updated.mp4 opening frame"
+      ],
+      "placements": [
+        "Home video poster"
+      ],
+      "sourcePlacementCount": 1,
+      "personAppearanceCount": null,
+      "uncertainty": "Cross-photograph person grouping not supplied; count is not a validated person total.",
+      "contactSheetNumber": 54
+    },
+    {
+      "groupLabel": "Unconfirmed source group 55",
+      "sourceFilenames": [
+        "lookbook updated vid.mp4 opening frame"
+      ],
+      "placements": [
+        "Lookbook video poster"
+      ],
+      "sourcePlacementCount": 1,
+      "personAppearanceCount": null,
+      "uncertainty": "Cross-photograph person grouping not supplied; count is not a validated person total.",
+      "contactSheetNumber": 55
+    },
+    {
+      "groupLabel": "Unconfirmed source group 56",
+      "sourceFilenames": [
+        "IMG-20261031-WA0087.jpg",
+        "1001242378.jpg (same composition, recompressed source; pixel difference mean approximately 1/255)"
+      ],
+      "placements": [
+        "sporting-waves detail",
+        "sporting-waves-products detail"
+      ],
+      "sourcePlacementCount": 2,
+      "personAppearanceCount": null,
+      "uncertainty": "Cross-photograph person grouping not supplied; count is not a validated person total.",
+      "contactSheetNumber": 56
+    }
+  ],
+  "decisions": [
+    "New WA0087 is canonical for the recompressed 2378 photograph. The separate 2382 colour photograph is retired from both dialogs to avoid adding another potentially related subject; no identity match asserted.",
+    "7.jpg, 8 (2).jpg and 1001242363.jpg moved from category card into Other Colours.",
+    "3.jpg removed from the category card to reach exactly four; its Lookbook placement remains.",
+    "Lookbook preserved at 34 pending owner-confirmed cross-photo groupings."
+  ],
+  "ownerDirection": "Owner has no confirmed filename groups yet; requests numbered contact sheets, unaffected work to continue, and person-level check to stay pending."
+}

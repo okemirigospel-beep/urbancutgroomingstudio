@@ -1,3 +1,5 @@
+> Current update — 1 November 2026: [service gallery refinement and pending owner person-group review](NOV1-GALLERY-UPDATE.md). Hair & Scalp Care has exactly four photos; Other Colours has three. Cross-photograph identity grouping remains pending; no global person-compliance claim.
+
 > Current update — 31 October 2026: [latest supplied media, Sporting Waves galleries, two-placement audit and studio policies](OCT31-FINAL-UPDATE.md). The 34-photo Lookbook and latest videos supersede prior media counts/files. Approved motion and other content remain unchanged.
 
 > Latest refinement: [relaxed motion, chair layout and full Home video](RELAXED-MOTION-VERIFICATION.md) supersedes the earlier once-only motion and trimmed Home video.

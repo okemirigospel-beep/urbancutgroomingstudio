@@ -1,0 +1,586 @@
+[
+  {
+    "number": 1,
+    "filename": "2 (2).jpg",
+    "sourceRecord": "2 (2).jpg",
+    "aliases": [],
+    "deliveryAsset": "/media/oct25/hero-1-480.webp",
+    "placements": [
+      "Hero background 1",
+      "Lookbook 3"
+    ]
+  },
+  {
+    "number": 2,
+    "filename": "5 (2).jpg",
+    "sourceRecord": "5 (2).jpg",
+    "aliases": [],
+    "deliveryAsset": "/media/oct25/hero-2-480.webp",
+    "placements": [
+      "Hero background 2",
+      "Lookbook 8"
+    ]
+  },
+  {
+    "number": 3,
+    "filename": "IMG-20260929-WA0055.jpg",
+    "sourceRecord": "IMG-20260929-WA0055.jpg",
+    "aliases": [],
+    "deliveryAsset": "/media/oct25/hero-3-480.webp",
+    "placements": [
+      "Hero background 3",
+      "Lookbook 21"
+    ]
+  },
+  {
+    "number": 4,
+    "filename": "IMG-20260929-WA0057.jpg",
+    "sourceRecord": "IMG-20260929-WA0057.jpg",
+    "aliases": [],
+    "deliveryAsset": "/media/oct25/hero-4-480.webp",
+    "placements": [
+      "Hero background 4",
+      "Lookbook 19"
+    ]
+  },
+  {
+    "number": 5,
+    "filename": "IMG-20260929-WA0090.jpg",
+    "sourceRecord": "IMG-20260929-WA0090.jpg",
+    "aliases": [],
+    "deliveryAsset": "/media/oct25/hero-5-480.webp",
+    "placements": [
+      "Hero background 5",
+      "Lookbook 26"
+    ]
+  },
+  {
+    "number": 6,
+    "filename": "1.jpg",
+    "sourceRecord": "1.jpg",
+    "aliases": [],
+    "deliveryAsset": "/media/oct25/gallery-1.webp",
+    "placements": [
+      "Lookbook 1",
+      "hair-care card slide 4"
+    ]
+  },
+  {
+    "number": 7,
+    "filename": "2.jpg",
+    "sourceRecord": "2.jpg",
+    "aliases": [],
+    "deliveryAsset": "/media/oct25/gallery-2.webp",
+    "placements": [
+      "Lookbook 2"
+    ]
+  },
+  {
+    "number": 8,
+    "filename": "3.jpg",
+    "sourceRecord": "3.jpg",
+    "aliases": [],
+    "deliveryAsset": "/media/oct25/gallery-4.webp",
+    "placements": [
+      "Lookbook 4"
+    ]
+  },
+  {
+    "number": 9,
+    "filename": "3 (2).jpg",
+    "sourceRecord": "3 (2).jpg",
+    "aliases": [],
+    "deliveryAsset": "/media/oct25/gallery-5.webp",
+    "placements": [
+      "Lookbook 5"
+    ]
+  },
+  {
+    "number": 10,
+    "filename": "4.jpg",
+    "sourceRecord": "4.jpg",
+    "aliases": [],
+    "deliveryAsset": "/media/oct25/gallery-6.webp",
+    "placements": [
+      "Lookbook 6"
+    ]
+  },
+  {
+    "number": 11,
+    "filename": "5.jpg",
+    "sourceRecord": "5.jpg",
+    "aliases": [],
+    "deliveryAsset": "/media/oct25/gallery-7.webp",
+    "placements": [
+      "Lookbook 7"
+    ]
+  },
+  {
+    "number": 12,
+    "filename": "6.jpg",
+    "sourceRecord": "6.jpg",
+    "aliases": [],
+    "deliveryAsset": "/media/oct25/gallery-9.webp",
+    "placements": [
+      "Lookbook 9"
+    ]
+  },
+  {
+    "number": 13,
+    "filename": "7.jpg",
+    "sourceRecord": "7.jpg",
+    "aliases": [],
+    "deliveryAsset": "/media/oct25/gallery-10.webp",
+    "placements": [
+      "Lookbook 10",
+      "other-colours detail"
+    ]
+  },
+  {
+    "number": 14,
+    "filename": "8 (2).jpg",
+    "sourceRecord": "8 (2).jpg",
+    "aliases": [],
+    "deliveryAsset": "/media/oct25/gallery-11.webp",
+    "placements": [
+      "Lookbook 11",
+      "other-colours detail"
+    ]
+  },
+  {
+    "number": 15,
+    "filename": "9.jpg",
+    "sourceRecord": "9.jpg",
+    "aliases": [],
+    "deliveryAsset": "/media/oct25/gallery-12.webp",
+    "placements": [
+      "Lookbook 12",
+      "hair-care card slide 3"
+    ]
+  },
+  {
+    "number": 16,
+    "filename": "10.jpg",
+    "sourceRecord": "10.jpg",
+    "aliases": [],
+    "deliveryAsset": "/media/oct25/gallery-13.webp",
+    "placements": [
+      "Lookbook 13"
+    ]
+  },
+  {
+    "number": 17,
+    "filename": "14.jpg",
+    "sourceRecord": "14.jpg",
+    "aliases": [],
+    "deliveryAsset": "/media/oct25/gallery-14.webp",
+    "placements": [
+      "Lookbook 14"
+    ]
+  },
+  {
+    "number": 18,
+    "filename": "IMG-20260929-WA0020.jpg",
+    "sourceRecord": "IMG-20260929-WA0020.jpg",
+    "aliases": [],
+    "deliveryAsset": "/media/oct25/gallery-15.webp",
+    "placements": [
+      "Lookbook 15"
+    ]
+  },
+  {
+    "number": 19,
+    "filename": "IMG-20260929-WA0048.jpg",
+    "sourceRecord": "IMG-20260929-WA0048.jpg",
+    "aliases": [],
+    "deliveryAsset": "/media/oct25/gallery-16.webp",
+    "placements": [
+      "Lookbook 16"
+    ]
+  },
+  {
+    "number": 20,
+    "filename": "IMG-20260929-WA0070.jpg",
+    "sourceRecord": "IMG-20260929-WA0070.jpg",
+    "aliases": [],
+    "deliveryAsset": "/media/oct25/gallery-17.webp",
+    "placements": [
+      "Lookbook 17"
+    ]
+  },
+  {
+    "number": 21,
+    "filename": "IMG-20260929-WA0088.jpg",
+    "sourceRecord": "IMG-20260929-WA0088.jpg",
+    "aliases": [],
+    "deliveryAsset": "/media/oct25/gallery-18.webp",
+    "placements": [
+      "Lookbook 18",
+      "beard card slide 4"
+    ]
+  },
+  {
+    "number": 22,
+    "filename": "IMG-20260929-WA0074.jpg",
+    "sourceRecord": "IMG-20260929-WA0074.jpg",
+    "aliases": [],
+    "deliveryAsset": "/media/oct25/gallery-20.webp",
+    "placements": [
+      "Lookbook 20",
+      "beard card slide 3"
+    ]
+  },
+  {
+    "number": 23,
+    "filename": "IMG-20260929-WA0066.jpg",
+    "sourceRecord": "IMG-20260929-WA0066.jpg",
+    "aliases": [],
+    "deliveryAsset": "/media/oct25/gallery-22.webp",
+    "placements": [
+      "Lookbook 22"
+    ]
+  },
+  {
+    "number": 24,
+    "filename": "IMG-20260929-WA0067.jpg",
+    "sourceRecord": "IMG-20260929-WA0067.jpg",
+    "aliases": [],
+    "deliveryAsset": "/media/oct25/gallery-23.webp",
+    "placements": [
+      "Lookbook 23",
+      "beard card slide 2"
+    ]
+  },
+  {
+    "number": 25,
+    "filename": "IMG-20260929-WA0085.jpg",
+    "sourceRecord": "IMG-20260929-WA0085.jpg",
+    "aliases": [],
+    "deliveryAsset": "/media/oct25/gallery-24.webp",
+    "placements": [
+      "Lookbook 24"
+    ]
+  },
+  {
+    "number": 26,
+    "filename": "IMG-20260929-WA0032.jpg",
+    "sourceRecord": "IMG-20260929-WA0032.jpg",
+    "aliases": [],
+    "deliveryAsset": "/media/oct25/gallery-25.webp",
+    "placements": [
+      "Lookbook 25"
+    ]
+  },
+  {
+    "number": 27,
+    "filename": "IMG_20260924_230009.jpg",
+    "sourceRecord": "IMG_20260924_230009.jpg",
+    "aliases": [
+      "H&G IMG 2.jpeg"
+    ],
+    "deliveryAsset": "/media/oct25/gallery-27.webp",
+    "placements": [
+      "Lookbook 27",
+      "haircuts card slide 2"
+    ]
+  },
+  {
+    "number": 28,
+    "filename": "IMG_20260924_230807.jpg",
+    "sourceRecord": "IMG_20260924_230807.jpg",
+    "aliases": [
+      "H&G IMG 1.jpeg"
+    ],
+    "deliveryAsset": "/media/oct25/gallery-28.webp",
+    "placements": [
+      "Lookbook 28",
+      "haircuts card slide 1"
+    ]
+  },
+  {
+    "number": 29,
+    "filename": "1001242392.jpg",
+    "sourceRecord": "1001242392.jpg",
+    "aliases": [],
+    "deliveryAsset": "/media/oct31/1001242392.webp",
+    "placements": [
+      "Lookbook 29"
+    ]
+  },
+  {
+    "number": 30,
+    "filename": "1001242391.jpg",
+    "sourceRecord": "1001242391.jpg",
+    "aliases": [],
+    "deliveryAsset": "/media/oct31/1001242391.webp",
+    "placements": [
+      "Lookbook 30"
+    ]
+  },
+  {
+    "number": 31,
+    "filename": "1001242395.jpg",
+    "sourceRecord": "1001242395.jpg",
+    "aliases": [],
+    "deliveryAsset": "/media/oct31/1001242395.webp",
+    "placements": [
+      "Lookbook 31"
+    ]
+  },
+  {
+    "number": 32,
+    "filename": "1001242396.jpg",
+    "sourceRecord": "1001242396.jpg",
+    "aliases": [],
+    "deliveryAsset": "/media/oct31/1001242396.webp",
+    "placements": [
+      "Lookbook 32"
+    ]
+  },
+  {
+    "number": 33,
+    "filename": "1001242389.jpg",
+    "sourceRecord": "1001242389.jpg",
+    "aliases": [],
+    "deliveryAsset": "/media/oct31/1001242389.webp",
+    "placements": [
+      "Lookbook 33"
+    ]
+  },
+  {
+    "number": 34,
+    "filename": "1001242393.jpg",
+    "sourceRecord": "1001242393.jpg",
+    "aliases": [],
+    "deliveryAsset": "/media/oct31/1001242393.webp",
+    "placements": [
+      "Lookbook 34"
+    ]
+  },
+  {
+    "number": 35,
+    "filename": "H&G IMG 3.jpeg",
+    "sourceRecord": "H&G IMG 3.jpeg",
+    "aliases": [],
+    "deliveryAsset": "/media/service-previews/haircuts-3-720.webp",
+    "placements": [
+      "haircuts card slide 3"
+    ]
+  },
+  {
+    "number": 36,
+    "filename": "H&G IMG 4.jpeg",
+    "sourceRecord": "H&G IMG 4.jpeg",
+    "aliases": [],
+    "deliveryAsset": "/media/service-previews/haircuts-4-720.webp",
+    "placements": [
+      "haircuts card slide 4"
+    ]
+  },
+  {
+    "number": 37,
+    "filename": "1001242355.jpg",
+    "sourceRecord": "1001242355.jpg",
+    "aliases": [],
+    "deliveryAsset": "/media/oct31/beard-1-720.webp",
+    "placements": [
+      "beard card slide 1"
+    ]
+  },
+  {
+    "number": 38,
+    "filename": "1001242368.jpg",
+    "sourceRecord": "1001242368.jpg",
+    "aliases": [],
+    "deliveryAsset": "/media/oct31/hair-care-6-720.webp",
+    "placements": [
+      "hair-care card slide 1"
+    ]
+  },
+  {
+    "number": 39,
+    "filename": "1001242363.jpg",
+    "sourceRecord": "1001242363.jpg",
+    "aliases": [],
+    "deliveryAsset": "/media/oct31/hair-care-7-720.webp",
+    "placements": [
+      "other-colours detail"
+    ]
+  },
+  {
+    "number": 40,
+    "filename": "1001242361.jpg",
+    "sourceRecord": "1001242361.jpg",
+    "aliases": [],
+    "deliveryAsset": "/media/oct31/hair-care-8-720.webp",
+    "placements": [
+      "hair-care card slide 2"
+    ]
+  },
+  {
+    "number": 41,
+    "filename": "1001242376.jpg",
+    "sourceRecord": "1001242376.jpg",
+    "aliases": [],
+    "deliveryAsset": "/media/nov1/waves-front.webp",
+    "placements": [
+      "sporting-waves detail",
+      "sporting-waves-products detail"
+    ]
+  },
+  {
+    "number": 42,
+    "filename": "1001242380.jpg",
+    "sourceRecord": "1001242380.jpg",
+    "aliases": [],
+    "deliveryAsset": "/media/oct31/1001242380.webp",
+    "placements": [
+      "sporting-waves detail",
+      "sporting-waves-products detail"
+    ]
+  },
+  {
+    "number": 43,
+    "filename": "Premium wave grooming essentials still life.png",
+    "sourceRecord": "Premium wave grooming essentials still life.png",
+    "aliases": [],
+    "deliveryAsset": "/media/oct31/wave-kit.webp",
+    "placements": [
+      "sporting-waves-products detail kit"
+    ]
+  },
+  {
+    "number": 44,
+    "filename": "urbancut-foundation-workstation.webp",
+    "sourceRecord": "urbancut-foundation-workstation.webp",
+    "aliases": [],
+    "deliveryAsset": "/media/academy/urbancut-foundation-workstation.webp",
+    "placements": [
+      "Academy foundation"
+    ]
+  },
+  {
+    "number": 45,
+    "filename": "academy-professional.webp",
+    "sourceRecord": "academy-professional.webp",
+    "aliases": [],
+    "deliveryAsset": "/media/oct25/academy-professional.webp",
+    "placements": [
+      "Academy professional"
+    ]
+  },
+  {
+    "number": 46,
+    "filename": "academy-master.webp",
+    "sourceRecord": "academy-master.webp",
+    "aliases": [],
+    "deliveryAsset": "/media/oct25/academy-master.webp",
+    "placements": [
+      "Academy master"
+    ]
+  },
+  {
+    "number": 47,
+    "filename": "urbancut-elite-workstation.webp",
+    "sourceRecord": "urbancut-elite-workstation.webp",
+    "aliases": [],
+    "deliveryAsset": "/media/academy/urbancut-elite-workstation.webp",
+    "placements": [
+      "Academy elite"
+    ]
+  },
+  {
+    "number": 48,
+    "filename": "academy-executive.webp",
+    "sourceRecord": "academy-executive.webp",
+    "aliases": [],
+    "deliveryAsset": "/media/oct25/academy-executive.webp",
+    "placements": [
+      "Academy executive"
+    ]
+  },
+  {
+    "number": 49,
+    "filename": "founder image.jpeg",
+    "sourceRecord": "founder image.jpeg",
+    "aliases": [],
+    "deliveryAsset": "/media/oct25/founder.webp",
+    "placements": [
+      "Story founder"
+    ]
+  },
+  {
+    "number": 50,
+    "filename": "Premium black barber chair station.png",
+    "sourceRecord": "Premium black barber chair station.png",
+    "aliases": [],
+    "deliveryAsset": "/media/refinement/barber-chair.webp",
+    "placements": [
+      "Beyond the Chair"
+    ]
+  },
+  {
+    "number": 51,
+    "filename": "urbancut-collection-teaser.webp",
+    "sourceRecord": "UrbanCut collection teaser",
+    "aliases": [],
+    "deliveryAsset": "/media/urbancut-collection-teaser.webp",
+    "placements": [
+      "Collection"
+    ]
+  },
+  {
+    "number": 52,
+    "filename": "wellness.webp",
+    "sourceRecord": "Wellness category photograph",
+    "aliases": [],
+    "deliveryAsset": "/media/services/wellness.webp",
+    "placements": [
+      "Wellness card"
+    ]
+  },
+  {
+    "number": 53,
+    "filename": "membership.webp",
+    "sourceRecord": "Black Card photograph",
+    "aliases": [],
+    "deliveryAsset": "/media/services/membership.webp",
+    "placements": [
+      "Black Card card",
+      "Black Card detail"
+    ]
+  },
+  {
+    "number": 54,
+    "filename": "home-poster.webp",
+    "sourceRecord": "home service updated.mp4 opening frame",
+    "aliases": [],
+    "deliveryAsset": "/media/oct31/home-poster.webp",
+    "placements": [
+      "Home video poster"
+    ]
+  },
+  {
+    "number": 55,
+    "filename": "lookbook-poster.webp",
+    "sourceRecord": "lookbook updated vid.mp4 opening frame",
+    "aliases": [],
+    "deliveryAsset": "/media/oct31/lookbook-poster.webp",
+    "placements": [
+      "Lookbook video poster"
+    ]
+  },
+  {
+    "number": 56,
+    "filename": "IMG-20261031-WA0087.jpg",
+    "sourceRecord": "IMG-20261031-WA0087.jpg",
+    "aliases": [
+      "1001242378.jpg (same composition, recompressed source; pixel difference mean approximately 1/255)"
+    ],
+    "deliveryAsset": "/media/nov1/waves-side.webp",
+    "placements": [
+      "sporting-waves detail",
+      "sporting-waves-products detail"
+    ]
+  }
+]
