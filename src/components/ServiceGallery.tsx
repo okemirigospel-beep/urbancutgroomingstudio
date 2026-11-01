@@ -1,22 +1,30 @@
 "use client";
 import { useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { wavePhotos, waveKit, galleryStep } from "@/lib/service-gallery";
-export default function WaveMedia({ inclusions }: { inclusions?: string[] }) {
+import { waveKit, galleryStep, type GalleryPhoto } from "@/lib/service-gallery";
+export default function ServiceGallery({
+  photos,
+  label,
+  inclusions,
+}: {
+  photos: readonly GalleryPhoto[];
+  label: string;
+  inclusions?: string[];
+}) {
   const [index, setIndex] = useState(0);
   const [failed, setFailed] = useState(false);
   const touch = useRef<{ x: number; y: number } | null>(null);
   const move = (step: number) => {
-    setIndex((i) => galleryStep(i, step));
+    setIndex((i) => galleryStep(i, step, photos.length));
     setFailed(false);
   };
-  const photo = wavePhotos[index];
+  const photo = photos[index];
   return (
     <div className={`wave-media${inclusions ? " with-kit" : ""}`}>
       <div
         className="wave-gallery"
         role="region"
-        aria-label="Sporting Waves hairstyle photographs"
+        aria-label={label}
         onKeyDown={(e) => {
           if (e.key === "ArrowLeft" || e.key === "ArrowRight") {
             e.preventDefault();
@@ -72,7 +80,7 @@ export default function WaveMedia({ inclusions }: { inclusions?: string[] }) {
             <ChevronLeft aria-hidden="true" />
           </button>
           <span aria-live="polite" aria-atomic="true">
-            {index + 1} / {wavePhotos.length}
+            {index + 1} / {photos.length}
           </span>
           <button
             type="button"
@@ -92,7 +100,7 @@ export default function WaveMedia({ inclusions }: { inclusions?: string[] }) {
             alt={waveKit.alt}
           />
           <div className="uc-inclusions">
-            <h3>What’s included</h3>
+            <h3>Take-home essentials</h3>
             <ul>
               {inclusions.map((item) => (
                 <li key={item}>{item}</li>

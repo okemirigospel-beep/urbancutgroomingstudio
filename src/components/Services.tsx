@@ -1,5 +1,6 @@
 "use client";
-import WaveMedia from "./WaveMedia";
+import ServiceGallery from "./ServiceGallery";
+import { wavePhotos, colourPhotos } from "@/lib/service-gallery";
 import StudioPolicies from "./StudioPolicies";
 import PackageInclusions from "./PackageInclusions";
 import Image from "next/image";
@@ -428,10 +429,21 @@ export default function Services() {
                         {service.description}
                       </p>
                       {(service.id === "sporting-waves" ||
-                        service.id === "sporting-waves-products") &&
+                        service.id === "sporting-waves-products" ||
+                        service.id === "other-colours") &&
                         currentService?.id === service.id && (
-                          <WaveMedia
+                          <ServiceGallery
                             key={service.id}
+                            photos={
+                              service.id === "other-colours"
+                                ? colourPhotos
+                                : wavePhotos
+                            }
+                            label={
+                              service.id === "other-colours"
+                                ? "Other Colours hairstyle photographs"
+                                : "Sporting Waves hairstyle photographs"
+                            }
                             inclusions={service.inclusions}
                           />
                         )}

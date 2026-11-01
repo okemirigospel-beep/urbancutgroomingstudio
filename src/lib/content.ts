@@ -16,7 +16,8 @@ export const faqs: readonly FAQ[] = [
   {
     id: "missed-appointment",
     question: "What happens if I miss my appointment?",
-    answer: "You may reschedule for a later available date. Payments are non-refundable.",
+    answer:
+      "You may reschedule for a later available date. Payments are non-refundable.",
   },
   {
     id: "location",
@@ -105,11 +106,6 @@ export const faqs: readonly FAQ[] = [
     question: "What happens if I arrive late?",
     answer:
       "Late arrival may reduce the time available for your appointment. Please contact the studio as soon as possible if you are running late.",
-  },
-  {
-    id: "cancellation-policy",
-    question: "How does rescheduling a missed studio appointment work?",
-    answer: studioPolicies[1].text,
   },
   {
     id: "home-booking-terms",

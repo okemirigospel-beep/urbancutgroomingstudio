@@ -10,7 +10,7 @@ import { whatsappUrl, whatsappBase } from "../src/lib/booking.ts";
 
 test("previews retain ordered, isolated assets; wrap and failures remain forward", () => {
   for (const [category, photos] of Object.entries(servicePreviews)) {
-    assert.equal(photos.length, category === "hair-care" ? 8 : 4);
+    assert.equal(photos.length, 4);
     assert.equal(new Set(photos.map((p) => p.src)).size, photos.length);
   }
   assert.equal(nextPreview(3, 4, []), 0);

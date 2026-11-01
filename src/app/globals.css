@@ -3267,3 +3267,11 @@ textarea {
 .studio-policies p { font-size: 14px; line-height: 1.6; }
 .studio-policies .studio-request-notice { margin-top: 16px; }
 @media(max-width: 699px) { .wave-media.with-kit { grid-template-columns: minmax(0,1fr); } .wave-kit { max-width: 360px; } .wave-stage { height: 300px; max-height: 45svh; } }
+
+/* Shared manual galleries and the coordinated take-home essentials panel. */
+.wave-kit { background: var(--ivory); border: 1px solid var(--line); border-top: 2px solid var(--gold); border-radius: 6px; padding: 16px; container-type: inline-size; }
+.wave-kit .uc-inclusions { border: 0; }
+.wave-kit h3 { font-size: 16px; line-height: 1.35; margin-bottom: 12px; }
+.wave-kit ul { display: grid; grid-template-columns: 1fr; gap: 10px 16px; padding: 0; list-style: none; }
+.wave-kit li { margin: 0; font-size: 14px; line-height: 1.5; }
+@container (min-width: 210px) { .wave-kit ul { grid-template-columns: repeat(2,minmax(0,1fr)); } }
