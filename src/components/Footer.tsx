@@ -2,18 +2,16 @@ import Image from "next/image";
 import { studio } from "@/lib/studio";
 
 const explore = [
-  ["About", "#about"],
+  ["Services", "#services"],
   ["Home Service", "#home-service"],
-  ["Our Services", "#services"],
-  ["The Lookbook", "#gallery"],
-  ["Client Reviews", "#reviews"],
-  ["UrbanCut Academy", "#academy"],
-  ["Products", "#products"],
+  ["Lookbook", "#gallery"],
+  ["Academy", "#academy"],
+  ["FAQs", "#faq"],
   ["Contact", "#contact"],
 ];
 export default function Footer() {
   return (
-    <footer className="site-footer">
+    <footer className="site-footer compact-footer">
       <div className="shell">
         <div className="footer-invitation">
           <h2>
@@ -37,8 +35,9 @@ export default function Footer() {
                 alt="UrbanCut Grooming Studio"
               />
             </a>
-            <p className="footer-tagline">Grooming, elevated.</p>
-            <p className="footer-location">Gwarinpa, Abuja</p>
+            <p className="footer-location">
+              Grooming, elevated. · Gwarinpa, Abuja
+            </p>
           </div>
           <nav aria-labelledby="footer-explore-heading">
             <h3 id="footer-explore-heading">Explore</h3>
@@ -48,10 +47,7 @@ export default function Footer() {
               </a>
             ))}
           </nav>
-          <nav aria-labelledby="footer-connect-heading">
-            <h3 id="footer-connect-heading">Visit &amp; Connect</h3>
-            <a href="#studio">Find Our Studio</a>
-            <a href="#faq">Frequently Asked Questions</a>
+          <nav className="footer-socials" aria-label="Contact and social links">
             <a href={studio.whatsapp} target="_blank" rel="noopener noreferrer">
               WhatsApp
             </a>

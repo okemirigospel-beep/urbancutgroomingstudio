@@ -1,0 +1,895 @@
+{
+  "status": "Pending owner-confirmed person groups; two-appearances-per-person compliance NOT verified.",
+  "note": "The former review sheets remain historical. Use the new November 13 sheet numbers. Multiple people or practitioners can appear in a single photograph.",
+  "groups": [
+    {
+      "number": 1,
+      "source": "2 (2).jpg",
+      "aliases": [],
+      "placements": [
+        "Hero background 1",
+        "Lookbook 15 (braids)"
+      ],
+      "sourcePlacementCount": 2,
+      "personGroup": null,
+      "personAppearanceCount": null,
+      "contactSheetNumber": 1
+    },
+    {
+      "number": 2,
+      "source": "5 (2).jpg",
+      "aliases": [],
+      "placements": [
+        "Hero background 2",
+        "Lookbook 18 (braids)"
+      ],
+      "sourcePlacementCount": 2,
+      "personGroup": null,
+      "personAppearanceCount": null,
+      "contactSheetNumber": 2
+    },
+    {
+      "number": 3,
+      "source": "IMG-20260929-WA0055.jpg",
+      "aliases": [],
+      "placements": [
+        "Hero background 3",
+        "Lookbook 37 (haircuts)"
+      ],
+      "sourcePlacementCount": 2,
+      "personGroup": null,
+      "personAppearanceCount": null,
+      "contactSheetNumber": 3
+    },
+    {
+      "number": 4,
+      "source": "IMG-20260929-WA0057.jpg",
+      "aliases": [],
+      "placements": [
+        "Hero background 4",
+        "Lookbook 35 (haircuts)"
+      ],
+      "sourcePlacementCount": 2,
+      "personGroup": null,
+      "personAppearanceCount": null,
+      "contactSheetNumber": 4
+    },
+    {
+      "number": 5,
+      "source": "IMG-20260929-WA0090.jpg",
+      "aliases": [],
+      "placements": [
+        "Hero background 5",
+        "Lookbook 42 (haircuts)"
+      ],
+      "sourcePlacementCount": 2,
+      "personGroup": null,
+      "personAppearanceCount": null,
+      "contactSheetNumber": 5
+    },
+    {
+      "number": 6,
+      "source": "1.jpg",
+      "aliases": [
+        "celebrities\\WhatsApp Image 2026-11-13 at 11.35.03.jpeg"
+      ],
+      "placements": [
+        "Lookbook 13 (owner-selection)"
+      ],
+      "sourcePlacementCount": 1,
+      "personGroup": null,
+      "personAppearanceCount": null,
+      "contactSheetNumber": 6
+    },
+    {
+      "number": 7,
+      "source": "2.jpg",
+      "aliases": [],
+      "placements": [
+        "Lookbook 14 (braids)"
+      ],
+      "sourcePlacementCount": 1,
+      "personGroup": null,
+      "personAppearanceCount": null,
+      "contactSheetNumber": 7
+    },
+    {
+      "number": 8,
+      "source": "3.jpg",
+      "aliases": [],
+      "placements": [
+        "Lookbook 16 (braids)"
+      ],
+      "sourcePlacementCount": 1,
+      "personGroup": null,
+      "personAppearanceCount": null,
+      "contactSheetNumber": 8
+    },
+    {
+      "number": 9,
+      "source": "3 (2).jpg",
+      "aliases": [
+        "celebrities\\WhatsApp Image 2026-11-12 at 18.51.28 (5).jpeg"
+      ],
+      "placements": [
+        "Lookbook 7 (owner-selection)"
+      ],
+      "sourcePlacementCount": 1,
+      "personGroup": null,
+      "personAppearanceCount": null,
+      "contactSheetNumber": 9
+    },
+    {
+      "number": 10,
+      "source": "4.jpg",
+      "aliases": [],
+      "placements": [
+        "Lookbook 17 (braids)"
+      ],
+      "sourcePlacementCount": 1,
+      "personGroup": null,
+      "personAppearanceCount": null,
+      "contactSheetNumber": 10
+    },
+    {
+      "number": 11,
+      "source": "5.jpg",
+      "aliases": [
+        "celebrities\\WhatsApp Image 2026-11-12 at 18.51.28 (1).jpeg"
+      ],
+      "placements": [
+        "Lookbook 3 (owner-selection)"
+      ],
+      "sourcePlacementCount": 1,
+      "personGroup": null,
+      "personAppearanceCount": null,
+      "contactSheetNumber": 11
+    },
+    {
+      "number": 12,
+      "source": "6.jpg",
+      "aliases": [
+        "celebrities\\WhatsApp Image 2026-11-12 at 18.51.28 (9).jpeg"
+      ],
+      "placements": [
+        "Lookbook 11 (owner-selection)"
+      ],
+      "sourcePlacementCount": 1,
+      "personGroup": null,
+      "personAppearanceCount": null,
+      "contactSheetNumber": 12
+    },
+    {
+      "number": 13,
+      "source": "7.jpg",
+      "aliases": [
+        "color hair, children and others/WhatsApp Image 2026-11-12 at 222.jpeg"
+      ],
+      "placements": [
+        "Lookbook 20 (colours)"
+      ],
+      "sourcePlacementCount": 1,
+      "personGroup": null,
+      "personAppearanceCount": null,
+      "contactSheetNumber": 13
+    },
+    {
+      "number": 14,
+      "source": "8 (2).jpg",
+      "aliases": [
+        "color hair, children and others/WhatsApp Image 2026-11-12 at 18.58.37.jpeg"
+      ],
+      "placements": [
+        "Lookbook 21 (colours)"
+      ],
+      "sourcePlacementCount": 1,
+      "personGroup": null,
+      "personAppearanceCount": null,
+      "contactSheetNumber": 14
+    },
+    {
+      "number": 15,
+      "source": "9.jpg",
+      "aliases": [],
+      "placements": [
+        "Lookbook 22 (colours)"
+      ],
+      "sourcePlacementCount": 1,
+      "personGroup": null,
+      "personAppearanceCount": null,
+      "contactSheetNumber": 15
+    },
+    {
+      "number": 16,
+      "source": "10.jpg",
+      "aliases": [],
+      "placements": [
+        "Lookbook 28 (children)"
+      ],
+      "sourcePlacementCount": 1,
+      "personGroup": null,
+      "personAppearanceCount": null,
+      "contactSheetNumber": 16
+    },
+    {
+      "number": 17,
+      "source": "14.jpg",
+      "aliases": [],
+      "placements": [
+        "Lookbook 30 (haircuts)"
+      ],
+      "sourcePlacementCount": 1,
+      "personGroup": null,
+      "personAppearanceCount": null,
+      "contactSheetNumber": 17
+    },
+    {
+      "number": 18,
+      "source": "IMG-20260929-WA0020.jpg",
+      "aliases": [],
+      "placements": [
+        "Lookbook 31 (haircuts)"
+      ],
+      "sourcePlacementCount": 1,
+      "personGroup": null,
+      "personAppearanceCount": null,
+      "contactSheetNumber": 18
+    },
+    {
+      "number": 19,
+      "source": "IMG-20260929-WA0048.jpg",
+      "aliases": [],
+      "placements": [
+        "Lookbook 32 (haircuts)"
+      ],
+      "sourcePlacementCount": 1,
+      "personGroup": null,
+      "personAppearanceCount": null,
+      "contactSheetNumber": 19
+    },
+    {
+      "number": 20,
+      "source": "IMG-20260929-WA0070.jpg",
+      "aliases": [],
+      "placements": [
+        "Lookbook 33 (haircuts)"
+      ],
+      "sourcePlacementCount": 1,
+      "personGroup": null,
+      "personAppearanceCount": null,
+      "contactSheetNumber": 20
+    },
+    {
+      "number": 21,
+      "source": "IMG-20260929-WA0088.jpg",
+      "aliases": [],
+      "placements": [
+        "beard card slide 4",
+        "Lookbook 34 (haircuts)"
+      ],
+      "sourcePlacementCount": 2,
+      "personGroup": null,
+      "personAppearanceCount": null,
+      "contactSheetNumber": 21
+    },
+    {
+      "number": 22,
+      "source": "IMG-20260929-WA0074.jpg",
+      "aliases": [],
+      "placements": [
+        "beard card slide 3",
+        "Lookbook 36 (haircuts)"
+      ],
+      "sourcePlacementCount": 2,
+      "personGroup": null,
+      "personAppearanceCount": null,
+      "contactSheetNumber": 22
+    },
+    {
+      "number": 23,
+      "source": "IMG-20260929-WA0066.jpg",
+      "aliases": [],
+      "placements": [
+        "Lookbook 38 (haircuts)"
+      ],
+      "sourcePlacementCount": 1,
+      "personGroup": null,
+      "personAppearanceCount": null,
+      "contactSheetNumber": 23
+    },
+    {
+      "number": 24,
+      "source": "IMG-20260929-WA0067.jpg",
+      "aliases": [],
+      "placements": [
+        "beard card slide 2",
+        "Lookbook 39 (haircuts)"
+      ],
+      "sourcePlacementCount": 2,
+      "personGroup": null,
+      "personAppearanceCount": null,
+      "contactSheetNumber": 24
+    },
+    {
+      "number": 25,
+      "source": "IMG-20260929-WA0085.jpg",
+      "aliases": [],
+      "placements": [
+        "Lookbook 40 (haircuts)"
+      ],
+      "sourcePlacementCount": 1,
+      "personGroup": null,
+      "personAppearanceCount": null,
+      "contactSheetNumber": 25
+    },
+    {
+      "number": 26,
+      "source": "IMG-20260929-WA0032.jpg",
+      "aliases": [],
+      "placements": [
+        "Lookbook 41 (haircuts)"
+      ],
+      "sourcePlacementCount": 1,
+      "personGroup": null,
+      "personAppearanceCount": null,
+      "contactSheetNumber": 26
+    },
+    {
+      "number": 27,
+      "source": "IMG_20260924_230009.jpg",
+      "aliases": [
+        "H&G IMG 2.jpeg"
+      ],
+      "placements": [
+        "haircuts card slide 2",
+        "Lookbook 43 (haircuts)"
+      ],
+      "sourcePlacementCount": 2,
+      "personGroup": null,
+      "personAppearanceCount": null,
+      "contactSheetNumber": 27
+    },
+    {
+      "number": 28,
+      "source": "IMG_20260924_230807.jpg",
+      "aliases": [
+        "H&G IMG 1.jpeg"
+      ],
+      "placements": [
+        "haircuts card slide 1",
+        "Lookbook 44 (haircuts)"
+      ],
+      "sourcePlacementCount": 2,
+      "personGroup": null,
+      "personAppearanceCount": null,
+      "contactSheetNumber": 28
+    },
+    {
+      "number": 29,
+      "source": "1001242392.jpg",
+      "aliases": [
+        "color hair, children and others/WhatsApp Image 2026-11-12 at 18.55.31.jpeg"
+      ],
+      "placements": [
+        "Lookbook 29 (children)"
+      ],
+      "sourcePlacementCount": 1,
+      "personGroup": null,
+      "personAppearanceCount": null,
+      "contactSheetNumber": 29
+    },
+    {
+      "number": 30,
+      "source": "1001242391.jpg",
+      "aliases": [],
+      "placements": [
+        "Lookbook 45 (haircuts)"
+      ],
+      "sourcePlacementCount": 1,
+      "personGroup": null,
+      "personAppearanceCount": null,
+      "contactSheetNumber": 30
+    },
+    {
+      "number": 31,
+      "source": "1001242395.jpg",
+      "aliases": [
+        "color hair, children and others/3333.jpeg"
+      ],
+      "placements": [
+        "Lookbook 46 (haircuts)"
+      ],
+      "sourcePlacementCount": 1,
+      "personGroup": null,
+      "personAppearanceCount": null,
+      "contactSheetNumber": 31
+    },
+    {
+      "number": 32,
+      "source": "1001242396.jpg",
+      "aliases": [],
+      "placements": [
+        "Lookbook 47 (haircuts)"
+      ],
+      "sourcePlacementCount": 1,
+      "personGroup": null,
+      "personAppearanceCount": null,
+      "contactSheetNumber": 32
+    },
+    {
+      "number": 33,
+      "source": "1001242389.jpg",
+      "aliases": [],
+      "placements": [
+        "Lookbook 48 (haircuts)"
+      ],
+      "sourcePlacementCount": 1,
+      "personGroup": null,
+      "personAppearanceCount": null,
+      "contactSheetNumber": 33
+    },
+    {
+      "number": 34,
+      "source": "1001242393.jpg",
+      "aliases": [
+        "color hair, children and others/WhatsApp Image 2026-11-12 at ssss.jpeg"
+      ],
+      "placements": [
+        "Lookbook 49 (haircuts)"
+      ],
+      "sourcePlacementCount": 1,
+      "personGroup": null,
+      "personAppearanceCount": null,
+      "contactSheetNumber": 34
+    },
+    {
+      "number": 35,
+      "source": "H&G IMG 3.jpeg",
+      "aliases": [],
+      "placements": [
+        "haircuts card slide 3",
+        "Lookbook 50 (haircuts)"
+      ],
+      "sourcePlacementCount": 2,
+      "personGroup": null,
+      "personAppearanceCount": null,
+      "contactSheetNumber": 35
+    },
+    {
+      "number": 36,
+      "source": "H&G IMG 4.jpeg",
+      "aliases": [],
+      "placements": [
+        "haircuts card slide 4",
+        "Lookbook 51 (haircuts)"
+      ],
+      "sourcePlacementCount": 2,
+      "personGroup": null,
+      "personAppearanceCount": null,
+      "contactSheetNumber": 36
+    },
+    {
+      "number": 37,
+      "source": "1001242355.jpg",
+      "aliases": [],
+      "placements": [
+        "beard card slide 1",
+        "Lookbook 52 (haircuts)"
+      ],
+      "sourcePlacementCount": 2,
+      "personGroup": null,
+      "personAppearanceCount": null,
+      "contactSheetNumber": 37
+    },
+    {
+      "number": 38,
+      "source": "1001242368.jpg",
+      "aliases": [],
+      "placements": [
+        "Lookbook 23 (colours)"
+      ],
+      "sourcePlacementCount": 1,
+      "personGroup": null,
+      "personAppearanceCount": null,
+      "contactSheetNumber": 38
+    },
+    {
+      "number": 39,
+      "source": "1001242363.jpg",
+      "aliases": [
+        "hair and scalp care slide show replacement photos\\WhatsApp Image 2026-11-13 at 10.47.37.jpeg"
+      ],
+      "placements": [
+        "Lookbook 27 (colours)",
+        "hair-care card slide 3"
+      ],
+      "sourcePlacementCount": 2,
+      "personGroup": null,
+      "personAppearanceCount": null,
+      "contactSheetNumber": 39
+    },
+    {
+      "number": 40,
+      "source": "1001242361.jpg",
+      "aliases": [
+        "hair and scalp care slide show replacement photos\\WhatsApp Image 2026-11-12 at 18.59.58.jpeg"
+      ],
+      "placements": [
+        "Lookbook 26 (colours)",
+        "hair-care card slide 2"
+      ],
+      "sourcePlacementCount": 2,
+      "personGroup": null,
+      "personAppearanceCount": null,
+      "contactSheetNumber": 40
+    },
+    {
+      "number": 41,
+      "source": "1001242376.jpg",
+      "aliases": [],
+      "placements": [
+        "sporting-waves detail",
+        "sporting-waves-products detail"
+      ],
+      "sourcePlacementCount": 2,
+      "personGroup": null,
+      "personAppearanceCount": null,
+      "contactSheetNumber": 41
+    },
+    {
+      "number": 42,
+      "source": "1001242380.jpg",
+      "aliases": [],
+      "placements": [
+        "sporting-waves detail",
+        "sporting-waves-products detail"
+      ],
+      "sourcePlacementCount": 2,
+      "personGroup": null,
+      "personAppearanceCount": null,
+      "contactSheetNumber": 42
+    },
+    {
+      "number": 43,
+      "source": "Premium wave grooming essentials still life.png",
+      "aliases": [],
+      "placements": [
+        "sporting-waves-products detail kit"
+      ],
+      "sourcePlacementCount": 1,
+      "personGroup": null,
+      "personAppearanceCount": null,
+      "contactSheetNumber": 43
+    },
+    {
+      "number": 44,
+      "source": "urbancut-foundation-workstation.webp",
+      "aliases": [],
+      "placements": [
+        "Academy foundation"
+      ],
+      "sourcePlacementCount": 1,
+      "personGroup": null,
+      "personAppearanceCount": null,
+      "contactSheetNumber": 44
+    },
+    {
+      "number": 45,
+      "source": "academy-professional.webp",
+      "aliases": [],
+      "placements": [
+        "Academy professional"
+      ],
+      "sourcePlacementCount": 1,
+      "personGroup": null,
+      "personAppearanceCount": null,
+      "contactSheetNumber": 45
+    },
+    {
+      "number": 46,
+      "source": "academy-master.webp",
+      "aliases": [],
+      "placements": [
+        "Academy master"
+      ],
+      "sourcePlacementCount": 1,
+      "personGroup": null,
+      "personAppearanceCount": null,
+      "contactSheetNumber": 46
+    },
+    {
+      "number": 47,
+      "source": "urbancut-elite-workstation.webp",
+      "aliases": [],
+      "placements": [
+        "Academy elite"
+      ],
+      "sourcePlacementCount": 1,
+      "personGroup": null,
+      "personAppearanceCount": null,
+      "contactSheetNumber": 47
+    },
+    {
+      "number": 48,
+      "source": "academy-executive.webp",
+      "aliases": [],
+      "placements": [
+        "Academy executive"
+      ],
+      "sourcePlacementCount": 1,
+      "personGroup": null,
+      "personAppearanceCount": null,
+      "contactSheetNumber": 48
+    },
+    {
+      "number": 49,
+      "source": "founder image.jpeg",
+      "aliases": [],
+      "placements": [
+        "Story founder"
+      ],
+      "sourcePlacementCount": 1,
+      "personGroup": null,
+      "personAppearanceCount": null,
+      "contactSheetNumber": 49
+    },
+    {
+      "number": 50,
+      "source": "Premium black barber chair station.png",
+      "aliases": [],
+      "placements": [
+        "Beyond the Chair"
+      ],
+      "sourcePlacementCount": 1,
+      "personGroup": null,
+      "personAppearanceCount": null,
+      "contactSheetNumber": 50
+    },
+    {
+      "number": 51,
+      "source": "UrbanCut collection teaser",
+      "aliases": [],
+      "placements": [
+        "Collection"
+      ],
+      "sourcePlacementCount": 1,
+      "personGroup": null,
+      "personAppearanceCount": null,
+      "contactSheetNumber": 51
+    },
+    {
+      "number": 52,
+      "source": "Wellness category photograph",
+      "aliases": [],
+      "placements": [
+        "Wellness card"
+      ],
+      "sourcePlacementCount": 1,
+      "personGroup": null,
+      "personAppearanceCount": null,
+      "contactSheetNumber": 52
+    },
+    {
+      "number": 53,
+      "source": "Black Card photograph",
+      "aliases": [],
+      "placements": [
+        "Black Card card",
+        "Black Card detail"
+      ],
+      "sourcePlacementCount": 2,
+      "personGroup": null,
+      "personAppearanceCount": null,
+      "contactSheetNumber": 53
+    },
+    {
+      "number": 54,
+      "source": "IMG-20261031-WA0087.jpg",
+      "aliases": [
+        "1001242378.jpg (same composition, recompressed source; pixel difference mean approximately 1/255)"
+      ],
+      "placements": [
+        "sporting-waves detail",
+        "sporting-waves-products detail"
+      ],
+      "sourcePlacementCount": 2,
+      "personGroup": null,
+      "personAppearanceCount": null,
+      "contactSheetNumber": 54
+    },
+    {
+      "number": 55,
+      "source": "celebrities\\WhatsApp Image 2026-11-12 at 18.51.27 (1).jpeg",
+      "aliases": [
+        "celebrities\\WhatsApp Image 2026-11-12 at 18.51.27 (1).jpeg"
+      ],
+      "placements": [
+        "Lookbook 1 (owner-selection)"
+      ],
+      "sourcePlacementCount": 1,
+      "personGroup": null,
+      "personAppearanceCount": null,
+      "contactSheetNumber": 55
+    },
+    {
+      "number": 56,
+      "source": "celebrities\\WhatsApp Image 2026-11-12 at 18.51.27.jpeg",
+      "aliases": [
+        "celebrities\\WhatsApp Image 2026-11-12 at 18.51.27.jpeg"
+      ],
+      "placements": [
+        "Lookbook 2 (owner-selection)"
+      ],
+      "sourcePlacementCount": 1,
+      "personGroup": null,
+      "personAppearanceCount": null,
+      "contactSheetNumber": 56
+    },
+    {
+      "number": 57,
+      "source": "celebrities\\WhatsApp Image 2026-11-12 at 18.51.28 (2).jpeg",
+      "aliases": [
+        "celebrities\\WhatsApp Image 2026-11-12 at 18.51.28 (2).jpeg"
+      ],
+      "placements": [
+        "Lookbook 4 (owner-selection)"
+      ],
+      "sourcePlacementCount": 1,
+      "personGroup": null,
+      "personAppearanceCount": null,
+      "contactSheetNumber": 57
+    },
+    {
+      "number": 58,
+      "source": "celebrities\\WhatsApp Image 2026-11-12 at 18.51.28 (3).jpeg",
+      "aliases": [
+        "celebrities\\WhatsApp Image 2026-11-12 at 18.51.28 (3).jpeg"
+      ],
+      "placements": [
+        "Lookbook 5 (owner-selection)"
+      ],
+      "sourcePlacementCount": 1,
+      "personGroup": null,
+      "personAppearanceCount": null,
+      "contactSheetNumber": 58
+    },
+    {
+      "number": 59,
+      "source": "celebrities\\WhatsApp Image 2026-11-12 at 18.51.28 (4).jpeg",
+      "aliases": [
+        "celebrities\\WhatsApp Image 2026-11-12 at 18.51.28 (4).jpeg"
+      ],
+      "placements": [
+        "Lookbook 6 (owner-selection)"
+      ],
+      "sourcePlacementCount": 1,
+      "personGroup": null,
+      "personAppearanceCount": null,
+      "contactSheetNumber": 59
+    },
+    {
+      "number": 60,
+      "source": "celebrities\\WhatsApp Image 2026-11-12 at 18.51.28 (6).jpeg",
+      "aliases": [
+        "celebrities\\WhatsApp Image 2026-11-12 at 18.51.28 (6).jpeg"
+      ],
+      "placements": [
+        "Lookbook 8 (owner-selection)"
+      ],
+      "sourcePlacementCount": 1,
+      "personGroup": null,
+      "personAppearanceCount": null,
+      "contactSheetNumber": 60
+    },
+    {
+      "number": 61,
+      "source": "celebrities\\WhatsApp Image 2026-11-12 at 18.51.28 (7).jpeg",
+      "aliases": [
+        "celebrities\\WhatsApp Image 2026-11-12 at 18.51.28 (7).jpeg"
+      ],
+      "placements": [
+        "Lookbook 9 (owner-selection)"
+      ],
+      "sourcePlacementCount": 1,
+      "personGroup": null,
+      "personAppearanceCount": null,
+      "contactSheetNumber": 61
+    },
+    {
+      "number": 62,
+      "source": "celebrities\\WhatsApp Image 2026-11-12 at 18.51.28 (8).jpeg",
+      "aliases": [
+        "celebrities\\WhatsApp Image 2026-11-12 at 18.51.28 (8).jpeg"
+      ],
+      "placements": [
+        "Lookbook 10 (owner-selection)"
+      ],
+      "sourcePlacementCount": 1,
+      "personGroup": null,
+      "personAppearanceCount": null,
+      "contactSheetNumber": 62
+    },
+    {
+      "number": 63,
+      "source": "celebrities\\WhatsApp Image 2026-11-12 at 18.51.28.jpeg",
+      "aliases": [
+        "celebrities\\WhatsApp Image 2026-11-12 at 18.51.28.jpeg"
+      ],
+      "placements": [
+        "Lookbook 12 (owner-selection)"
+      ],
+      "sourcePlacementCount": 1,
+      "personGroup": null,
+      "personAppearanceCount": null,
+      "contactSheetNumber": 63
+    },
+    {
+      "number": 64,
+      "source": "color hair, children and others\\WhatsApp Image 2026-11-13 at 10.47.37.jpeg",
+      "aliases": [
+        "color hair, children and others\\WhatsApp Image 2026-11-13 at 10.47.37.jpeg"
+      ],
+      "placements": [
+        "Lookbook 19 (braids)"
+      ],
+      "sourcePlacementCount": 1,
+      "personGroup": null,
+      "personAppearanceCount": null,
+      "contactSheetNumber": 64
+    },
+    {
+      "number": 65,
+      "source": "color hair, children and others\\WhatsApp Image 2026-11-13 at 11.05.12.jpeg",
+      "aliases": [
+        "color hair, children and others\\WhatsApp Image 2026-11-13 at 11.05.12.jpeg"
+      ],
+      "placements": [
+        "Lookbook 24 (colours)"
+      ],
+      "sourcePlacementCount": 1,
+      "personGroup": null,
+      "personAppearanceCount": null,
+      "contactSheetNumber": 65
+    },
+    {
+      "number": 66,
+      "source": "hair and scalp care slide show replacement photos\\1.jpeg",
+      "aliases": [
+        "hair and scalp care slide show replacement photos\\1.jpeg"
+      ],
+      "placements": [
+        "Lookbook 25 (colours)",
+        "hair-care card slide 1"
+      ],
+      "sourcePlacementCount": 2,
+      "personGroup": null,
+      "personAppearanceCount": null,
+      "contactSheetNumber": 66
+    },
+    {
+      "number": 67,
+      "source": "home service vid.mp4 poster",
+      "aliases": [],
+      "placements": [
+        "Home video poster"
+      ],
+      "sourcePlacementCount": 1,
+      "personGroup": null,
+      "personAppearanceCount": null,
+      "contactSheetNumber": 67
+    },
+    {
+      "number": 68,
+      "source": "lookbook vid.mp4 poster",
+      "aliases": [],
+      "placements": [
+        "Lookbook video poster"
+      ],
+      "sourcePlacementCount": 1,
+      "personGroup": null,
+      "personAppearanceCount": null,
+      "contactSheetNumber": 68
+    }
+  ],
+  "ownerDirection": "Owner has no confirmed filename groups yet; requests numbered contact sheets, unaffected work to continue, and person-level check to stay pending."
+}

@@ -1,6 +1,6 @@
 "use client";
 import ServiceGallery from "./ServiceGallery";
-import { wavePhotos, colourPhotos } from "@/lib/service-gallery";
+import { wavePhotos } from "@/lib/service-gallery";
 import StudioPolicies from "./StudioPolicies";
 import PackageInclusions from "./PackageInclusions";
 import Image from "next/image";
@@ -63,11 +63,15 @@ function AddAction({
   ) : (
     <button
       className={`uc-add ${basket[service.id] ? "is-added" : ""}`}
-      aria-label={`${basket[service.id] ? "Added" : "Add to Booking"}: ${service.name}`}
+      aria-label={`${basket[service.id] ? (service.id === "other-colours" ? "Save / edit colour" : "Added") : "Add to Booking"}: ${service.name}`}
       aria-pressed={!!basket[service.id]}
       onClick={() => add(service.id)}
     >
-      {basket[service.id] ? "Added" : "Add to Booking"}
+      {basket[service.id]
+        ? service.id === "other-colours"
+          ? "Save / edit colour"
+          : "Added"
+        : "Add to Booking"}
     </button>
   );
 }
@@ -91,6 +95,8 @@ function Price({ service }: { service: Service }) {
 }
 export default function Services() {
   const [view, setView] = useState<View | null>(null);
+  const [colourChoice, setColourChoice] = useState("");
+  const [customColour, setCustomColour] = useState("");
   const [basket, setBasket] = useState<Basket>({});
   const [studio, setStudio] = useState<StudioRequest>(emptyRequest);
   const [home, setHome] = useState<HomeRequest>({
@@ -163,6 +169,32 @@ export default function Services() {
     } else go({ kind: category.id === "home" ? "home" : "membership" });
   }
   function add(id: string) {
+    if (id === "other-colours") {
+      if (view?.kind !== "detail" || view.id !== id) {
+        go({ kind: "detail", id });
+        return;
+      }
+      const colour =
+        colourChoice === "Other" ? customColour.trim() : colourChoice;
+      if (!colour) {
+        setErrors({
+          colour:
+            colourChoice === "Other"
+              ? "Specify your preferred colour."
+              : "Choose your preferred colour.",
+        });
+        requestAnimationFrame(() =>
+          document
+            .getElementById(
+              colourChoice === "Other" ? "custom-colour" : "preferred-colour",
+            )
+            ?.focus(),
+        );
+        return;
+      }
+      setStudio((prev) => ({ ...prev, preferredColour: colour }));
+      setErrors({});
+    }
     setBasket((prev) => addService(prev, id));
     setAnnouncement(
       `${services.find((s) => s.id === id)?.name} added. Adjust quantities in your selection.`,
@@ -429,23 +461,69 @@ export default function Services() {
                         {service.description}
                       </p>
                       {(service.id === "sporting-waves" ||
-                        service.id === "sporting-waves-products" ||
-                        service.id === "other-colours") &&
+                        service.id === "sporting-waves-products") &&
                         currentService?.id === service.id && (
                           <ServiceGallery
                             key={service.id}
-                            photos={
-                              service.id === "other-colours"
-                                ? colourPhotos
-                                : wavePhotos
-                            }
-                            label={
-                              service.id === "other-colours"
-                                ? "Other Colours hairstyle photographs"
-                                : "Sporting Waves hairstyle photographs"
-                            }
+                            photos={wavePhotos}
+                            label="Sporting Waves hairstyle photographs"
                             inclusions={service.inclusions}
                           />
+                        )}
+                      {service.id === "other-colours" &&
+                        currentService?.id === service.id && (
+                          <div className="uc-colour-choice">
+                            <label htmlFor="preferred-colour">
+                              Preferred colour
+                            </label>
+                            <select
+                              id="preferred-colour"
+                              value={colourChoice}
+                              aria-invalid={!!errors.colour}
+                              aria-describedby={
+                                errors.colour ? "colour-error" : undefined
+                              }
+                              onChange={(e) => {
+                                setColourChoice(e.target.value);
+                                setErrors({});
+                              }}
+                            >
+                              <option value="">Choose a colour</option>
+                              {["Red", "Green", "Blue", "Grey", "Other"].map(
+                                (c) => (
+                                  <option key={c}>{c}</option>
+                                ),
+                              )}
+                            </select>
+                            {colourChoice === "Other" && (
+                              <>
+                                <label htmlFor="custom-colour">
+                                  Specify your preferred colour
+                                </label>
+                                <input
+                                  id="custom-colour"
+                                  value={customColour}
+                                  placeholder="Enter your preferred shade"
+                                  aria-invalid={!!errors.colour}
+                                  aria-describedby={
+                                    errors.colour ? "colour-error" : undefined
+                                  }
+                                  onChange={(e) =>
+                                    setCustomColour(e.target.value)
+                                  }
+                                />
+                              </>
+                            )}
+                            {errors.colour && (
+                              <p
+                                className="uc-error"
+                                id="colour-error"
+                                role="alert"
+                              >
+                                {errors.colour}
+                              </p>
+                            )}
+                          </div>
                         )}
                       {service.inclusions &&
                         service.id !== "sporting-waves-products" && (
@@ -470,7 +548,17 @@ export default function Services() {
                   {view?.kind === "studio" && (
                     <StudioForm
                       data={studio}
-                      update={setStudio}
+                      update={(next) => {
+                        setStudio(next);
+                        setErrors((previous) => {
+                          const remaining = validateStudio(next, basket);
+                          return Object.fromEntries(
+                            Object.entries(previous).filter(
+                              ([key]) => remaining[key],
+                            ),
+                          );
+                        });
+                      }}
                       basket={basket}
                       errors={errors}
                       submit={submitStudio}
@@ -545,7 +633,17 @@ export default function Services() {
                   {view?.kind === "home-form" && (
                     <HomeForm
                       data={home}
-                      update={setHome}
+                      update={(next) => {
+                        setHome(next);
+                        setErrors((previous) => {
+                          const remaining = validateHome(next);
+                          return Object.fromEntries(
+                            Object.entries(previous).filter(
+                              ([key]) => remaining[key],
+                            ),
+                          );
+                        });
+                      }}
                       errors={errors}
                       submit={submitHome}
                     />
@@ -595,6 +693,10 @@ export default function Services() {
                 {isStudio && (
                   <SelectionSummary
                     basket={basket}
+                    preferredColour={studio.preferredColour}
+                    editColour={() =>
+                      go({ kind: "detail", id: "other-colours" })
+                    }
                     adjust={adjust}
                     onContinue={() => go({ kind: "studio" })}
                     canContinue={view?.kind !== "studio"}

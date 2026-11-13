@@ -10,13 +10,12 @@ import {
   type HomeRequest,
 } from "@/lib/booking";
 import {
-  firstRequestDate,
   hourlyTimes,
-  timeLabel,
   changeRequestDate,
   advanceNotice,
 } from "@/lib/appointments";
 import { ShoppingCart } from "lucide-react";
+import AppointmentPicker from "./AppointmentPicker";
 import StudioPolicies from "./StudioPolicies";
 import OpeningHours from "./OpeningHours";
 
@@ -55,12 +54,16 @@ export function SelectionSummary({
   adjust,
   onContinue,
   canContinue = true,
+  preferredColour,
+  editColour,
   error,
 }: {
   basket: Basket;
   adjust: (id: string, qty: number) => void;
   onContinue: () => void;
   canContinue?: boolean;
+  preferredColour?: string;
+  editColour?: () => void;
   error?: string;
 }) {
   const [expanded, setExpanded] = useState(false);
@@ -96,6 +99,18 @@ export function SelectionSummary({
         {lines.map(({ service, quantity, total: lineTotal }) => (
           <div className="uc-selection-line" key={service.id}>
             <h4>{service.name}</h4>
+            {service.id === "other-colours" && (
+              <p>
+                Preferred colour: {preferredColour || "Choose a colour"}{" "}
+                <button
+                  type="button"
+                  className="uc-remove"
+                  onClick={editColour}
+                >
+                  Edit colour
+                </button>
+              </p>
+            )}
             <p>
               {money(service.price!)} each <strong>{money(lineTotal)}</strong>
             </p>
@@ -351,61 +366,18 @@ function RequestSchedule({
   updateDate: (date: string) => void;
   updateTime: (time: string) => void;
 }) {
-  const [timeNotice, setTimeNotice] = useState("");
   return (
     <>
-      <div className="uc-form-row">
-        <Field
-          label="Preferred date (required)"
-          id={`${prefix}-date`}
-          error={errors.date}
-        >
-          <input
-            id={`${prefix}-date`}
-            type="date"
-            required
-            min={firstRequestDate()}
-            value={data.date}
-            onChange={(e) => {
-              if (data.time)
-                setTimeNotice(
-                  "Date changed. Check your preferred start; if cleared, please choose another time.",
-                );
-              updateDate(e.target.value);
-            }}
-            {...inputError(`${prefix}-date`, errors.date)}
-          />
-        </Field>
-        <Field
-          label="Preferred start time (required)"
-          id={`${prefix}-time`}
-          error={errors.time}
-        >
-          <select
-            id={`${prefix}-time`}
-            required
-            disabled={!data.date}
-            value={data.time}
-            onChange={(e) => {
-              updateTime(e.target.value);
-              setTimeNotice("");
-            }}
-            {...inputError(`${prefix}-time`, errors.time)}
-          >
-            <option value="">
-              {data.date ? "Choose a time" : "Choose a date first"}
-            </option>
-            {times.map((t) => (
-              <option key={t} value={t}>
-                {timeLabel(t)} · Abuja time
-              </option>
-            ))}
-          </select>
-        </Field>
-      </div>
-      <p className="uc-fine" role="status">
-        {timeNotice}
-      </p>
+      <AppointmentPicker
+        prefix={prefix}
+        date={data.date}
+        time={data.time}
+        times={times}
+        dateError={errors.date}
+        timeError={errors.time}
+        onDate={updateDate}
+        onTime={updateTime}
+      />
       <div className="uc-schedule-help">
         <OpeningHours />
         <p>

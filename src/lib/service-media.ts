@@ -53,28 +53,22 @@ export const servicePreviews = {
   ],
   "hair-care": [
     {
-      src: "/media/oct31/hair-care-6",
+      src: "/media/nov13/care-1",
       width: 720,
-      height: 948,
+      height: 976,
       position: "50% 40%",
     },
     {
-      src: "/media/oct31/hair-care-8",
-      width: 720,
-      height: 949,
-      position: "50% 40%",
-    },
-    {
-      src: "/media/oct25/hair-care-3",
+      src: "/media/nov13/care-2",
       width: 720,
       height: 960,
-      position: "50% 45%",
+      position: "50% 40%",
     },
     {
-      src: "/media/oct31/hair-care-4",
-      width: 607,
-      height: 1080,
-      position: "50% 45%",
+      src: "/media/nov13/care-3",
+      width: 720,
+      height: 954,
+      position: "50% 40%",
     },
   ],
 } as const;

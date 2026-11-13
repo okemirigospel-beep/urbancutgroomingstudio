@@ -10,6 +10,7 @@ export type StudioRequest = {
   date: string;
   time: string;
   notes: string;
+  preferredColour?: string;
 };
 export type HomeRequest = StudioRequest & {
   region: "Abuja" | "Outside Abuja";
@@ -67,6 +68,9 @@ export function validateStudio(
   if (!data.name.trim()) errors.name = "Enter your name.";
   if (!selection(basket).length)
     errors.basket = "Add at least one available studio service.";
+  if (basket["other-colours"] && !data.preferredColour?.trim())
+    errors.basket =
+      "Choose a preferred colour for Other Colours before continuing.";
   const dateIssue = dateError(data.date, now);
   if (dateIssue) errors.date = dateIssue;
   if (!preferredTimes(basket, data.date).includes(data.time))
@@ -107,7 +111,8 @@ export function studioMessage(
     "",
     "Services:",
     ...lines.map(
-      (l) => `• ${l.service.name} × ${l.quantity} — ${money(l.total)}`,
+      (l) =>
+        `• ${l.service.name}${l.service.id === "other-colours" ? ` — preferred colour: ${data.preferredColour!.trim()}` : ""} × ${l.quantity} — ${money(l.total)}`,
     ),
     "",
     `Listed total: ${money(lines.reduce((sum, l) => sum + l.total, 0))}`,
