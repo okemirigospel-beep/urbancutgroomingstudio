@@ -1,17 +1,6 @@
 export const lookbookPhotos = [
   {
     id: "gallery-1",
-    src: "/media/nov13/opening-1.webp",
-    width: 739,
-    height: 987,
-    alt: "Grooming portrait from the supplied opening selection",
-    fit: "contain",
-    position: "50% 50%",
-    source: "celebrities\\WhatsApp Image 2026-11-12 at 18.51.27 (1).jpeg",
-    group: "owner-selection",
-  },
-  {
-    id: "gallery-2",
     src: "/media/nov13/opening-2.webp",
     width: 900,
     height: 1200,
@@ -19,6 +8,17 @@ export const lookbookPhotos = [
     fit: "contain",
     position: "50% 50%",
     source: "celebrities\\WhatsApp Image 2026-11-12 at 18.51.27.jpeg",
+    group: "owner-selection",
+  },
+  {
+    id: "gallery-2",
+    src: "/media/nov13/opening-13.webp",
+    width: 607,
+    height: 1080,
+    alt: "Grooming portrait from the supplied opening selection",
+    fit: "contain",
+    position: "50% 50%",
+    source: "1.jpg",
     group: "owner-selection",
   },
   {
@@ -34,17 +34,6 @@ export const lookbookPhotos = [
   },
   {
     id: "gallery-4",
-    src: "/media/nov13/opening-4.webp",
-    width: 900,
-    height: 1200,
-    alt: "Grooming portrait from the supplied opening selection",
-    fit: "contain",
-    position: "50% 50%",
-    source: "celebrities\\WhatsApp Image 2026-11-12 at 18.51.28 (2).jpeg",
-    group: "owner-selection",
-  },
-  {
-    id: "gallery-5",
     src: "/media/nov13/opening-5.webp",
     width: 900,
     height: 1200,
@@ -55,7 +44,7 @@ export const lookbookPhotos = [
     group: "owner-selection",
   },
   {
-    id: "gallery-6",
+    id: "gallery-5",
     src: "/media/nov13/opening-6.webp",
     width: 900,
     height: 1200,
@@ -66,7 +55,7 @@ export const lookbookPhotos = [
     group: "owner-selection",
   },
   {
-    id: "gallery-7",
+    id: "gallery-6",
     src: "/media/nov13/opening-7.webp",
     width: 900,
     height: 1200,
@@ -74,6 +63,17 @@ export const lookbookPhotos = [
     fit: "contain",
     position: "50% 50%",
     source: "3 (2).jpg",
+    group: "owner-selection",
+  },
+  {
+    id: "gallery-7",
+    src: "/media/nov13/opening-1.webp",
+    width: 739,
+    height: 987,
+    alt: "Grooming portrait from the supplied opening selection",
+    fit: "contain",
+    position: "50% 50%",
+    source: "celebrities\\WhatsApp Image 2026-11-12 at 18.51.27 (1).jpeg",
     group: "owner-selection",
   },
   {
@@ -133,17 +133,6 @@ export const lookbookPhotos = [
   },
   {
     id: "gallery-13",
-    src: "/media/nov13/opening-13.webp",
-    width: 607,
-    height: 1080,
-    alt: "Grooming portrait from the supplied opening selection",
-    fit: "contain",
-    position: "50% 50%",
-    source: "1.jpg",
-    group: "owner-selection",
-  },
-  {
-    id: "gallery-14",
     src: "/media/oct25/gallery-2.webp",
     width: 720,
     height: 960,
@@ -154,18 +143,7 @@ export const lookbookPhotos = [
     group: "braids",
   },
   {
-    id: "gallery-15",
-    src: "/media/oct25/gallery-3.webp",
-    width: 720,
-    height: 825,
-    alt: "Child with patterned cornrows",
-    fit: "contain",
-    position: "50% 50%",
-    source: "2 (2).jpg",
-    group: "braids",
-  },
-  {
-    id: "gallery-16",
+    id: "gallery-14",
     src: "/media/oct25/gallery-4.webp",
     width: 720,
     height: 960,
@@ -176,7 +154,7 @@ export const lookbookPhotos = [
     group: "braids",
   },
   {
-    id: "gallery-17",
+    id: "gallery-15",
     src: "/media/oct25/gallery-6.webp",
     width: 720,
     height: 960,
@@ -187,7 +165,7 @@ export const lookbookPhotos = [
     group: "braids",
   },
   {
-    id: "gallery-18",
+    id: "gallery-16",
     src: "/media/oct25/gallery-8.webp",
     width: 720,
     height: 813,
@@ -198,19 +176,7 @@ export const lookbookPhotos = [
     group: "braids",
   },
   {
-    id: "gallery-19",
-    src: "/media/nov13/braids-new.webp",
-    width: 720,
-    height: 1061,
-    alt: "Braided hairstyle during finishing",
-    fit: "contain",
-    position: "50% 50%",
-    source:
-      "color hair, children and others\\WhatsApp Image 2026-11-13 at 10.47.37.jpeg",
-    group: "braids",
-  },
-  {
-    id: "gallery-20",
+    id: "gallery-17",
     src: "/media/oct25/gallery-10.webp",
     width: 720,
     height: 960,
@@ -221,7 +187,7 @@ export const lookbookPhotos = [
     group: "colours",
   },
   {
-    id: "gallery-21",
+    id: "gallery-18",
     src: "/media/oct25/gallery-11.webp",
     width: 720,
     height: 960,
@@ -232,7 +198,7 @@ export const lookbookPhotos = [
     group: "colours",
   },
   {
-    id: "gallery-22",
+    id: "gallery-19",
     src: "/media/oct25/gallery-12.webp",
     width: 720,
     height: 960,
@@ -243,7 +209,7 @@ export const lookbookPhotos = [
     group: "colours",
   },
   {
-    id: "gallery-23",
+    id: "gallery-20",
     src: "/media/oct31/hair-care-6-720.webp",
     width: 720,
     height: 948,
@@ -254,7 +220,7 @@ export const lookbookPhotos = [
     group: "colours",
   },
   {
-    id: "gallery-24",
+    id: "gallery-21",
     src: "/media/nov13/colour-green.webp",
     width: 672,
     height: 902,
@@ -266,7 +232,7 @@ export const lookbookPhotos = [
     group: "colours",
   },
   {
-    id: "gallery-25",
+    id: "gallery-22",
     src: "/media/nov13/care-1.webp",
     width: 720,
     height: 976,
@@ -277,7 +243,7 @@ export const lookbookPhotos = [
     group: "colours",
   },
   {
-    id: "gallery-26",
+    id: "gallery-23",
     src: "/media/nov13/care-2.webp",
     width: 810,
     height: 1080,
@@ -288,7 +254,7 @@ export const lookbookPhotos = [
     group: "colours",
   },
   {
-    id: "gallery-27",
+    id: "gallery-24",
     src: "/media/nov13/care-3.webp",
     width: 720,
     height: 954,
@@ -299,7 +265,30 @@ export const lookbookPhotos = [
     group: "colours",
   },
   {
-    id: "gallery-28",
+    id: "gallery-25",
+    src: "/media/oct25/gallery-3.webp",
+    width: 720,
+    height: 825,
+    alt: "Child with patterned cornrows",
+    fit: "contain",
+    position: "50% 50%",
+    source: "2 (2).jpg",
+    group: "children",
+  },
+  {
+    id: "gallery-26",
+    src: "/media/nov13/braids-new.webp",
+    width: 720,
+    height: 1061,
+    alt: "Braided hairstyle during finishing",
+    fit: "contain",
+    position: "50% 50%",
+    source:
+      "color hair, children and others\\WhatsApp Image 2026-11-13 at 10.47.37.jpeg",
+    group: "children",
+  },
+  {
+    id: "gallery-27",
     src: "/media/oct25/gallery-13.webp",
     width: 720,
     height: 960,
@@ -310,7 +299,7 @@ export const lookbookPhotos = [
     group: "children",
   },
   {
-    id: "gallery-29",
+    id: "gallery-28",
     src: "/media/oct31/1001242392.webp",
     width: 720,
     height: 960,
@@ -321,7 +310,7 @@ export const lookbookPhotos = [
     group: "children",
   },
   {
-    id: "gallery-30",
+    id: "gallery-29",
     src: "/media/oct25/gallery-14.webp",
     width: 720,
     height: 960,
@@ -332,7 +321,7 @@ export const lookbookPhotos = [
     group: "haircuts",
   },
   {
-    id: "gallery-31",
+    id: "gallery-30",
     src: "/media/oct25/gallery-15.webp",
     width: 720,
     height: 960,
@@ -343,7 +332,7 @@ export const lookbookPhotos = [
     group: "haircuts",
   },
   {
-    id: "gallery-32",
+    id: "gallery-31",
     src: "/media/oct25/gallery-16.webp",
     width: 720,
     height: 540,
@@ -354,7 +343,7 @@ export const lookbookPhotos = [
     group: "haircuts",
   },
   {
-    id: "gallery-33",
+    id: "gallery-32",
     src: "/media/oct25/gallery-17.webp",
     width: 720,
     height: 960,
@@ -365,7 +354,7 @@ export const lookbookPhotos = [
     group: "haircuts",
   },
   {
-    id: "gallery-34",
+    id: "gallery-33",
     src: "/media/oct25/gallery-18.webp",
     width: 720,
     height: 961,
@@ -376,7 +365,7 @@ export const lookbookPhotos = [
     group: "haircuts",
   },
   {
-    id: "gallery-35",
+    id: "gallery-34",
     src: "/media/oct25/gallery-19.webp",
     width: 720,
     height: 960,
@@ -387,7 +376,7 @@ export const lookbookPhotos = [
     group: "haircuts",
   },
   {
-    id: "gallery-36",
+    id: "gallery-35",
     src: "/media/oct25/gallery-20.webp",
     width: 720,
     height: 1022,
@@ -398,7 +387,7 @@ export const lookbookPhotos = [
     group: "haircuts",
   },
   {
-    id: "gallery-37",
+    id: "gallery-36",
     src: "/media/oct25/gallery-21.webp",
     width: 720,
     height: 960,
@@ -409,7 +398,7 @@ export const lookbookPhotos = [
     group: "haircuts",
   },
   {
-    id: "gallery-38",
+    id: "gallery-37",
     src: "/media/oct25/gallery-22.webp",
     width: 720,
     height: 960,
@@ -420,7 +409,7 @@ export const lookbookPhotos = [
     group: "haircuts",
   },
   {
-    id: "gallery-39",
+    id: "gallery-38",
     src: "/media/oct25/gallery-23.webp",
     width: 720,
     height: 961,
@@ -431,7 +420,7 @@ export const lookbookPhotos = [
     group: "haircuts",
   },
   {
-    id: "gallery-40",
+    id: "gallery-39",
     src: "/media/oct25/gallery-24.webp",
     width: 720,
     height: 960,
@@ -442,7 +431,7 @@ export const lookbookPhotos = [
     group: "haircuts",
   },
   {
-    id: "gallery-41",
+    id: "gallery-40",
     src: "/media/oct25/gallery-25.webp",
     width: 720,
     height: 960,
@@ -453,7 +442,7 @@ export const lookbookPhotos = [
     group: "haircuts",
   },
   {
-    id: "gallery-42",
+    id: "gallery-41",
     src: "/media/oct25/gallery-26.webp",
     width: 720,
     height: 960,
@@ -464,7 +453,7 @@ export const lookbookPhotos = [
     group: "haircuts",
   },
   {
-    id: "gallery-43",
+    id: "gallery-42",
     src: "/media/oct25/gallery-27.webp",
     width: 720,
     height: 882,
@@ -475,7 +464,7 @@ export const lookbookPhotos = [
     group: "haircuts",
   },
   {
-    id: "gallery-44",
+    id: "gallery-43",
     src: "/media/oct25/gallery-28.webp",
     width: 720,
     height: 747,
@@ -486,7 +475,7 @@ export const lookbookPhotos = [
     group: "haircuts",
   },
   {
-    id: "gallery-45",
+    id: "gallery-44",
     src: "/media/oct31/1001242391.webp",
     width: 720,
     height: 960,
@@ -497,7 +486,7 @@ export const lookbookPhotos = [
     group: "haircuts",
   },
   {
-    id: "gallery-46",
+    id: "gallery-45",
     src: "/media/oct31/1001242395.webp",
     width: 720,
     height: 960,
@@ -508,7 +497,7 @@ export const lookbookPhotos = [
     group: "haircuts",
   },
   {
-    id: "gallery-47",
+    id: "gallery-46",
     src: "/media/oct31/1001242396.webp",
     width: 720,
     height: 960,
@@ -519,7 +508,7 @@ export const lookbookPhotos = [
     group: "haircuts",
   },
   {
-    id: "gallery-48",
+    id: "gallery-47",
     src: "/media/oct31/1001242389.webp",
     width: 720,
     height: 960,
@@ -530,7 +519,7 @@ export const lookbookPhotos = [
     group: "haircuts",
   },
   {
-    id: "gallery-49",
+    id: "gallery-48",
     src: "/media/oct31/1001242393.webp",
     width: 720,
     height: 960,
@@ -541,7 +530,7 @@ export const lookbookPhotos = [
     group: "haircuts",
   },
   {
-    id: "gallery-50",
+    id: "gallery-49",
     src: "/media/service-previews/haircuts-3-720.webp",
     width: 720,
     height: 947,
@@ -552,7 +541,7 @@ export const lookbookPhotos = [
     group: "haircuts",
   },
   {
-    id: "gallery-51",
+    id: "gallery-50",
     src: "/media/service-previews/haircuts-4-720.webp",
     width: 720,
     height: 960,
@@ -563,7 +552,7 @@ export const lookbookPhotos = [
     group: "haircuts",
   },
   {
-    id: "gallery-52",
+    id: "gallery-51",
     src: "/media/oct31/beard-1-720.webp",
     width: 720,
     height: 960,
@@ -574,6 +563,7 @@ export const lookbookPhotos = [
     group: "haircuts",
   },
 ] as const;
+
 export const galleryIndex = (index: number, step: -1 | 1) =>
   (index + step + lookbookPhotos.length) % lookbookPhotos.length;
 export const LOOKBOOK_TRANSITION_MS = 400;

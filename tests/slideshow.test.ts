@@ -20,7 +20,7 @@ test("approved hero and categorized Lookbook use approved order and available as
   );
   const current = JSON.parse(readFileSync(new URL("../docs/nov13-media.json",import.meta.url),"utf8"));
   assert.deepEqual(lookbookPhotos.map(p=>p.source),current.lookbook.map((p:{source:string})=>p.source));
-  assert.equal(lookbookPhotos.filter(p=>p.group==="owner-selection").length,13);
+  assert.equal(lookbookPhotos.filter(p=>p.group==="owner-selection").length,12);
   assert.equal(new Set(lookbookPhotos.map(p=>p.source)).size,lookbookPhotos.length);
   const groups=["owner-selection","braids","colours","children","haircuts"];
   const order=lookbookPhotos.map(p=>groups.indexOf(p.group));

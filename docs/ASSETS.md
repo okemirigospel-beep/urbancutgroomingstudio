@@ -1,3 +1,5 @@
+> Follow-up photo review: Lookbook now has 51 photos. White-shirt photograph is first, patterned-shirt photograph second, former opening photograph seventh. The specified locs photograph (opening-4) is removed from the Lookbook; both identified child photographs move to the children group. All remaining relative order is preserved.
+
 > Current update — 13 November 2026: [approved latest media, 52-photo Lookbook, required colour preference, compact footer and coordinated booking calendar](NOV13-LATEST-UPDATE.md). Hair & Scalp Care now has exactly three photos; Other Colours has no gallery. Person grouping remains owner-review pending. Indexing remains off. Older conflicting counts below are historical.
 
 > Current update — 1 November 2026: [service gallery refinement and pending owner person-group review](NOV1-GALLERY-UPDATE.md). Hair & Scalp Care has exactly four photos; Other Colours has three. Cross-photograph identity grouping remains pending; no global person-compliance claim.

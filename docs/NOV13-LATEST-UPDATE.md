@@ -1,3 +1,5 @@
+> Follow-up photo review: Lookbook now has 51 photos. White-shirt photograph is first, patterned-shirt photograph second, former opening photograph seventh. The specified locs photograph (opening-4) is removed from the Lookbook; both identified child photographs move to the children group. All remaining relative order is preserved.
+
 # 13 November 2026 — approved latest update
 
 The owner approved all decisions in the latest draft, including the 13-photo opening archive order, compact footer and coordinated date/time layout. This update supersedes earlier media counts and colour-gallery instructions. Existing hosting settings, prices, booking policies and page order are unchanged. Netlify Git deployment is authorized; indexing stays off.
