@@ -3263,7 +3263,7 @@ textarea {
 .wave-kit .uc-inclusions { margin-top: 16px; padding: 0; background: transparent; }
 .studio-policies { border: 1px solid #d9d3c5; border-left: 3px solid var(--gold); padding: 20px; margin-block: 24px; background: var(--ivory); }
 .studio-policies h3 { font-size: 18px; margin-bottom: 14px; }
-.studio-policies h4 { font-size: 15px; margin-block: 14px 6px; }
+.studio-policies h4 { font-size: 15px; font-weight: 700; margin-block: 14px 6px; }
 .studio-policies p { font-size: 14px; line-height: 1.6; }
 .studio-policies .studio-request-notice { margin-top: 16px; }
 @media(max-width: 699px) { .wave-media.with-kit { grid-template-columns: minmax(0,1fr); } .wave-kit { max-width: 360px; } .wave-stage { height: 300px; max-height: 45svh; } }
