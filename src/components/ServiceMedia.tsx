@@ -239,6 +239,8 @@ function CardVideo() {
         loading="lazy"
       />
       <video
+        controlsList="nodownload"
+        draggable={false}
         ref={video}
         src={
           near && !state.reduced

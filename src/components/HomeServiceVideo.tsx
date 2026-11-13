@@ -92,6 +92,8 @@ export default function HomeServiceVideo() {
         loading="lazy"
       />
       <video
+        controlsList="nodownload"
+        draggable={false}
         ref={video}
         width={720}
         height={1280}

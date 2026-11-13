@@ -3287,3 +3287,11 @@ textarea {
 .uc-colour-choice{display:grid;gap:10px;margin-block:24px;max-width:480px}.uc-colour-choice label{font-size:14px;font-weight:600}.uc-colour-choice select,.uc-colour-choice input{width:100%;min-height:46px;padding:10px 12px;border:1px solid var(--line);border-radius:4px;background:#fff}
 .compact-footer .footer-groups{grid-template-columns:1fr 1fr;gap:24px 48px;padding-block:28px}.compact-footer .footer-logo{width:150px;max-width:100%}.compact-footer .footer-groups nav:not(.footer-socials){display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px 18px;align-content:start}.compact-footer .footer-groups nav h3{grid-column:1/-1;margin-bottom:6px}.compact-footer .footer-groups nav a{display:inline-flex;align-items:center;min-height:44px;margin:0;padding:4px 0}.compact-footer .footer-groups .footer-socials{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:4px 24px}.compact-footer .footer-location{margin-top:12px}.compact-footer .footer-invitation{padding-block:36px}.compact-footer .footer-bottom{padding-block:20px}
 @media(max-width:699px){.appointment-controls{grid-template-columns:1fr}.appointment-calendar{padding:18px 14px}.appointment-times{border-left:0;border-top:1px solid #42433d;padding:16px 14px}.time-options{grid-template-columns:repeat(3,minmax(0,1fr));max-height:220px}.time-options p{grid-column:1/-1}.calendar-days button{height:38px}.compact-footer .footer-groups{grid-template-columns:1fr;gap:18px;padding-block:24px}.compact-footer .footer-groups nav:not(.footer-socials){grid-template-columns:repeat(2,minmax(0,1fr))}.compact-footer .footer-groups .footer-socials{gap:4px 18px}.compact-footer .footer-invitation{padding-block:28px;gap:20px}}
+
+/* Discourage casual media saving without disabling text selection or touch scrolling. */
+img, video, picture, .home-service-media, .grooming-slideshow {
+  -webkit-touch-callout: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  user-select: none;
+}

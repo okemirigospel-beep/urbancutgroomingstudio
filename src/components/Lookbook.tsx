@@ -82,6 +82,8 @@ function LookbookVideo() {
         loading="lazy"
       />
       <video
+        controlsList="nodownload"
+        draggable={false}
         ref={video}
         src={
           near && !reduced ? "/media/nov13/lookbook.mp4" : undefined

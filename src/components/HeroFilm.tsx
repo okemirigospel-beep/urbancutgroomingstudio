@@ -66,6 +66,8 @@ export default function HeroFilm() {
     <figure className="hero-film">
       <div className="film-frame">
         <video
+        controlsList="nodownload"
+        draggable={false}
           ref={video}
           poster="/media/hero-poster.jpg"
           muted

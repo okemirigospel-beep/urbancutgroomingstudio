@@ -3,6 +3,7 @@ import { baseMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import MediaSaveDeterrent from "@/components/MediaSaveDeterrent";
 
 const dmSans = localFont({
   src: "./fonts/dm-sans.woff2",
@@ -52,7 +53,10 @@ export default function RootLayout({
       lang="en"
       className={`${dmSans.variable} ${crimsonText.variable} ${naira.variable}`}
     >
-      <body>{children}</body>
+      <body>
+        <MediaSaveDeterrent />
+        {children}
+      </body>
     </html>
   );
 }
